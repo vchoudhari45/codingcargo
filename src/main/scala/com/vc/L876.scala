@@ -5,7 +5,7 @@ class ListNode(var _x: Int = 0) {
   var x: Int = _x
 }
 
-object Solution {
+object L876 {
   def middleNode(head: ListNode): ListNode = {
     var fast = head
     var slow = head
