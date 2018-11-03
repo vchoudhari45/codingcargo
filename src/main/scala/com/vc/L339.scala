@@ -14,7 +14,7 @@ class NestedInteger {
   def add(ni: NestedInteger) = ???
 }
 
-object Solution {
+object L339 {
   //[[1,1],2,[1,1]]
   def depthSum(nestedList: List[NestedInteger]): Int = {
     var sum = 0
