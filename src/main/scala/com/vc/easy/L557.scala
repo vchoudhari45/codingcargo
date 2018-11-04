@@ -1,4 +1,4 @@
-package com.vc
+package com.vc.easy
 
 object L557 {
   def reverseWords(s: String): String = {

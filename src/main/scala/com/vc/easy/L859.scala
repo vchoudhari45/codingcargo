@@ -1,4 +1,4 @@
-package com.vc
+package com.vc.easy
 
 object L859 {
   import scala.collection.mutable

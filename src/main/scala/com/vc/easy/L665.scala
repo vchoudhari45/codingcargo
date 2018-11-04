@@ -1,4 +1,4 @@
-package com.vc
+package com.vc.easy
 
 object L665 {
   def checkPossibility(nums: Array[Int]): Boolean = {

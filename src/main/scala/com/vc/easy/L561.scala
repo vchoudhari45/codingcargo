@@ -1,4 +1,4 @@
-package com.vc
+package com.vc.easy
 
 object L561 {
   def arrayPairSum(nums: Array[Int]): Int = {

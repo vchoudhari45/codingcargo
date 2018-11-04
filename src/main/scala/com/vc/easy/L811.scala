@@ -1,4 +1,4 @@
-package com.vc
+package com.vc.easy
 
 object L811 {
   /**
@@ -35,5 +35,3 @@ object L811 {
     out.toList
   }
 }
-
-

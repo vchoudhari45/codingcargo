@@ -1,4 +1,4 @@
-package com.vc
+package com.vc.easy
 
 object L806 {
   def numberOfLines(widths: Array[Int], s: String): Array[Int] = {

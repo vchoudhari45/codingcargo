@@ -1,4 +1,4 @@
-package com.vc
+package com.vc.easy
 
 object L760 {
   def anagramMappings(A: Array[Int], B: Array[Int]): Array[Int] = {

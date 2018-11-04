@@ -1,4 +1,4 @@
-package com.vc
+package com.vc.easy
 
 object L905 {
   def sortArrayByParity(A: Array[Int]): Array[Int] = {

@@ -1,4 +1,4 @@
-package com.vc
+package com.vc.easy
 
 object L832 {
   def flipAndInvertImage(arr: Array[Array[Int]]): Array[Array[Int]] = {

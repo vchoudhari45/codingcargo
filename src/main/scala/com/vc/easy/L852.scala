@@ -1,4 +1,4 @@
-package com.vc
+package com.vc.easy
 
 object L852 {
   def peakIndexInMountainArray(arr: Array[Int]): Int = {

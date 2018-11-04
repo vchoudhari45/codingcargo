@@ -1,4 +1,4 @@
-package com.vc
+package com.vc.easy
 
 class TreeNode700(var _value: Int) {
   var value: Int = _value

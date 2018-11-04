@@ -1,4 +1,4 @@
-package com.vc
+package com.vc.easy
 
 class L344 {
   def reverseString(str: String): String = {

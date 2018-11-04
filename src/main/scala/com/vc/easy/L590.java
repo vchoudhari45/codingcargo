@@ -1,4 +1,4 @@
-package com.vc;
+package com.vc.easy;
 
 import java.util.ArrayList;
 import java.util.List;

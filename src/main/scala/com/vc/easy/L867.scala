@@ -1,4 +1,4 @@
-package com.vc
+package com.vc.easy
 
 object L867 {
   def transpose(arr: Array[Array[Int]]): Array[Array[Int]] = {

@@ -1,4 +1,4 @@
-package com.vc
+package com.vc.easy
 
 import scala.annotation.tailrec
 

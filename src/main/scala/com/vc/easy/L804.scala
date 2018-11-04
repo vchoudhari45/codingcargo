@@ -1,4 +1,4 @@
-package com.vc
+package com.vc.easy
 
 object L804 {
   def uniqueMorseRepresentations(words: Array[String]): Int = {

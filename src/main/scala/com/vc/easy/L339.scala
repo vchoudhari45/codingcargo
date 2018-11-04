@@ -1,5 +1,4 @@
-package com.vc
-
+package com.vc.easy
 
 class NestedInteger {
   // Return true if this NestedInteger holds a single integer, rather than a nested list.

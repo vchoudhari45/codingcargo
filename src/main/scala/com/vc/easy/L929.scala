@@ -1,4 +1,4 @@
-package com.vc
+package com.vc.easy
 
 object L929 {
   def numUniqueEmails(emails: Array[String]): Int = {

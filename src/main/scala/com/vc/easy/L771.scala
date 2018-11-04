@@ -1,4 +1,4 @@
-package com.vc
+package com.vc.easy
 
 object L771 {
   def numJewelsInStones(J: String, S: String): Int = {
