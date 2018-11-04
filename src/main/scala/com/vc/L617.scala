@@ -1,15 +1,15 @@
 package com.vc
 
-class TreeNode(var _value: Int) {
+class TreeNode617(var _value: Int) {
   var value: Int = _value
-  var left: TreeNode = null
-  var right: TreeNode = null
+  var left: TreeNode617 = null
+  var right: TreeNode617 = null
 }
 
 object L617 {
-  def mergeTrees(t1: TreeNode, t2: TreeNode): TreeNode = {
+  def mergeTrees(t1: TreeNode617, t2: TreeNode617): TreeNode617 = {
     if(t1 != null && t2 != null) {
-      val t = new TreeNode(t1.value + t2.value)
+      val t = new TreeNode617(t1.value + t2.value)
       t.left = mergeTrees(t1.left, t2.left)
       t.right = mergeTrees(t1.right, t2.right)
       t

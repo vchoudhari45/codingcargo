@@ -1,13 +1,13 @@
 package com.vc
 
-class TreeNode(var _value: Int) {
+class TreeNode700(var _value: Int) {
   var value: Int = _value
-  var left: TreeNode = null
-  var right: TreeNode = null
+  var left: TreeNode700 = null
+  var right: TreeNode700 = null
 }
 
 object L700 {
-  def searchBST(root: TreeNode, value: Int): TreeNode = {
+  def searchBST(root: TreeNode700, value: Int): TreeNode700 = {
     var current = root
     while(current != null) {
       if(current.value < value) {
