@@ -6,7 +6,7 @@ class TreeNode226(var _value: Int) {
   var right: TreeNode226 = null
 }
 
-object Solution {
+object L226 {
   def invertTree(root: TreeNode226): TreeNode226 = {
 //    if(root != null) {
 //      val tmp = root.right

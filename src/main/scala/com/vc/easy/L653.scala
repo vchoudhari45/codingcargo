@@ -6,7 +6,7 @@ class TreeNode653(var _value: Int) {
   var right: TreeNode653 = null
 }
 
-object Solution {
+object L653 {
   def findTarget(root: TreeNode653, k: Int): Boolean = {
     if(root == null) return false
     import scala.collection.mutable
