@@ -16,6 +16,7 @@ object L788 {
       val digit = n % 10
       if(digit == 2 || digit == 5 || digit == 6 || digit == 9) isValidFound = true
       if(digit == 3 || digit == 4 || digit == 7) return false
+      n = n / 10
     }
     isValidFound
   }
