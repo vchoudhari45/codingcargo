@@ -1,6 +1,6 @@
 package com.vc.easy
 
-object Solution {
+object L167 {
   def twoSum(numbers: Array[Int], target: Int): Array[Int] = {
     def binarySearch(start:Int, target:Int): Int = {
       var lo = start

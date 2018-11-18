@@ -7,7 +7,7 @@ class TreeNode530(var _value: Int) {
   var right: TreeNode530 = null
 }
 
-object Solution {
+object L530 {
   def getMinimumDifference(root: TreeNode530): Int = {
     import scala.collection.mutable
     val st = new mutable.Stack[TreeNode530]()

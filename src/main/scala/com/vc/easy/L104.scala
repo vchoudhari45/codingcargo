@@ -6,7 +6,7 @@ class TreeNode104(var _value: Int) {
   var right: TreeNode104 = null
 }
 
-object Solution {
+object L104 {
   def maxDepth(root: TreeNode104): Int = {
     /**
       * if(root == null) return 0

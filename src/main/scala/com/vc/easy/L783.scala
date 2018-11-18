@@ -6,7 +6,7 @@ class TreeNode783(var _value: Int) {
   var right: TreeNode783 = null
 }
 
-object Solution {
+object L783 {
   def minDiffInBST(root: TreeNode783): Int = {
     import scala.collection.mutable
     val st = new mutable.Stack[TreeNode783]()

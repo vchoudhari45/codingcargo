@@ -6,7 +6,7 @@ class TreeNode538(var _value: Int) {
   var right: TreeNode538 = null
 }
 
-object Solution {
+object L538 {
   def convertBST(root: TreeNode538): TreeNode538 = {
     /**
     var sum = 0
