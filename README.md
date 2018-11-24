@@ -1,2 +1,2 @@
 # Leetcode
-Leetcode problems solutions in Scala/Java
+Leetcode solutions in Scala/Java
