@@ -21,7 +21,7 @@ class Node558 {
     }
 };
 
-class Solution {
+class L558 {
     public Node558 intersect(Node558 t1, Node558 t2) {
         if(t1.isLeaf) {
             if(t1.val) return t1;
