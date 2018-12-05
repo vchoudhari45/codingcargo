@@ -10,6 +10,6 @@ object L112 {
   def hasPathSum(root: TreeNode112, sum: Int): Boolean = {
     if(root == null) return false
     else if(root.left == null && root.right == null) return root.value == sum
-    else hasPathSum(root.left, sum - root.value) || hasPathSum(root.right, sum -root.value)
+    else hasPathSum(root.left, sum - root.value) || hasPathSum(root.right, sum - root.value)
   }
 }
