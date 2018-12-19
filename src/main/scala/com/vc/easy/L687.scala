@@ -6,7 +6,7 @@ class TreeNode687(var _value: Int) {
   var right: TreeNode687 = null
 }
 
-object Solution {
+object L687 {
   def longestUnivaluePath(root: TreeNode687): Int = {
     var maxLength = 0
     def find(root: TreeNode687): Unit = {

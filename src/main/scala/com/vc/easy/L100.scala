@@ -7,7 +7,7 @@ class TreeNode100(var _value: Int) {
   var right: TreeNode100 = null
 }
 
-object Solution {
+object L100 {
   def isSameTree(p: TreeNode100, q: TreeNode100): Boolean = {
     //(p ==null && q == null) || (p != null && q != null && p.value == q.value && isSameTree(p.left, q.left) && isSameTree(p.right, q.right))
     import scala.collection.mutable
