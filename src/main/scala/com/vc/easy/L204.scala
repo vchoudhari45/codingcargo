@@ -1,18 +1,26 @@
 package com.vc.easy
 
 object L204 {
-  def isIsomorphic(s: String, t: String): Boolean = {
-    import scala.collection.mutable
-    if(s.length != t.length) return false
-    val map = new mutable.HashMap[Char, Char]()
-    val reverseMap = new mutable.HashMap[Char, Char]()
-    s.indices.foreach(i => {
-      if(map.contains(s(i)) && map(s(i)) != t(i)) return false
-      else map.put(s(i), t(i))
+  def countPrimes(n: Int): Int = {
+    if(n == 0 || n == 1) return 0
 
-      if(reverseMap.contains(t(i)) && reverseMap(t(i)) != s(i)) return false
-      else reverseMap.put(t(i), s(i))
-    })
-    true
+    val isNotPrime = new Array[Boolean](n)
+    isNotPrime(0) = true
+    isNotPrime(1) = true
+    val sqrt = Math.sqrt(n)
+
+    var i = 0
+    var j = 0
+    while(i < sqrt) {
+      j = 2
+      if(!isNotPrime(i)) {
+        while(i * j < n) {
+          isNotPrime(i * j) = true
+          j += 1
+        }
+      }
+      i += 1
+    }
+    isNotPrime.count(_ == false)
   }
 }
