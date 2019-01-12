@@ -7,7 +7,7 @@ class TreeNode654(var _value: Int) {
   var right: TreeNode654 = null
 }
 
-object Solution {
+object L654 {
   def constructMaximumBinaryTree(nums: Array[Int]): TreeNode654 = {
     if(nums.length > 0) {
       val maxIdx = getMaxIdx(nums)

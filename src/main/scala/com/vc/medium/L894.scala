@@ -6,7 +6,7 @@ class TreeNode894(var _value: Int) {
   var right: TreeNode894 = null
 }
 
-object Solution {
+object L894 {
   def allPossibleFBT(N: Int): List[TreeNode894] = {
     import scala.collection.mutable
     val cache = new mutable.HashMap[Int, List[TreeNode894]]()

@@ -6,7 +6,7 @@ class TreeNode701(var _value: Int) {
   var right: TreeNode701 = null
 }
 
-object Solution {
+object L701 {
   def insertIntoBST(root: TreeNode701, value: Int): TreeNode701 = {
     var current = root
     var prev = current
