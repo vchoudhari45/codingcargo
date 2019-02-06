@@ -22,17 +22,12 @@ object L889 {
         val tree = new TreeNode889(pre(preStart))
         if(preStart == preEnd) return tree
         var index = postStart
-        var found = false
-        while(!found && index < postEnd) {
-          if(pre(preStart + 1) == post(index)) found = true
-          else index += 1
-        }
-        if(!found) return tree
+        while(post(index) != pre(preStart + 1)) index += 1
         tree.left = solve(preStart + 1, preStart + 1 + index - postStart, postStart, index)
-        tree.right = solve(preStart + 1 + index - postStart + 1, preEnd, index + 1, postEnd)
+        tree.right = solve(preStart + 2 + index - postStart, preEnd, index + 1, postEnd)
         tree
       }
-      solve(0, pre.length - 1, 0, post.length - 1)
+    solve(0, pre.length - 1, 0, pre.length - 1)
   }
 }
 
