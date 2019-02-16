@@ -16,15 +16,22 @@ class NestedInteger {
 object L339 {
   //[[1,1],2,[1,1]]
   def depthSum(nestedList: List[NestedInteger]): Int = {
+    import scala.collection.mutable
+    val q = new mutable.Queue[NestedInteger]()
+    nestedList.foreach(list => q.enqueue(list))
+
     var sum = 0
-    nestedList.foreach(x => depth(x, 1))
-    def depth(nestedInteger: NestedInteger, d:Int): Unit = {
-      if(nestedInteger.isInteger){
-        sum += nestedInteger.getInteger * d
+    var level = 1
+    while(q.nonEmpty) {
+      val size = q.length
+      var i = 0
+      while(i < size) {
+        val e = q.dequeue
+        if(e.isInteger) sum += level * e.getInteger
+        else e.getList.foreach(item => q.enqueue(item))
+        i += 1
       }
-      else {
-        nestedInteger.getList.foreach(x => depth(x, d + 1))
-      }
+      level += 1
     }
     sum
   }
