@@ -8,35 +8,40 @@ class ListNode234(var _x: Int = 0) {
 
 object L234 {
   def isPalindrome(head: ListNode234): Boolean = {
-    var hare = head
-    var tortoise = head
-
-    while(hare != null && hare.next != null) {
-      hare = hare.next
-      hare = hare.next
-      tortoise = tortoise.next
+    var i = 0
+    var current = head
+    while(current != null) {
+      current = current.next
+      i += 1
     }
 
-    if(hare != null) tortoise = tortoise.next
-    tortoise = reverse(tortoise)
-    hare = head
-    while(tortoise != null) {
-      if(hare.x != tortoise.x) return false
-      tortoise = tortoise.next
-      hare = hare.next
+    var mid = head
+    var j = if(i % 2 == 0) i / 2 else i / 2 + 1
+    while(j > 0) {
+      mid = mid.next
+      j -= 1
+    }
+
+    current = reverse(head, i / 2)
+    while(mid != null) {
+      if(mid.x != current.x) return false
+      mid = mid.next
+      current = current.next
     }
     true
   }
 
-  def reverse(tortoise: ListNode234): ListNode234 = {
-    var current = tortoise
+  def reverse(head: ListNode234, count: Int): ListNode234 = {
+    var current = head
     var prev: ListNode234 = null
-
-    while(current != null) {
-      val next = current.next
+    var next: ListNode234 = null
+    var c = count
+    while(c > 0) {
+      next = current.next
       current.next = prev
       prev = current
       current = next
+      c -= 1
     }
     prev
   }
