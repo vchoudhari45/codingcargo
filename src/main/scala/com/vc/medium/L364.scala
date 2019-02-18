@@ -3,7 +3,7 @@ package com.vc.medium
 
 // This is the interface that allows for creating nested lists.
 // You should not implement it, or speculate about its implementation
-class NestedInteger {
+class NestedInteger364 {
 
   // Return true if this NestedInteger holds a single integer, rather than a nested list.
   def isInteger: Boolean = true
@@ -15,16 +15,16 @@ class NestedInteger {
   def setInteger(i: Int): Unit = Unit
 
   // Return the nested list that this NestedInteger holds, if it holds a nested list
-  def getList : List[NestedInteger] = Nil
+  def getList : List[NestedInteger364] = Nil
 
   // Set this NestedInteger to hold a nested list and adds a nested integer to it.
-  def add(ni: NestedInteger): Unit = Unit
+  def add(ni: NestedInteger364): Unit = Unit
 }
 
 object L364 {
-  def depthSumInverse(nestedList: List[NestedInteger]): Int = {
+  def depthSumInverse(nestedList: List[NestedInteger364]): Int = {
     import scala.collection.mutable
-    val q = new mutable.Queue[NestedInteger]()
+    val q = new mutable.Queue[NestedInteger364]()
     nestedList.foreach(x => q.enqueue(x))
     var prev = 0
     var total = 0
