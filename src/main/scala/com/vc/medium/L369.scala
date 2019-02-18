@@ -5,7 +5,7 @@ class ListNodeL369(var _x: Int = 0) {
   var x: Int = _x
 }
 
-object Solution {
+object L369 {
   def plusOne(head: ListNodeL369): ListNodeL369 = {
     var current = reverse(head)
 

@@ -6,7 +6,7 @@ class ListNode817(var _x: Int = 0) {
   var x: Int = _x
 }
 
-object Solution {
+object L817 {
   def numComponents(head: ListNode817, arr: Array[Int]): Int = {
     import scala.collection.mutable
     val set = new mutable.HashSet[Int]()
