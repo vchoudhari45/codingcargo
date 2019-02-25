@@ -8,41 +8,47 @@ class ListNode234(var _x: Int = 0) {
 
 object L234 {
   def isPalindrome(head: ListNode234): Boolean = {
-    var i = 0
-    var current = head
-    while(current != null) {
-      current = current.next
-      i += 1
-    }
+    if(head == null || head.next == null) return true
+    else {
+      //Find Middle of the List
+      var i = 0
+      var current = head
+      while(current != null) {
+        current = current.next
+        i += 1
+      }
+      val (j, even) = if(i % 2 == 0) (i / 2, true) else ((i - 1) / 2, false)
 
-    var mid = head
-    var j = if(i % 2 == 0) i / 2 else i / 2 + 1
-    while(j > 0) {
-      mid = mid.next
-      j -= 1
-    }
+      //reverse first half of the list
+      val (firstHalfReversed, secondHalf) = reverse(head, 0, j, even)
 
-    current = reverse(head, i / 2)
-    while(mid != null) {
-      if(mid.x != current.x) return false
-      mid = mid.next
-      current = current.next
+      //Validate the reversed first half with the second half
+      current = firstHalfReversed
+      var mid = secondHalf
+      while(mid != null) {
+        if(current.x != mid.x) return false
+        current = current.next
+        mid = mid.next
+      }
+      true
     }
-    true
   }
 
-  def reverse(head: ListNode234, count: Int): ListNode234 = {
-    var current = head
-    var prev: ListNode234 = null
-    var next: ListNode234 = null
-    var c = count
-    while(c > 0) {
+  def reverse(head:ListNode234, start: Int, end: Int, even: Boolean): (ListNode234, ListNode234) = {
+    val dummyNode=  new ListNode234()
+    dummyNode.next = head
+    val prev = dummyNode
+    val current = prev.next
+    var next = current.next
+    var s = start
+    while(s < end - 1) {
+      current.next = next.next
+      next.next = prev.next
+      prev.next = next
       next = current.next
-      current.next = prev
-      prev = current
-      current = next
-      c -= 1
+      s += 1
     }
-    prev
+    if(even) (dummyNode.next, next)
+    else (dummyNode.next, next.next)
   }
 }

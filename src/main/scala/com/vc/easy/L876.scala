@@ -1,12 +1,12 @@
 package com.vc.easy
 
-class ListNode(var _x: Int = 0) {
-  var next: ListNode = null
+class ListNode876(var _x: Int = 0) {
+  var next: ListNode876 = null
   var x: Int = _x
 }
 
 object L876 {
-  def middleNode(head: ListNode): ListNode = {
+  def middleNode(head: ListNode876): ListNode876 = {
     var fast = head
     var slow = head
     while(fast != null && fast.next != null) {
