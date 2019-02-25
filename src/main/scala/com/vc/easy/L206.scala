@@ -7,18 +7,29 @@ class ListNode206(var _x: Int = 0) {
 
 object L206 {
   def reverseList(head: ListNode206): ListNode206 = {
-    if(head == null || head.next == null) head
+    if(head == null) return head
     else {
-      var prev:ListNode206 = null
-      var current = head
-      var next:ListNode206 = null
-      while(current != null) {
+      val dummyNode = new ListNode206()
+      dummyNode.next = head
+
+      val prev = dummyNode
+      val current = prev.next
+      var next = current.next
+
+      //0->1->2->3->4->5->NULL
+      //p->c->n->3->4->5->NULL
+
+      //0->2->1->3->4->5->NULL
+      //0->3->2->1->4->5->NULL
+      //0->4->3->2->1->5->NULL
+      //0->5->4->3->2->1->NULL
+      while(next != null) {
+        current.next = next.next
+        next.next = prev.next
+        prev.next = next
         next = current.next
-        current.next = prev
-        prev = current
-        current = next
       }
-      prev
+      dummyNode.next
     }
   }
 }
