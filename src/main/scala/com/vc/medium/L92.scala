@@ -6,7 +6,7 @@ class ListNode92(var _x: Int = 0) {
   var x: Int = _x
 }
 
-object Solution {
+object L92 {
   def reverseBetween(head: ListNode92, m: Int, n: Int): ListNode92 = {
     if(head == null) head
     else {
