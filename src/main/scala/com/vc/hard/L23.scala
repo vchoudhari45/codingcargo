@@ -13,7 +13,7 @@ object PQOrdering extends Ordering[ListNode23] {
     else l2.x.compareTo(l1.x)
   }
 }
-object Solution {
+object L23 {
   def mergeKLists(lists: Array[ListNode23]): ListNode23 = {
     import scala.collection.mutable
     val pq = new mutable.PriorityQueue[ListNode23]()(PQOrdering)

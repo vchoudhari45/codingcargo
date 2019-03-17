@@ -11,7 +11,7 @@ class TreeNode109(var _value: Int) {
   var right: TreeNode109 = null
 }
 
-object Solution {
+object L109 {
   def sortedListToBST(head: ListNode109): TreeNode109 = {
     def solve(head: ListNode109, tail: ListNode109): TreeNode109 = {
       if(head == tail) return null

@@ -7,7 +7,7 @@ class ListNode143(var _x: Int = 0) {
 
 object L143 {
   def reorderList(head: ListNode143): Unit = {
-    if(head == null || head.next == null) return head
+    if(head == null || head.next == null) return
 
     var hare = head
     var tortoise = head
@@ -39,7 +39,6 @@ object L143 {
         tortoise = tortoise.next
       }
     }
-    dummyNode.next
   }
 
   def reverse(head: ListNode143): ListNode143 = {

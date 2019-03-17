@@ -7,7 +7,7 @@ class TreeNode94(var _value: Int) {
   var right: TreeNode94 = null
 }
 
-object Solution {
+object L94 {
   def inorderTraversal(root: TreeNode94): List[Int] = {
     import scala.collection.mutable
     val list = new mutable.ListBuffer[Int]()
