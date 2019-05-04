@@ -1,13 +1,13 @@
 package com.vc.easy
 
-object PQOrdering extends Ordering[(Int, Int)]{
-  def compare(x:(Int, Int), y:(Int, Int)) : Int = {
-    val cmp = x._1.compareTo(y._1)
-    if(cmp == 0) x._2.compareTo(y._2)
-    else cmp
-  }
-}
 object L506 {
+  object PQOrdering extends Ordering[(Int, Int)]{
+    def compare(x:(Int, Int), y:(Int, Int)) : Int = {
+      val cmp = x._1.compareTo(y._1)
+      if(cmp == 0) x._2.compareTo(y._2)
+      else cmp
+    }
+  }
   def findRelativeRanks(nums: Array[Int]): Array[String] = {
     import scala.collection.mutable
     val pq = new mutable.PriorityQueue[(Int, Int)]()(PQOrdering)

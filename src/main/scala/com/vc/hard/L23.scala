@@ -5,15 +5,14 @@ class ListNode23(var _x: Int = 0) {
   var x: Int = _x
 }
 
-
-object PQOrdering extends Ordering[ListNode23] {
-  def compare(l1: ListNode23, l2: ListNode23): Int = {
-    if(l1 == null) 1
-    else if(l2 == null) -1
-    else l2.x.compareTo(l1.x)
-  }
-}
 object L23 {
+  object PQOrdering extends Ordering[ListNode23] {
+    def compare(l1: ListNode23, l2: ListNode23): Int = {
+      if(l1 == null) 1
+      else if(l2 == null) -1
+      else l2.x.compareTo(l1.x)
+    }
+  }
   def mergeKLists(lists: Array[ListNode23]): ListNode23 = {
     import scala.collection.mutable
     val pq = new mutable.PriorityQueue[ListNode23]()(PQOrdering)

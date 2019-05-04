@@ -1,9 +1,9 @@
 package com.vc.medium
 
-object PQOrdering extends Ordering[(Char, Int)] {
-  def compare(x: (Char, Int), y: (Char, Int)): Int = x._2.compareTo(y._2)
-}
 class L451 {
+  object PQOrdering extends Ordering[(Char, Int)] {
+    def compare(x: (Char, Int), y: (Char, Int)): Int = x._2.compareTo(y._2)
+  }
   def frequencySort(s: String): String = {
     import scala.collection.mutable
     val map = new mutable.HashMap[Char, Int]()
