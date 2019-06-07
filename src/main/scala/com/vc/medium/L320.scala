@@ -4,8 +4,8 @@ object L320 {
   def generateAbbreviations(word: String): List[String] = {
     import scala.collection.mutable
     val sb = new mutable.StringBuilder()
-    val list = new mutable.ListBuffer[String]()
     val n = word.length
+    val list = new mutable.ListBuffer[String]()
     def solve(pos:Int, count: Int): Unit = {
       val len = sb.length
       if(pos == n) {
