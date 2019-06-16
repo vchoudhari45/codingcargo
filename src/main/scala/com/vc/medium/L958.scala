@@ -7,7 +7,7 @@ class TreeNodeL958(var _value: Int) {
   var right: TreeNodeL958 = null
 }
 
-object Solution {
+object L958 {
   def isCompleteTree(root: TreeNodeL958): Boolean = {
     import scala.collection.mutable
     val q = new mutable.Queue[TreeNodeL958]()

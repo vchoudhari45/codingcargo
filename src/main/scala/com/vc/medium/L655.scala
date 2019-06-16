@@ -6,7 +6,7 @@ class TreeNode655(var _value: Int) {
   var right: TreeNode655 = null
 }
 
-object Solution {
+object L655 {
   def printTree(root: TreeNode655): List[List[String]] = {
     val row = getHeight(root)
     val col = Math.pow(2, row).toInt - 1

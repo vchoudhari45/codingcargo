@@ -7,7 +7,7 @@ class TreeNodeL623(var _value: Int) {
   var right: TreeNodeL623 = null
 }
 
-object Solution {
+object L623 {
   def addOneRow(root: TreeNodeL623, v: Int, d: Int): TreeNodeL623 = {
     if(d == 0 || d == 1) {
       val newRoot = new TreeNodeL623(v)
