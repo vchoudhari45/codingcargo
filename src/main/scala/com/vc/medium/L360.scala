@@ -25,11 +25,11 @@ object L360 {
       else {
         if(iIndexValue >= jIndexValue) {
           sorted(index) = jIndexValue
-          i += 1
+          j -= 1
         }
         else {
           sorted(index) = iIndexValue
-          j -= 1
+          i += 1
         }
         index += 1
       }
