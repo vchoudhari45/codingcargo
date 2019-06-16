@@ -31,7 +31,7 @@ object L360 {
           sorted(index) = iIndexValue
           j -= 1
         }
-        index -= 1
+        index += 1
       }
     }
     sorted
