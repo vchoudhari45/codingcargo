@@ -1,6 +1,6 @@
 package com.vc.hard
 
-object Solution {
+object L37 {
   def solveSudoku(board: Array[Array[Char]]): Unit = {
     def isValid(): Boolean = {
       import scala.collection.mutable

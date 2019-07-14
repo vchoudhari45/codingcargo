@@ -1,6 +1,6 @@
 package com.vc.hard
 
-object Solution {
+object L174 {
   def calculateMinimumHP(arr: Array[Array[Int]]): Int = {
     /**
              0  1  2
