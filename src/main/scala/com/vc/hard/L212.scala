@@ -1,6 +1,6 @@
 package com.vc.hard
 
-object Solution {
+object L212 {
   def findWords(board: Array[Array[Char]], words: Array[String]): List[String] = {
     import scala.collection.mutable
     val res = new mutable.HashSet[String]()
