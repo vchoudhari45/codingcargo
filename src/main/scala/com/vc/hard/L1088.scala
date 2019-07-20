@@ -1,6 +1,6 @@
 package com.vc.hard
 
-object Solution {
+object L1088 {
   def confusingNumberII(N: Int): Int = {
     import scala.collection.mutable
     val map = new mutable.HashMap[Long, Long]()
