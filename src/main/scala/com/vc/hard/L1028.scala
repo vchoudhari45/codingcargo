@@ -7,7 +7,7 @@ class TreeNode1028(var _value: Int) {
   var right: TreeNode1028 = null
 }
 
-object Solution {
+object L1028 {
   def recoverFromPreorder(s: String): TreeNode1028 = {
     import scala.collection.mutable
     val map = new mutable.HashMap[Int, TreeNode1028]()
