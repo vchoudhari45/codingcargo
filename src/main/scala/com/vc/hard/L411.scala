@@ -60,8 +60,9 @@ object L411 {
         if(currentIndex == target.length - 1) {
           sb.append(target(currentIndex))
           list += sb.toString
+          sb.setLength(sb.length - 1)
         }
-        else if(!prevNum) {
+        if(!prevNum) {
           val remainingLengthFromTarget = target.length - currentIndex
           sb.append(remainingLengthFromTarget)
           list += sb.toString
@@ -92,7 +93,7 @@ object L411 {
     })
 
     //Start with index 1 & go until target.length
-    (1 until target.length).foreach(i => {
+    (1 to target.length).foreach(i => {
       list.clear
       sb.clear
       getAbbr(0, i)
