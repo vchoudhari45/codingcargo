@@ -22,7 +22,7 @@ object L320 {
         }
       }
       else {
-        var endIndex = sb.length
+        val endIndex = sb.length
 
         //Append character
         sb.append(word(currentIndex))
