@@ -18,7 +18,7 @@ interface Robot {
     public void clean();
 }
 
-class Solution {
+class L489 {
 
     int dirs[][] = {{0, 1}, {1, 0}, {0, -1}, {-1, 0}};
 
