@@ -6,7 +6,7 @@ class TreeNodeL272(var _value: Int) {
   var right: TreeNodeL272 = null
 }
 
-object Solution {
+object L272 {
   def closestKValues(root: TreeNodeL272, target: Double, k: Int): List[Int] = {
     import scala.collection.mutable
     val st1 = new mutable.Stack[Int]()
