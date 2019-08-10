@@ -6,44 +6,44 @@ object L291 {
     val sn = str.length
     import scala.collection.mutable
     val map = new mutable.HashMap[Char, String]()
-    val substringSet = new mutable.HashSet[String]()
+    val set = new mutable.HashSet[String]()
 
     def solve(p: Int, s: Int): Boolean = {
       if(p == pn && s == sn) return true
-      else if(p == pn || s == sn) return false
-      else {
-        val c = pattern(p)
-        //pattern is already assigned a str
-        if(map.contains(c)) {
-          val existingString = map(c)
+      if(p == pn || s == sn) return false
 
-          //Check if str has existingString starting at index s
-          if(
-            s + existingString.length <= sn &&
-              existingString == str.substring(s, s + existingString.length)
-          ) {
-            //And rest of pattern & string matches
-            if(solve(p + 1, s + existingString.length)) return true
-          }
-          return false
+      val patternChar = pattern(p)
+      //pattern is already assigned a str
+      if(map.contains(patternChar)) {
+        val existingSubstring = map(patternChar)
+
+        //Check if str has existingString starting at index s
+        if(
+          s + existingSubstring.length <= sn &&
+            existingSubstring == str.substring(s, s + existingSubstring.length)
+        ) {
+          //And rest of pattern & string matches
+          if(solve(p + 1, s + existingSubstring.length)) return true
         }
 
-        //Try to match pattern with substring from str
-        (s until sn).foreach(i => {
-          val strSubstring = str.substring(s, i + 1)
-
-          if(!substringSet.contains(strSubstring)) {
-            map.put(c, strSubstring)
-            substringSet += strSubstring
-
-            if(solve(p + 1, i + 1)) return true
-
-            map.remove(c)
-            substringSet.remove(strSubstring)
-          }
-        })
         return false
       }
+
+      //Try to match pattern with substring from str
+      (s until sn).foreach(i => {
+        val substring = str.substring(s, i + 1)
+
+        if(!set.contains(substring)) {
+          map.put(patternChar, substring)
+          set += substring
+
+          if(solve(p + 1, i + 1)) return true
+
+          map.remove(patternChar)
+          set.remove(substring)
+        }
+      })
+      return false
     }
     solve(0, 0)
   }
