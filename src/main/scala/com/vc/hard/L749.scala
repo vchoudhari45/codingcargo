@@ -38,6 +38,7 @@ object L749 {
         })
       })
 
+      //Block maxArea
       block(row, col)
 
       visited = Array.ofDim[Int](R, C)
@@ -48,6 +49,8 @@ object L749 {
           }
         })
       })
+
+      //Return number of walls not the number of MaxArea
       maxWalls
     }
 
@@ -82,6 +85,7 @@ object L749 {
 
     def dfs(x: Int, y: Int, color: Int): Unit = {
       if(arr(x)(y) == 0) {
+        //This is main idea here, wall is not equal to area
         walls += 1
         if(visited(x)(y) != color) {
           visited(x)(y) = color
