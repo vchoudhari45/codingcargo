@@ -85,7 +85,7 @@ object L749 {
 
     def dfs(x: Int, y: Int, color: Int): Unit = {
       if(arr(x)(y) == 0) {
-        //This is main idea here, wall is not equal to area
+        //This is main idea here, wall is not equal to area, run main method and see first output
         walls += 1
         if(visited(x)(y) != color) {
           visited(x)(y) = color
@@ -110,6 +110,14 @@ object L749 {
       if(walls == 0) return ans
     }
     return ans
+  }
+
+  def main(args: Array[String]): Unit = {
+    containVirus(
+     Array(Array(1,1,1,0,0,0,0,0,0),
+      Array(1,0,1,0,1,1,1,1,1),
+      Array(1,1,1,0,0,0,0,0,0))
+    )
   }
 }
 
