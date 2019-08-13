@@ -1,6 +1,6 @@
 package com.vc.hard
 
-object Solution {
+object L798 {
   def bestRotation(arr: Array[Int]): Int = {
     val n = arr.length
     //We get one point if ValueAtIndex <= Index
