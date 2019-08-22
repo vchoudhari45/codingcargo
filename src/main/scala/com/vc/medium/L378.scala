@@ -20,17 +20,13 @@ object L378 {
   def getLess(arr: Array[Array[Int]], mid: Int): Int = {
     val n = arr.length
     val m = arr(0).length
-    var i = n - 1
-    var j = 0
+    var i = 0
+    var j = m - 1
     var res = 0
-    while(i >= 0 && j < m) {
-      if(arr(i)(j) > mid) {
-        i -= 1
-      }
-      else {
-        res += i + 1
-        j += 1
-      }
+    while(i < n) {
+      while(j >= 0 && arr(i)(j) > mid) j -= 1
+      res += (j + 1)
+      i += 1
     }
     res
   }
