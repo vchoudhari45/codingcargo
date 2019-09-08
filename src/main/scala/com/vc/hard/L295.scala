@@ -3,25 +3,25 @@ package com.vc.hard
 class MedianFinder() {
 
   /** initialize your data structure here. */
-
   import scala.collection.mutable
+  object PQOrdering extends Ordering[Int] {
+    def compare(x: Int, y: Int): Int = y.compareTo(x)
+  }
 
-  val small = new mutable.PriorityQueue[Int]()
-  val large = new mutable.PriorityQueue[Int]()
-
+  val maxHeap = new mutable.PriorityQueue[Int]()(PQOrdering)
+  val minHeap = new mutable.PriorityQueue[Int]()
   def addNum(num: Int) {
-    large += num
-    small += -1 * large.dequeue
-    if(large.size < small.size) {
-      large += -1 * small.dequeue
+    minHeap += num
+    maxHeap += minHeap.dequeue
+    if(minHeap.size < maxHeap.size) {
+      minHeap += maxHeap.dequeue
     }
   }
 
   def findMedian(): Double = {
-    if(large.size > small.size) large.head
-    else (large.head - small.head) / 2.0
+    if(maxHeap.size < minHeap.size) minHeap.head
+    else (maxHeap.head + minHeap.head) / 2.0
   }
-
 }
 
 /**

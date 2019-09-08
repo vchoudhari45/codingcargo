@@ -14,7 +14,7 @@ class Node428 {
     }
 };
 
-class Codec {
+class CodecL428 {
 
 
     // Encodes a tree to a single string.

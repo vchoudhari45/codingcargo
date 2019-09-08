@@ -23,7 +23,7 @@ class TreeNode431 {
     TreeNode431(int x) { val = x; }
 }
 
-class Codec {
+class CodecL431 {
 
     // Encodes an n-ary tree to a binary tree.
     public TreeNode431 encode(Node431 root) {
