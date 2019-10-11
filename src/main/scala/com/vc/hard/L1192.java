@@ -2,7 +2,7 @@ package com.vc.hard;
 
 import java.util.*;
 
-class Solution {
+class L1192 {
     public List<List<Integer>> criticalConnections(int n, List<List<Integer>> connections) {
         List<Integer> graph[] = new ArrayList[n];
         for(int i = 0; i < n; i++) {
