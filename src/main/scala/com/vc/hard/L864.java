@@ -2,7 +2,7 @@ package com.vc.hard;
 
 import java.util.*;
 
-class Solution {
+class L864 {
     public int shortestPathAllKeys(String[] grid) {
         /**
          [
