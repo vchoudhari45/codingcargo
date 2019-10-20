@@ -1,54 +1,53 @@
 package com.vc.hard;
 
-class Solution {
+class L552 {
     public int checkRecord(int n){
         int MOD = (int) (1e9 + 7);
         /**
-         P[i] = Number of Sequences ending in 'P'
-         L[i] = Number of Sequences ending in 'L'
-         A[i] = Number of Sequences ending in 'A'
+             P[i] = Number of Sequences ending in 'P'
+             L[i] = Number of Sequences ending in 'L'
+             A[i] = Number of Sequences ending in 'A'
 
-         n       P         L           A       P_CONTAINS_NO_A     L_CONTAINS_NO_A
-         1       1         1           1              1                   1             When length is 1
-         (P)       (L)          (A)           (P)                 (L)
+             n       P         L           A       P_CONTAINS_NO_A     L_CONTAINS_NO_A
+             1       1         1           1              1                   1             When length is 1
+                    (P)       (L)          (A)           (P)                 (L)
 
-         2       3         3           2             2                   2              When length is 2
-         (         (            (            (                   (
-         PP,       PL,          PA,          PP,                 PL,
-         LP,       AL,          LA           LP                  LL
-         AP        LL         )            )                   )
-         )         )
+             2       3         3           2             2                   2              When length is 2
+                   (         (            (            (                  (
+                     PP,       PL,          PA,          PP,                 PL,
+                     LP,       AL,          LA           LP                  LL
+                     AP        LL         )            )                   )
+                   )         )
 
-         3      8         7             4           4                   3
-         (         (            (           (                    (
-         PPP,      PPL,         PPA,        PPP,                  PPL,
-         LPP,      LPL,         LPA,        LPP,                  LPL,
-         APP,      APL,         PLA,        PLP                   PLL
-         PLP,      PLL,         LLA         LLP                )
-         ALP,      ALL        )            )
-         LLP,      PAL,
-         PAP,      LAL
-         LAP     )
-         )
+             3      8         7             4           4                   3
+                  (         (            (           (                   (
+                     PPP,      PPL,         PPA,        PPP,                  PPL,
+                     LPP,      LPL,         LPA,        LPP,                  LPL,
+                     APP,      APL,         PLA,        PLP                   PLL
+                     PLP,      PLL,         LLA         LLP                )
+                     ALP,      ALL        )            )
+                     LLP,      PAL,
+                     PAP,      LAL
+                     LAP     )
+                   )
 
-         //Rule for P: You can append P to any Seq
-         P(n) = P(n - 1) + L(n - 1) + A(n - 1)
+             Rule for P: You can append P to any Seq
+             P(n) = P(n - 1) + L(n - 1) + A(n - 1)
 
-         //Rule for L: There can't be more than two continuous L
-         L(n) =  P(n - 1)     //You can append L to Sequences ending in P
-         + A(n - 1)     //You can append L to Sequences ending in A
-         + if(n - 2 == 'A' || n - 2 == 'P') L(n - 1)  i.e. P(n - 2) + A(n - 2)
-         //You can append L to Sequence ending in L only if PrevToPrev Character is not L, i.e. PrevtoPrev Character is either A OR P
+             Rule for L: There can't be more than two continuous L
+             L(n) =  P(n - 1)                                                               You can append L to Sequences ending in P
+                   + A(n - 1)                                                               You can append L to Sequences ending in A
+                   + if(n - 2 == 'A' || n - 2 == 'P') L(n - 1)  i.e. P(n - 2) + A(n - 2)    You can append L to Sequence ending in L only if PrevToPrev Character is not L, i.e. PrevtoPrev Character is either A OR P
 
-         L(n) = P(n - 1) + A(n - 1) + P(n - 2) + A(n - 2)
+             L(n) = P(n - 1) + A(n - 1) + P(n - 2) + A(n - 2)
 
 
-         Rule for A: There can't be more than one A
-         A(n) =   P_CONTAINS_NO_A(n - 1)     //You can append A to Sequences ending in P and has no 'A'
-         + L_CONTAINS_NO_A(n - 1)    // You can append A to Sequences ending in L and has no 'A'
+             Rule for A: There can't be more than one A
+             A(n) =   P_CONTAINS_NO_A(n - 1)              You can append A to Sequences ending in P and has no 'A'
+                    + L_CONTAINS_NO_A(n - 1)             You can append A to Sequences ending in L and has no 'A'
 
-         P_CONTAINS_NO_A(n) = P_CONTAINS_NO_A(n - 1) + L_CONTAINS_NO_A(n - 1)
-         L_CONTAINS_NO_A(n) = P_CONTAINS_NO_A(n - 1) + P_CONTAINS_NO_A(n - 2)
+             P_CONTAINS_NO_A(n) = P_CONTAINS_NO_A(n - 1) + L_CONTAINS_NO_A(n - 1)
+             L_CONTAINS_NO_A(n) = P_CONTAINS_NO_A(n - 1) + P_CONTAINS_NO_A(n - 2)
          */
         if(n == 1) return 3;
         else if(n == 2) return 8;
