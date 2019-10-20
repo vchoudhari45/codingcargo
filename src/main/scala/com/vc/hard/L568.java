@@ -1,6 +1,6 @@
 package com.vc.hard;
 
-class Solution {
+class L568 {
     public int maxVacationDays(int[][] flights, int[][] days) {
         /**
 
