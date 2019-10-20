@@ -27,6 +27,7 @@ class Solution {
         int cities = flights.length;
         int weeks = days[0].length;
         int[][] dp = new int[weeks][cities];
+        //To take a flight, you have to be in that city
         boolean[][] isInCity = new boolean[cities][weeks];
         int res = Integer.MIN_VALUE;
 
