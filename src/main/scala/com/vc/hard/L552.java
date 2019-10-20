@@ -19,7 +19,7 @@ class L552 {
                      AP        LL         )            )                   )
                    )         )
 
-             3      8         7             4           4                   3
+             3      8         7             4           4                   3               When length is 3
                   (         (            (           (                   (
                      PPP,      PPL,         PPA,        PPP,                  PPL,
                      LPP,      LPL,         LPA,        LPP,                  LPL,
