@@ -4,9 +4,12 @@ class L552 {
     public int checkRecord(int n){
         int MOD = (int) (1e9 + 7);
         /**
-             P[i] = Number of Sequences ending in 'P'
-             L[i] = Number of Sequences ending in 'L'
-             A[i] = Number of Sequences ending in 'A'
+             P[i]               = Number of Sequences ending in 'P'
+             L[i]               = Number of Sequences ending in 'L'
+             A[i]               = Number of Sequences ending in 'A'
+             P_CONTAINS_NO_A[i] = Number of Sequences ending in 'P' and contains NO A
+             L_CONTAINS_NO_A[i] = Number of Sequences ending in 'L' and contains NO A
+
 
              n       P         L           A       P_CONTAINS_NO_A     L_CONTAINS_NO_A
              1       1         1           1              1                   1             When length is 1
