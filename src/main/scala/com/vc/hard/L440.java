@@ -18,7 +18,7 @@ class L440 {
         return curr;
     }
 
-    public int findSteps(int n, long n1, long n2) {
+    private int findSteps(int n, long n1, long n2) {
         int step = 0;
         while(n1 <= n) {
             step += Math.min(n + 1, n2) - n1;
