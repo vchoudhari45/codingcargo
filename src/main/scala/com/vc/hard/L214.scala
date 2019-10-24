@@ -2,11 +2,11 @@ package com.vc.hard
 
 object L214 {
   def shortestPalindrome(s: String): String = {
-    "aacecaaa#aaacecaa"
-    //01000121012234567
+    //"aacecaaa#aaacecaa"
+    // 01000121012234567
 
-    "abcd#dcba"
-    //000000001
+    //"abcd#dcba"
+    // 000000001
 
     val sNew = s + "#" + s.reverse
     val n = sNew.length
