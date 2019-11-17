@@ -14,7 +14,7 @@ class Point {
     }
 }
 
-class Solution {
+class L850 {
     public int rectangleArea(int[][] rectangles) {
         List<Point> data = new ArrayList<Point>();
         for(int[] r: rectangles) {
