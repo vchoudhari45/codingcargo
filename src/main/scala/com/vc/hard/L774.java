@@ -1,6 +1,6 @@
 package com.vc.hard;
 
-class Solution {
+class L774 {
     public double minmaxGasDist(int[] arr, int K) {
         double lo = 0;
         double hi = arr[arr.length - 1] - arr[0];
