@@ -1,23 +1,33 @@
-package com.vc.medium;
+package com.vc.hard;
 
 import java.util.*;
 
-class L227 {
+class L772 {
     public int calculate(String s) {
-        s += "+";
+        Queue<Character> q = new LinkedList<Character>();
+        for(int i = 0; i < s.length(); i++) {
+            q.offer(s.charAt(i));
+        }
+        q.offer('+');
+        return solve(q);
+    }
+
+    public int solve(Queue<Character> q) {
         int sum = 0;
         char prevSign = '+';
 
         Stack<Integer> st = new Stack<Integer>();
         int num = 0;
 
-        int i = 0;
-        while(i < s.length()) {
-            char ch = s.charAt(i++);
+        while(!q.isEmpty()) {
+            char ch = q.poll();
             if(ch == ' ') continue;
 
             if(ch >= '0' && ch <= '9') {
                 num = num * 10 + (ch - '0');
+            }
+            else if(ch == '(') {
+                num = solve(q);
             }
             else {
                 if(prevSign == '+') {
@@ -34,6 +44,7 @@ class L227 {
                 }
                 prevSign = ch;
                 num = 0;
+                if(ch == ')') break;
             }
         }
         while(!st.isEmpty()) {
