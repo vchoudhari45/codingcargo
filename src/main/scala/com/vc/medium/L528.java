@@ -3,13 +3,13 @@ package com.vc.medium;
 import java.util.*;
 
 //https://www.youtube.com/watch?v=KAZM4tsH8aI
-class Solution {
+class L528 {
 
     int[] wSum;
     Random r;
     int len;
 
-    public Solution(int[] w) {
+    public L528(int[] w) {
         len = w.length;
         r = new Random();
         for(int i = 1; i < len; i++) {

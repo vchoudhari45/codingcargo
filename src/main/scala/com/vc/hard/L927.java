@@ -1,6 +1,6 @@
 package com.vc.hard;
 
-class Solution {
+class L927 {
     public int[] threeEqualParts(int[] arr) {
         int countOnes = 0;
         for(int k = 0; k < arr.length; k++) {
