@@ -5,27 +5,25 @@ import java.util.*;
 class L805 {
     //https://leetcode.com/problems/split-array-with-same-average/discuss/120660/Java-accepted-recursive-solution-with-explanation
     public boolean splitArraySameAverage(int[] arr) {
-        int n = arr.length;
-        if(n == 1) return false;
         int sum = 0;
-        for(int i = 0; i < n; i++) {
+        for(int i = 0; i < arr.length; i++) {
             sum += arr[i];
         }
-        Arrays.sort(arr);
-        for(int i = 1; i <= n / 2; i++) {
-            if((sum * i) % n == 0) {
-                if(solve(arr, (sum * i) / n, i, 0, 0)) return true;
+        System.out.println(sum);
+        for(int i = 1; i <= arr.length / 2; i++) {
+            if(sum * i % arr.length == 0) {
+                if(solve(arr, 0, sum * i / arr.length, i)) return true;
             }
         }
         return false;
     }
 
-    private boolean solve(int[] arr, int sum, int count, int index, int loop) {
+    private boolean solve(int[] arr, int index, int sum, int count) {
         if(count == 0) return sum == 0;
         else {
-            for(int i = index; i < arr.length; i++) {
+            for(int i = index; i < arr.length; i++){
                 if(i > index && arr[i] == arr[i - 1]) continue;
-                if(solve(arr, sum - arr[i], count - 1, i + 1, loop + 1)) return true;
+                if(solve(arr, i + 1, sum - arr[i], count - 1)) return true;
             }
             return false;
         }
