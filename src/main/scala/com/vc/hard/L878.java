@@ -3,15 +3,15 @@ package com.vc.hard;
 class L878 {
     public int nthMagicalNumber(int N, int A, int B) {
         /**
-         let X be the Magical number
-         X / A = Count of numbers divisible by A
-         X / B = Count of numbers divisible by B
-         X / LCM(A, B) = Count of numbers divisible by Both
+             let X be the Magical number
+             X / A = Count of numbers divisible by A
+             X / B = Count of numbers divisible by B
+             X / LCM(A, B) = Count of numbers divisible by Both
 
-         X / A + X / B - X / LCM(A, B) = N (Inclusion & Exclusion Principal F(A) + F(B) - F(A UNION B) )
-         Now we know A & B and LCM, we need to find the N using binary search
+             X / A + X / B - X / LCM(A, B) = N (Inclusion & Exclusion Principal F(A) + F(B) - F(A UNION B) )
+             Now we know A & B and LCM, we need to find the N using binary search
 
-         and LCM(A, B) = A* B * GCD(A, B)
+             and LCM(A, B) = A* B * GCD(A, B)
          */
         long lcm = A * B / gcd(A, B);
         long lo = 0;
