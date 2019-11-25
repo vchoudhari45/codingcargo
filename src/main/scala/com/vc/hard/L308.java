@@ -32,11 +32,7 @@ class NumMatrix {
         if(m == 0 || n == 0) return;
         int delta = val - matrix[row][col];
         matrix[row][col] = val;
-        for(int i = row + 1; i <= m; i = getNext(i)) {
-            for(int j = col + 1; j <= n; j = getNext(j)) {
-                tree[i][j] += delta;
-            }
-        }
+        set(row, col, delta);
     }
 
     private int sum(int row, int col) {
@@ -51,11 +47,11 @@ class NumMatrix {
     }
 
     private int getParent(int x) {
-        return x -= (x & -x);
+        return x - (x & -x);
     }
 
     private int getNext(int x) {
-        return x += (x & -x);
+        return x + (x & -x);
     }
 
     public int sumRegion(int row1, int col1, int row2, int col2) {
