@@ -1,7 +1,5 @@
 package com.vc.hard;
 
-import java.util.*;
-
 class L479 {
     public int largestPalindrome(int n) {
         long lo = n > 1 ? Long.parseLong(repeat("9", n - 1)) : 0;
@@ -28,25 +26,48 @@ class L479 {
         return 1;
     }
 
-    private long getPrevPalindrome(Long maxProduct) {
-        if(maxProduct <= 10) return --maxProduct;
-        else if(maxProduct == 11) return 9;
+    private long getPrevPalindrome(Long l) {
+        String str = Long.toString(l);
+        int len = str.length();
 
-        String str = Long.toString(maxProduct);
-        int len = (str.length() + 1) / 2;
+        if(l < 10) return l;
 
-        StringBuilder firstBuilder = new StringBuilder(str.substring(0, len));
-        String first = firstBuilder.toString();
-        String firstReverse = firstBuilder.reverse().toString();
-        long cand1 = Long.parseLong(first + firstReverse);
+        if(l % Math.pow(10, len - 1) == 0) return --l;
 
-        long prev = Long.parseLong(first) - 1;
-        StringBuilder secondBuilder = new StringBuilder(Long.toString(prev));
-        String second = secondBuilder.toString();
-        String secondReverse = secondBuilder.reverse().toString();
-        long cand2 = Long.parseLong(second + secondReverse);
+        String first = "", prev =  "", firstReverse = "", prevReverse = "";
 
-        return Math.min(cand1, cand2);
+        if(len % 2 == 0) { //even length
+            first = str.substring(0, len / 2);
+            prev =  Long.toString(Long.parseLong(first) - 1);
+
+            firstReverse = reverse(first);
+            prevReverse = reverse(prev);
+        }
+        else {  //odd length
+            first = str.substring(0, (len + 1)/ 2);
+            prev =  Long.toString(Long.parseLong(first) - 1);
+
+            firstReverse = reverse(first.substring(0, len / 2));
+            prevReverse = reverse(prev.substring(0, len / 2));
+        }
+
+        long cand1 = Long.parseLong(first+firstReverse);
+        long cand2 = Long.parseLong(prev+prevReverse);
+
+        //System.out.println("Getting Palindrome for: "+l+" cand1: "+cand1+" cand2: "+cand2);
+        return cand1 <= l ? cand1 : cand2;
+    }
+
+    private String reverse(String str) {
+        char[] c = str.toCharArray();
+        int i = 0;
+        int j = str.length() - 1;
+        while(i < j) {
+            char ch = c[i];
+            c[i++] = c[j];
+            c[j--] = ch;
+        }
+        return new String(c);
     }
 
     private String repeat(String a, int n) {
