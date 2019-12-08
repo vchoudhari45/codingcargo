@@ -6,7 +6,7 @@ class ListNode445 {
     ListNode445(int x) { val = x; }
 }
 
-class Solution {
+class L445 {
     public ListNode445 addTwoNumbers(ListNode445 l1, ListNode445 l2) {
         ListNode445 l1Rev = reverse(l1);
         ListNode445 l2Rev = reverse(l2);
