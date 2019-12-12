@@ -4,10 +4,7 @@ import java.util.*;
 
 class L126 {
     public List<List<String>> findLadders(String beginWord, String endWord, List<String> wordList) {
-        HashSet<String> words = new HashSet<>();
-        for(int i = 0; i < wordList.size(); i++) {
-            words.add(wordList.get(i));
-        }
+        HashSet<String> words = new HashSet<>(wordList);
         words.add(beginWord);
         if(!words.contains(endWord)) return new ArrayList<List<String>>();
 
