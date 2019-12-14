@@ -1,41 +1,25 @@
 package com.vc.hard;
 
+import java.util.*;
+
 class L239 {
     public int[] maxSlidingWindow(int[] arr, int k) {
-        int n = arr.length;
-        if(n == 0) return new int[0];
+        if(arr.length == 0) return new int[0];
 
-        int[] max_left = new int[n];
-        int[] max_right = new int[n];
-
-        int max = 0;
-        for(int i = 0; i < n; i++) {
-            if(i % k == 0) max_left[i] = arr[i];
-            else max_left[i] = Math.max(max, arr[i]);
-            max = max_left[i];
+        TreeMap<Integer, Integer> map = new TreeMap<>();
+        for(int i = 0; i < k; i++) {
+            map.put(arr[i], map.getOrDefault(arr[i], 0) + 1);
         }
 
-        max = 0;
-        for(int i = n - 1; i >= 0; i--) {
-            if(i % k == 0) max_right[i] = arr[i];
-            else max_right[i] = Math.max(max, arr[i]);
-            max = max_right[i];
+        int[] res = new int[arr.length - k + 1];
+        int index = 0;
+        for(int i = k; i < arr.length; i++) {
+            res[index++] = map.lastKey();
+            if(map.get(arr[i - k]) > 1) map.put(arr[i - k], map.get(arr[i - k]) - 1);
+            else map.remove(arr[i - k]);
+            map.put(arr[i], map.getOrDefault(arr[i], 0) + 1);
         }
-
-//         System.out.println("Left");
-//         for(int i = 0; i < n; i++) {
-//             System.out.print(max_left[i]+" ");
-//         }
-
-//         System.out.println("\nRight");
-//         for(int i = 0; i < n; i++) {
-//             System.out.print(max_right[i]+" ");
-//         }
-
-        int[] res = new int[n - k + 1];
-        for(int i = 0 ; i < res.length; i++) {
-            res[i] = Math.max(max_right[i], max_left[i + k - 1]);
-        }
+        res[res.length - 1] = map.lastKey();
         return res;
     }
 }
