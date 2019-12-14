@@ -16,23 +16,16 @@ class Node431 {
     }
 };
 
-class TreeNode431 {
-    int val;
-    TreeNode431 left;
-    TreeNode431 right;
-    TreeNode431(int x) { val = x; }
-}
-
 class CodecL431 {
 
     // Encodes an n-ary tree to a binary tree.
-    public TreeNode431 encode(Node431 root) {
+    public TreeNode encode(Node431 root) {
         if(root == null) return null;
 
-        TreeNode431 res = new TreeNode431(root.val);
+        TreeNode res = new TreeNode(root.val);
         if(root.children != null && root.children.size() > 0) {
             res.left = encode(root.children.get(0));
-            TreeNode431 current = res.left;
+            TreeNode current = res.left;
             for(int i = 1; i < root.children.size(); i++) {
                 current.right = encode(root.children.get(i));
                 current = current.right;
@@ -42,11 +35,11 @@ class CodecL431 {
     }
 
     // Decodes your binary tree to an n-ary tree.
-    public Node431 decode(TreeNode431 root) {
+    public Node431 decode(TreeNode root) {
         if(root == null) return null;
 
         Node431 res = new Node431(root.val, new ArrayList<Node431>());
-        TreeNode431 current = root.left;
+        TreeNode current = root.left;
         while(current != null) {
             res.children.add(decode(current));
             current = current.right;

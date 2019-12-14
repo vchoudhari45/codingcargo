@@ -1,20 +1,13 @@
 package com.vc.hard;
 
-class TreeNode124 {
-    int val;
-    TreeNode124 left;
-    TreeNode124 right;
-    TreeNode124(int x) { val = x; }
-}
-
 class L124 {
     int max = Integer.MIN_VALUE;
-    public int maxPathSum(TreeNode124 root) {
+    public int maxPathSum(TreeNode root) {
         solve(root);
         return max;
     }
 
-    private int solve(TreeNode124 root) {
+    private int solve(TreeNode root) {
         if(root != null) {
             int left = solve(root.left);
             int right = solve(root.right);

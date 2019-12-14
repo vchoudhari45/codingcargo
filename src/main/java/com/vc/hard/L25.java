@@ -1,28 +1,22 @@
 package com.vc.hard;
 
-class ListNode25 {
-    int val;
-    ListNode25 next;
-    ListNode25(int x) { val = x; }
-}
-
 class L25 {
-    public ListNode25 reverseKGroup(ListNode25 head, int k) {
+    public ListNode reverseKGroup(ListNode head, int k) {
         if(head == null) return null;
 
         int n = 0;
-        ListNode25 current = head;
+        ListNode current = head;
         while(current != null) {
             current = current.next;
             n++;
         }
 
-        ListNode25 dummyNode = new ListNode25(-1);
+        ListNode dummyNode = new ListNode(-1);
         dummyNode.next = head;
 
-        ListNode25 prev = dummyNode;
+        ListNode prev = dummyNode;
         current = prev.next;
-        ListNode25 next = current.next;
+        ListNode next = current.next;
 
         int i = 0;
         while(next != null) {
