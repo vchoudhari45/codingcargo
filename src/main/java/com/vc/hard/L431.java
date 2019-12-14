@@ -3,23 +3,10 @@ package com.vc.hard;
 
 import java.util.*;
 
-// Definition for a Node.
-class Node431 {
-    public int val;
-    public List<Node431> children;
-
-    public Node431() {}
-
-    public Node431(int _val,List<Node431> _children) {
-        val = _val;
-        children = _children;
-    }
-};
-
 class CodecL431 {
 
     // Encodes an n-ary tree to a binary tree.
-    public TreeNode encode(Node431 root) {
+    public TreeNode encode(Node root) {
         if(root == null) return null;
 
         TreeNode res = new TreeNode(root.val);
@@ -35,10 +22,10 @@ class CodecL431 {
     }
 
     // Decodes your binary tree to an n-ary tree.
-    public Node431 decode(TreeNode root) {
+    public Node decode(TreeNode root) {
         if(root == null) return null;
 
-        Node431 res = new Node431(root.val, new ArrayList<Node431>());
+        Node res = new Node(root.val, new ArrayList<Node>());
         TreeNode current = root.left;
         while(current != null) {
             res.children.add(decode(current));

@@ -2,23 +2,23 @@ package com.vc.hard;
 
 import java.util.*;
 
-class Node642 {
-    String sentence;
-    int times;
-
-    public Node642(String sentence, int times) {
-        this.sentence = sentence;
-        this.times = times;
-    }
-}
-
-class Trie {
-    int times = 0;
-    HashMap<Character, Trie> map = new HashMap<Character, Trie>();
-}
-
 class AutocompleteSystem {
 
+    class Node {
+        String sentence;
+        int times;
+
+        public Node(String sentence, int times) {
+            this.sentence = sentence;
+            this.times = times;
+        }
+    }
+
+    class Trie {
+        int times = 0;
+        HashMap<Character, Trie> map = new HashMap<Character, Trie>();
+    }
+    
     Trie root = new Trie();
     public AutocompleteSystem(String[] sentences, int[] times) {
         for(int i = 0; i < times.length; i++) {
@@ -41,13 +41,13 @@ class AutocompleteSystem {
     }
 
 
-    public List<Node642> lookup(String s) {
-        List<Node642> list = new ArrayList<Node642>();
+    public List<Node> lookup(String s) {
+        List<Node> list = new ArrayList<Node>();
         Trie current = root;
         for(int i = 0; i < s.length(); i++) {
             char ch = s.charAt(i);
             if(!current.map.containsKey(ch)) {
-                return new ArrayList<Node642>();
+                return new ArrayList<Node>();
             }
             else current = current.map.get(ch);
         }
@@ -55,8 +55,8 @@ class AutocompleteSystem {
         return list;
     }
 
-    public void traverse(Trie current, String s, List<Node642> list) {
-        if(current.times > 0) list.add(new Node642(s, current.times));
+    public void traverse(Trie current, String s, List<Node> list) {
+        if(current.times > 0) list.add(new Node(s, current.times));
         for(Map.Entry<Character, Trie> entry: current.map.entrySet()) {
             Character key = entry.getKey();
             Trie t = entry.getValue();
@@ -73,7 +73,7 @@ class AutocompleteSystem {
         }
         else {
             currentPrefix += c;
-            List<Node642> list = lookup(currentPrefix);
+            List<Node> list = lookup(currentPrefix);
             Collections.sort(
                     list,
                     (a, b) -> a.times == b.times ? a.sentence.compareTo(b.sentence) : b.times - a.times

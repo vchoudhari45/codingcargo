@@ -2,41 +2,41 @@ package com.vc.hard;
 
 import java.util.*;
 
-class Node212 {
-    boolean isLeaf;
-    HashMap<Character, Node212> map;
-
-    Node212() {
-        isLeaf = false;
-        map = new HashMap<Character, Node212>();
-    }
-}
-
-class Trie212 {
-    Node212 root = new Node212();
-    public void addWord(String word) {
-        Node212 current = root;
-        for(int i = 0; i < word.length(); i++) {
-            char ch = word.charAt(i);
-            if(!current.map.containsKey(ch)) current.map.put(ch, new Node212());
-            current = current.map.get(ch);
-        }
-        current.isLeaf = true;
-    }
-
-    public boolean[] search(String word) {
-        Node212 current = root;
-        for(int i = 0; i < word.length(); i++) {
-            char ch = word.charAt(i);
-            if(current.map.containsKey(ch)) current = current.map.get(ch);
-            else return new boolean[]{false, false};
-        }
-        return new boolean[]{true, current.isLeaf};
-    }
-}
-
 class Solution {
-    Trie212 trie = new Trie212();
+    class Trie {
+        class Node {
+            boolean isLeaf;
+            HashMap<Character, Node> map;
+
+            Node() {
+                isLeaf = false;
+                map = new HashMap<Character, Node>();
+            }
+        }
+
+        Node root = new Node();
+
+        public void addWord(String word) {
+            Node current = root;
+            for (int i = 0; i < word.length(); i++) {
+                char ch = word.charAt(i);
+                if (!current.map.containsKey(ch)) current.map.put(ch, new Node());
+                current = current.map.get(ch);
+            }
+            current.isLeaf = true;
+        }
+
+        public boolean[] search(String word) {
+            Node current = root;
+            for (int i = 0; i < word.length(); i++) {
+                char ch = word.charAt(i);
+                if (current.map.containsKey(ch)) current = current.map.get(ch);
+                else return new boolean[]{false, false};
+            }
+            return new boolean[]{true, current.isLeaf};
+        }
+    }
+    Trie trie = new Trie();
 
     public List<String> findWords(char[][] board, String[] words) {
         int n = board.length;
