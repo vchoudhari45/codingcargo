@@ -1,4 +1,4 @@
-package com.vc.hard
+package com.vc.medium
 
 object L289 {
   def gameOfLife(arr: Array[Array[Int]]): Unit = {
