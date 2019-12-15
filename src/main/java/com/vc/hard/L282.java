@@ -4,32 +4,24 @@ import java.util.*;
 
 class L282 {
     public List<String> addOperators(String num, int target) {
-        List<String> res = new ArrayList<String>();
-        solve(res, 0, "", num, target, 0l, 0l);
+        List<String> res = new ArrayList<>();
+        solve("", num, 0, 0, target, 0, res);
         return res;
     }
 
-    private void solve(List<String> res, int pos,
-                       String expr, String num, int target, long current, long prev) {
-        //System.out.println("pos: "+pos+" expr: "+expr+" current: "+current+" prev: "+prev);
-        if(pos == num.length() && target == current) {
-            res.add(expr);
-        }
+    private void solve(String expr, String num,
+                       int index, long current, long target, long prev, List<String> res) {
+        if(current == target && index == num.length()) res.add(expr);
         else {
-            for(int i = pos; i < num.length(); i++) {
-                if(i != pos && num.charAt(pos) == '0') break;
-                long digit = Long.parseLong(num.substring(pos, i + 1));
-                if(pos == 0) {
-                    solve(res, i + 1, digit+"", num, target, digit, digit);
-                }
+            for(int i = index; i < num.length(); i++) {
+                String digitStr = num.substring(index, i + 1);
+                if(digitStr.startsWith("0") && digitStr.length() > 1) break;
+                long digit = Long.parseLong(digitStr);
+                if(expr.equals("")) solve(digit +"", num, i + 1, digit, target, digit, res);
                 else {
-                    solve(res, i + 1, expr + "+" + digit, num, target, current + digit, digit);
-
-                    solve(res, i + 1, expr + "-" + digit, num, target, current - digit, -digit);
-
-                    solve(res, i + 1,
-                            expr + "*" + digit, num, target, current - prev + prev * digit,
-                            prev * digit);
+                    solve(expr + "+" + digit, num, i + 1, current + digit, target, digit, res);
+                    solve(expr + "-" + digit, num, i + 1, current - digit, target, -digit, res);
+                    solve(expr + "*" + digit, num, i + 1, current - prev + prev * digit, target, prev * digit, res);
                 }
             }
         }
