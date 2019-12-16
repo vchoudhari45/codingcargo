@@ -2,7 +2,7 @@ package com.vc.hard;
 
 import java.util.*;
 
-class Solution {
+class L212 {
     class Trie {
         class Node {
             boolean isLeaf;
