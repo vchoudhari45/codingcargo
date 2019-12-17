@@ -24,7 +24,7 @@ class L354 {
             }
         }
         int max = 0;
-        for(int i = 0; i < dp.length; i++) max = Math.max(max, dp[i]);
+        for(int value : dp) max = Math.max(max, value);
         return max;
     }
 
