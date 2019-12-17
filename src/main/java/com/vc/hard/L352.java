@@ -3,45 +3,44 @@ package com.vc.hard;
 import java.util.*;
 
 class SummaryRanges {
-    TreeMap<Integer, Integer> map;
-
-    /** Initialize your data structure here. */
-    public SummaryRanges() {
-        map = new TreeMap<Integer, Integer>();
-    }
+    List<int[]> list = new ArrayList<int[]>();
+    HashSet<Integer> set = new HashSet<>();
 
     public void addNum(int val) {
-        Integer pre = map.floorKey(val);
-        Integer next = map.ceilingKey(val);
-
-        if(pre != null && map.get(pre) >= val) return;
-        if(next != null && next == val) return;
-
-        int start = val;
-        int end = val;
-
-        if(pre != null && map.get(pre) + 1 == val) {
-            start = pre;
-            map.remove(pre);
+        if(set.add(val)) {
+            int i = 0;
+            for(i = 0; i < list.size(); i++) {
+                int[] interval = list.get(i);
+                if(val < interval[1]) break;
+            }
+            int[] prev = i == 0 ? new int[]{val, val} : list.get(i - 1);
+            int[] next = i == list.size() ? new int[]{val, val} : list.get(i);
+            if(prev[1] + 1 == val && next[0] - 1== val) {
+                list.remove(i - 1);
+                list.remove(i - 1);
+                list.add(i - 1, new int[]{prev[0], next[1]});
+            }
+            else if(next[0] - 1 == val) {
+                list.remove(i);
+                list.add(i, new int[]{val, next[1]});
+            }
+            else if(prev[1] + 1 == val) {
+                list.remove(i - 1);
+                list.add(i - 1, new int[]{prev[0], val});
+            }
+            else {
+                list.add(i, new int[]{val, val});
+            }
         }
-
-        if(next != null && next - 1 == val) {
-            end = map.get(next);
-            map.remove(next);
-        }
-
-        map.put(start, end);
     }
 
     public int[][] getIntervals() {
-        int[][] res = new int[map.size()][2];
-
-        int i = 0;
-        for(Map.Entry<Integer, Integer> entry: map.entrySet()) {
-            res[i][0] = entry.getKey();
-            res[i++][1] = entry.getValue();
+        int[][] arr = new int[list.size()][2];
+        int index = 0;
+        for(int[] i: list) {
+            arr[index++] = i;
         }
-        return res;
+        return arr;
     }
 }
 
