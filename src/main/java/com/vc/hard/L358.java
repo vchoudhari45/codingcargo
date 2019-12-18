@@ -2,7 +2,7 @@ package com.vc.hard;
 
 import java.util.*;
 
-class Solution {
+class L358 {
     class Entry {
         Character ch;
         Integer count;
