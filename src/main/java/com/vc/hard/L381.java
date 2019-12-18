@@ -4,69 +4,63 @@ import java.util.*;
 
 class RandomizedCollection {
 
+    HashMap<Integer, Set<Integer>> map;
+    List<Integer> list;
+    Random random;
+
     /** Initialize your data structure here. */
-    HashMap<Integer, List<Integer>> map = new HashMap<Integer, List<Integer>>();
-    List<int[]> list = new ArrayList<int[]>();
-
-    Random random = new Random();
     public RandomizedCollection() {
-
+        map = new HashMap<Integer, Set<Integer>>();
+        list = new ArrayList<Integer>();
+        random = new Random();
     }
 
     /** Inserts a value to the collection. Returns true if the collection did not already contain the specified element. */
     public boolean insert(int val) {
+        // System.out.println("Before inserting :"+ val);
+        // printStuff();
         boolean res = !map.containsKey(val);
-        List<Integer> indexList = map.getOrDefault(val, new ArrayList<Integer>());
-        indexList.add(list.size());
-        map.put(val, indexList);
-        list.add(new int[] { val, indexList.size() - 1 });
-        //System.out.print("After Inserting "+val);
-        //printStuff();
+        Set<Integer> set = map.getOrDefault(val, new HashSet<Integer>());
+        set.add(list.size());
+        list.add(val);
+        map.put(val, set);
+        // System.out.println("After inserting: "+val);
+        // printStuff();
         return res;
     }
 
     /** Removes a value from the collection. Returns true if the collection contained the specified element. */
     public boolean remove(int val) {
-        boolean res = map.containsKey(val);
-        if(res) {
-            int[] swapElement = list.get(list.size() - 1);
-            int swapElementValue = swapElement[0];
-            int swapElementIndexInList = swapElement[1];
+        // System.out.println("Before removing :"+ val);
+        // printStuff();
+        if(map.containsKey(val)) {
+            int remove = map.get(val).iterator().next();
+            int swap = list.get(list.size() - 1);
 
-            List<Integer> removeElementList = map.get(val);
-            int removeElementIndexInMainList = removeElementList.get(removeElementList.size() - 1);
+            map.get(val).remove(remove);
+            map.get(swap).add(remove);
+            map.get(swap).remove(list.size() - 1);
+            if(map.get(val).size() == 0) map.remove(val);
 
-            List<Integer> swapElementList = map.get(swapElementValue);
-            swapElementList.set(swapElementIndexInList, removeElementIndexInMainList);
-
-            removeElementList.remove(removeElementList.size() - 1);
-            if(removeElementList.size() == 0) map.remove(val);
-            else map.put(val, removeElementList);
-
-            list.set(removeElementIndexInMainList, swapElement);
+            list.set(remove, swap);
             list.remove(list.size() - 1);
+            // System.out.println("After removing :"+ val);
+            // printStuff();
+            return true;
         }
-        //System.out.print("After removing "+val);
-        //printStuff();
-        return res;
+        // System.out.println("After removing :"+ val);
+        // printStuff();
+        return false;
     }
 
     /** Get a random element from the collection. */
     public int getRandom() {
-        return list.get(random.nextInt(list.size()))[0];
+        return list.get(random.nextInt(list.size()));
     }
 
     private void printStuff() {
-        System.out.println(" ");
-        System.out.println("Printing Map");
-        for(Map.Entry<Integer, List<Integer>> entry: map.entrySet()) {
-            System.out.println("Key: "+entry.getKey()+" Value: "+entry.getValue());
-        }
-        System.out.print("[");
-        for(int[] elements: list) {
-            System.out.print(" ("+elements[0]+", "+elements[1]+"), ");
-        }
-        System.out.println("] ");
+        System.out.println(map);
+        System.out.println(list);
     }
 }
 
