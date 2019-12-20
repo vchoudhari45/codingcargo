@@ -2,7 +2,7 @@ package com.vc.hard;
 
 import java.util.*;
 
-class Codec {
+class L297 {
 
     // Encodes a tree to a single string.
     public String serialize(TreeNode root) {

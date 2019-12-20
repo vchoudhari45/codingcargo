@@ -2,7 +2,7 @@ package com.vc.hard;
 
 import java.util.*;
 
-class Codec {
+class L428 {
     // Encodes a tree to a single string.
     public String serialize(Node root) {
         StringBuilder str = new StringBuilder();
