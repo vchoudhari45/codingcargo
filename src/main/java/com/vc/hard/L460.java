@@ -4,72 +4,97 @@ import java.util.*;
 
 class LFUCache {
 
-    Map<Integer, Integer> vals = new HashMap<Integer, Integer>();
-    Map<Integer, Integer> counts = new HashMap<Integer, Integer>();
-    Map<Integer, LinkedHashSet<Integer>> countGroups = new HashMap<Integer, LinkedHashSet<Integer>>();
+    /**
+         1.Key-Value Map
+             key1 => value1
+             key2 => value2
+             key3 => value3
 
-    int capacity = 0;
+         2. Key-Count Map
+             key1 => count1
+             key2 => count2
+             key3 => count2
+
+         3. CountGroup Map
+            count1 => List(key1)
+            count2 => List(key2, key3)
+     */
     int min = 1;
+    int capacity = 0;
+    HashMap<Integer, Integer> map;
+    HashMap<Integer, Integer> count;
+    HashMap<Integer, LinkedHashSet<Integer>> countGroup;
+
     public LFUCache(int capacity) {
         this.capacity = capacity;
-        countGroups.put(1, new LinkedHashSet<Integer>());
+        map = new HashMap<>();
+        count = new HashMap<>();
+        countGroup = new HashMap<>();
     }
 
     public int get(int key) {
-        if(vals.containsKey(key)) {
-            int oldCountGroup = counts.get(key);
-            int newCountGroup = oldCountGroup + 1;
+        // System.out.println("============================================");
+        // System.out.println("Before getting key: "+key);
+        // System.out.println("Map: "+map);
+        // System.out.println("Count: "+count);
+        // System.out.println("CountGroup: "+countGroup);
+        if(map.containsKey(key)) {
+            int oldCount = count.get(key);
+            int newCount = oldCount + 1;
 
-            //Update key's countGroup
-            counts.put(key, newCountGroup);
-
-            //Add key to newCountGroup
-            LinkedHashSet<Integer> newCountGroupSet =
-                    countGroups.getOrDefault(newCountGroup, new LinkedHashSet<Integer>());
-
-            newCountGroupSet.add(key);
-            countGroups.put(newCountGroup, newCountGroupSet);
-
-            //Remove key from oldCountGroup
-            countGroups.get(oldCountGroup).remove(key);
-            if(oldCountGroup == min && countGroups.get(oldCountGroup).size() == 0) {
-                min = newCountGroup;
+            LinkedHashSet<Integer> oldSet = countGroup.get(oldCount);
+            oldSet.remove(key);
+            if(oldSet.size() == 0) {
+                countGroup.remove(oldCount);
+                if(oldCount == min) min++;
             }
+            else countGroup.put(oldCount, oldSet);
 
-            return vals.get(key);
+            LinkedHashSet<Integer> newSet = countGroup.getOrDefault(newCount, new LinkedHashSet<Integer>());
+            newSet.add(key);
+
+            countGroup.put(newCount, newSet);
+            count.put(key, newCount);
         }
-        return -1;
+        // System.out.println("After getting key: "+key);
+        // System.out.println("Map: "+map);
+        // System.out.println("Count: "+count);
+        // System.out.println("CountGroup: "+countGroup);
+        return map.getOrDefault(key, -1);
     }
 
     public void put(int key, int value) {
         if(capacity == 0) return;
-        if(vals.containsKey(key)) {
-            //Update key's countGroup
+        // System.out.println("============================================");
+        // System.out.println("Before adding key: "+key+" value: "+value);
+        // System.out.println("Map: "+map);
+        // System.out.println("Count: "+count);
+        // System.out.println("CountGroup: "+countGroup);
+        if(map.containsKey(key)) {
             get(key);
+            map.put(key, value);
         }
         else {
-            //Add key to countGroup 1
-            if(vals.size() < capacity) {
-                vals.put(key, value);
-                counts.put(key, 1);
-                countGroups.get(1).add(key);
-                min = 1;
+            if(map.size() == capacity) {
+                LinkedHashSet<Integer> set = countGroup.get(min);
+                int toBeRemoved = set.iterator().next();
+                set.remove(toBeRemoved);
+                if(set.size() == 0) countGroup.remove(min);
+                else countGroup.put(min, set);
+                map.remove(toBeRemoved);
+                count.remove(toBeRemoved);
             }
-            else {
-                LinkedHashSet<Integer> set = countGroups.get(min);
-
-                int firstElementToBeEvicted = set.iterator().next();
-                vals.remove(firstElementToBeEvicted);
-                counts.remove(firstElementToBeEvicted);
-                set.remove(firstElementToBeEvicted);
-
-                vals.put(key, value);
-                counts.put(key, 1);
-                countGroups.get(1).add(key);
-                min = 1;
-            }
+            map.put(key, value);
+            count.put(key, 1);
+            LinkedHashSet<Integer> set = countGroup.getOrDefault(1, new LinkedHashSet<Integer>());
+            set.add(key);
+            countGroup.put(1, set);
+            min = 1;
         }
-        vals.put(key, value);
+        // System.out.println("After adding key: "+key+" value: "+value);
+        // System.out.println("Map: "+map);
+        // System.out.println("Count: "+count);
+        // System.out.println("CountGroup: "+countGroup);
     }
 }
 
