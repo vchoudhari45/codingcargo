@@ -2,56 +2,51 @@ package com.vc.hard;
 
 import java.util.*;
 
-class CodecL428 {
-
-    class Node {
-        public int val;
-        public List<Node> children;
-
-        public Node() {}
-
-        public Node(int _val,List<Node> _children) {
-            val = _val;
-            children = _children;
-        }
-    };
-    
+class Codec {
     // Encodes a tree to a single string.
     public String serialize(Node root) {
-        StringBuilder sb = new StringBuilder();
-        serialize(sb, root);
-        return sb.toString();
+        StringBuilder str = new StringBuilder();
+        serialize(root, str);
+        System.out.println(str.toString());
+        return str.toString();
     }
 
-    private void serialize(StringBuilder sb, Node root) {
-        if(root == null) sb.append("#").append(",");
-        else {
-            sb.append(root.val).append(",");
-            sb.append(root.children.size()).append(",");
-            for(Node node: root.children) {
-                serialize(sb, node);
+    private void serialize(Node root, StringBuilder str) {
+        if(root != null) {
+            str.append(root.val);
+            str.append(" ");
+            if(root.children != null) {
+                str.append(root.children.size());
+                str.append(" ");
+                for(Node node : root.children) {
+                    serialize(node, str);
+                }
             }
+            else str.append("0 ");
         }
+        else str.append("NULL ");
     }
 
     // Decodes your encoded data to tree.
     public Node deserialize(String data) {
-        Queue<String> q = new LinkedList<>(Arrays.asList(data.split(",")));
+        Queue<String> q = new LinkedList<>();
+        for(String s: data.split(" ")) q.offer(s);
         return deserialize(q);
     }
 
     private Node deserialize(Queue<String> q) {
-        String s = q.poll();
-        if(s.equals("#")) return null;
-
-        Node root = new Node(Integer.valueOf(s), new ArrayList<Node>());
-        int children = Integer.valueOf(q.poll());
-
-        root.children = new ArrayList<>();
-        for(int i = 0; i < children; i++) {
-            root.children.add(deserialize(q));
+        String e = q.poll();
+        if(e.equals("NULL")) return null;
+        else {
+            Node node = new Node(Integer.parseInt(e), new ArrayList<>());
+            int size = Integer.parseInt(q.poll());
+            List<Node> children = new ArrayList<>();
+            for(int i = 0; i < size; i++) {
+                children.add(deserialize(q));
+            }
+            node.children = children;
+            return node;
         }
-        return root;
     }
 }
 
