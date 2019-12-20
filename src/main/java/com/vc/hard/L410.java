@@ -3,7 +3,7 @@ package com.vc.hard;
 class L410 {
     public int splitArray(int[] arr, int m) {
         /**
-         Minimize the maximum
+            Minimize the maximum
          */
         int lo = Integer.MIN_VALUE;
         int hi = 0;
@@ -19,7 +19,7 @@ class L410 {
             if(isValid(arr, m, mid)) hi = mid;
             else lo = mid + 1;
         }
-        return (int)lo;
+        return lo;
     }
 
     private boolean isValid(int[] arr, int m, int sum) {
