@@ -3,51 +3,62 @@ package com.vc.hard;
 import java.util.*;
 
 class L480 {
-    PriorityQueue<Integer> left = new PriorityQueue<Integer>((a, b) -> b.compareTo(a));
-    PriorityQueue<Integer> right = new PriorityQueue<Integer>((a, b) -> a.compareTo(b));
-
     public double[] medianSlidingWindow(int[] arr, int k) {
+        PriorityQueue<Integer> left = new PriorityQueue<>(new Comparator<Integer>(){
+            @Override
+            public int compare(Integer x, Integer y) {
+                return y.compareTo(x);
+            }
+        });
+
+        PriorityQueue<Integer> right = new PriorityQueue<>(new Comparator<Integer>(){
+            @Override
+            public int compare(Integer x, Integer y) {
+                return x.compareTo(y);
+            }
+        });
+
         int n = arr.length;
-        double[] res = new double[n - k + 1];
-
         if(n == 0) return new double[0];
-        for(int i = 0; i < k; i++) {
-            //System.out.println("left: "+left+" right: "+right);
-            if(left.size() <= right.size()) {
-                //System.out.println("Adding "+arr[i]+" to right first");
-                right.offer(arr[i]);
-                left.offer(right.poll());
-            }
-            else {
-                //System.out.println("Adding "+arr[i]+" to left first");
-                left.offer(arr[i]);
-                right.offer(left.poll());
-            }
-        }
 
+        double[] res = new double[n - k + 1];
         int index = 0;
-        for(int i = k; i < n; i++) {
-            res[index] = getMedian();
-            //System.out.println("left: "+left+" right: "+right+" Median("+index+"): "+res[index]);
-            index++;
-            if(!left.remove(arr[i - k])) right.remove(arr[i - k]);
-            if(left.size() <= right.size()) {
-                right.offer(arr[i]);
-                left.offer(right.poll());
-            }
-            else {
-                left.offer(arr[i]);
-                right.offer(left.poll());
-            }
+        int i = 0;
+        for(index = 0; index < k; index++) {
+            add(left, right, arr[index]);
         }
-        res[res.length - 1] = getMedian();
+        res[i++] = getMedian(left, right);
+
+        for(index = index; index < n; index++) {
+            if(!left.remove(arr[index - k])) right.remove(arr[index - k]);
+            add(left, right, arr[index]);
+            res[i++] = getMedian(left, right);
+        }
         return res;
     }
 
-    private double getMedian() {
-        if(left.size() == right.size()) {
-            return ((double)left.peek() + (double)right.peek()) / 2.0D;
+    private void add(PriorityQueue<Integer> left, PriorityQueue<Integer> right, int element) {
+        //System.out.println("====================================================================");
+        //System.out.println("Before adding element: "+element+" left: "+left+" right: "+right);
+        if(left.size() > right.size()) {
+            left.offer(element);
+            right.offer(left.poll());
         }
-        else return (double)left.peek();
+        else {
+            right.offer(element);
+            left.offer(right.poll());
+        }
+        //System.out.println("After adding element: "+element+" left: "+left+" right: "+right);
+    }
+    private double getMedian(PriorityQueue<Integer> left, PriorityQueue<Integer> right) {
+        if(left.size() > right.size()) {
+            //System.out.println("left: "+left+" right: "+right+" Returning: "+left.peek());
+            return (double) left.peek();
+        }
+        else {
+            double d = (double) (((double)left.peek() + (double)right.peek()) / (double)2.0);
+            //System.out.println("left: "+left+" right: "+right+" Returning: "+d);
+            return d;
+        }
     }
 }
