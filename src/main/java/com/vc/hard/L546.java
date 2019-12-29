@@ -1,7 +1,7 @@
 package com.vc.hard;
 
 class L546 {
-    int[][][] m;
+    private int[][][] m;
     public int removeBoxes(int[] boxes) {
         if(boxes == null || boxes.length == 0) return 0;
         int n = boxes.length;

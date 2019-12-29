@@ -3,25 +3,23 @@ package com.vc.hard;
 class L568 {
     public int maxVacationDays(int[][] flights, int[][] days) {
         /**
+             flights[i][j] Represents if there is flight from city i to j
+             flights [
+                 [0,1,1],
+                 [1,0,1],
+                 [1,1,0]
+             ]
 
-                 flights[i][j] Represents if there is flight from city i to j
-                 flights [
-                     [0,1,1],
-                     [1,0,1],
-                     [1,1,0]
-                 ]
+             days[i][j] Represents the maximum days you could take vacation in the city i in the week j.
+             days [
+                 [1,3,1],
+                 [6,0,3],
+                 [3,3,3]
+             ]
 
-                 days[i][j] Represents the maximum days you could take vacation in the city i in the week j.
-                 days [
-                     [1,3,1],
-                     [6,0,3],
-                     [3,3,3]
-                 ]
-
-                 Cities = flights.length;
-                 Weeks  = days[0].length;
+             Cities = flights.length;
+             Weeks  = days[0].length;
          */
-
         if(days == null || days.length == 0 || flights == null || flights.length == 0) return 0;
 
         int cities = flights.length;
