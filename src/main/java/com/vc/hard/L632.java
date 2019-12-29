@@ -2,47 +2,62 @@ package com.vc.hard;
 
 import java.util.*;
 
-class Element {
-    int row;
-    int col;
-    int val;
-
-    public Element(int row, int col, int val) {
-        this.row = row;
-        this.col = col;
-        this.val = val;
-    }
-}
 class L632 {
-    public int[] smallestRange(List<List<Integer>> nums) {
-        PriorityQueue<Element> pq = new PriorityQueue<Element>((a, b) -> a.val - b.val);
+
+    static class Element {
+        int row;
+        int col;
+        int val;
+
+        Element(int row, int col, int val) {
+            this.row = row;
+            this.col = col;
+            this.val = val;
+        }
+
+        @Override
+        public String toString() {
+            return "(row: "+row+" col:"+col+" val: "+val+")";
+        }
+    }
+
+    public int[] smallestRange(List<List<Integer>> list) {
+        PriorityQueue<Element> pq = new PriorityQueue<>(new Comparator<Element>(){
+            public int compare(Element e1, Element e2) {
+                return Integer.valueOf(e1.val).compareTo(e2.val);
+            }
+        });
 
         int max = Integer.MIN_VALUE;
         int min = Integer.MAX_VALUE;
-        for(int i = 0; i < nums.size(); i++) {
-            Element e = new Element(i, 0, nums.get(i).get(0));
-            max = Math.max(max, nums.get(i).get(0));
+        for(int i = 0; i < list.size(); i++) {
+            int value = list.get(i).get(0);
+            Element e = new Element(i, 0, value);
+            max = Math.max(max, value);
+            min = Math.min(min, value);
             pq.offer(e);
         }
 
-        int start = -1;
-        int end = -1;
         int range = Integer.MAX_VALUE;
-        while(pq.size() == nums.size()) {
-            Element current = pq.poll();
+        int start = 0;
+        int end = 0;
+        while(pq.size() == list.size()) {
+            //System.out.println("PriorityQueue: "+pq);
+            Element e = pq.poll();
+            //System.out.println("Removing: "+e+" min: "+min+" max: "+max);
 
-            if(max - current.val < range) {
-                range = max - current.val;
+            if(max - e.val < range) {
+                range = max - e.val;
+                min = e.val;
+                start = min;
                 end = max;
-                start = current.val;
             }
 
-            if(current.col + 1 < nums.get(current.row).size()) {
-                Element newElement = new Element(current.row,
-                        current.col + 1,
-                        nums.get(current.row).get(current.col + 1));
-                pq.offer(newElement);
-                max = Math.max(max, newElement.val);
+            if(e.col + 1 < list.get(e.row).size()) {
+                int value = list.get(e.row).get(e.col + 1);
+                Element eNew = new Element(e.row, e.col + 1, value);
+                max = Math.max(max, value);
+                pq.offer(eNew);
             }
         }
         return new int[]{start, end};
