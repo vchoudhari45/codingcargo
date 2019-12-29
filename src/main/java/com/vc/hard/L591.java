@@ -16,7 +16,6 @@ class L591 {
     public boolean isValid(String code) {
         Stack<String> st = new Stack<>();
         int n = code.length();
-        String tagName = "";
         //System.out.println(code+" "+n);
         while(index < n) {
             //System.out.println("index: "+index+" ch: "+code.charAt(index));
