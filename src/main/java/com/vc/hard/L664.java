@@ -5,34 +5,25 @@ class L664 {
         int n = s.length();
         if(n == 0) return 0;
         int[][] dp = new int[n][n];
-        /**
-         (0, 0)
-         (1, 1)
-         (2, 2)
-
-         (0, 1)
-         (1, 2)
-
-         (0, 2)
-         */
-        int k = 0;
-        while(k < n) {
-            int i = 0;
-            int j = k;
-            while(j < n) {
-                if(i == j) dp[i][j] = 1;
+        for(int len = 0; len < n; len++) {
+            for(int i = 0; i + len < n; i++) {
+                int j = i + len;
+                if(len == 0) dp[i][j] = 1;
                 else {
                     dp[i][j] = Integer.MAX_VALUE;
-                    for(int l = i; l < j; l++) {
-                        dp[i][j] = Math.min(dp[i][j], dp[i][l] + dp[l + 1][j]);
+                    for(int k = i; k < j; k++) {
+                        dp[i][j] = Math.min(dp[i][j], dp[i][k] + dp[k + 1][j]);
                     }
                     if(s.charAt(i) == s.charAt(j)) dp[i][j]--;
                 }
-                i++;
-                j++;
             }
-            k++;
         }
+        // for(int i = 0; i < n; i++) {
+        //     for(int j = 0; j < n; j++) {
+        //         System.out.format("%4d", dp[i][j]);
+        //     }
+        //     System.out.println();
+        // }
         return dp[0][n - 1];
     }
 }
