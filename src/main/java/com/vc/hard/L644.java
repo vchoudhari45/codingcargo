@@ -17,7 +17,7 @@ class L644 {
     }
 
     private boolean isLarger(int[] arr, int k, double avg) {
-        double a[] = new double[arr.length];
+        double[] a = new double[arr.length];
         for(int i = 0; i < a.length; i++) {
             a[i] = arr[i] - avg;
         }
