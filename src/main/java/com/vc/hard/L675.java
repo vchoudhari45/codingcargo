@@ -3,63 +3,96 @@ package com.vc.hard;
 import java.util.*;
 
 class L675 {
-    int[][] dirs = {{0, 1}, {1, 0}, {-1, 0}, {0, -1}};
+
+    static class Entry{
+        int row;
+        int col;
+        int val;
+
+        Entry(int row, int col, int val) {
+            this.row = row;
+            this.col = col;
+            this.val = val;
+        }
+
+        @Override
+        public String toString() {
+            return "(row: "+row+" col: "+col+" val: "+val+")";
+        }
+    }
+
     public int cutOffTree(List<List<Integer>> forest) {
-        if(forest == null || forest.size() == 0) return 0;
+        /**
+             [
+                 [2,3,4],
+                 [0,0,5],
+                 [8,7,6]
+             ]
+         */
+        if(forest == null) return 0;
 
         int n = forest.size();
+        if(n == 0) return 0;
         int m = forest.get(0).size();
-        PriorityQueue<int[]> pq = new PriorityQueue<>(new Comparator<int[]>(){
-            public int compare(int[] a, int[] b) {
-                return a[2] - b[2];
+
+        PriorityQueue<Entry> pq = new PriorityQueue<>(new Comparator<Entry>(){
+            public int compare(Entry e1, Entry e2) {
+                return Integer.valueOf(e1.val).compareTo(e2.val);
             }
         });
 
-        for(int i = 0; i < n; i++) {
-            for(int j = 0; j < m; j++) {
-                if(forest.get(i).get(j) >= 1) {
-                    pq.add(new int[] {i, j, forest.get(i).get(j)});
+        for(int i = 0; i < forest.size(); i++) {
+            for(int j = 0; j < forest.get(i).size(); j++) {
+                int val = forest.get(i).get(j);
+                if(val >= 1) {
+                    pq.offer(new Entry(i, j, val));
                 }
             }
         }
 
-        int[] from = new int[2];
-        int totalSteps = 0;
+        int res = 0;
+        Entry prev = new Entry(0, 0, forest.get(0).get(0));
         while(!pq.isEmpty()) {
-            int[] to = pq.poll();
-            int steps = minStep(from, to, forest, n, m);
-            if(steps < 0) return -1;
-            totalSteps += steps;
-
-            from = to;
+            Entry current = pq.poll();
+            int distance = getDistance(forest, prev, current, n, m);
+            //System.out.println("Distance from: "+prev+" to: "+current+" is: "+distance);
+            if(distance == -1) return -1;
+            res += distance;
+            prev = current;
+            forest.get(current.row).set(current.col, 1);
         }
-        return totalSteps;
+        return res;
     }
 
-    private int minStep(int[] from, int[] to, List<List<Integer>> forest, int row, int col) {
-        int step = 0;
-        boolean[][] visited = new boolean[row][col];
-        Queue<int[]> q = new LinkedList<>();
-        q.add(from);
-        visited[from[0]][from[1]] = true;
-
+    private int[][] dirs = {{1, 0},{0, 1},{-1, 0},{0, -1}};
+    private int getDistance(List<List<Integer>> forest,
+                            Entry current, Entry target, int totalRow, int totalCol) {
+        Queue<Entry> q = new LinkedList<>();
+        HashSet<String> visited = new HashSet<>();
+        q.add(current);
+        int level = 0;
         while(!q.isEmpty()) {
             int size = q.size();
             for(int i = 0; i < size; i++) {
-                int[] current = q.poll();
-                if(current[0] == to[0] && current[1] == to[1]) return step;
-
-                for(int[] d: dirs) {
-                    int newRow = d[0] + current[0];
-                    int newCol = d[1] + current[1];
-                    if(newRow < 0 || newRow >= row || newCol < 0
-                            || newCol >= col || forest.get(newRow).get(newCol) == 0
-                            || visited[newRow][newCol]) continue;
-                    q.add(new int[]{newRow, newCol});
-                    visited[newRow][newCol] = true;
+                Entry e = q.poll();
+                if(e.row == target.row && e.col == target.col) return level;
+                if(!visited.contains(e.row+" "+e.col)) {
+                    //System.out.println("Row: "+e.row+" Col: "+e.col+" Val: "+e.val);
+                    visited.add(e.row+" "+e.col);
+                    for(int[] dir: dirs) {
+                        int rowNew = e.row + dir[0];
+                        int colNew = e.col + dir[1];
+                        if(rowNew >= 0 && rowNew < totalRow &&
+                                colNew >= 0 && colNew < totalCol)  {
+                            if(forest.get(rowNew).get(colNew) == 0)
+                                visited.add(rowNew+" "+colNew);
+                            else
+                                q.offer(new Entry(rowNew, colNew, forest.get(rowNew).get(colNew)));
+                        }
+                    }
                 }
             }
-            step++;
+            level++;
         }
         return -1;
     }
