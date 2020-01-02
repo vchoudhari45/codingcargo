@@ -4,23 +4,24 @@ import java.util.*;
 
 class L710 {
 
-    /** Idea is to shift the whitelisted number up and
-     take the random index from 0 to whitelisted.length
+    /**
+         Idea is to shift the whitelisted number up and
+         take the random index from 0 to whitelisted.length
 
-     For e.g. N = 6
-     blacklist = {2, 3, 4}
+         For e.g. N = 6
+         blacklist = {2, 3, 4}
 
-     1, 2, 3, 4, 5, 6
-     w  b  b  b  w  w
+         1, 2, 3, 4, 5, 6
+         w  b  b  b  w  w
 
-     Only 3 whitelisted,
-     so swap 2 with 5 & swap 3 with 6
+         Only 3 whitelisted,
+         so swap 2 with 5 & swap 3 with 6
 
-     which make the arr
-     1, 5, 6, 4, 2, 3
-     w  w  w  b  b  b
+         which make the arr
+         1, 5, 6, 4, 2, 3
+         w  w  w  b  b  b
 
-     And then take random number from 0 - whitelisted.lenth
+         And then take random number from 0 - whitelisted.length
      */
     Random r = new Random();
     HashMap<Integer, Integer> map = new HashMap<Integer, Integer>();
