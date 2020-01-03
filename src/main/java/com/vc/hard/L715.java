@@ -4,46 +4,58 @@ import java.util.*;
 
 class RangeModule {
 
-    TreeMap<Integer, Integer> map = new TreeMap<Integer, Integer>();
+    private TreeMap<Integer, Integer> rangeMap = new TreeMap<>();
 
     public void addRange(int left, int right) {
-        //System.out.println("Before Adding "+map);
-        Integer pre = map.floorKey(left);
-        Integer next = map.floorKey(right);
+        Integer pre = rangeMap.floorKey(left);
+        Integer next = rangeMap.floorKey(right);
 
-        if(pre != null && map.get(pre) >= left) {
+        // System.out.println("==================================================================");
+        // System.out.println("Before adding left: "+left+" right: "+right+" pre: "+pre+" next: "+next);
+        // System.out.println(rangeMap);
+
+        if(pre != null && rangeMap.get(pre) >= left) {
             left = pre;
         }
 
-        if(next != null && map.get(next) > right) {
-            right = map.get(next);
+        if(next != null && rangeMap.get(next) > right) {
+            right = rangeMap.get(next);
         }
-        map.put(left, right);
-        map.subMap(left, false, right, true).clear();
-        //System.out.println("After Adding "+map);
+
+        rangeMap.subMap(left, true, right, true).clear();
+        rangeMap.put(left, right);
+
+        // System.out.println("After adding left: "+left+" right: "+right+" pre: "+pre+" next: "+next);
+        // System.out.println(rangeMap);
     }
 
     public boolean queryRange(int left, int right) {
-        //System.out.println("Before Querying "+map);
-        Integer node = map.floorKey(left);
-        if(node == null) return false;
-        return map.get(node) >= right;
+        Integer pre = rangeMap.floorKey(left);
+        if(pre != null && rangeMap.get(pre) >= right) return true;
+        else return false;
     }
 
     public void removeRange(int left, int right) {
-        //System.out.println("Before Removing "+map);
-        Integer pre = map.floorKey(left);
-        Integer next = map.floorKey(right);
+        Integer pre = rangeMap.floorKey(left);
+        Integer next = rangeMap.floorKey(right);
 
-        if(next != null && map.get(next) > right) {
-            map.put(right, map.get(next));
+        // System.out.println("==================================================================");
+        // System.out.println("Before adding left: "+left+" right: "+right+" pre: "+pre+" next: "+next);
+        // System.out.println(rangeMap);
+
+        if(next != null && rangeMap.get(next) > right) {
+            rangeMap.put(right, rangeMap.get(next));
         }
 
-        if(pre != null && map.get(pre) > left) {
-            map.put(pre, left);
+        if(pre != null && rangeMap.get(pre) >= left) {
+            rangeMap.put(pre, left);
         }
-        map.subMap(left, true, right, false).clear();
-        //System.out.println("After Removing "+map);
+
+        rangeMap.subMap(left, true, right, false).clear();
+
+        // System.out.println("==================================================================");
+        // System.out.println("After adding left: "+left+" right: "+right+" pre: "+pre+" next: "+next);
+        // System.out.println(rangeMap);
     }
 }
 
