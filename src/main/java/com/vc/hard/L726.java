@@ -4,58 +4,58 @@ import java.util.*;
 
 class L726 {
     public String countOfAtoms(String formula) {
-        TreeMap<String, Integer> map = solve(formula);
-        StringBuilder str = new StringBuilder();
+        Queue<Character> q = new LinkedList<Character>();
+        for(int i = 0; i < formula.length(); i++) q.offer(formula.charAt(i));
+        TreeMap<String, Integer> map = solve(q);
+        StringBuilder sb = new StringBuilder();
         for(Map.Entry<String, Integer> entry: map.entrySet()) {
-            if(entry.getValue() > 1) str.append(entry.getKey()).append(entry.getValue());
-            else str.append(entry.getKey());
+            sb.append(entry.getKey());
+            if(entry.getValue() > 1) sb.append(entry.getValue());
         }
-        return str.toString();
+        return sb.toString();
     }
 
-    int index = 0;
-    private TreeMap<String, Integer> solve(String str) {
-        TreeMap<String, Integer> map = new TreeMap<String, Integer>();
-        while(index < str.length() && str.charAt(index) != ')') {
-            char ch = str.charAt(index);
+    private TreeMap<String, Integer> solve(Queue<Character> q) {
+        TreeMap<String, Integer> map = new TreeMap<>();
 
-            if(ch == '(') {
-                index++;
-                TreeMap<String, Integer> subMap = solve(str);
-                for(String key: subMap.keySet()) {
-                    map.put(key, map.getOrDefault(key, 0) + subMap.get(key));
+        String prefix = "";
+        int num = 0;
+        while(!q.isEmpty()) {
+            char ch = q.poll();
+            if(ch >= 'A' && ch <= 'Z') {
+                if(!prefix.equals("")) map.put(prefix, map.getOrDefault(prefix, 0) + (num == 0 ? 1: num));
+                prefix = "";
+                num = 0;
+                prefix += ch;
+            }
+            else if(ch >= 'a' && ch <= 'z') {
+                prefix += ch;
+            }
+            else if(ch == '(') {
+                if(!prefix.equals("")) map.put(prefix, map.getOrDefault(prefix, 0) + (num == 0 ? 1: num));
+                prefix = "";
+                num = 0;
+                TreeMap<String, Integer> subMap = solve(q);
+                int factor = 0;
+                while(!q.isEmpty() && q.peek() >= '0' && q.peek() <= '9') {
+                    factor = factor * 10 + q.poll() - '0';
+                }
+                for(Map.Entry<String, Integer> entry: subMap.entrySet()) {
+                    map.put(entry.getKey(), map.getOrDefault(entry.getKey(), 0) + factor * entry.getValue());
                 }
             }
-            else {
-                String element = "";
-                if(Character.isLetter(ch)) {
-                    index++;
-                    element += ch;
-                    while(index < str.length() && Character.isLowerCase(str.charAt(index)))
-                        element += str.charAt(index++);
-                }
-                int power = 0;
-                while(index < str.length() && Character.isDigit(str.charAt(index)))
-                    power = power * 10 + str.charAt(index++) - '0';
-
-                if(power == 0) power = 1;
-                map.put(element, map.getOrDefault(element, 0) + power);
-                //System.out.println("Element: "+element+" Power: "+power+" Index: "+index+" Map: "+map);
+            else if(ch == ')') {
+                if(!prefix.equals("")) map.put(prefix, map.getOrDefault(prefix, 0) + (num == 0 ? 1: num));
+                prefix = "";
+                num = 0;
+                return map;
+            }
+            else if(ch >= '0' && ch <= '9') {
+                num = num * 10 + ch - '0';
             }
         }
 
-        int power = 0;
-        index++;
-        while(index < str.length() && Character.isDigit(str.charAt(index)))
-            power = power * 10 + str.charAt(index++) - '0';
-
-        //System.out.println("Power After Closing: "+power+" Map: "+map);
-        if(power > 0) {
-            for(String key: map.keySet()) {
-                map.put(key, map.get(key) * power);
-            }
-        }
-        //System.out.println("Power After Multiplying: "+power+" Map: "+map);
+        if(!prefix.equals("")) map.put(prefix, (num == 0 ? 1: num));
         return map;
     }
 }
