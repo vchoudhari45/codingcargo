@@ -3,70 +3,66 @@ package com.vc.hard;
 import java.util.*;
 
 class L736 {
-    public int evaluate(String expr) {
-        HashMap<String, Integer> map = new HashMap<String, Integer>();
-        return helper(expr, map);
+    public int evaluate(String expression) {
+        HashMap<String, Integer> variables = new HashMap<>();
+        return solve(expression, variables);
     }
 
-    private int helper(String expr, HashMap<String, Integer> map) {
-        if(isNumber(expr)) return Integer.parseInt(expr);
-        if(isVariable(expr)) return map.get(expr);
+    private int solve(String expression, HashMap<String, Integer> variables) {
+        if(isNumber(expression)) return Integer.parseInt(expression);
+        else if(isVariable(expression)) return variables.get(expression);
 
-        List<String> list = parse(expr);
+        List<String> list = parse(expression);
+        //System.out.println("Expression: "+expression+" list: "+list);
         if(list.get(0).equals("add")) {
-            return helper(list.get(1), map) + helper(list.get(2), map);
+            return solve(list.get(1), variables) + solve(list.get(2), variables);
         }
         else if(list.get(0).equals("mult")) {
-            return helper(list.get(1), map) * helper(list.get(2), map);
+            return solve(list.get(1), variables) * solve(list.get(2), variables);
         }
         else {
-            HashMap<String, Integer> newMap = new HashMap<String, Integer>();
-            newMap.putAll(map);
+            HashMap<String, Integer> subVariables = new HashMap<>(variables);
             for(int i = 1; i < list.size() - 2; i += 2) {
                 String variable = list.get(i);
-                int value = helper(list.get(i + 1), newMap);
-                newMap.put(variable, value);
+                int value = solve(list.get(i + 1), subVariables);
+                subVariables.put(variable, value);
             }
-            return helper(list.get(list.size() - 1), newMap);
+            return solve(list.get(list.size() - 1), subVariables);
         }
     }
 
-    private List<String> parse(String expr) {
-        List<String> list = new ArrayList<String>();
-        StringBuilder sb = new StringBuilder();
-        expr = expr.substring(1, expr.length() - 1);
-        int countParan = 0;
-        for(char ch: expr.toCharArray()) {
-            if(ch == '(') {
-                sb.append(ch);
-                countParan++;
+    private List<String> parse(String expression) {
+        int n = expression.length();
+        StringBuilder str = new StringBuilder();
+        List<String> list = new ArrayList<>();
+        int countParen = 0;
+        for(int i = 1; i < expression.length() - 1; i++) {
+            char ch = expression.charAt(i);
+            if(ch == ')') {
+                str.append(")");
+                countParen--;
             }
-            else if(ch == ')') {
-                sb.append(ch);
-                countParan--;
+            else if(ch == '(') {
+                str.append("(");
+                countParen++;
             }
-            else if(countParan == 0 && ch == ' ') {
-                list.add(sb.toString());
-                sb = new StringBuilder();
+            else if(ch == ' ' && countParen == 0) {
+                list.add(str.toString());
+                str.setLength(0);
             }
-            else {
-                sb.append(ch);
-            }
+            else str.append(ch);
         }
-        if(sb.length() > 0) list.add(sb.toString());
-        //System.out.println("expr: "+expr+" list: "+list);
+        if(str.length() > 0) list.add(str.toString());
         return list;
     }
 
-    private boolean isNumber(String expr) {
-        char ch = expr.charAt(0);
-        if(ch >= '0' && ch <= '9' || ch == '-') return true;
-        else return false;
+    private boolean isNumber(String expression) {
+        char ch = expression.charAt(0);
+        return (ch >= '0' && ch <= '9') || ch == '-';
     }
 
-    private boolean isVariable(String expr) {
-        char ch = expr.charAt(0);
-        if(ch >= 'a' && ch <= 'z') return true;
-        else return false;
+    private boolean isVariable(String expression) {
+        char ch = expression.charAt(0);
+        return ch >= 'a' && ch <= 'z';
     }
 }
