@@ -2,28 +2,25 @@ package com.vc.hard;
 
 import java.util.*;
 
-class Interval {
-    int start;
-    int end;
-    Interval(int s, int e) { start = s; end = e; }
-}
-
 class L759 {
-    public List<Interval> employeeFreeTime(List<List<Interval>> schedule) {
-        /**
-             [1,2],
-             [1,3],
-             [4,10],
-             [5,6]
-         */
-        List<Interval> result = new ArrayList<Interval>();
-        PriorityQueue<Interval> pq = new PriorityQueue<>((a, b) -> a.start - b.start);
-        schedule.forEach(e -> pq.addAll(e));
+    public List<Interval> employeeFreeTime(List<List<Interval>> schedules) {
+        PriorityQueue<Interval> pq = new PriorityQueue<>(new Comparator<Interval>(){
+            public int compare(Interval p1, Interval p2) {
+                return Integer.valueOf(p1.start).compareTo(p2.start);
+            }
+        });
 
+        for(List<Interval> schedule: schedules) {
+            for(Interval interval: schedule) {
+                pq.offer(interval);
+            }
+        }
+
+        List<Interval> res = new ArrayList<>();
         Interval prev = pq.poll();
         while(!pq.isEmpty()) {
             if(prev.end < pq.peek().start) {
-                result.add(new Interval(prev.end, pq.peek().start));
+                res.add(new Interval(prev.end, pq.peek().start));
                 prev = pq.poll();
             }
             else {
@@ -31,6 +28,6 @@ class L759 {
                 pq.poll();
             }
         }
-        return result;
+        return res;
     }
 }
