@@ -42,7 +42,6 @@ class L773 {
 
         HashSet<String> visited = new HashSet<>();
         int level = 0;
-        boolean found = false;
         while(!q.isEmpty()) {
             int size = q.size();
             for(int i = 0; i < size; i++) {

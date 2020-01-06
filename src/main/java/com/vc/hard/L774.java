@@ -1,28 +1,28 @@
 package com.vc.hard;
 
 class L774 {
-    public double minmaxGasDist(int[] arr, int K) {
+    public double minmaxGasDist(int[] stations, int K) {
+        int n = stations.length;
+        if(n == 0) return 0d;
+
         double lo = 0;
-        double hi = arr[arr.length - 1] - arr[0];
-        /**
-         Minimize the maximum
-         */
+        double hi = stations[n - 1] - stations[0];
+
         while(lo + 1e-6 < hi) {
             double mid = lo + (hi - lo) / 2;
-            boolean isPossible = isPossible(arr, mid, K);
-            //System.out.println("lo: "+lo+" hi: "+hi+" Mid: "+mid+" isPossible: "+isPossible);
-            if(!isPossible) lo = mid + 1e-6;
+            //System.out.println("mid: "+mid+" lo: "+lo+" hi: "+hi);
+            if(isSmaller(stations, mid, K)) lo = mid;
             else hi = mid;
         }
         return lo;
     }
 
-    private boolean isPossible(int[] arr, double mid, int k) {
+    private boolean isSmaller(int[] arr, double distance, int k) {
         int count = 0;
         for(int i = 0; i < arr.length - 1; i++) {
-            count += Math.ceil((arr[i + 1] - arr[i]) / mid) - 1;
-            if(count > k) return false;
+            count += Math.floor((arr[i + 1] - arr[i]) / distance);
+            if(count > k) return true;
         }
-        return true;
+        return false;
     }
 }
