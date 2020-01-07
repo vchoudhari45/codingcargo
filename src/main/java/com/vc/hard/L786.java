@@ -1,33 +1,35 @@
 package com.vc.hard;
 
-import java.util.*;
-
 class L786 {
     public int[] kthSmallestPrimeFraction(int[] arr, int K) {
-        Arrays.sort(arr);
-        int x = 0, y = 0;
-        double lo = 0, hi = 1;
+        double lo = 0;
+        double hi = 1;
+
+        int[] res = new int[2];
         while(lo < hi) {
             double mid = lo + (hi - lo) / 2;
-            double max = 0;
-            int count = 0;
-            int right = 0;
-            for(int left = 0; left < arr.length; left++) {
-
-                while(right < arr.length && arr[left] > mid * arr[right]) right++;
-                count += arr.length - right;
-
-                if(right < arr.length && arr[left] > max * arr[right]) {
-                    max = (double) arr[left] / (double) arr[right];
-                    x = arr[left];
-                    y = arr[right];
-                }
-            }
-            if(count > K) hi = mid;
-            else if(count < K) lo = mid;
-            else return new int[]{x, y};
+            int count = countFractions(arr, mid, res);
+            if(count < K) lo = mid;
+            else if(count > K) hi = mid;
+            else return res;
         }
-        return new int[]{x, y};
+        return res;
+    }
+
+    private int countFractions(int[] arr, double mid, int[] res) {
+        int right = 0;
+        int count = 0;
+        double ans = 0;
+        for(int left = 0; left < arr.length; left++) {
+            while(right < arr.length && arr[left] > mid * arr[right]) right++;
+            count += arr.length - right;
+
+            if(right < arr.length && arr[left] > ans * arr[right]) {
+                ans = (double) arr[left] / (double) arr[right];
+                res[0] = arr[left];
+                res[1] = arr[right];
+            }
+        }
+        return count;
     }
 }
-
