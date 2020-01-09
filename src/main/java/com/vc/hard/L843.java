@@ -7,28 +7,38 @@ abstract interface Master {
 }
 
 class L843 {
-    Random r = new Random();
+
+    private Random r = new Random();
+
     public void findSecretWord(String[] wordlist, Master master) {
-        for(int i = 0, x = 0; i < 10 && x < 6; i++) {
-            String guess = wordlist[r.nextInt(wordlist.length)];
-            List<String> wordlist2 = new ArrayList<String>();
-            x = master.guess(guess);
-            for(String w: wordlist) {
-                if(matches(w, guess) == x) {
-                    wordlist2.add(w);
-                }
+        int matchedCount = 0;
+        for(int i = 0; i < 10 && matchedCount < 6; i++) {
+            //System.out.println("wordlist: "+wordlist.length+" matchedCount: "+matchedCount);
+
+            String wordGuess = wordlist[r.nextInt(wordlist.length)];
+            matchedCount = master.guess(wordGuess);
+
+            List<String> nextWordlist = new ArrayList<>();
+            for(String word: wordlist) {
+                if(matches(word, wordGuess) == matchedCount) nextWordlist.add(word);
             }
-            wordlist = wordlist2.toArray(new String[wordlist2.size()]);
+
+            wordlist = new String[nextWordlist.size()];
+            for(int index = 0; index < nextWordlist.size(); index++) {
+                wordlist[index] = nextWordlist.get(index);
+            }
         }
+        // System.out.println("Secret is in ");
+        // for(String word: wordlist) {
+        //     System.out.println(word);
+        // }
     }
 
     private int matches(String a, String b) {
-        int matches = 0;
-        for(int i = 0; i < a.length(); i++) {
-            if(a.charAt(i) == b.charAt(i)) {
-                matches++;
-            }
+        int res = 0;
+        for(int i = 0; i < a.length(); i++){
+            if(a.charAt(i) == b.charAt(i)) res++;
         }
-        return matches;
+        return res;
     }
 }
