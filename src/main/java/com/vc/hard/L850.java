@@ -2,19 +2,20 @@ package com.vc.hard;
 
 import java.util.*;
 
-class Point {
-    int x;
-    int y;
-    int endValue;
-
-    public Point(int x, int y, int endValue) {
-        this.x = x;
-        this.y = y;
-        this.endValue = endValue;
-    }
-}
-
 class L850 {
+
+    static class Point {
+        int x;
+        int y;
+        int endValue;
+
+        public Point(int x, int y, int endValue) {
+            this.x = x;
+            this.y = y;
+            this.endValue = endValue;
+        }
+    }
+
     public int rectangleArea(int[][] rectangles) {
         List<Point> data = new ArrayList<Point>();
         for(int[] r: rectangles) {
