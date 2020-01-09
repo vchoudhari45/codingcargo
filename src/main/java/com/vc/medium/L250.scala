@@ -6,7 +6,7 @@ class TreeNodeL250(var _value: Int) {
   var right: TreeNodeL250 = null
 }
 
-object Solution {
+object L250 {
   def countUnivalSubtrees(root: TreeNodeL250): Int = {
     var count = 0
     def solve(root: TreeNodeL250, value: Int): Boolean = {
