@@ -3,6 +3,7 @@ package com.vc.medium;
 import java.util.*;
 
 class L524 {
+
     public String findLongestWord(String s, List<String> d) {
         Collections.sort(d, new Comparator<String>(){
             public int compare(String s1, String s2) {
