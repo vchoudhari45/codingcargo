@@ -4,11 +4,11 @@ import java.util.*;
 
 class CombinationIterator {
 
-    int n = 0;
-    char[] arr;
-    List<String> list;
-    int combinationLength = 0;
-    int index = 0;
+    private int n = 0;
+    private char[] arr;
+    private List<String> list;
+    private int combinationLength = 0;
+    private int index = 0;
 
     public CombinationIterator(String characters, int combinationLength) {
         this.n = characters.length();
