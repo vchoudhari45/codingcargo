@@ -2,28 +2,28 @@ package com.vc.medium;
 
 import java.util.*;
 
-class Node {
-    Node next;
-    Node prev;
-    int key;
-    int value;
-
-    Node(int key, int value) {
-        this.next = null;
-        this.prev = null;
-        this.value = value;
-        this.key = key;
-    }
-
-    Node(Node next, Node prev, int key, int value) {
-        this.key = key;
-        this.next = next;
-        this.prev = prev;
-        this.value = value;
-    }
-}
-
 class LRUCache {
+
+    static class Node {
+        Node next;
+        Node prev;
+        int key;
+        int value;
+
+        Node(int key, int value) {
+            this.next = null;
+            this.prev = null;
+            this.value = value;
+            this.key = key;
+        }
+
+        Node(Node next, Node prev, int key, int value) {
+            this.key = key;
+            this.next = next;
+            this.prev = prev;
+            this.value = value;
+        }
+    }
 
     Node head, tail;
     Map<Integer, Node> map;
