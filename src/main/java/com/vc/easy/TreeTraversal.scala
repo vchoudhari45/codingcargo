@@ -1,10 +1,6 @@
 package com.vc.easy
 
-class TreeNode(var _value: Int) {
-  var value: Int = _value
-  var left: TreeNode = null
-  var right: TreeNode = null
-}
+import com.vc.hard.TreeNode
 
 /**
   *     1
@@ -13,6 +9,7 @@ class TreeNode(var _value: Int) {
   **/
 object TreeTraversal {
   import scala.collection.mutable
+
   def main(args: Array[String]): Unit = {
     val root = new TreeNode(1)
     val left = new TreeNode(2)
@@ -38,7 +35,7 @@ object TreeTraversal {
       }
       else {
         current = st.pop
-        println(current.value)
+        println(current.`val`)
         current = current.right
       }
     }
@@ -49,7 +46,7 @@ object TreeTraversal {
     var current = root
     while(current != null || st.nonEmpty) {
       if(current != null) {
-        println(current.value)
+        println(current.`val`)
         st.push(current)
         current = current.left
       }
@@ -70,7 +67,7 @@ object TreeTraversal {
         if(tmp == null) {
           do {
             tmp = st.pop
-            println(tmp.value)
+            println(tmp.`val`)
           } while(st.nonEmpty && tmp == st.head.right)
         }
         else current = tmp
