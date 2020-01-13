@@ -7,9 +7,9 @@ class L1245 {
 
     public int treeDiameter(int[][] edges) {
         HashMap<Integer, List<Integer>> map = new HashMap<>();
-        for(int i = 0; i < edges.length; i++) {
-            int from = edges[i][0];
-            int to = edges[i][1];
+        for (int[] edge : edges) {
+            int from = edge[0];
+            int to = edge[1];
 
             List<Integer> listFrom = map.getOrDefault(from, new ArrayList<Integer>());
             listFrom.add(to);
