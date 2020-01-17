@@ -1,7 +1,7 @@
 package com.vc.medium;
 
 import java.util.*;
-g
+
 class L1197 {
     private int[][] dirs = {{2, 1},{1, 2},{-1, 2},{-2, 1}, {-2, -1},{-1, -2},{1, -2},{2, -1}};
 
