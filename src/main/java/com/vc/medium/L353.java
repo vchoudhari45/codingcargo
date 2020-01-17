@@ -91,11 +91,6 @@ class SnakeGame {
 }
 
 /**
- ["SnakeGame","move","move","move","move","move","move","move","move","move","move","move","move"]
- [[3,3,[[2,0],[0,0],[0,2],[2,2]]],["D"],["D"],["R"],["U"],["U"],["L"],["D"],["R"],["R"],["U"],["L"],["D"]]
- */
-
-/**
  * Your SnakeGame object will be instantiated and called as such:
  * SnakeGame obj = new SnakeGame(width, height, food);
  * int param_1 = obj.move(direction);
