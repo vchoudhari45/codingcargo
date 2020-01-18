@@ -1,19 +1,16 @@
 package com.vc.easy;
 
-class ListNode206 {
-    int val;
-    ListNode206 next;
-    ListNode206(int x) { val = x; }
-}
 
-class Solution {
-    public ListNode206 reverseList(ListNode206 head) {
+import com.vc.hard.ListNode;
+
+class L206 {
+    public ListNode reverseList(ListNode head) {
         if(head == null) return null;
 
-        ListNode206 prev = new ListNode206(-1);
+        ListNode prev = new ListNode(-1);
         prev.next = head;
-        ListNode206 current = prev.next;
-        ListNode206 next = current.next;
+        ListNode current = prev.next;
+        ListNode next = current.next;
         while(next != null) {
             current.next = next.next;
             next.next = prev.next;
