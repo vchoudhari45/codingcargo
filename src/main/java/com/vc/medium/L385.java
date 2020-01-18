@@ -5,7 +5,7 @@ import java.util.*;
 
 // This is the interface that allows for creating nested lists.
 // You should not implement it, or speculate about its implementation
-public class NestedInteger {
+class NestedInteger {
     // Constructor initializes an empty nested list.
     public NestedInteger(){
 
@@ -44,7 +44,7 @@ public class NestedInteger {
     }
 }
 
-class Solution {
+class L385 {
     public NestedInteger deserialize(String s) {
         Queue<Character> q = new LinkedList<>();
         for(int i = 0; i < s.length(); i++){
