@@ -3,11 +3,11 @@ package com.vc.easy;
 class L121 {
     public int maxProfit(int[] prices) {
         /**
-         dp[i][k][0]
-         on ith Day, we can do k transactions and we will end up having 0 stock in our hand
+             dp[i][k][0]
+             on ith Day, we can do k transactions and we will end up having 0 stock in our hand
 
-         dp[i][k][1]
-         on ith Day, we can do k transactions and we will end up having 1 stock in our hand
+             dp[i][k][1]
+             on ith Day, we can do k transactions and we will end up having 1 stock in our hand
          */
         int n = prices.length;
         if(n == 0) return 0;
