@@ -1,6 +1,6 @@
 package com.vc.medium;
 
-class L668 {
+class L667 {
     public int[] constructArray(int n, int k) {
         /**
 
