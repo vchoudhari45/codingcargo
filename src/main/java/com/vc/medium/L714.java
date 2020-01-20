@@ -3,11 +3,11 @@ package com.vc.medium;
 class L714 {
     public int maxProfit(int[] prices, int fee) {
         /**
-         dp_i_k_0
-         on ith day we can perform k transaction and we should have zero stock in our hand
+             dp_i_k_0
+             on ith day we can perform k transaction and we should have zero stock in our hand
 
-         dp_i_k_1
-         on ith day we can perform k transaction and we should have one stock in our hand
+             dp_i_k_1
+             on ith day we can perform k transaction and we should have one stock in our hand
          */
         int dp_i_k_0 = 0;
         int dp_i_k_1 = Integer.MIN_VALUE;
