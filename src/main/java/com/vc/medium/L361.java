@@ -11,7 +11,6 @@ class L361 {
         int[] colHits = new int[m];
         for(int i = 0; i < grid.length; i++) {
             for(int j = 0; j < grid[0].length; j++) {
-                int count = 0;
                 if(j == 0 || grid[i][j - 1] == 'W') {
                     rowHits = 0;
                     for(int col = j; col < grid[0].length && grid[i][col] != 'W'; col++) {
