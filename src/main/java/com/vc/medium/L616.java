@@ -14,7 +14,6 @@ class L616 {
         }
 
         StringBuilder sb = new StringBuilder();
-        int start = 0;
         boolean started = false;
         for(int i = 0; i < s.length(); i++) {
             if(bold[i]) {
