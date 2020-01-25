@@ -5,7 +5,7 @@ import java.util.*;
 class L229 {
     public List<Integer> majorityElement(int[] arr) {
         /**
-         In an array of length n, only 2 or less than two numbers can appear more than n / 3 times
+            In an array of length n, only 2 or less than two numbers can appear more than n / 3 times
          */
         int n = arr.length;
         int cnt1 = 0;
