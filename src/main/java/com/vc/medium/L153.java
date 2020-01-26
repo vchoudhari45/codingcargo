@@ -4,12 +4,11 @@ class L153 {
     public int findMin(int[] arr) {
         int lo = 0;
         int hi = arr.length - 1;
-        while(lo < hi) {
-            if(arr[lo] < arr[hi]) return arr[lo];
-
+        while(lo <= hi) {
             int mid = lo + (hi - lo) / 2;
-            if(arr[mid] >= arr[lo]) lo = mid + 1;
-            else hi = mid;
+            if(arr[mid] > arr[hi]) lo = mid + 1;
+            else if(arr[mid] < arr[hi]) hi = mid;
+            else hi--;
         }
         return arr[lo];
     }
