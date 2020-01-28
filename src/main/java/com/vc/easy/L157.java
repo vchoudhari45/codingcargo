@@ -16,17 +16,15 @@ class L157 extends Reader4 {
      * @return    The number of characters read
      */
     public int read(char[] buf, int n) {
-        char tmpBuf[] = new char[4];
-        int index = 0;
-        int charRead = 0;
-        int tmpIndex = 0;
+        char[] tempBuf = new char[4];
+        int index = 0, charIndex = 0, tempIndex = 0;
         while(index < n) {
-            if(charRead == tmpIndex) {
-                tmpIndex = 0;
-                charRead = read4(tmpBuf);
-                if(charRead == 0) break;
+            if(charIndex == tempIndex) {
+                tempIndex = 0;
+                charIndex = read4(tempBuf);
+                if(charIndex == 0) break;
             }
-            buf[index++] = tmpBuf[tmpIndex++];
+            buf[index++] = tempBuf[tempIndex++];
         }
         return index;
     }
