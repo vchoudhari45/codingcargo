@@ -9,6 +9,6 @@ class L215 {
             pq.offer(arr[i]);
             if(pq.size() > k) pq.poll();
         }
-        return pq.poll();
+        return pq.isEmpty() ? -1: pq.poll();
     }
 }
