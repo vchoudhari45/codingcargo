@@ -3,11 +3,11 @@ package com.vc.hard;
 class L32 {
     public int longestValidParentheses(String s) {
         /**
-         ((()))
-         012345
+             ((()))
+             012345
 
-         (()())
-         012345
+             (()())
+             012345
          */
         int n = s.length();
         int[] dp = new int[n];
