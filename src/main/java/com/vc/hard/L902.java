@@ -1,88 +1,35 @@
 package com.vc.hard;
 
-import java.util.*;
-
 class L902 {
-    public int atMostNGivenDigitSet(String[] D, int N) {
-        N++;
-        List<Integer> digits = getDigits(N);
+    public int atMostNGivenDigitSet(String[] options, int N) {
+        String s = String.valueOf(N);
+        int len = s.length();
 
-        int digitCount = digits.size();
-        int arrayCount = D.length;
-        int res = 0;
-        for(int i = 1; i < digitCount; i++) {
-            res += permute(arrayCount, i);
+        int lessDigits = 0;
+        //For e.g. let's Say N = 164 and options [1, 2, 3, 4]
+        //For all 1 digit numbers there are 4 options
+        //For all 2 digit numbers there 4 * 4 possiblities = 16
+        for(int i = 1; i < len; i++) {
+            //Here i is count of digits in number generated
+            lessDigits += (int)Math.pow(options.length, i);
         }
 
-        System.out.println(res);
-
-        for(int i = digitCount - 1; i >= 0; i--) {
-            int digit = digits.get(i);
-            int lessThanDigit = getLessThanDigitCount(digit, D);
-            int add = lessThanDigit * permute(arrayCount, i);
-            res += add;
-            boolean equalToDigit = containsDigit(digit, D);
-            if(!equalToDigit) break;
+        //For all the number with same number of digits as in N
+        //we have to select a digit smaller or equal to digit in N
+        int[] slots = new int[len + 1];
+        slots[len] = 1;
+        for(int slot = len - 1; slot >= 0; slot--) {
+            int digit = s.charAt(slot) - '0';
+            for(String option: options) {
+                if(digit > Integer.parseInt(option)) {
+                    //For all the slots to right side of this slot can have options.length possibilities
+                    slots[slot] += (int) Math.pow(options.length, len - slot - 1);
+                }
+                else if(digit == Integer.parseInt(option)){
+                    slots[slot] += slots[slot + 1];
+                }
+            }
         }
-
-        return res;
-    }
-
-    private boolean containsDigit(int digit, String[] digits) {
-        for(String s: digits) {
-            int d = s.charAt(0) - '0';
-            if(d == digit) return true;
-        }
-        return false;
-    }
-
-    private int getLessThanDigitCount(int digit, String[] digits) {
-        int count = 0;
-        for(String s: digits) {
-            int d = s.charAt(0) - '0';
-            if(d < digit) count++;
-        }
-        return count;
-    }
-
-    private List<Integer> getDigits(int N) {
-        List<Integer> digits = new ArrayList<Integer>();
-        while(N != 0) {
-            digits.add(N % 10);
-            N = N / 10;
-        }
-        return digits;
-    }
-
-    /**
-         Given: {"1","3","5","7"}
-         Numbers will be
-         11,
-         13,
-         15,
-         17,
-         33,
-         31,
-         35,
-         37,
-         55,
-         51,
-         53,
-         57,
-         77,
-         71,
-         73,
-         75
-     */
-    private int permute(int n, int r) {
-        int numerator = n;
-        int denominator = (n - r);
-
-        int res = 1;
-        while(numerator > denominator) {
-            res *= n;
-            numerator--;
-        }
-        return res;
+        return lessDigits + slots[0];
     }
 }
