@@ -4,72 +4,71 @@ import java.util.*;
 
 class L952 {
     public int largestComponentSize(int[] arr) {
-        int[] index = new int[arr.length];
+        int N = arr.length;
+        int[] parent = new int[N];
+        for(int i = 0; i < N; i++) parent[i] = i;
+        HashMap<Integer, Integer> factorToIndex = new HashMap<>();
         for(int i = 0; i < arr.length; i++) {
-            index[i] = i;
-        }
-
-        HashMap<Integer, Integer> primeFactorMap = new HashMap<Integer, Integer>();
-        for(int i = 0; i < arr.length; i++) {
-            int from = arr[i];
-            for(int j = 2; j * j <= from; j++) {
-                if(from % j == 0) {
-                    if(!primeFactorMap.containsKey(j)) {
-                        primeFactorMap.put(j, i);
+            int element = arr[i];
+            for(int j = 2; j * j <= element; j++) {
+                //Add all the factor of number into
+                if(element % j == 0) {
+                    //Number is divisible j
+                    if(factorToIndex.containsKey(j)) {
+                        //Some other element already claimed that j is it's factor
+                        union(i, factorToIndex.get(j), parent);
                     }
                     else {
-                        int to = primeFactorMap.get(j);
-                        int fromParent = find(i, index);
-                        int toParent = find(to, index);
-                        union(fromParent, toParent, index);
+                        factorToIndex.put(j, i);
                     }
 
-                    if(!primeFactorMap.containsKey(from / j)) {
-                        primeFactorMap.put(from / j, i);
+                    //Also add the other factor
+                    if(factorToIndex.containsKey(element / j)) {
+                        union(i, factorToIndex.get(element / j), parent);
                     }
                     else {
-                        int to = primeFactorMap.get(from / j);
-                        int fromParent = find(i, index);
-                        int toParent = find(to, index);
-                        union(fromParent, toParent, index);
+                        factorToIndex.put(element / j, i);
                     }
                 }
             }
-            if(!primeFactorMap.containsKey(from)) {
-                primeFactorMap.put(from, i);
+
+            //Add number it's self because number can be one of the prime factor like 2, 3, 5 etc
+            if(factorToIndex.containsKey(element)) {
+                union(i, factorToIndex.get(element), parent);
             }
             else {
-                int to = primeFactorMap.get(from);
-                int fromParent = find(i, index);
-                int toParent = find(to, index);
-                union(fromParent, toParent, index);
+                factorToIndex.put(element, i);
             }
         }
 
         //Compress Path
-        for(int k = 0; k < arr.length; k++) {
-            index[k] = find(index[k], index);
-            System.out.print(index[k]+" ");
+        for(int i = 0; i < N; i++) {
+            parent[i] = find(parent[i], parent);
         }
 
-        TreeMap<Integer, Integer> map = new TreeMap<Integer, Integer>();
-        for(int k = 0; k < arr.length; k++) {
-            map.put(index[k], map.getOrDefault(index[k], 0) + 1);
+        //System.out.println(factorToIndex);
+
+        int max = 0;
+        HashMap<Integer, Integer> map = new HashMap<>();
+        for(int p: parent) {
+            //System.out.println(p);
+            map.put(p, map.getOrDefault(p, 0) + 1);
         }
 
-        int res = 0;
-        for(Integer i: map.keySet()) {
-            if(map.get(i) > res) res = map.get(i);
-        }
-        return res;
+        //System.out.println(map);
+
+        for(Integer value: map.values()) max = Math.max(max, value);
+        return max;
     }
 
-    private int find(int x, int[] arr) {
-        if(arr[x] == x) return x;
-        else return find(arr[x], arr);
+    private void union(int i, int j, int[] parent) {
+        int iParent = find(i, parent);
+        int jParent = find(j, parent);
+        if(iParent != jParent) parent[iParent] = jParent;
     }
 
-    private void union(int x, int y, int[] arr) {
-        arr[x] = y;
+    private int find(int i, int[] parent) {
+        if(i == parent[i]) return i;
+        return parent[i] = find(parent[i], parent);
     }
 }
