@@ -4,48 +4,31 @@ import java.util.*;
 
 class L956 {
     public int tallestBillboard(int[] rods) {
-        /**
-         i         = Considering i rods in the calculation
-         j         = Difference between smaller & larger side
-         dp[i][j]     = Length of larger side consider i rods
-         dp[i][j] - j = Length of smaller side consider i rods
+        int left = 0, right = 0, currentIndex = 0;
+        return solve(currentIndex, left, right, rods, new HashMap<String, Integer>());
+    }
 
-         [1, 2, 3]
-         At dp[0][0] = 0
-         Meaning considering 0 rods, difference between smaller & larger side is 0
-         */
-        int sum = 0;
-        int len = rods.length;
-        for(int r: rods) {
-            sum += r;
+    private int solve(int index, int left, int right, int[] rods, HashMap<String, Integer> memo) {
+        if(index == rods.length) {
+            if(left == right) return left;
+            return -1;
         }
 
-        int dp[][] = new int[len + 1][sum + 1];
-        for(int i = 0; i <= len; i++) {
-            Arrays.fill(dp[i], -1);
+        //If you are at specific index in an array and you encounter the
+        //Same abs difference between left & right then you alredy know the answer
+        //We save the answer as it add X size to max of left & right
+        String key = index+" "+Math.abs(left - right);
+        if(memo.containsKey(key)) {
+            return memo.get(key) == -1 ? -1 : Math.max(left, right) + memo.get(key);
         }
 
-        dp[0][0] = 0;
-        for(int i = 1; i <= len; i++) {
-            int rod = rods[i - 1];
-            for(int j = 0; j <= sum - rod; j++) {
-                if(dp[i - 1][j] >= 0) {
-                    //case 1: Rod not used
-                    dp[i][j] = Math.max(dp[i][j], dp[i - 1][j]);
+        int l = solve(index + 1, left + rods[index], right, rods, memo); //add to left
+        int r = solve(index + 1, left, right + rods[index], rods, memo); //add to right
+        int s = solve(index + 1, left, right, rods, memo);              //skip
 
-                    //case 2: Rod used for taller side
-                    dp[i][j + rod] = Math.max(dp[i][j + rod], dp[i - 1][j]);
+        int res = Math.max(s, Math.max(l, r));
 
-                    //case 3: Rod used for smaller side
-                    if(j < rod) {
-                        dp[i][rod - j] = Math.max(dp[i][rod - j], dp[i - 1][j] + j);
-                    }
-                    else {
-                        dp[i][j - rod] = Math.max(dp[i][j - rod], dp[i - 1][j] + rod);
-                    }
-                }
-            }
-        }
-        return dp[len][0];
+        memo.put(key, res == -1 ? -1 : res - Math.max(left, right));
+        return res;
     }
 }
