@@ -1,23 +1,24 @@
 package com.vc.hard;
 
 class L920 {
-    public int numMusicPlaylists(int N, int L, int K) {
-        //N > K return 0 because every song has to be played at least once
-        if(N == 0 || L == 0 || N > L) return 0;
+    int MOD = (int)1e9 + 7;
 
-        long[][] dp = new long[N + 1][L + 1];
-        /**
-         F(N, L, K) = N * F(N - 1, L - 1, K) + (N - K) * F(N, L - 1, K)
-         */
-        dp[0][0] = 1;
-        int MOD = (int)1e9 + 7;
-        for(int songs = 1; songs <= N; songs++) {
-            for(int slot = 1; slot <= L; slot++) {
-                dp[songs][slot] = (songs * dp[songs - 1][slot - 1]) % MOD;
-                if(songs - K > 0) dp[songs][slot] += ((songs - K) * dp[songs][slot - 1]) % MOD;
-                dp[songs][slot] %= MOD;
-            }
-        }
-        return (int)dp[N][L];
+    public int numMusicPlaylists(int N, int L, int K) {
+        Long[][] memo = new Long[N + 1][L + 1];
+        return (int)solve(N, L, K, memo);
+    }
+
+    private long solve(int total, int playlist, int repeatAfter, Long[][] memo) {
+        if(playlist == 0 && total != 0) return 0;
+        if(playlist != 0 && total == 0) return 0;
+        if(playlist == 0 && total == 0) return 1;
+        if(memo[total][playlist] != null) return memo[total][playlist];
+
+        long withoutRepeat = total * solve(total - 1, playlist - 1, repeatAfter, memo) % MOD;
+        long withRepeat = Math.max(0, total - repeatAfter) * solve(total, playlist - 1, repeatAfter, memo) % MOD;
+
+        long res = (withoutRepeat % MOD + withRepeat % MOD) % MOD;
+        memo[total][playlist] = res;
+        return res;
     }
 }

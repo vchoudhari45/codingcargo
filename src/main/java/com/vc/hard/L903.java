@@ -17,7 +17,7 @@ class L903 {
                 }
             }
             else {
-                for(int j = n - i - 1; j >=0; j--) {
+                for(int j = n - i - 1; j >= 0; j--) {
                     cur = (cur + dp[i][j + 1]) % MOD;
                     dp[i + 1][j] = cur;
                 }
