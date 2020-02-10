@@ -1,9 +1,11 @@
 package com.vc.hard;
 
+import java.util.Arrays;
+
 class L1000 {
-    int K = 0;
-    int[] prefixSum;
-    int[][][] memo;
+    private int K = 0;
+    private int[] prefixSum;
+    private int[][][] memo;
     public int mergeStones(int[] stones, int K) {
         int n = stones.length;
 
@@ -13,7 +15,7 @@ class L1000 {
 
         for(int i = 0; i < memo.length; i++) {
             for(int j = 0; j < memo[i].length; j++) {
-                for(int k = 0; k < memo[i][j].length; k++) memo[i][j][k] = -1;
+                Arrays.fill(memo[i][j], -1);
             }
         }
 
