@@ -49,6 +49,7 @@ object L1036 {
     q.clear()
     level = 0
     visited.clear()
+
     val fromTargetToSource = solve(target(0), target(1), source(0), source(1))
 
     fromSourceToTarget && fromTargetToSource
