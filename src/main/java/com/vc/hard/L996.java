@@ -44,10 +44,7 @@ class L996 {
                        HashMap<Integer, HashSet<Integer>> map, HashMap<Integer, Integer> countMap) {
         if(countMap.getOrDefault(from, 0) <= 0) return;
 
-        if(remaining == 0) {
-            //System.out.println("Increamenting");
-            count++;
-        }
+        if(remaining == 0) count++;
 
         //System.out.println(from);
         countMap.put(from, countMap.get(from) - 1);
