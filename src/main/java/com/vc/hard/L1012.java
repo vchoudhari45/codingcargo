@@ -11,7 +11,7 @@ class L1012 {
 
         //But above function won't calculate all the numbers without repeated digits
         //Because function stops at digitCount - 1
-        HashSet<Integer> seen = new HashSet<Integer>();
+        HashSet<Integer> seen = new HashSet<>();
         boolean uniqNum = true;
         for(int i = digits.size() - 1; i >= 0; i--) {
             for(int j = (i == digits.size() - 1) ? 1: 0; j < digits.get(i); j++) {
@@ -48,7 +48,6 @@ class L1012 {
     }
 
     private int permute(int selectDigits, int selectedDigits) {
-        int n = 10;
         int res = 1;
         int numerator = 10 - selectedDigits;
         int denominator = 10 - selectDigits;
@@ -65,9 +64,9 @@ class L1012 {
              let's say selectedDigits = 2, so n in Permutation formula becomes (n - 2)!
              and that is why numerator is 10 - selectedDigits
 
-             let's say selectDigit = 3, so (n - r) in Permuation formula becomes (n - 3)!
+             let's say selectDigit = 3, so (n - r) in Permutation formula becomes (n - 3)!
 
-             Permuation = (n - 2)! / (n - 3)!
+             permutation = (n - 2)! / (n - 3)!
              = (n - 2) * (n - 3)! / (n - 3)!
              = (n - 2)
         */
