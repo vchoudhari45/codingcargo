@@ -1,7 +1,7 @@
 package com.vc.hard;
 
 class L1067 {
-    //https://leetcode.com/problems/number-of-digit-one/
+    //https://leetcode.com/articles/number-of-digit-one/
     public int digitsCount(int d, int low, int high) {
         return countDigit(d, high) - countDigit(d, low - 1);
     }
