@@ -4,20 +4,19 @@ import java.util.*;
 
 class L1259 {
     //https://www.youtube.com/watch?v=YGsmvcQzpxs
-    Map<Integer, Integer> map = new HashMap<Integer, Integer>();
+    HashMap<Integer, Integer> cache = new HashMap<>();
     int MOD = (int)1e9 + 7;
     public int numberOfWays(int n) {
-        if(map.containsKey(n)) return map.get(n);
-
-        if(n % 2 != 0) return 0;
+        if(cache.containsKey(n)) return cache.get(n);
         if(n == 0) return 1;
-
-        int sum = 0;
-        for(int i = 0; i < n; i+=2) {
-            sum += ((long)numberOfWays(i) * numberOfWays(n - 2 - i)) % MOD;
-            sum %= MOD;
+        long total = 0;
+        for(int mid = 0; mid < n; mid += 2) {
+            long left = numberOfWays(mid) % MOD;
+            long right = numberOfWays(n - mid - 2) % MOD;
+            total += (left * right) % MOD;
         }
-        map.put(n, sum);
-        return sum;
+        total = total % MOD;
+        cache.put(n, (int)total);
+        return (int)total;
     }
 }
