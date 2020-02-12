@@ -1,39 +1,50 @@
 package com.vc.hard;
 
-import java.util.HashMap;
+import java.util.Arrays;
 
 class L1278 {
+    int[][][] memo;
     public int palindromePartition(String s, int k) {
-        int n = s.length();
-        HashMap<String, Integer> map = new HashMap<>();
-        return partition(s, k, map);
+        this.memo = new int[s.length() + 1][s.length() + 1][k + 1];
+        for(int i = 0; i < s.length(); i++) {
+            for(int j = 0; j < s.length(); j++) {
+                Arrays.fill(memo[i][j], -1);
+            }
+        }
+        return solve(s, 0, s.length() - 1, k);
     }
 
-    private int partition(String s, int k, HashMap<String, Integer> map) {
-        String key = s + " " + k;
-        if(map.containsKey(key)) return map.get(key);
-        if(s.equals("")) {
-            if(k == 0) return 0;
-            else if(k > 0) return Integer.MAX_VALUE;
-        }
-        if(k <= 0) return Integer.MAX_VALUE;
+    private int solve(String s, int left, int right, int k) {
+        if(right - left + 1 < k) return Integer.MAX_VALUE;
 
-        int min = Integer.MAX_VALUE;
-        int take = (s.length() + 1) / k;
-        for(int takeChar = s.length(); takeChar > 0; takeChar--) {
-            int res = partition(s.substring(takeChar), k - 1, map);
-            if(res != Integer.MAX_VALUE) min = Math.min(min, count(s, 0, takeChar - 1) + res);
+        if(right - left + 1 == k) return 0;
+
+        if(memo[left][right][k] != -1)  return memo[left][right][k];
+
+        if(k == 1) {
+            int changeRequired = changeRequired(s, left, right);
+            memo[left][right][k] = changeRequired;
+            return memo[left][right][k];
         }
-        map.put(key, min);
-        return min;
+
+        int res = Integer.MAX_VALUE;
+        for(int mid = left; mid < right; mid++) {
+            int l = solve(s, left, mid, 1);
+            int r = solve(s, mid + 1, right, k - 1);
+            if(l == Integer.MAX_VALUE || r == Integer.MAX_VALUE) continue;
+            res = Math.min(res, l + r);
+        }
+
+        memo[left][right][k] = res;
+        return memo[left][right][k];
     }
 
-    private int count(String s, int start, int end) {
+    private int changeRequired(String s, int left, int right) {
         int res = 0;
-        while(start < end) {
-            if(s.charAt(start) != s.charAt(end)) res++;
-            start++;
-            end--;
+        while(left < right) {
+            if(s.charAt(left) != s.charAt(right)) res++;
+            left++;
+            right--;
         }
         return res;
     }
