@@ -1,33 +1,32 @@
 package com.vc.hard;
 
-class L1246 {
-    public int minimumMoves(int[] arr) {
-        int n = arr.length;
-        int dp[][] = new int[n + 1][n + 1];
-        for(int l = 0; l < n; l++) {
-            for(int i = 0; i < n - l; i++) {
-                int j = i + l;
-                if(i == j) dp[i][j] = 1;
-                else {
-                    dp[i][j] = 1 + dp[i + 1][j];
-                    if (arr[i] == arr[i + 1])
-                        dp[i][j] = Math.min(1 + dp[i + 2][j], dp[i][j]);
+import java.util.Arrays;
 
-                    for(int k = i + 2; k <= j; k++){
-                        if (arr[i] == arr[k]){
-                            dp[i][j] = Math.min(dp[i + 1][k -1] + dp[k + 1][j], dp[i][j]);
-                        }
-                    }
-                }
-            }
+class L1246 {
+    int[][] memo;
+
+    public int minimumMoves(int[] arr) {
+        this.memo = new int[arr.length + 1][arr.length + 1];
+        for(int i = 0; i < arr.length; i++) Arrays.fill(memo[i], -1);
+
+        return solve(arr, 0, arr.length - 1);
+    }
+
+    private int solve(int[] arr, int left, int right) {
+        if(left >= right) return 1;
+
+        if(memo[left][right] != -1) return memo[left][right];
+
+        if(arr[left] == arr[right]) return solve(arr, left + 1, right - 1);
+
+        int min = Integer.MAX_VALUE;
+        for(int mid = left; mid < right; mid++) {
+            int l = solve(arr, left, mid);
+            int r = solve(arr, mid + 1, right);
+            min = Math.min(l + r,  min);
         }
 
-        // for(int i = 0; i < n; i++) {
-        //     for(int j = 0; j < n; j++) {
-        //         System.out.format("%10d", dp[i][j]);
-        //     }
-        //     System.out.println();
-        // }
-        return dp[0][n - 1];
+        memo[left][right] = min;
+        return min;
     }
 }

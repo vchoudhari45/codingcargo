@@ -18,25 +18,25 @@ class L1210 {
                 int first = span[0];
                 int second = span[1];
 
-                int x1 = first / n;
-                int y1 = first % n;
+                int tailX = first / n;
+                int tailY = first % n;
 
-                int x2 = second / n;
-                int y2 = second % n;
+                int headX = second / n;
+                int headY = second % n;
 
-                if(x1 == n - 1 && y1 == n - 2 && x2 == n - 1 && y2 == n - 1) return moves;
+                if(tailX == n - 1 && tailY == n - 2 && headX == n - 1 && headY == n - 1) return moves;
 
-                if(x1 == x2) { //horizontal
-                    if(y2 + 1 < n && grid[x1][y2 + 1] == 0) move(q, visited, second, second + 1); // move right
-                    if(x1 + 1 < n && grid[x1 + 1][y1] == 0 && grid[x1 + 1][y2] == 0) {
+                if(tailX == headX) { //horizontal
+                    if(headY + 1 < n && grid[tailX][headY + 1] == 0) move(q, visited, second, second + 1); // move right
+                    if(tailX + 1 < n && grid[tailX + 1][tailY] == 0 && grid[tailX + 1][headY] == 0) {
                         move(q, visited, first + n, second + n); //down
                         move(q, visited, first, first + n);      //clockwise
                     }
                 }
 
-                if(y1 == y2) { //vertical
-                    if(x2 + 1 < n && grid[x2 + 1][y1] == 0) move(q, visited, second, second + n); //move down
-                    if(y1 + 1 < n && grid[x1][y1 + 1] == 0 && grid[x2][y2 + 1] == 0) {
+                if(tailY == headY) { //vertical
+                    if(headX + 1 < n && grid[headX + 1][tailY] == 0) move(q, visited, second, second + n); //move down
+                    if(tailY + 1 < n && grid[tailX][tailY + 1] == 0 && grid[headX][headY + 1] == 0) {
                         move(q, visited, first + 1, second + 1); //right
                         move(q, visited, first, first + 1); //counterclockwise
                     }
