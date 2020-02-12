@@ -2,18 +2,29 @@ package com.vc.hard;
 
 class L639 {
     int MOD = (int)1e9 + 7;
+
     public int numDecodings(String s) {
         int n = s.length();
+        long[] dp = new long[n + 1];
+
         if(n == 0) return 0;
 
-        long f1 = 1;                          //Seeding
-        long f2 = helper(s.substring(0, 1)); //Encoded one digits
-        for(int i = 1; i < n; i++) {
-            long f3 = (f2 * helper(s.charAt(i)+"")) + (f1 * helper(s.substring(i - 1, i + 1)));
-            f1 = f2;
-            f2 = f3 % MOD;
+        dp[0] = 1; // how many different ways empty string can be decoded
+        dp[1] = helper(s.charAt(0)+""); //how many different ways first character of string can be decoded
+
+        //dp[i] means how many ways we can decode string ending at position i
+        for(int i = 2; i <= n; i++) {
+            long singleDigit = helper(s.substring(i - 1, i));
+            long doubleDigits = helper(s.substring(i - 2, i));
+
+            if(singleDigit != 0) dp[i] += (dp[i - 1] * singleDigit) % MOD;
+            if(doubleDigits != 0) dp[i] += (dp[i - 2] * doubleDigits) % MOD;
+
+            dp[i] %= MOD;
         }
-        return (int)f2;
+
+        //for(int i = 0; i <= n; i++) System.out.print(dp[i]+" ");
+        return (int)dp[n];
     }
 
     private int helper(String s) {
