@@ -3,7 +3,7 @@ package com.vc.hard;
 import java.util.Arrays;
 
 class L1278 {
-    int[][][] memo;
+    private int[][][] memo;
     public int palindromePartition(String s, int k) {
         this.memo = new int[s.length() + 1][s.length() + 1][k + 1];
         for(int i = 0; i < s.length(); i++) {

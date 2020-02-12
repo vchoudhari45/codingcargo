@@ -3,67 +3,57 @@ package com.vc.hard;
 import java.util.*;
 
 class L1320 {
+    private int[][][] memo;
+
     public int minimumDistance(String word) {
-        class State {
-            int index, cost;
-            char right;
+        if(word.length() == 0) return 0;
 
-            State(int index, char right, int cost) {
-                this.index = index;
-                this.right = right;
-                this.cost = cost;
-            }
+        this.memo = new int[27][27][word.length() + 1];
 
-            @Override
-            public String toString() {
-                return index+" "+right+" "+cost;
-            }
+        for(int i = 0; i < memo.length; i++)
+            for(int j = 0; j < memo[i].length; j++) Arrays.fill(memo[i][j], -1);
+
+        //left hand start at char 0, right hand can start any location
+        int min = Integer.MAX_VALUE;
+        for(char ch = 'A'; ch <= 'Z'; ch++) {
+            int value = solve(1, word, location(word.charAt(0)), location(ch));
+            min = Math.min(min, value);
         }
-
-        PriorityQueue<State> pq = new PriorityQueue<>(new Comparator<State>(){
-            public int compare(State s1, State s2) {
-                return Integer.compare(s1.cost, s2.cost);
-            }
-        });
-
-        //Right finger can start from any characters from A - Z
-        for(char i = 'A'; i <= 'Z'; i++) {
-            pq.offer(new State(0, i, 0));
-        }
-
-        int n = word.length();
-        HashSet<String> visited = new HashSet<>();
-        while(!pq.isEmpty()) {
-            State e = pq.poll();
-
-            //System.out.println(e);
-
-            if(e.index == n - 1) return e.cost;
-
-            String key = e.index + " "+e.right;
-
-            if(visited.contains(key)) continue;
-
-            visited.add(key);
-
-            int useLeft = e.cost + distance(word.charAt(e.index + 1), word.charAt(e.index));
-            int useRight = e.cost + distance(word.charAt(e.index + 1), e.right);
-
-            pq.offer(new State(e.index + 1, e.right, useLeft));
-            pq.offer(new State(e.index + 1, word.charAt(e.index), useRight));
-        }
-        return -1;
+        return min;
     }
 
-    private int distance(char from, char to) {
-        int[] f = location(from);
-        int[] t = location(to);
-        return Math.abs(f[0] - t[0]) + Math.abs(f[1] - t[1]);
+    private int solve(int index, String word, int[] left, int[] right) {
+        if(index == word.length()) return 0;
+
+        int lPos = 6 * left[0] + left[1];
+        int rPos = 6 * right[0] + right[1];
+        if(memo[lPos][rPos][index] != -1) return memo[lPos][rPos][index];
+
+        char ch = word.charAt(index);
+        int[] location = location(ch);
+
+        //UseLeft finger
+        int costLeft = distance(left, location);
+        int useLeft = costLeft + solve(index + 1, word, location, right);
+
+        //UseRight finger
+        int costRight = distance(right, location);
+        int useRight = costRight + solve(index + 1, word, left, location);
+
+        int res = Math.min(useLeft, useRight);
+        memo[lPos][rPos][index] = res;
+
+        return memo[lPos][rPos][index];
+    }
+
+    private int distance(int[] from, int[] to) {
+        return Math.abs(from[0] - to[0]) + Math.abs(from[1] - to[1]);
     }
 
     private int[] location(char ch) {
-        int r = (ch - 'A') / 6;
-        int c = (ch - 'A') % 6;
-        return new int[]{r, c};
+        int x = (ch - 'A') / 6;
+        int y = (ch - 'A') % 6;
+        //System.out.println(ch+" "+x+" "+y);
+        return new int[]{x, y};
     }
 }
