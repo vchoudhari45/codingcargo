@@ -1,7 +1,7 @@
 package com.vc.medium;
 
 class L5 {
-    int maxLength = 0, start = 0;
+    private int maxLength = 0, start = 0;
     public String longestPalindrome(String s) {
         int n = s.length();
         if(n <= 1) return s;
