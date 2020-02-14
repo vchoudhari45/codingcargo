@@ -14,6 +14,7 @@ class NumArray {
         }
     }
 
+    //Add element to each of it's child
     private void set(int index, int val) {
         //System.out.println("Setting Value: "+index);
         for(int i = index + 1; i <= n; i = getNext(i)) {
@@ -45,6 +46,18 @@ class NumArray {
         return sum(j + 1) - sum(i);
     }
 
+    /**
+         Java uses two's complement to represent binary number
+         Two's complement is invert all the digits and add one
+         so for e.g. we have
+         5 => 101
+         -5 => 010 + 001 => 011
+
+         5 & -5 should give us last set bit
+         5 & -5 => 101 & 011 => 001
+
+         And we have to remove last set bit in a number to get to it's parent
+     */
     private int getParent(int x) {
         return x - (x & -x);
     }
