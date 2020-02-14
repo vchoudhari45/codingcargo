@@ -1,44 +1,53 @@
 package com.vc.medium;
 
-class Node708 {
-    public int val;
-    public Node708 next;
-
-    public Node708() {}
-
-    public Node708(int _val,Node708 _next) {
-        val = _val;
-        next = _next;
-    }
-};
-
 class L708 {
-    public Node708 insert(Node708 head, int insertVal) {
+    class Node {
+        public int val;
+        public Node next;
+        public Node(int x) { val = x; }
+    }
+
+    public Node insert(Node head, int insertVal) {
+        Node toInsert = new Node(insertVal);
+
         if(head == null) {
-            Node708 node = new Node708();
-            node.val = insertVal;
-            node.next = node;
-            return node;
+            head = toInsert;
+            head.next = head;
+            return head;
         }
-        boolean find = false;
-        Node708 prev = head;
-        Node708 current = prev.next;
+
+        //Find min & max
+        Node prev = head, max = head;
+        Node current = prev.next;
         while(current != head) {
-            if(
-                    prev.val <= insertVal && current.val >= insertVal ||
-                    current.val < prev.val && insertVal >= prev.val ||
-                    current.val < prev.val && insertVal <= current.val
-            ){
-                find = true;
-                prev.next = new Node708(insertVal, current);
-                break;
+            if(max.val <= current.val) {
+                max = current;
+            }
+            current = current.next;
+        }
+        Node min = max.next;
+        //System.out.println(min.val+" "+max.val);
+
+        //if value to be insert is greater than max or less than min then insert that after max
+        if(insertVal <= min.val || insertVal >= max.val) {
+            max.next = toInsert;
+            toInsert.next = min;
+            return head;
+        }
+
+        //System.out.println(prev.val+" "+current.val);
+        prev = min;
+        current = min.next;
+        while(current != min) {
+            if(prev.val <= insertVal && insertVal <= current.val) {
+                prev.next = toInsert;
+                toInsert.next = current;
+                return head;
             }
             prev = current;
             current = current.next;
         }
-        if(!find) {
-            prev.next = new Node708(insertVal, current);
-        }
-        return head;
+
+        return toInsert;
     }
 }
