@@ -1,5 +1,7 @@
 package com.vc.medium;
 
+import java.util.Arrays;
+
 class L31 {
     public void nextPermutation(int[] arr) {
         int n = arr.length;
@@ -13,13 +15,6 @@ class L31 {
             arr[j] = temp;
         }
         int start = i + 1;
-        int end = n - 1;
-        while(start < end) {
-            int temp = arr[start];
-            arr[start] = arr[end];
-            arr[end] = temp;
-            start++;
-            end--;
-        }
+        Arrays.sort(arr, start, n);
     }
 }
