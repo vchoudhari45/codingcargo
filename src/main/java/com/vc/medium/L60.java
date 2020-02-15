@@ -4,23 +4,30 @@ import java.util.*;
 
 class L60 {
     public String getPermutation(int n, int k) {
-        int fact = 1;
+        int[] factorials = new int[n];
+        List<Integer> nums = new ArrayList() {{add(1);}};
 
-        List<Integer> numbers = new ArrayList<>();
-        for(int i = 1; i <= n; i++) {
-            numbers.add(i);
-            fact *= i;
+        factorials[0] = 1;
+        for(int i = 1; i < n; ++i) {
+            // generate factorial system bases 0!, 1!, ..., (n - 1)!
+            factorials[i] = factorials[i - 1] * i;
+            System.out.println(factorials[i]);
+            // generate nums 1, 2, ..., n
+            nums.add(i + 1);
         }
-        //System.out.println(fact);
 
-        k--;
-        StringBuilder str = new StringBuilder();
-        for(int i = n; i > 0; i--) {
-            fact = fact / i;
-            int index = (k / fact);
-            k -= index * fact;
-            str.append(numbers.remove(index));
+        // fit k in the interval 0 ... (n! - 1)
+        --k;
+
+        // compute factorial representation of k
+        StringBuilder sb = new StringBuilder();
+        for (int i = n - 1; i > -1; --i) {
+            int idx = k / factorials[i];
+            k -= idx * factorials[i];
+
+            sb.append(nums.get(idx));
+            nums.remove(idx);
         }
-        return str.toString();
+        return sb.toString();
     }
 }
