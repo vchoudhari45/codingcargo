@@ -1,5 +1,7 @@
 package com.vc.medium;
 
+import java.util.*;
+
 class L47 {
     List<List<Integer>> res = new ArrayList<>();
     public List<List<Integer>> permuteUnique(int[] nums) {
