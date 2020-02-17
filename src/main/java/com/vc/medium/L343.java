@@ -13,7 +13,9 @@ class L343 {
         }
         int res = 0;
         for (int i = 1; i < n; i++) {
-            res = Math.max(i * Math.max(n - i, integerBreak(n - i)), res);
+            //Either futher divide the number else use the number itself
+            int subProblem = i * Math.max(n - i, integerBreak(n - i));
+            res = Math.max(subProblem, res);
         }
         memo.put(n, res);
         return res;
