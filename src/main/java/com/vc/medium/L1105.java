@@ -1,35 +1,33 @@
 package com.vc.medium;
 
+import java.util.HashMap;
+
 class L1105 {
     public int minHeightShelves(int[][] books, int shelfWidth) {
-        int n = books.length;
-        int[] dp = new int[n + 1];
-        dp[0] = 0;
+        HashMap<Integer, Integer> memo = new HashMap<>();
+        return solve(books, shelfWidth, 0, memo);
+    }
 
-        /**
-             [[1,3],[2,4],[3,2]]
-             6
+    private int solve(int[][] books, int shelfWidth, int index, HashMap<Integer, Integer> memo) {
+        if(index >= books.length) return 0;
 
-             0 height = 0, dp = 0
-             1 height = 3, dp = 3
-             2 height = 4, dp = 7 ===Optimize===> height = 4, dp = 4
-             3 height = 2, dp = 6 ===Optimize===> height = 4, dp = 7 ===Optimize===> height = 4, dp = 4
-         */
+        if(memo.containsKey(index)) return memo.get(index);
 
-        for(int i = 1; i <= n; i++) {
-            int width = books[i - 1][0];
-            int height = books[i - 1][1];
-            dp[i] = dp[i - 1] + height;
+        int globalMin = Integer.MAX_VALUE;
+        int layerHeight = 0, totalWidth = 0;
+        for(int i = index; i < books.length; i++) {
+            int bookWidth = books[i][0], bookHeight = books[i][1];
 
-            for(int j = i - 1; j > 0; j--) {
-                width += books[j - 1][0];
-                if(width > shelfWidth) break;
+            if (totalWidth + bookWidth > shelfWidth) break; // current layer is full
 
-                height = Math.max(height, books[j - 1][1]);
-                dp[i] = Math.min(dp[i], dp[j - 1] + height);
-            }
+            layerHeight = Math.max(layerHeight, bookHeight);
+            totalWidth += bookWidth;
+
+            int subProblem = solve(books, shelfWidth, i + 1, memo);
+            globalMin = Math.min(globalMin, layerHeight + subProblem);
         }
-        //for(int i = 0; i <= n; i++) System.out.print(dp[i]+", ");
-        return dp[n];
+
+        memo.put(index, globalMin);
+        return globalMin;
     }
 }
