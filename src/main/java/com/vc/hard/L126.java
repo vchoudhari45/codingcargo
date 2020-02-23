@@ -3,65 +3,59 @@ package com.vc.hard;
 import java.util.*;
 
 class L126 {
+    HashMap<String, HashSet<String>> graph = new HashMap<>();
+    List<List<String>> res = new ArrayList<>();
+    List<String> ladder = new ArrayList<>();
+    HashSet<String> visited = new HashSet<>();
+
     public List<List<String>> findLadders(String beginWord, String endWord, List<String> wordList) {
-        HashSet<String> words = new HashSet<>(wordList);
-        words.add(beginWord);
-        if(!words.contains(endWord)) return new ArrayList<List<String>>();
+        HashSet<String> wordSet = new HashSet<>(wordList);
+        wordSet.add(beginWord);
 
-        Queue<String> q = new LinkedList<String>();
-        HashMap<String, HashSet<String>> map = new HashMap<String, HashSet<String>>();
-        HashMap<String, Integer> dist = new HashMap<String, Integer>();
-        for(String word: words) {
-            dist.put(word, -1);
-        }
-        dist.put(beginWord, 0);
+        if(!wordSet.contains(endWord)) return res;
 
+        Queue<String> q = new LinkedList<>();
         q.offer(beginWord);
+        HashMap<String, Integer> distance = new HashMap<>();
+        for(String word: wordSet) distance.put(word, -1);
+        distance.put(beginWord, 0);
+
         while(!q.isEmpty()) {
-            String toWord = q.poll();
-            char[] toWordChar = toWord.toCharArray();
-            for(int index = 0; index < toWord.length(); index++) {
+            String word = q.poll();
+            graph.put(word, new HashSet<>());
+            for(int index = 0; index < word.length(); index++) {
                 for(char ch = 'a'; ch <= 'z'; ch++) {
-                    char oldChar = toWordChar[index];
-                    if(oldChar != ch) {
-                        toWordChar[index] = ch;
-                        String newWord = new String(toWordChar);
-                        if(words.contains(newWord)
-                                && (dist.get(newWord) == -1 || dist.get(newWord) >= dist.get(toWord) + 1)) {
-                            dist.put(newWord, dist.get(toWord) + 1);
-                            HashSet<String> set = map.getOrDefault(toWord, new HashSet<String>());
+                    String newWord = word.substring(0, index) + ch + word.substring(index + 1);
+                    if(!newWord.equals(word) && wordSet.contains(newWord)) {
+                        if(distance.get(newWord) == -1 || distance.get(word) + 1 == distance.get(newWord)) {
+                            graph.get(word).add(newWord);
+                            distance.put(newWord, distance.get(word) + 1);
                             q.offer(newWord);
-                            set.add(newWord);
-                            map.put(toWord, set);
                         }
-                        toWordChar[index] = oldChar;
                     }
                 }
             }
         }
-
-        // for(Map.Entry<String, HashSet<String>> entry: map.entrySet()) {
-        //     System.out.println(entry.getKey()+" "+entry.getValue());
-        // }
-        List<List<String>> res = new ArrayList<List<String>>();
-        List<String> ans = new ArrayList<String>();
-        dfs(beginWord, endWord, map, res, ans);
+        dfs(beginWord, endWord);
         return res;
     }
 
-    private void dfs(String start, String end,
-                     HashMap<String, HashSet<String>> map,
-                     List<List<String>> res, List<String> ans) {
-        ans.add(start);
-        if(start.equals(end)) {
-            List<String> ansClone = new ArrayList<>(ans);
-            res.add(ansClone);
+    private void dfs(String beginWord, String endWord) {
+        if(visited.contains(beginWord)) return;
+
+        if(beginWord.equals(endWord)) {
+            ladder.add(endWord);
+            res.add(new ArrayList<>(ladder));
+            ladder.remove(ladder.size() - 1);
         }
         else {
-            if(map.containsKey(start)) {
-                for(String toWord: map.get(start)) dfs(toWord, end, map, res, ans);
+            visited.add(beginWord);
+            ladder.add(beginWord);
+            for(String toWord: graph.get(beginWord)) {
+                dfs(toWord, endWord);
             }
+            ladder.remove(ladder.size() - 1);
+            visited.remove(beginWord);
         }
-        ans.remove(ans.size() - 1);
     }
 }
