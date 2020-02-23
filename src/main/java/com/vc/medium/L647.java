@@ -8,7 +8,7 @@ class L647 {
         this.count = 0;
         this.s = s;
         for(int i = 0; i < s.length(); i++) {
-            expand(i, i);       //Odd length;
+            expand(i, i);            //Odd length;
             expand(i, i + 1);  //Even length;
         }
         return count;
