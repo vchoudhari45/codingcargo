@@ -1,77 +1,79 @@
 package com.vc.hard;
 
 class L564 {
-    public String nearestPalindromic(String str) {
-        int n = str.length();
-        if(n == 0) return "0";
-        long num = Long.parseLong(str);
-        long lower = lowerPalindrome(num - 1);
-        long higher = higherPalindrome(num + 1);
-        System.out.println("lower: "+lower+" higher: "+higher);
-        if(higher - num >= num - lower) return lower+"";
-        else return higher+"";
-    }
-
-    private long lowerPalindrome(long num) {
-        String s = num + "";
-        int n = s.length();
-        long palindrome = makePalindrome(num);
-        if(palindrome <= num) return palindrome;
-        else {
-            int index = n % 2 == 0 ? n / 2 - 1 : n / 2;
-            char[] str = (num + "").toCharArray();
-            while(index >= 0 && str[index] == '0') index--;
-            char before = str[index];
-            str[index] = (char)(Long.parseLong(str[index]+"") - 1 + '0');
-            if(str[index] == '0') {
-                index++;
-                while(index < n) {
-                    str[index] = '9';
-                    index++;
-                }
-            }
-            return makePalindrome(Long.parseLong(new String(str)));
-        }
-    }
-
-    private long higherPalindrome(long num) {
-        String s = num + "";
-        int n = s.length();
-        long palindrome = makePalindrome(num);
-        if(palindrome >= num) return palindrome;
-        else {
-            int index = n % 2 == 0 ? n / 2 - 1 : n / 2;
-            char[] str = (num + "").toCharArray();
-            while(index >= 0 && str[index] == '9') index--;
-            if(index < 0) {
-                StringBuilder st = new StringBuilder();
-                st.append('1');
-                while(index < n) {
-                    st.append('0');
-                    index++;
-                }
-            }
-            else {
-                str[index] = (char)(Long.parseLong(str[index]+"") + 1 + '0');
-            }
-            return makePalindrome(Long.parseLong(new String(str)));
-        }
-    }
-
-    private long makePalindrome(long num) {
-        int n = (num + "").length();
-        int index = n / 2;
-        String str = num + "";
-
-        String firstHalf = str.substring(0, index);
-        if(n % 2 == 0)
-            return Long.parseLong(firstHalf + reverse(firstHalf));
+    public String nearestPalindromic(String n) {
+        if(n.length() == 0) return "0";
+        long number = Long.parseLong(n);
+        String lowerPalindrome = lower(String.valueOf(number - 1));
+        String higherPalindrome = higher(String.valueOf(number + 1));
+        //System.out.println(lowerPalindrome+" "+higherPalindrome);
+        if(number - Long.parseLong(lowerPalindrome) <= Long.parseLong(higherPalindrome) - number)
+            return lowerPalindrome;
         else
-            return Long.parseLong(firstHalf + str.charAt(index) + reverse(firstHalf));
+            return higherPalindrome;
+    }
+
+    private String lower(String num) {
+        String palindrome = makePalindrome(num);
+        long number = Long.parseLong(num);
+        if(Long.parseLong(palindrome) <= number) return palindrome;
+        else {
+            int len = num.length();
+            int mid = len % 2 == 0 ? len / 2 - 1: len / 2;
+
+            char[] arr = num.toCharArray();
+            while(mid >= 0 && arr[mid] == '0') mid--;
+            arr[mid] = (char)(arr[mid] - '0' - 1 + '0');
+            mid++;
+
+            while(mid < len) arr[mid++] = '9';
+
+            StringBuilder str = new StringBuilder();
+            int i = 0;
+            while(i < len && arr[i] == '0') i++;
+            for(;i < len; i++) str.append(arr[i]);
+            return makePalindrome(str.toString());
+        }
+    }
+
+    private String higher(String num) {
+        String palindrome = makePalindrome(num);
+        long number = Long.parseLong(num);
+        if(Long.parseLong(palindrome) >= number) return palindrome;
+        else {
+            int len = num.length();
+            int mid = len % 2 == 0 ? len / 2 - 1: len / 2;
+
+            char[] arr = num.toCharArray();
+            while(mid >= 0 && arr[mid] == '9') mid--;
+            arr[mid] = (char)(arr[mid] - '0' + 1 + '0');
+            mid++;
+
+            while(mid < len) arr[mid++] = '0';
+
+            StringBuilder str = new StringBuilder();
+            int i = 0;
+            while(i < len && arr[i] == '0') i++;
+            for(;i < len; i++) str.append(arr[i]);
+            return makePalindrome(str.toString());
+        }
+    }
+
+    private String makePalindrome(String num) {
+        int len = num.length();
+        if(len % 2 == 0) {
+            String firstHalf = num.substring(0, len / 2);
+            return firstHalf + reverse(firstHalf);
+        }
+        else {
+            String firstHalf = num.substring(0, len / 2);
+            return firstHalf + num.charAt(len / 2) + reverse(firstHalf);
+        }
     }
 
     private String reverse(String str) {
         StringBuilder s = new StringBuilder(str);
-        return s.reverse().toString();
+        s.reverse();
+        return s.toString();
     }
 }
