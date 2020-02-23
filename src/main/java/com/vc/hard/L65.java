@@ -1,16 +1,16 @@
 package com.vc.hard;
 
 class L65 {
-    final int INITIAL = 0;
-    final int DIGIT = 1;
-    final int DOT = 2;
-    final int OPERATOR = 3;
-    final int EXPR = 4;
+    private final int INITIAL = 0;
+    private final int DIGIT = 1;
+    private final int DOT = 2;
+    private final int OPERATOR = 3;
+    private final int EXPR = 4;
 
-    final int DIGIT_AFTER_DOT = 5;
-    final int DIGIT_AFTER_EXPR = 6;
-    final int OPERATOR_AFTER_EXPR = 7;
-    int state = INITIAL;
+    private final int DIGIT_AFTER_DOT = 5;
+    private final int DIGIT_AFTER_EXPR = 6;
+    private final int OPERATOR_AFTER_EXPR = 7;
+    private int state = INITIAL;
 
     public boolean isNumber(String s) {
 
@@ -31,11 +31,9 @@ class L65 {
                 seenDigit = true;
                 if(isNotForDigitState()) return false;
                 else {
-                    if(state == DOT) state = DIGIT_AFTER_DOT;
-                    else if(state == EXPR) state = DIGIT_AFTER_EXPR;
+                    if(state == DOT || state == DIGIT_AFTER_DOT) state = DIGIT_AFTER_DOT;
+                    else if(state == EXPR || state == DIGIT_AFTER_EXPR) state = DIGIT_AFTER_EXPR;
                     else if(state == OPERATOR_AFTER_EXPR) state = DIGIT_AFTER_EXPR;
-                    else if(state == DIGIT_AFTER_DOT) state = DIGIT_AFTER_DOT;
-                    else if(state == DIGIT_AFTER_EXPR) state = DIGIT_AFTER_EXPR;
                     else state = DIGIT;
                 }
             }
