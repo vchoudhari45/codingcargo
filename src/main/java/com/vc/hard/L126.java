@@ -3,10 +3,10 @@ package com.vc.hard;
 import java.util.*;
 
 class L126 {
-    HashMap<String, HashSet<String>> graph = new HashMap<>();
-    List<List<String>> res = new ArrayList<>();
-    List<String> ladder = new ArrayList<>();
-    HashSet<String> visited = new HashSet<>();
+    private HashMap<String, HashSet<String>> graph = new HashMap<>();
+    private List<List<String>> res = new ArrayList<>();
+    private List<String> ladder = new ArrayList<>();
+    private HashSet<String> visited = new HashSet<>();
 
     public List<List<String>> findLadders(String beginWord, String endWord, List<String> wordList) {
         HashSet<String> wordSet = new HashSet<>(wordList);
