@@ -25,6 +25,7 @@ class L493 {
             count += rightCount;
         }
 
+        //Sort after counting is needed
         leftCount = 0;
         rightCount = 0;
         while(leftCount < left.length && rightCount < right.length) {
