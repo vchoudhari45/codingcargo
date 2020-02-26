@@ -1,13 +1,12 @@
 package com.vc.hard;
 
+import java.util.Arrays;
+
 class L44 {
     int[][] dp;
     public boolean isMatch(String s, String p) {
         this.dp = new int[s.length() + 1][p.length() + 1];
-        for(int i = 0; i < dp.length; i++)
-            for(int j = 0; j < dp[i].length; j++)
-                dp[i][j] = -1;
-
+        for(int i = 0; i < dp.length; i++) Arrays.fill(dp[i], -1);
         return solve(s.toCharArray(), 0, p.toCharArray(), 0);
     }
 
