@@ -23,7 +23,7 @@ class L973 {
     public int[][] kClosest(int[][] points, int K) {
         PriorityQueue<Point> pq = new PriorityQueue<Point>(new Comparator<Point>(){
             public int compare(Point p1, Point p2) {
-                return Double.valueOf(p1.distance).compareTo(p2.distance);
+                return Double.compare(p1.distance, p2.distance);
             }
         });
 
