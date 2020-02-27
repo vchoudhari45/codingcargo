@@ -5,6 +5,7 @@ import com.vc.hard.TreeNode;
 class L1008 {
     private int index = 0, n = 0;
     private int[] preorder;
+
     public TreeNode bstFromPreorder(int[] preorder) {
         this.n = preorder.length;
         this.preorder = preorder;
