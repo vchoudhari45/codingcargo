@@ -30,8 +30,7 @@ class L1219 {
         for(int[] dir: dirs) {
             int xNew = x + dir[0];
             int yNew = y + dir[1];
-            if(xNew >= 0 && xNew < grid.length && yNew >= 0
-                    && yNew < grid[0].length && grid[xNew][yNew] > 0 && !visited[xNew][yNew]) {
+            if(xNew >= 0 && xNew < grid.length && yNew >= 0 && yNew < grid[0].length && grid[xNew][yNew] > 0) {
                 rMax = Math.max(rMax, solve(xNew, yNew, grid, visited));
             }
         }
