@@ -2,18 +2,18 @@ package com.vc.medium;
 
 class L1060 {
     public int missingElement(int[] arr, int k) {
-        int n = arr.length;
-
-        if(k > missingCount(n - 1, arr))
-            return arr[n - 1] + k - missingCount(n - 1, arr);
-
-        int index = 0;
-        while(missingCount(index, arr) < k) index++;
-
-        return arr[index - 1] + k - missingCount(index - 1, arr);
-    }
-
-    private int missingCount(int index, int[] arr) {
-        return arr[index] - arr[0] - index;
+        int prev = arr[0];
+        for(int i = 1; i < arr.length; i++) {
+            int diff = arr[i] - prev - 1;
+            if(k - diff <= 0) {
+                for(int j = prev + 1; j < arr[i]; j++) {
+                    k--;
+                    if(k <= 0) return j;
+                }
+            }
+            else k -= diff;
+            prev = arr[i];
+        }
+        return prev + k;
     }
 }
