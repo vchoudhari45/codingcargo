@@ -13,7 +13,7 @@ class L1252 {
         int count = 0;
         for(int i = 0; i < n; i++) {
             for(int j = 0; j < m; j++) {
-                if(row[i] + col[j] % 2 != 0) count++;
+                if((row[i] + col[j]) % 2 != 0) count++;
             }
         }
         return count;
