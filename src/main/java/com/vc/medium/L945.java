@@ -7,7 +7,7 @@ class L945 {
         if(A == null || A.length == 0) return 0;
 
         Arrays.sort(A);
-        int next = 0, moves = 0, prev = A[0];
+        int next, moves = 0, prev = A[0];
         for(int i = 1; i < A.length; i++) {
             next = prev + 1;
             moves += A[i] > next ? 0 : next - A[i];
