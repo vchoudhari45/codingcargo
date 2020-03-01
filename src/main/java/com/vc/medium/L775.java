@@ -5,11 +5,9 @@ class L775 {
         if(A == null && A.length == 0) return true;
 
         int N = A.length;
-        int floor = N;
-        for (int i = N - 1; i >= 2; i--) {
-            floor = Math.min(floor, A[i]);
-            if (A[i - 2] > floor) return false;
-        }
+        for (int i = 0; i < N; ++i)
+            for (int j = i + 2; j < N; ++j)
+                if (A[i] > A[j]) return false;
         return true;
     }
 }
