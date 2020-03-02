@@ -1,5 +1,7 @@
 package com.vc.medium;
 
+import static java.lang.Math.min;
+
 class L1277 {
     public int countSquares(int[][] matrix) {
         int n = matrix.length;
@@ -10,8 +12,7 @@ class L1277 {
         for(int i = 0; i < n; i++) {
             for(int j = 0; j < m; j++) {
                 if(matrix[i][j] > 0 && i > 0 && j > 0) {
-                    matrix[i][j] = Math.min(Math.min(matrix[i - 1][j - 1], matrix[i - 1][j]),
-                            matrix[i][j - 1]) + 1;
+                    matrix[i][j] = min(min(matrix[i - 1][j - 1], matrix[i - 1][j]), matrix[i][j - 1]) + 1;
                 }
                 res += matrix[i][j];
             }
