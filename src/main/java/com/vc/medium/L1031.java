@@ -1,38 +1,31 @@
 package com.vc.medium;
 
 class L1031 {
-    public int maxSumTwoNoOverlap(int[] arr, int L, int M) {
-        int n = arr.length;
-        if(n == 0) return 0;
-        int[] sum = new int[n];
-        sum[0] = arr[0];
 
-        for(int i = 1; i < n; i++) {
-            sum[i] = sum[i - 1] + arr[i];
+    private int[] prefix;
+    private int n = 0;
+
+    public int maxSumTwoNoOverlap(int[] A, int L, int M) {
+        if(A == null || A.length == 0) return 0;
+        this.n = A.length;
+        this.prefix = new int[n + 1];
+
+        for(int i = 1; i <= n; i++) prefix[i] = prefix[i - 1] + A[i - 1];
+
+        return Math.max(helper(L, M), helper(M, L));
+    }
+
+    private int helper(int L, int M) {
+        int lMax = 0, mSum = 0, max = 0;
+        for(int i = L; i + M <= n; i++) {
+            lMax = Math.max(lMax, getSum(i - L, i));
+            mSum = getSum(i, i + M);
+            max = Math.max(max, lMax + mSum);
         }
+        return max;
+    }
 
-
-        int lMax = sum[L - 1];
-        int mMax = sum[M - 1];
-        int res = 0;
-        for(int i = 0; i < n; i++) {
-
-            if(i >= L && i + M - 1 < n) {
-                res = Math.max(res, lMax + sum[i + M - 1] - sum[i - 1]);
-            }
-
-            if(i >= M && i + L - 1 < n) {
-                res = Math.max(res, mMax + sum[i + L - 1] - sum[i - 1]);
-            }
-
-            if(i >= L) {
-                lMax = Math.max(lMax, sum[i] - sum[i - L]);
-            }
-
-            if(i >= M) {
-                mMax = Math.max(mMax, sum[i] - sum[i - M]);
-            }
-        }
-        return res;
+    private int getSum(int from, int to) {
+        return prefix[to] - prefix[from];
     }
 }
