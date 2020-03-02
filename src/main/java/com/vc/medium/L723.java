@@ -62,7 +62,6 @@ class L723 {
             //System.out.println("Fall is finished!");
 
         }
-
         return board;
     }
 }
