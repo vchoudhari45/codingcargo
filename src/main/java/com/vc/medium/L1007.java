@@ -12,11 +12,13 @@ class L1007 {
         // and to have all elements in B equal to x
         int rotations_a = 0, rotations_b = 0;
         for (int i = 0; i < n; i++) {
-            // rotations coudn't be done
+            // rotations couldn't be done
             if (A[i] != x && B[i] != x) return -1;
-                // A[i] != x and B[i] == x
+
+            // A[i] != x and B[i] == x
             else if (A[i] != x) rotations_a++;
-                // A[i] == x and B[i] != x
+
+            // A[i] == x and B[i] != x
             else if (B[i] != x) rotations_b++;
         }
         // min number of rotations to have all
