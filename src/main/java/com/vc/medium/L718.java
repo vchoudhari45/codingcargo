@@ -6,7 +6,7 @@ class L718 {
         int m = A.length;
         int n = B.length;
         int max = 0;
-        //dp[i][j] is the length of longest common subarray ending with nums[i] and nums[j]
+        //dp[i][j] is the length of longest common sub-array ending with nums[i] and nums[j]
         int[][] dp = new int[m + 1][n + 1];
         /**
              0 1 2 3 2 1
