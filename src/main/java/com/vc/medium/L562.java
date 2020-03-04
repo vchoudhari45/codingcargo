@@ -1,33 +1,78 @@
 package com.vc.medium;
 
 class L562 {
-    public int longestLine(int[][] arr) {
-        int n = arr.length;
-        if(n == 0) return 0;
-        int m = arr[0].length;
+    static class Directions {
+        int h, v, d, a;
 
-        int[][][] dp = new int[n + 2][m + 2][4];
-        int max = 0;
-        for(int i = 1; i <= n; i++) {
-            for(int j = 1; j <= m; j++) {
-                if(arr[i - 1][j - 1] == 1) {
-                    //Row
-                    dp[i][j][0] = dp[i - 1][j][0] + 1;
+        Directions(int h, int v, int d, int a) {
+            this.h = h;
+            this.v = v;
+            this.d = d;
+            this.a = a;
+        }
 
-                    //Col
-                    dp[i][j][1] = dp[i][j - 1][1] + 1;
+        @Override
+        public String toString() {
+            return "("+h+", "+v+", "+d+", "+a+") ";
+        }
+    }
 
-                    //Diagonal
-                    dp[i][j][2] = dp[i - 1][j - 1][2] + 1;
+    public int longestLine(int[][] A) {
+        if(A == null || A.length == 0) return 0;
 
-                    //Anti-Diagonal
-                    dp[i][j][3] = dp[i - 1][j + 1][3] + 1;
+        /**
+             [
+                 [0,1,0,1,1],
+                 [1,1,0,0,1],
+                 [0,0,0,1,0],
+                 [1,0,1,1,1],
+                 [1,0,0,0,1]
+             ]
+         */
+        int n = A.length, m = A[0].length, max = 0;
+        Directions[][] dp = new Directions[n][m];
 
-                    max = Math.max(dp[i][j][0], max);
-                    max = Math.max(dp[i][j][1], max);
-                    max = Math.max(dp[i][j][2], max);
-                    max = Math.max(dp[i][j][3], max);
+        for(int i = 0; i < n; i++) {
+            for(int j = 0; j < m; j++) {
+                dp[i][j] = new Directions(0, 0, 0, 0);
+            }
+        }
+
+        for(int i = 0; i < n; i ++) {
+            for(int j = 0; j < m; j++) {
+                if(A[i][j] == 0) continue;
+
+                if(i == 0 && j == 0) {
+                    dp[i][j].h = 1;
+                    dp[i][j].v = 1;
+                    dp[i][j].d = 1;
+                    dp[i][j].a = 1;
                 }
+                else if(i == 0) {
+                    dp[i][j].h = 1;
+                    dp[i][j].v = dp[i][j - 1].v + 1;
+                    dp[i][j].d = 1;
+                    dp[i][j].a = 1;
+                }
+                else if(j == 0) {
+                    dp[i][j].h = dp[i - 1][j].h + 1;
+                    dp[i][j].v = 1;
+                    dp[i][j].d = 1;
+                    dp[i][j].a = j + 1 < m ? (dp[i - 1][j + 1].a + 1) : 1;
+                }
+                else {
+                    dp[i][j].h = dp[i - 1][j].h + 1;
+                    dp[i][j].v = dp[i][j - 1].v + 1;
+                    dp[i][j].d = dp[i - 1][j - 1].d + 1;
+                    dp[i][j].a = j + 1 < m ? (dp[i - 1][j + 1].a + 1) : 1;
+                }
+
+                int h = dp[i][j].h;
+                int v = dp[i][j].v;
+                int d = dp[i][j].d;
+                int a = dp[i][j].a;
+                //System.out.println(dp[i][j]+" "+A[i][j]+" i: "+i+" j:"+j);
+                max = Math.max(max, Math.max(a, Math.max(d, Math.max(h, v))));
             }
         }
         return max;
