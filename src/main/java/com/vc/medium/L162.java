@@ -1,23 +1,15 @@
 package com.vc.medium;
 
 class L162 {
-    public int findPeakElement(int[] arr) {
-        int n = arr.length;
-        int[] left = new int[n];
-        int[] right = new int[n];
+    public int findPeakElement(int[] nums) {
+        if(nums == null || nums.length == 0) return -1;
 
-        left[0] = 1;
-        for(int i = 1; i < n; i++) {
-            if(arr[i - 1] < arr[i]) left[i] = 1;
-        }
-
-        right[n - 1] = 1;
-        for(int i = n - 2; i >= 0; i--) {
-            if(arr[i + 1] < arr[i]) right[i] = 1;
-        }
-
-        for(int i = 0; i < left.length; i++) {
-            if(left[i] + right[i] == 2) return i;
+        int n = nums.length;
+        if(n == 1) return 0;
+        for(int i = 0; i < nums.length; i++) {
+            int prev = i > 0 ? nums[i - 1] : Integer.MIN_VALUE;
+            int next = i + 1 < n ? nums[i + 1] : Integer.MIN_VALUE;
+            if(prev < nums[i] && nums[i] > next) return i;
         }
         return -1;
     }
