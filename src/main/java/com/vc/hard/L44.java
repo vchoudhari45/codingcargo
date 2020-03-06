@@ -1,51 +1,32 @@
 package com.vc.hard;
 
-import java.util.Arrays;
-
 class L44 {
-    int[][] dp;
     public boolean isMatch(String s, String p) {
-        this.dp = new int[s.length() + 1][p.length() + 1];
-        for(int i = 0; i < dp.length; i++) Arrays.fill(dp[i], -1);
-        return solve(s.toCharArray(), 0, p.toCharArray(), 0);
-    }
+        int n = s.length();
+        int m = p.length();
+        boolean[][] dp = new boolean[n + 1][m + 1];
 
-    private boolean solve(char[] s, int si, char[] p, int pi) {
-        if(si == s.length || pi == p.length) {
-            if(si == s.length && pi == p.length) {
-                dp[si][pi] = 1;
-                return true;
-            }
-
-            if(si == s.length) {
-                while(pi < p.length && p[pi] == '*') pi++;
-                if(pi == p.length) {
-                    dp[si][pi] = 1;
-                    return true;
+        for(int si = 0; si <= n; si++) {
+            for(int pi = 0; pi <= m; pi++) {
+                if(si == 0 && pi == 0) dp[si][pi] = true;
+                else if(si == 0) {
+                    if(p.charAt(pi - 1) == '*') {
+                        dp[si][pi] = dp[si][pi - 1];
+                    }
+                }
+                else if(pi == 0) {
+                    dp[si][pi] = false;
                 }
                 else {
-                    dp[si][pi] = 0;
-                    return false;
+                    if(p.charAt(pi - 1) == '*') {
+                        dp[si][pi] = dp[si][pi - 1] || dp[si - 1][pi];
+                    }
+                    if(p.charAt(pi - 1) == '?' || p.charAt(pi - 1) == s.charAt(si - 1)) {
+                        dp[si][pi] = dp[si - 1][pi - 1];
+                    }
                 }
             }
-            else return false;
         }
-
-        if(dp[si][pi] != -1) return dp[si][pi] == 1;
-
-        boolean isMatch = false;
-        if(p[pi] == '*') {
-            //zero Match
-            if(solve(s, si, p, pi + 1)) isMatch = true;
-
-            //More than one character match
-            if(solve(s, si + 1, p, pi)) isMatch = true;
-        }
-
-        if(p[pi] == '?' || p[pi] == s[si])
-            isMatch = solve(s, si + 1, p, pi + 1);
-
-        dp[si][pi] = isMatch ? 1 : 0;
-        return isMatch;
+        return dp[n][m];
     }
 }
