@@ -21,7 +21,7 @@ class L44 {
                     if(p.charAt(pi - 1) == '*') {
                         dp[si][pi] = dp[si][pi - 1] || dp[si - 1][pi];
                     }
-                    if(p.charAt(pi - 1) == '?' || p.charAt(pi - 1) == s.charAt(si - 1)) {
+                    else if(p.charAt(pi - 1) == '?' || p.charAt(pi - 1) == s.charAt(si - 1)) {
                         dp[si][pi] = dp[si - 1][pi - 1];
                     }
                 }
