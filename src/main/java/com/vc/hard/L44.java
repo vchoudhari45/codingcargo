@@ -38,9 +38,6 @@ class L44 {
             //zero Match
             if(solve(s, si, p, pi + 1)) isMatch = true;
 
-            //one Character Match
-            if(solve(s, si + 1, p, pi + 1)) isMatch = true;
-
             //More than one character match
             if(solve(s, si + 1, p, pi)) isMatch = true;
         }
