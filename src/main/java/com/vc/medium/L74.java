@@ -2,19 +2,17 @@ package com.vc.medium;
 
 class L74 {
     public boolean searchMatrix(int[][] matrix, int target) {
-        int r = matrix.length;
-        if(r == 0) return false;
-        int c = matrix[0].length;
+        if(matrix == null || matrix.length == 0) return false;
 
-        int lo = 0;
-        int hi = r * c - 1;
-        while(lo <= hi) {
-            int mid = lo + (hi - lo) / 2;
-            int midValue = matrix[mid / c][mid % c];
+        int n = matrix.length, m = matrix[0].length;
 
-            if(midValue == target) return true;
-            else if(midValue > target) hi = mid - 1;
-            else lo = mid + 1;
+        if(m == 0) return false;
+
+        int row = 0, col = m - 1;
+        while(col >= 0 && row < n) {
+            if(matrix[row][col] > target) col--;
+            else if(matrix[row][col] < target) row++;
+            else return true;
         }
         return false;
     }

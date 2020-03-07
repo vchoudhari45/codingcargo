@@ -4,16 +4,14 @@ import java.util.*;
 
 class SnapshotArray {
 
-    TreeMap<Integer, Integer>[] arr;
-    int n = 0;
-    int snapId = 0;
+    private TreeMap<Integer, Integer>[] arr;
+    private int snapId = 0;
     public SnapshotArray(int length) {
-        this.n = length;
         arr = new TreeMap[length];
     }
 
     public void set(int index, int val) {
-        if(arr[index] == null) arr[index] = new TreeMap<Integer, Integer>();
+        if(arr[index] == null) arr[index] = new TreeMap<>();
         arr[index].put(snapId, val);
     }
 
