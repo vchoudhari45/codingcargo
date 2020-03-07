@@ -4,27 +4,21 @@ import java.util.*;
 
 class L228 {
     public List<String> summaryRanges(int[] arr) {
-        List<String> list = new ArrayList<String>();
+        if(arr == null || arr.length == 0) return new ArrayList<>();
 
-        int n = arr.length;
-        if(n == 0) return list;
-
-        int start = arr[0];
-        int prev = arr[0];
-        for(int i = 1; i < arr.length; i++) {
-            if(prev + 1 == arr[i]) {
-                prev = arr[i];
+        List<String> res = new ArrayList<>();
+        int start = 0, prev = arr[0], n = arr.length;
+        for(int i = 1; i <= n; i++) {
+            if(i == n || prev + 1 != arr[i]) {
+                if(arr[start] == prev)
+                    res.add(arr[start]+"");
+                else
+                    res.add(arr[start]+"->"+prev);
+                start = i;
+                if(i == n) return res;
             }
-            else {
-                if(start != arr[i - 1]) list.add(start+"->"+arr[i - 1]);
-                else list.add(start+"");
-
-                start = arr[i];
-                prev = start;
-            }
+            prev = arr[i];
         }
-        if(prev == start) list.add(prev+"");
-        else list.add(start+"->"+prev);
-        return list;
+        return res;
     }
 }
