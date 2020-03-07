@@ -2,14 +2,16 @@ package com.vc.medium;
 
 class L713 {
     public int numSubarrayProductLessThanK(int[] arr, int k) {
-        if(k <= 1) return 0;
-        int left = 0, res = 0, product = 1;
-        for(int right = 0; right < arr.length; right++) {
-            product *= arr[right];
-            while(product >= k) {
-                product /= arr[left++];
+        if(arr == null || arr.length == 0) return 0;
+
+        int start = 0, end = 0, product = arr[end++], n = arr.length;
+        int res = product < k ? 1 : 0;
+        while(end < n) {
+            product = product * arr[end++];
+            while(start < end && product >= k) {
+                product = product / arr[start++];
             }
-            res += right - left + 1;
+            res += end - start;
         }
         return res;
     }

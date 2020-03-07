@@ -4,7 +4,7 @@ import com.vc.hard.TreeNode;
 
 class L333 {
 
-    class Entry {
+    static class Entry {
         int size;
         long leftValue, rightValue;
 
