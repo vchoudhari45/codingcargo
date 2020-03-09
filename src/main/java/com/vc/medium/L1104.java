@@ -9,10 +9,10 @@ class L1104 {
             res.add(0, label);
             label /= 2;
         }
-        for(int i = res.size() - 2; i >= 0; i -= 2){
-            int maxLabel = (1 << (i + 1)) - 1;
-            int minLabel = (1 << i);
-            res.set(i, minLabel + maxLabel - res.get(i));
+        for(int level = res.size() - 2; level >= 0; level -= 2){
+            int maxLabel = (1 << (level + 1)) - 1;
+            int minLabel = (1 << level);
+            res.set(level, minLabel + maxLabel - res.get(level));
         }
         return res;
     }
