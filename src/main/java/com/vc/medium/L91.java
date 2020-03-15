@@ -17,7 +17,7 @@ class L91 {
             if(twoDigit >= 10 && twoDigit <= 26) dp[i] += dp[i - 2];
         }
 
-        for(int i = 0; i <= n; i++) System.out.print(dp[i]+" ");
+        //for(int i = 0; i <= n; i++) System.out.print(dp[i]+" ");
         return dp[n];
     }
 }
