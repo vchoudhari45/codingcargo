@@ -4,26 +4,29 @@ import java.util.*;
 
 class L56 {
     public int[][] merge(int[][] intervals) {
-        TreeMap<Integer, Integer> map = new TreeMap<>();
+        TreeMap<Integer, Integer> treeMap = new TreeMap<>();
+
         for(int[] interval: intervals) {
             int start = interval[0];
             int end = interval[1];
 
-            Integer pre = map.floorKey(start);
-            if(pre != null && map.get(pre) >= start) {
-                start = pre;
+            Integer prev = treeMap.floorKey(start);
+            if(prev != null && treeMap.get(prev) >= start) {
+                start = prev;
             }
 
-            Integer next = map.floorKey(end);
-            if(next != null && end >= next) {
-                end = Math.max(map.get(next), end);
+            Integer next = treeMap.floorKey(end);
+            if(next != null) {
+                end = Math.max(end, treeMap.get(next));
             }
-            map.subMap(start, end + 1).clear();
-            map.put(start, end);
+
+            treeMap.subMap(start, end + 1).clear();
+            treeMap.put(start, end);
         }
-        int[][] res = new int[map.size()][2];
+
+        int[][] res = new int[treeMap.size()][2];
         int index = 0;
-        for(Map.Entry<Integer, Integer> entry: map.entrySet()) {
+        for(Map.Entry<Integer, Integer> entry: treeMap.entrySet()) {
             res[index][0] = entry.getKey();
             res[index++][1] = entry.getValue();
         }
