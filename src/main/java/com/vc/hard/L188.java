@@ -27,26 +27,32 @@ class L188 {
              If value of K larger than prices.length / 2 then we know for sure that we are allowed to do unlimited number of transaction, because on a given day we can either Buy, Rest or Sell.
 
 
-             dp_i_k_0
+             dp_i_0[K]
              on ith day, we can perform k at most transaction and we should have zero stock left in our hand
 
-             dp_i_k_1
+             dp_i_1[K]
              on ith day, we can perform k at most transaction and we should have one stock left in our hand
          */
 
-        int[] dp_i_k_0 = new int[k + 1];
-        int[] dp_i_k_1 = new int[k + 1];
-        Arrays.fill(dp_i_k_1, Integer.MIN_VALUE);
+        int[] dp_i_0 = new int[k + 1];
+        int[] dp_i_1 = new int[k + 1];
+        Arrays.fill(dp_i_1, Integer.MIN_VALUE);
+        /**
+             intput [3 2 6 5 0 3]
+             k = 2
 
+             [0, 0, 0]
+             []
+         */
         for(int i = 0; i < prices.length; i++) {
             for(int j = k; j > 0; j--) {
                 //Rest or Sell so that we should have zero stock in our hand
-                dp_i_k_0[j] = Math.max(dp_i_k_0[j], dp_i_k_1[j] + prices[i]);
+                dp_i_0[j] = Math.max(dp_i_0[j], dp_i_1[j] + prices[i]);
 
                 //Rest or Buy so that we should have one stock in our hand
-                dp_i_k_1[j] = Math.max(dp_i_k_1[j], dp_i_k_0[j - 1] - prices[i]);
+                dp_i_1[j] = Math.max(dp_i_1[j], dp_i_0[j - 1] - prices[i]);
             }
         }
-        return dp_i_k_0[k];
+        return dp_i_0[k];
     }
 }
