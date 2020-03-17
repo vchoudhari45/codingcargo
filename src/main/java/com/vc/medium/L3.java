@@ -4,23 +4,19 @@ import java.util.HashSet;
 
 class L3 {
     public int lengthOfLongestSubstring(String s) {
-        int n = s.length();
-        if(n == 0) return 0;
+        if(s == null || s.length() == 0) return 0;
 
-        HashSet set = new HashSet<>();
-        int end = 0, start = 0, res = 0;
-        while(end < s.length()) {
-            char ch = s.charAt(end);
-            while(start < s.length() && set.contains(ch)) {
-                char toBeRemoved = s.charAt(start);
-                set.remove(toBeRemoved);
+        int start = 0, end = 0, n = s.length(), max = 0;
+        HashSet<Character> duplicate = new HashSet<>();
+        while(end < n) {
+            char ch = s.charAt(end++);
+            if(duplicate.contains(ch)) {
+                while(s.charAt(start) != ch) duplicate.remove(s.charAt(start++));
                 start++;
-                if(toBeRemoved == ch) break;
             }
-            if(!set.contains(ch)) res = Math.max(res, end - start + 1);
-            set.add(ch);
-            end++;
+            duplicate.add(ch);
+            max = Math.max(max, end - start);
         }
-        return res;
+        return max;
     }
 }
