@@ -3,21 +3,22 @@ package com.vc.medium;
 import java.util.*;
 
 class L22 {
-    private List<String> res;
-    private int n;
+    private List<String> list;
+    private int n = 0;
 
     public List<String> generateParenthesis(int n) {
-        this.res = new ArrayList<>();
+        this.list = new ArrayList<>();
         this.n = n;
-        solve("", 0, 0);
-        return res;
+        helper(0, 0, "");
+        return list;
     }
 
-    private void solve(String str, int open, int close) {
-        if(str.length() == 2 * n) res.add(str);
+    private void helper(int open, int close, String str) {
+        if(open == close && close == n) list.add(str);
+
+        if(open > close)
+            helper(open, close + 1, str + ")");
         if(open < n)
-            solve(str + "(", open + 1, close);
-        if(close < open)
-            solve(str + ")", open, close + 1);
+            helper(open + 1, close, str + "(");
     }
 }
