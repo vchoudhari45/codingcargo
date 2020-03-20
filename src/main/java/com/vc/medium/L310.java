@@ -4,7 +4,7 @@ import java.util.*;
 
 class L310 {
     public List<Integer> findMinHeightTrees(int n, int[][] edges) {
-        if(n == 1) return Arrays.asList(0);
+        if(n == 1) return Collections.singletonList(0);
 
         HashMap<Integer, Set<Integer>> map = new HashMap<>();
 
