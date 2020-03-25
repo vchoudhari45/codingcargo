@@ -38,16 +38,11 @@ class L767 {
         StringBuilder str = new StringBuilder();
         while(!pq.isEmpty()) {
             Entry e = pq.poll();
-            char ch = e.ch;
-            int count = e.count;
-            if(e.count > 1) {
-                str.append(ch);
-                if(!q.isEmpty()) pq.offer(q.poll());
-                q.offer(new Entry(ch, e.count - 1));
-            }
-            else {
-                str.append(ch);
-                if(!q.isEmpty()) pq.offer(q.poll());
+            str.append(e.ch);
+            q.offer(new Entry(e.ch, e.count - 1));
+            if(q.size() > 1) {
+                Entry eNew = q.poll();
+                if(eNew.count > 0) pq.offer(eNew);
             }
         }
         return str.length() == s.length() ? str.toString() : "";
