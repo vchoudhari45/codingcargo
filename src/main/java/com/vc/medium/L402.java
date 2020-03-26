@@ -20,13 +20,12 @@ class L402 {
 
         StringBuilder sb = new StringBuilder();
         while(!st.isEmpty()) {
-            sb.append(st.pop());
+            sb.insert(0, st.pop());
         }
 
-        String res = sb.reverse().toString();
-        while(res.length() > 0 && res.charAt(0) == '0') {
-            res = res.substring(1);
-        }
+        int index = 0;
+        while(index < sb.length() && sb.charAt(index) == '0') index++;
+        String res = sb.substring(index);
 
         return res.length() == 0 ? "0" : res;
     }
