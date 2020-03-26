@@ -12,7 +12,7 @@ class L166 {
         StringBuilder fraction = new StringBuilder();
         if(numerator < 0 ^ denominator < 0) fraction.append("-");
 
-        fraction.append(String.valueOf(lnumerator / ldenominator));
+        fraction.append(lnumerator / ldenominator);
 
         if(lnumerator % ldenominator == 0) return fraction.toString();
         fraction.append(".");
