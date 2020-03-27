@@ -3,20 +3,22 @@ package com.vc.medium;
 import java.util.*;
 
 class L96 {
+    private HashMap<Integer, Integer> memo = new HashMap<>();
     public int numTrees(int n) {
-        return solve(n, new HashMap<Integer, Integer>());
+        return helper(n);
     }
 
-    private int solve(int n, HashMap<Integer, Integer> map) {
-        if(map.containsKey(n)) return map.get(n);
+    private int helper(int n) {
+        if(memo.containsKey(n)) return memo.get(n);
 
-        if(n == 0) return 1;
+        if(n == 0) return 1; //root element will be counted
 
         int res = 0;
-        for(int i = 1; i <= n; i++) {
-            res += solve(i - 1, map) * solve(n - i, map);
+        for(int i = 1; i <=n; i++) {
+            int left = helper(i - 1);
+            int right = helper(n - i);
+            res += left * right;
         }
-        map.put(n, res);
         return res;
     }
 }
