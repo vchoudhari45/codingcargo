@@ -2,38 +2,33 @@ package com.vc.medium;
 
 import com.vc.hard.TreeNode;
 
+import java.util.HashMap;
+
 class L105 {
-
-    private int[] preorder, inorder;
-    private int n;
-
+    private HashMap<Integer, Integer> inorderLookup;
+    private int[] preorder;
     public TreeNode buildTree(int[] preorder, int[] inorder) {
-        this.n = preorder.length;
+        /**
+             preorder: [3, 9, 20, 15, 7]
+             inorder:  [9, 3, 15, 20, 7]
+                        0  1   2   3  4
+         */
+        this.inorderLookup = new HashMap<>();
         this.preorder = preorder;
-        this.inorder = inorder;
-        return helper(0, n - 1, 0, n - 1);
+        for(int i = 0; i < inorder.length; i++) inorderLookup.put(inorder[i], i);
+        return helper(0, preorder.length - 1, 0,  inorder.length - 1);
     }
 
-    private TreeNode helper(int pl, int pr, int il, int ir) {
-        if(pl > pr) return null;
-        else if(pl == pr) return new TreeNode(preorder[pl]);
-        else {
-            TreeNode root = new TreeNode(preorder[pl]);
-            int index = 0;
-            for(int i = il; i <= ir; i++) {
-                if(inorder[i] == preorder[pl]) {
-                    index = i;
-                    break;
-                }
-            }
+    private TreeNode helper(int pl, int ph, int il, int ih) {
+        if(pl > ph) return null;
 
-            int leftCount = index - il;
-            int rightCount = ir - index;
+        int rootValue = preorder[pl];
+        int rootIndex = inorderLookup.get(rootValue);
+        int leftCount = rootIndex - il;
 
-            root.left = helper(pl + 1, pl + leftCount, il, index - 1);
-            root.right = helper(pr - rightCount + 1, pr, index + 1, ir);
-
-            return root;
-        }
+        TreeNode root = new TreeNode(rootValue);
+        root.left = helper(pl + 1, pl + leftCount, il, rootIndex - 1);
+        root.right = helper(pl + leftCount + 1, ph, rootIndex + 1, ih);
+        return root;
     }
 }
