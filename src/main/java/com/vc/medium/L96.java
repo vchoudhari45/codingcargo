@@ -1,24 +1,18 @@
 package com.vc.medium;
 
-import java.util.*;
-
 class L96 {
-    private HashMap<Integer, Integer> memo = new HashMap<>();
     public int numTrees(int n) {
-        return helper(n);
-    }
+        int[] dp = new int[n + 1];
+        dp[0] = dp[1] = 1;
 
-    private int helper(int n) {
-        if(memo.containsKey(n)) return memo.get(n);
-
-        if(n == 0) return 1; //root element will be counted
-
-        int res = 0;
-        for(int i = 1; i <=n; i++) {
-            int left = helper(i - 1);
-            int right = helper(n - i);
-            res += left * right;
+        for(int elements = 2; elements <= n; elements++) { // consider total number of elements
+            for(int selectedRoot = 1; selectedRoot <= elements; selectedRoot++) {
+                //For those elements select a root from 1 to elements
+                int left = dp[selectedRoot - 1];
+                int right = dp[elements - selectedRoot];
+                dp[elements] += left * right;
+            }
         }
-        return res;
+        return dp[n];
     }
 }
