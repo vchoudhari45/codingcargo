@@ -25,22 +25,21 @@ class L116 {
 
     public Node connect(Node root) {
         if(root == null) return null;
+
         Queue<Node> q = new LinkedList<>();
-        if(root.left != null) q.offer(root.left);
-        if(root.right != null) q.offer(root.right);
+        q.offer(root);
         q.offer(null);
-        Node prev = null;
         while(!q.isEmpty()) {
-            Node e = q.poll();
-            if(prev != null) {
-                prev.next = e;
+            Node current = q.poll();
+            Node next = q.peek();
+            if(current != null) {
+                current.next = next;
+                if(current.left != null) q.offer(current.left);
+                if(current.right != null) q.offer(current.right);
             }
-            prev = e;
-            if(e != null) {
-                if(e.left != null) q.offer(e.left);
-                if(e.right != null) q.offer(e.right);
+            else {
+                if(!q.isEmpty()) q.offer(null);
             }
-            else if(!q.isEmpty()) q.offer(null);
         }
         return root;
     }
