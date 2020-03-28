@@ -4,19 +4,22 @@ import com.vc.hard.TreeNode;
 
 class L114 {
     public void flatten(TreeNode root) {
-        if(root == null) return;
+        helper(root);
+    }
 
-        flatten(root.left);
-        flatten(root.right);
+    private TreeNode helper(TreeNode root) {
+        if(root == null) return null;
 
-        TreeNode rightTreeHolder = root.right;
+        if(root.left == null && root.right == null) return root;
 
-        //Because we know it is already flattened when we invoked flatten(root.left)
-        root.right = root.left;
-        root.left = null;
+        TreeNode left = helper(root.left);
+        TreeNode right = helper(root.right);
 
-        TreeNode current = root;
-        while(current.right != null) current = current.right;
-        current.right = rightTreeHolder;
+        if(left != null) {
+            left.right = root.right;
+            root.right = root.left;
+            root.left = null;
+        }
+        return right == null ? left : right;
     }
 }
