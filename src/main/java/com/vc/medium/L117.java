@@ -24,25 +24,21 @@ class L117 {
     }
 
     public Node connect(Node root) {
-        if(root == null) return root;
+        if(root == null) return null;
 
         Queue<Node> q = new LinkedList<>();
-        Node prev = null;
-        if(root.left != null) q.offer(root.left);
-        if(root.right != null) q.offer(root.right);
+        q.offer(root);
         q.offer(null);
         while(!q.isEmpty()) {
             Node current = q.poll();
-            if(prev != null) {
-                prev.next = current;
-            }
-            prev = current;
+            Node next = q.peek();
             if(current != null) {
+                current.next = next;
                 if(current.left != null) q.offer(current.left);
                 if(current.right != null) q.offer(current.right);
             }
-            else if(!q.isEmpty()) {
-                q.offer(null);
+            else {
+                if(!q.isEmpty()) q.offer(null);
             }
         }
         return root;
