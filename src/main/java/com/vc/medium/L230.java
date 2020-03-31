@@ -5,18 +5,20 @@ import com.vc.hard.TreeNode;
 import java.util.*;
 
 class L230 {
-    private List<Integer> list;
-
     public int kthSmallest(TreeNode root, int k) {
-        this.list = new ArrayList<>();
-        inorder(root);
-        return list.get(k - 1);
-    }
-
-    private void inorder(TreeNode root) {
-        if(root == null) return;
-        inorder(root.left);
-        list.add(root.val);
-        inorder(root.right);
+        Stack<TreeNode> st = new Stack<>();
+        TreeNode current = root;
+        while(!st.isEmpty() || current != null) {
+            if(current != null) {
+                st.push(current);
+                current = current.left;
+            }
+            else {
+                current = st.pop();
+                if(--k == 0) return current.val;
+                current = current.right;
+            }
+        }
+        return -1;
     }
 }

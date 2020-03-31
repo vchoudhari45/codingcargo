@@ -7,7 +7,7 @@ import java.util.Queue;
 
 class L226 {
     public TreeNode invertTree(TreeNode root) {
-        if(root == null) return root;
+        if(root == null) return null;
         Queue<TreeNode> q = new LinkedList<>();
         q.offer(root);
         while(!q.isEmpty()) {
