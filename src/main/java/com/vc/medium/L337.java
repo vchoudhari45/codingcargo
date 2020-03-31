@@ -15,8 +15,8 @@ class L337 {
         int[] right = helper(root.right);
 
         int rob = root.val + left[1] + right[1];
-        int withoutRob = Math.max(left[0], left[1]) + Math.max(right[0], right[1]);
+        int noRob = Math.max(left[0], left[1]) + Math.max(right[0], right[1]);
 
-        return new int[]{rob, withoutRob};
+        return new int[]{rob, noRob};
     }
 }
