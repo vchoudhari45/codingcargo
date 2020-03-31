@@ -16,28 +16,25 @@ class L426 {
         }
     }
 
-    private Node first, last;
-
+    private Node head, tail;
     public Node treeToDoublyList(Node root) {
         if(root == null) return null;
-        solve(root);
-        last.right = first;
-        first.left = last;
-        return first;
+        helper(root);
+        tail.right = head;
+        head.left = tail;
+        return head;
     }
 
-    private void solve(Node node) {
-        if(node == null) return;
+    private void helper(Node root) {
+        if(root == null) return;
 
-        solve(node.left);
-        if(last != null) {
-            last.right = node;
-            node.left = last;
+        helper(root.left);
+        if(head == null) head = root;
+        if(tail != null) {
+            tail.right = root;
+            root.left = tail;
         }
-        else {
-            first = node;
-        }
-        last = node;
-        solve(node.right);
+        tail = root;
+        helper(root.right);
     }
 }
