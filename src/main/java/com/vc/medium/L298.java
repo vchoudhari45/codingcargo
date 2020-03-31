@@ -5,29 +5,22 @@ import com.vc.hard.TreeNode;
 class L298 {
     int max = 0;
     public int longestConsecutive(TreeNode root) {
-        solve(root);
+        helper(root);
         return max;
     }
 
-    private int solve(TreeNode root) {
+    private int helper(TreeNode root) {
         if(root == null) return 0;
 
-        int left = solve(root.left);
-        int right = solve(root.right);
+        int left = helper(root.left);
+        int right = helper(root.right);
 
-        int lc = 0;
-        if(root.left != null && root.left.val - root.val == 1) {
-            lc = 1 + left;
-        }
+        int res = 1;
+        if(root.left != null && root.left.val - 1 == root.val) res = 1 + left;
+        if(root.right != null && root.right.val - 1 == root.val) res = Math.max(res, 1 + right);
 
-        int rc = 0;
-        if(root.right != null && root.right.val - root.val == 1) {
-            rc = 1 + right;
-        }
+        max = Math.max(max, res);
 
-        //System.out.println("For root: "+root.val+" left: "+lc+" right: "+rc);
-        max = Math.max(max, 1 + Math.max(lc, rc));
-
-        return Math.max(lc, rc);
+        return res;
     }
 }
