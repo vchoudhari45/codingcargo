@@ -1,30 +1,22 @@
 package com.vc.medium;
 
-// Definition for a Node.
-class Node510 {
-    public int val;
-    public Node510 left;
-    public Node510 right;
-    public Node510 parent;
-}
-
 class L510 {
-    public Node510 inorderSuccessor(Node510 x) {
-        Node510 result = x;
-        if(x.right == null) {
-            result = x.parent;
-            while(result != null && result.val < x.val) {
-                result = result.parent;
-            }
-            return result;
+    static class Node {
+        public int val;
+        public Node left;
+        public Node right;
+        public Node parent;
+    }
+    public Node inorderSuccessor(Node node) {
+        if(node == null) return null;
+
+        if(node.right != null) {
+            node = node.right;
+            while(node.left != null) node = node.left;
+            return node;
         }
-        else {
-            x = x.right;
-            while(x != null) {
-                result = x;
-                x = x.left;
-            }
-        }
-        return result;
+
+        while(node.parent != null && node.parent.right == node) node = node.parent;
+        return node.parent;
     }
 }
