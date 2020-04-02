@@ -17,7 +17,7 @@ class L685 {
 
             if(toParent != to) multipleParentEdge = edge;
             else if(fromParent == toParent) cycleEdge = edge;
-            else parentArr[toParent] = fromParent;
+            else parentArr[toParent] = fromParent; //This is a trick to find multi parent assign toParent to fromParent;
         }
 
         if(multipleParentEdge == null) return cycleEdge;
