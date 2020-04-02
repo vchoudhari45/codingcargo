@@ -5,22 +5,24 @@ import com.vc.hard.TreeNode;
 import java.util.*;
 
 class L655 {
-    private String[][] res;
+    private List<List<String>> res;
 
     public List<List<String>> printTree(TreeNode root) {
         int height = height(root);
-        this.res = new String[height][(1 << height) - 1];
-        for(int i = 0; i < res.length; i++) Arrays.fill(res[i], "");
-        List<List<String>> ans = new ArrayList<>();
-        for(String[] arr: res) ans.add(Arrays.asList(arr));
+        this.res = new ArrayList<>();
+        for(int i = 0; i < height; i++) {
+            List<String> list = new ArrayList<>();
+            for(int j = 0; j < (1 << height) - 1; j++) list.add("");
+            this.res.add(list);
+        }
         helper(root, 0, 0, (1 << height) - 1);
-        return ans;
+        return res;
     }
 
     private void helper(TreeNode root, int level, int lo, int hi) {
         if(root == null) return;
         int mid = lo + (hi - lo) / 2;
-        res[level][mid] = String.valueOf(root.val);
+        res.get(level).set(mid, String.valueOf(root.val));
         helper(root.left, level + 1, lo, mid - 1);
         helper(root.right, level + 1, mid + 1, hi);
     }
