@@ -2,53 +2,37 @@ package com.vc.hard;
 
 class L685 {
     public int[] findRedundantDirectedConnection(int[][] edges) {
-        int nodes = edges.length + 1;
+        int n = edges.length;
 
-        int[] parentArr = new int[nodes];
-        for(int i = 0; i < parentArr.length; i++) {
-            parentArr[i] = i;
+        int[] parentArr = new int[n + 1];
+        for(int i = 0; i < parentArr.length; i++) parentArr[i] = i;
+
+        int[] cycleEdge = null;
+        int[] multipleParentEdge = null;
+        for(int[] edge: edges) {
+            int from = edge[0], to = edge[1];
+
+            int fromParent = find(from, parentArr);
+            int toParent = find(to, parentArr);
+
+            if(toParent != to) multipleParentEdge = edge;
+            else if(fromParent == toParent) cycleEdge = edge;
+            else parentArr[toParent] = fromParent;
         }
 
-        int count = 0;
-        int[] res = new int[2];
-        //Traverse from left to right
-        for(int i = 0; i < edges.length; i++) {
-            int parent = edges[i][0];
-            int child = edges[i][1];
+        if(multipleParentEdge == null) return cycleEdge;
+        if(cycleEdge == null) return multipleParentEdge;
 
-            //parentArr[child] = child <- Meaning this child has more than two parents
-            //find(parent) == child <- Meaning there is cycle
-            if(parentArr[child] != child || find(parent, parentArr) == child) {
-                res = edges[i];
-                count++;
-            }
-            else {
-                parentArr[child] = parent;
-            }
+        //If we find both the issue, choose a edge which is in the cycle
+        //And to do that we go over edges once more and find the first edge which cause multipleParent issue
+        for(int[] edge: edges) {
+            if(edge[1] == multipleParentEdge[1]) return edge;
         }
-
-        if(count == 1) return res;
-
-        for(int i = 0; i < parentArr.length; i++) {
-            parentArr[i] = i;
-        }
-        //Traverse from right to left
-        for(int i = edges.length - 1; i >= 0; i--) {
-            int parent = edges[i][0];
-            int child = edges[i][1];
-
-            if(parentArr[child] != child || find(parent, parentArr) == child) {
-                res = edges[i];
-            }
-            else {
-                parentArr[child] = parent;
-            }
-        }
-        return res;
+        return cycleEdge;
     }
 
-    private int find(int parent, int[] parentArr) {
-        if(parentArr[parent] == parent) return parent;
-        else return find(parentArr[parent], parentArr);
+    private int find(int x, int[] parent) {
+        if(parent[x] == x) return x;
+        else return parent[x] = find(parent[x], parent);
     }
 }

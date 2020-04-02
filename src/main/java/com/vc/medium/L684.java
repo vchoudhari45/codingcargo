@@ -21,6 +21,7 @@ class L684 {
 
     private int find(int x, int[] parent) {
         if(x == parent[x]) return x;
-        else return find(parent[x], parent);
+        //path compression before returning the value, also assign the value
+        else return parent[x] = find(parent[x], parent);
     }
 }
