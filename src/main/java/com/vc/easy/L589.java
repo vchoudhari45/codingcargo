@@ -1,33 +1,25 @@
 package com.vc.easy;
 
-import java.util.ArrayList;
-import java.util.List;
+import com.vc.hard.Node;
 
-class Node589 {
-    public int val;
-    public List<Node589> children;
-
-    public Node589() {}
-
-    public Node589(int _val,List<Node589> _children) {
-        val = _val;
-        children = _children;
-    }
-}
+import java.util.*;
 
 class L589 {
-    public List<Integer> preorder(Node589 root) {
-        List<Integer> list = new ArrayList<Integer>();
-        preOrder(root, list);
-        return list;
-    }
+    public List<Integer> preorder(Node root) {
+        List<Integer> res = new ArrayList<>();
 
-    private void preOrder(Node589 root, List<Integer> list) {
-        if(root != null) {
-            list.add(root.val);
-            for(Node589 node: root.children) {
-                preOrder(node, list);
+        if(root == null) return res;
+
+        Stack<Node> st = new Stack<>();
+        st.push(root);
+        while(!st.isEmpty()) {
+            Node current = st.pop();
+            res.add(current.val);
+            Collections.reverse(current.children);
+            for(Node child: current.children) {
+                st.push(child);
             }
         }
+        return res;
     }
 }

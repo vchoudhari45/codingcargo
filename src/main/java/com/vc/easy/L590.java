@@ -1,33 +1,24 @@
 package com.vc.easy;
 
-import java.util.ArrayList;
-import java.util.List;
+import com.vc.hard.Node;
 
-class Node590 {
-    public int val;
-    public List<Node590> children;
-
-    public Node590() {}
-
-    public Node590(int _val,List<Node590> _children) {
-        val = _val;
-        children = _children;
-    }
-};
+import java.util.*;
 
 class L590 {
-    public List<Integer> postorder(Node590 root) {
-        List<Integer> list = new ArrayList<Integer>();
-        postOrder(root, list);
-        return list;
+    private List<Integer> res;
+    public List<Integer> postorder(Node root) {
+        this.res = new ArrayList<>();
+        helper(root);
+        return res;
     }
 
-    private void postOrder(Node590 root, List<Integer> list){
-        if(root != null) {
-            for(Node590 node : root.children) {
-                postOrder(node, list);
+    private void helper(Node root) {
+        if(root == null) return;
+        if(root.children != null) {
+            for(Node child: root.children) {
+                helper(child);
             }
-            list.add(root.val);
         }
+        res.add(root.val);
     }
 }
