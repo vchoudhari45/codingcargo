@@ -3,40 +3,31 @@ package com.vc.medium;
 import java.util.*;
 
 class L323 {
-    private int[] parent;
-
     public int countComponents(int n, int[][] edges) {
-        this.parent = new int[n];
-
-        for(int i = 0; i < n; i++) parent[i] = i;
+        int[] parentArr = new int[n];
+        for(int i = 0; i < n; i++) parentArr[i] = i;
 
         for(int[] edge: edges) {
             int from = edge[0];
             int to = edge[1];
 
-            int fromParent = find(from);
-            int toParent = find(to);
+            int fromParent = find(from, parentArr);
+            int toParent = find(to, parentArr);
 
-            if(fromParent != toParent) {
-                union(fromParent, toParent);
-            }
+            parentArr[toParent] = fromParent;
         }
 
-        HashSet<Integer> distinct = new HashSet<>();
-        for(int i = 0; i < parent.length; i++) {
-            parent[i] = find(parent[i]);
-            distinct.add(parent[i]);
-        }
-        return distinct.size();
+        //Update parentReference
+        for(int i = 0; i < parentArr.length; i++) parentArr[i] = find(i, parentArr);
+
+        HashSet<Integer> components = new HashSet<>();
+        for(int i = 0; i < parentArr.length; i++) components.add(parentArr[i]);
+
+        return components.size();
     }
 
-    private int find(int child) {
-        if(parent[child] == child) return child;
-        else return find(parent[child]);
-    }
-
-    private void union(int from, int to) {
-        if(from < to) parent[from] = to;
-        else parent[to] = from;
+    private int find(int x, int[] parentArr) {
+        if(parentArr[x] == x) return x;
+        else return parentArr[x] = find(parentArr[x], parentArr);
     }
 }
