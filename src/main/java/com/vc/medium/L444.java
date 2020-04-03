@@ -25,7 +25,7 @@ class L444 {
             }
         }
 
-        if(org.length != indegree.size()) return false;
+        if(org.length != indegree.size()) return false; //it means there can be multiple seq possible
 
         Queue<Integer> q = new LinkedList<>();
         for(Map.Entry<Integer, Integer> entry: indegree.entrySet()) {
