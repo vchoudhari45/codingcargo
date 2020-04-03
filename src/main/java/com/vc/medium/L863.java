@@ -18,21 +18,15 @@ class L863 {
         HashSet<TreeNode> visited = new HashSet<TreeNode>();
         while(K > 0) {
             int size = q.size();
-            while(size > 0) {
+            for(int i = 0; i < size; i++) {
                 TreeNode e = q.poll();
 
-                if(visited.contains(e)) {
-                    size--;
-                    continue;
-                }
+                if(visited.contains(e)) continue;
 
                 visited.add(e);
-
                 if(e.left != null && !visited.contains(e.left)) q.offer(e.left);
                 if(e.right != null && !visited.contains(e.right)) q.offer(e.right);
                 if(parent.containsKey(e) && !visited.contains(parent.get(e))) q.offer(parent.get(e));
-
-                size--;
             }
             K--;
         }

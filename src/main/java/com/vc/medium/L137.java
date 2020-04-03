@@ -2,7 +2,7 @@ package com.vc.medium;
 
 import java.util.*;
 
-class L132 {
+class L137 {
     public int singleNumber(int[] arr) {
         HashMap<Integer, Integer> map = new HashMap<>();
         for(int i = 0; i < arr.length; i++) {
