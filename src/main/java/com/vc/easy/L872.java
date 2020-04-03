@@ -14,7 +14,7 @@ class L872 {
         if(leafRoot1.size() != leafRoot2.size()) return false;
 
         for(int i = 0; i < leafRoot1.size(); i++) {
-            if(leafRoot1.get(i) != leafRoot2.get(i)) return false;
+            if(!leafRoot1.get(i).equals(leafRoot2.get(i))) return false;
         }
         return true;
     }
