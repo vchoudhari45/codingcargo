@@ -9,8 +9,8 @@ class L839 {
         for(int i = 0; i < parentArr.length; i++) parentArr[i] = i;
 
         int res = n;
-        for(int i = 1; i < arr.length; i++){
-            for(int j = 0; j < i; j++) {
+        for(int i = 0; i < arr.length; i++){
+            for(int j = i + 1; j < arr.length; j++) {
                 //System.out.println("\nComparing "+arr[i]+" with "+arr[j]);
                 if(isSimilar(i, j, arr)) {
                     //System.out.println(arr[i]+" and "+arr[j]+" are similar");
@@ -40,6 +40,6 @@ class L839 {
 
     private int find(int p, int[] parentArr) {
         if(parentArr[p] == p) return p;
-        else return find(parentArr[p], parentArr);
+        else return parentArr[p] = find(parentArr[p], parentArr);
     }
 }
