@@ -14,10 +14,10 @@ class L996 {
 
                 double sqrt = Math.sqrt(from + to);
                 if(sqrt == Math.ceil(sqrt)) {
-                    HashSet<Integer> fromList = map.getOrDefault(from, new HashSet<Integer>());
+                    HashSet<Integer> fromList = map.getOrDefault(from, new HashSet<>());
                     fromList.add(to);
 
-                    HashSet<Integer> toList = map.getOrDefault(to, new HashSet<Integer>());
+                    HashSet<Integer> toList = map.getOrDefault(to, new HashSet<>());
                     toList.add(from);
 
                     map.put(from, fromList);
