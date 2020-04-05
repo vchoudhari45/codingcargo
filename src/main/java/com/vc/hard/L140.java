@@ -3,25 +3,34 @@ package com.vc.hard;
 import java.util.*;
 
 class L140 {
+
+    HashMap<Integer, List<String>> memo = new HashMap<>();
+
     public List<String> wordBreak(String s, List<String> wordDict) {
-        HashMap<Integer, List<String>> map = new HashMap<>();
-        HashSet<String> words = new HashSet<>(wordDict);
-        return solve(0, s, words, map);
+        List<String> r = new ArrayList<>();
+        r.add("");
+
+        memo.put(s.length(), r);
+        return helper(s, 0, new HashSet<>(wordDict));
     }
 
-    private List<String> solve(int index, String s,
-                               HashSet<String> words, HashMap<Integer, List<String>> map) {
-        if(map.containsKey(index)) return map.get(index);
-        List<String> res = new ArrayList<String>();
-        for(int i = index; i < s.length(); i++) {
-            String word = s.substring(index, i + 1);
-            if(words.contains(word)) {
-                List<String> sub = solve(i + 1, s, words, map);
-                if(sub.size() == 0 && i + 1 >= s.length()) res.add(word);
-                for(String str: sub) res.add(word+" "+str);
+    private List<String> helper(String s, int start, HashSet<String> dict) {
+
+        if(memo.containsKey(start)) return memo.get(start);
+
+        List<String> res = new ArrayList<>();
+        for(int i = start + 1; i <= s.length(); i++) {
+            String prefix = s.substring(start, i);
+            if(dict.contains(prefix)) {
+                List<String> subWords = helper(s, i, dict);
+                for(String subWord: subWords) {
+                    res.add(prefix + (subWord.equals("") ? "": " ") + subWord);
+                }
             }
         }
-        map.put(index, res);
+
+        memo.put(start, res);
+
         return res;
     }
 }
