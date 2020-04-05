@@ -3,7 +3,7 @@ package com.vc.medium;
 import java.util.*;
 
 class L1387 {
-    HashMap<Integer, Integer> map = new HashMap<>();
+    private HashMap<Integer, Integer> map = new HashMap<>();
 
     public int getKth(int lo, int hi, int k) {
         map.put(1, 0);
