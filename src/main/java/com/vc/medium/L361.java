@@ -2,33 +2,45 @@ package com.vc.medium;
 
 class L361 {
     public int maxKilledEnemies(char[][] grid) {
+        if(grid == null || grid.length == 0) return 0;
+
         int n = grid.length;
-        if(n == 0) return 0;
         int m = grid[0].length;
 
-        int max = 0;
-        int rowHits = 0;
-        int[] colHits = new int[m];
-        for(int i = 0; i < grid.length; i++) {
-            for(int j = 0; j < grid[0].length; j++) {
-                if(j == 0 || grid[i][j - 1] == 'W') {
-                    rowHits = 0;
-                    for(int col = j; col < grid[0].length && grid[i][col] != 'W'; col++) {
-                        if(grid[i][col] == 'E') rowHits++;
-                    }
-                }
+        int row = 0, max = 0;
+        int[] cols = new int[m];
+        for(int i = 0; i < n; i++) {
+            for(int j = 0; j < m; j++) {
+                if(grid[i][j] == 'W') continue;
                 if(i == 0 || grid[i - 1][j] == 'W') {
-                    colHits[j] = 0;
-                    for(int row = i; row < grid.length && grid[row][j] != 'W'; row++) {
-                        if(grid[row][j] == 'E') colHits[j]++;
-                    }
+                    //Calculate fresh for this column as we have wall before this
+                    cols[j] = calculateEnemyInCol(grid, i, j);
                 }
-                if(grid[i][j] == '0'){
-                    //System.out.println("Enemies on ith: "+i+" Row jth: "+j+" Col is: "+(colHits[j] + rowHits));
-                    max = Math.max(max, colHits[j] + rowHits);
+                if(j == 0 || grid[i][j - 1] == 'W') {
+                    row = calculateEnemyInRow(grid, i, j);
                 }
+                if(grid[i][j] == '0') max = Math.max(max, row + cols[j]);
+                //System.out.println("For row: "+i+" Col: "+j+" rowCount: "+row+" colCount: "+cols[j]+" max: "+max);
             }
         }
         return max;
+    }
+
+    private int calculateEnemyInCol(char[][] grid, int row, int col) {
+        int num = 0;
+        while(row < grid.length && grid[row][col] != 'W') {
+            if(grid[row][col] == 'E') num++;
+            row++;
+        }
+        return num;
+    }
+
+    private int calculateEnemyInRow(char[][] grid, int row, int col) {
+        int num = 0;
+        while(col < grid[0].length && grid[row][col] != 'W') {
+            if(grid[row][col] == 'E') num++;
+            col++;
+        }
+        return num;
     }
 }
