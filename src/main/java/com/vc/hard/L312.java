@@ -1,35 +1,37 @@
 package com.vc.hard;
 
-import java.util.Arrays;
-
 class L312 {
-    int[][] memo;
-    public int maxCoins(int[] arr) {
-        int n = arr.length;
-        this.memo = new int[n + 2][n + 2];
-        int[] newArr = new int[n + 2];
+    public int maxCoins(int[] nums) {
+        if(nums == null || nums.length == 0) return 0;
 
-        for(int i = 0; i < n; i++) newArr[i + 1] = arr[i];
-        newArr[0] = newArr[newArr.length - 1] = 1;
+        int n = nums.length;
+        int[][] dp = new int[n][n];
 
-        for(int i = 0; i < memo.length; i++) {
-            Arrays.fill(memo[i], -1);
-        }
-        return solve(0, newArr.length - 1, newArr);
-    }
+        for(int l = 0; l < n; l++) {
+            for(int from = 0; from + l < n; from++) {
+                int to = from + l;
 
-    private int solve(int left, int right, int[] arr) {
-        if(left + 1 == right) return 0;
-        if(memo[left][right] != -1) return memo[left][right];
-        else {
-            int max = 0;
-            for(int i = left + 1; i < right; i++) {
-                int res = arr[left] * arr[i] * arr[right] +
-                        solve(left, i, arr) + solve(i, right, arr);
-                max = Math.max(max, res);
+                int leftValue = from - 1 >= 0 ? nums[from - 1] : 1;
+                int rightValue = to + 1 < nums.length ? nums[to + 1] : 1;
+
+                if(l == 0) {
+                    dp[from][to] = nums[from] * rightValue * leftValue;
+                }
+                else {
+                    for(int burstLast = from; burstLast <= to; burstLast++) {
+                        int before = burstLast - 1 >= 0 ? dp[from][burstLast - 1] : 0;
+                        int after  = burstLast + 1 < n ? dp[burstLast + 1][to] : 0;
+                        dp[from][to] = Math.max(dp[from][to],
+                                before + after + nums[burstLast] * rightValue * leftValue);
+                    }
+                }
             }
-            memo[left][right] = max;
-            return max;
         }
+
+        // for(int i = 0; i < n; i++) {
+        //     for(int j = 0; j < n; j++) System.out.format("%5s", dp[i][j]+" ");
+        //     System.out.println();
+        // }
+        return dp[0][n - 1];
     }
 }
