@@ -3,32 +3,36 @@ package com.vc.hard;
 import java.util.*;
 
 class L354 {
-    public int maxEnvelopes(int[][] arr) {
-        Arrays.sort(arr, (a, b) -> {
-            int cmp = a[0] - b[0];
-            if(cmp == 0) return a[1] - b[1];
-            else return cmp;
+    public int maxEnvelopes(int[][] envelopes) {
+        if(envelopes == null || envelopes.length == 0) return 0;
+
+        Arrays.sort(envelopes, new Comparator<int[]>(){
+            public int compare(int[] x, int[] y) {
+                int cmp = Integer.compare(x[0], y[0]);
+                if(cmp == 0) return Integer.compare(x[1], y[1]);
+                return cmp;
+            }
         });
 
-        // for(int i = 0 ; i < arr.length; i++) {
-        //     System.out.println(arr[i][0]+" "+arr[i][1]);
-        // }
-
-        int[] dp = new int[arr.length];
-        for(int i = 0; i < arr.length; i++) {
-            dp[i] = 1;
+        int n = envelopes.length;
+        int[] dp = new int[n];
+        Arrays.fill(dp, 1);
+        for(int i = 1; i < n; i++) {
             for(int j = 0; j < i; j++) {
-                if(canInsert(j, i, arr)) {
+                if(canInsert(envelopes[j], envelopes[i])) {
                     dp[i] = Math.max(dp[i], dp[j] + 1);
                 }
             }
         }
+
         int max = 0;
-        for(int value : dp) max = Math.max(max, value);
+        for(int i = 0; i < n; i++) {
+            max = Math.max(dp[i], max);
+        }
         return max;
     }
 
-    private boolean canInsert(int small, int big, int[][] arr) {
-        return arr[small][0] < arr[big][0] && arr[small][1] < arr[big][1];
+    private boolean canInsert(int[] x, int[] y) {
+        return x[0] < y[0] && x[1] < y[1];
     }
 }
