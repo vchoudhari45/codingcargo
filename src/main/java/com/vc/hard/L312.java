@@ -21,8 +21,7 @@ class L312 {
                     for(int burstLast = from; burstLast <= to; burstLast++) {
                         int before = burstLast - 1 >= 0 ? dp[from][burstLast - 1] : 0;
                         int after  = burstLast + 1 < n ? dp[burstLast + 1][to] : 0;
-                        dp[from][to] = Math.max(dp[from][to],
-                                before + after + nums[burstLast] * rightValue * leftValue);
+                        dp[from][to] = Math.max(dp[from][to], before + after + nums[burstLast] * rightValue * leftValue);
                     }
                 }
             }
