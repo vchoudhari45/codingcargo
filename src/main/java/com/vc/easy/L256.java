@@ -4,29 +4,13 @@ class L256 {
     public int minCost(int[][] costs) {
         if(costs == null || costs.length == 0) return 0;
 
-        int n = costs.length, m = costs[0].length;
-        for(int i = n - 2; i >= 0; i--) {
-            int currentRow = i;
-            int nextRow = i + 1;
-
-            for(int j = 0; j < m; j++) {
-                int min = Integer.MAX_VALUE;
-
-                for(int k = 0; k < m; k++) {
-                    if(j == k) continue;
-                    min = Math.min(costs[nextRow][k], min);
-                }
-                costs[currentRow][j] += min;
-            }
+        int n = costs.length;
+        for(int currentRow = n - 2; currentRow >= 0; currentRow--) {
+            int nextRow = currentRow + 1;
+            costs[currentRow][0] += Math.min(costs[nextRow][1], costs[nextRow][2]);
+            costs[currentRow][1] += Math.min(costs[nextRow][0], costs[nextRow][2]);
+            costs[currentRow][2] += Math.min(costs[nextRow][0], costs[nextRow][1]);
         }
-
-        // for(int i = 0; i < n; i++) {
-        //     for(int j = 0; j < m; j++) System.out.format("%3s", costs[i][j]+"");
-        //     System.out.println();
-        // }
-
-        int min = Integer.MAX_VALUE;
-        for(int i = 0; i < m; i++) min = Math.min(min, costs[0][i]);
-        return min;
+        return Math.min(Math.min(costs[0][0], costs[0][1]), costs[0][2]);
     }
 }

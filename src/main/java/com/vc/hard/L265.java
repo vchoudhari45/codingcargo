@@ -2,28 +2,35 @@ package com.vc.hard;
 
 class L265 {
     public int minCostII(int[][] costs) {
-        int min1 = 0;
-        int min2 = 0;
-        int minIndex = -1;
-        for(int i = 0; i < costs.length; i++) {
-            int currentMin1 = Integer.MAX_VALUE;
-            int currentMin2 = Integer.MAX_VALUE;
-            int currentMinIndex = -1;
-            for(int j = 0; j < costs[0].length; j++) {
-                int cost = costs[i][j] + (j == minIndex ? min2 : min1);
-                if(cost < currentMin1) {
-                    currentMin2 = currentMin1;
-                    currentMin1 = cost;
-                    currentMinIndex = j;
+        if(costs == null || costs.length == 0) return 0;
+
+        int n = costs.length, m = costs[0].length;
+        for(int currentRow = n - 2; currentRow >= 0; currentRow--) {
+            int nextRow = currentRow + 1;
+
+            int minColor1 = -1, minColor2 = -1;
+            for(int color = 0; color < m; color++) {
+                if(minColor1 == -1 || costs[nextRow][color] < costs[nextRow][minColor1]) {
+                    minColor2 = minColor1;
+                    minColor1 = color;
                 }
-                else if(cost < currentMin2) {
-                    currentMin2 = cost;
+                else if(minColor2 == -1 || costs[nextRow][color] < costs[nextRow][minColor2]) {
+                    minColor2 = color;
                 }
             }
-            min1 = currentMin1;
-            min2 = currentMin2;
-            minIndex = currentMinIndex;
+
+            //System.out.println("For row: "+nextRow+" minColor1: "+minColor1+" minColor2: "+minColor2);
+            for(int color = 0; color < m; color++) {
+                if(color != minColor1) {
+                    costs[currentRow][color] += costs[nextRow][minColor1];
+                }
+                else {
+                    costs[currentRow][color] += costs[nextRow][minColor2];
+                }
+            }
         }
-        return min1;
+        int min = Integer.MAX_VALUE;
+        for(int i = 0; i < m; i++) min = Math.min(costs[0][i], min);
+        return min;
     }
 }
