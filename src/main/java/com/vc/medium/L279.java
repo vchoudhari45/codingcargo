@@ -1,31 +1,32 @@
 package com.vc.medium;
 
-import java.util.HashMap;
-import java.util.Map;
+import java.util.Arrays;
 
 class L279 {
-    private Map<Integer, Integer> memo;
-
     public int numSquares(int n) {
-        memo = new HashMap<>();
-        return numSquaresFrom(n);
-    }
+        //first try to find the solution for 1
+        if(n == 0 || n == 1) return n;
 
-    private int numSquaresFrom(int target) {
-        if (target == 0 || target == 1) {
-            return target;
+        int squareCount = (int)(Math.sqrt(n)) + 1;
+        int[] squares = new int[squareCount];
+        for(int i = 0; i < squareCount; i++) {
+            squares[i] = i * i;
         }
+        //System.out.println(Arrays.toString(squares));
 
-        if (memo.containsKey(target)) return memo.get(target);
+        int[] dp = new int[n + 1];
+        Arrays.fill(dp, Integer.MAX_VALUE);
+        dp[0] = 0;
+        dp[1] = 1;
+        for(int i = 2; i <= n; i++) {
+            for(int j = 1; j < squareCount; j++) {
+                if(i < squares[j]) break;
 
-        int minSquares = Integer.MAX_VALUE;
-        for(int base = 1; base <= target / 2; base++) {
-            if (base * base <= target) {
-                minSquares = Math.min(minSquares, numSquaresFrom(target - base * base) + 1);
+                //consider square[j] as one of the value
+                int remaining = i - squares[j];
+                dp[i] = Math.min(dp[i], 1 + dp[remaining]);
             }
         }
-
-        memo.put(target, minSquares);
-        return minSquares;
+        return dp[n];
     }
 }
