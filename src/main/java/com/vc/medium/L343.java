@@ -1,23 +1,24 @@
 package com.vc.medium;
 
-import java.util.*;
-
 class L343 {
-    Map<Integer, Integer> memo = new HashMap<>();
     public int integerBreak(int n) {
-        if (n == 1) {
-            return 1;
+        int[] dp = new int[n + 1];
+        dp[1] = 1;
+
+        /**
+             n = 6
+             MaxMultiplication:  0 1 2 3 4 6 9
+             Numbers:            0 1 2 3 4 5 6
+         */
+        for(int i = 2; i <= n; i++) {
+            for(int j = 1; j < i; j++) {
+                //User number itself or it's division
+                int first = Math.max(j, dp[j]);
+                int second = Math.max(i - j, dp[i - j]);
+                dp[i] = Math.max(dp[i], first * second);
+            }
         }
-        if (memo.containsKey(n)) {
-            return memo.get(n);
-        }
-        int res = 0;
-        for (int i = 1; i < n; i++) {
-            //Either futher divide the number else use the number itself
-            int subProblem = i * Math.max(n - i, integerBreak(n - i));
-            res = Math.max(subProblem, res);
-        }
-        memo.put(n, res);
-        return res;
+        //System.out.println(Arrays.toString(dp));
+        return dp[n];
     }
 }
