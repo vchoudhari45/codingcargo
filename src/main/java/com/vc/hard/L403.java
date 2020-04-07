@@ -1,20 +1,26 @@
 package com.vc.hard;
 
+import java.util.*;
+
 class L403 {
     public boolean canCross(int[] stones) {
+        if(stones == null || stones.length == 0) return true;
+
         int n = stones.length;
-        boolean[][] dp = new boolean[n + 1][n + 1];
-        dp[0][1] = true;
-        for(int i = 1; i < n; i++) {
-            for(int j = 0; j < i; j++) {
-                int diff = stones[i] - stones[j];
-                if(diff < 0 || diff >= n || !dp[j][diff]) continue;
-                dp[i][diff] = true;
-                if(diff - 1 >= 0) dp[i][diff - 1] = true;
-                if(diff + 1 < n) dp[i][diff + 1] = true;
-                if(i == n - 1) return true;
+
+        HashMap<Integer, Set<Integer>> map = new HashMap<>();
+        for(int stone: stones) map.put(stone, new HashSet<>());
+        map.get(0).add(0);
+
+        for(int i = 0; i < stones.length; i++) {
+            for(Integer prevjump: map.get(stones[i])) { //what jump lands me on this stone
+                for(int nextjump = prevjump - 1; nextjump <= prevjump + 1; nextjump++) {
+                    if(nextjump > 0 && map.containsKey(stones[i] + nextjump))
+                        map.get(stones[i] + nextjump).add(nextjump);
+                }
             }
         }
-        return false;
+        //System.out.println(map);
+        return map.get(stones[n - 1]).size() > 0;
     }
 }
