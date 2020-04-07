@@ -2,9 +2,6 @@ package com.vc.hard;
 
 class L410 {
     public int splitArray(int[] arr, int m) {
-        /**
-            Minimize the maximum
-         */
         int lo = Integer.MIN_VALUE;
         int hi = 0;
         for(int i = 0; i < arr.length; i++) {
@@ -16,23 +13,24 @@ class L410 {
 
         while(lo < hi) {
             int mid = lo + (hi - lo) / 2;
-            if(isValid(arr, m, mid)) hi = mid;
-            else lo = mid + 1;
+            //System.out.println(lo+" "+hi+" "+mid);
+            if(madeMorePartition(arr, m, mid)) lo = mid + 1;
+            else hi = mid;
         }
         return lo;
     }
 
-    private boolean isValid(int[] arr, int m, int sum) {
-        int total = 0;
+    private boolean madeMorePartition(int[] arr, int m, int sum) {
         int count = 1;
+        int total = 0;
         for(int i = 0; i < arr.length; i++) {
             total += arr[i];
             if(total > sum) {
                 total = arr[i];
                 count++;
-                if(count > m) return false;
+                if(count > m) return true;
             }
         }
-        return true;
+        return false;
     }
 }
