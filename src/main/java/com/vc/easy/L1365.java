@@ -16,7 +16,6 @@ class L1365 {
         for(int i = 0; i < nums.length; i++) {
             nums[i] = map.get(nums[i]);
         }
-
         return nums;
     }
 }
