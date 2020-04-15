@@ -4,6 +4,14 @@ import com.vc.hard.TreeNode;
 
 import java.util.*;
 
+//Recursive
+//class L104 {
+//    public int maxDepth(TreeNode root) {
+//        if(root == null) return 0;
+//        else return 1 + Math.max(maxDepth(root.left), maxDepth(root.right));
+//    }
+//}
+
 class L104 {
     public int maxDepth(TreeNode root) {
         //Level order traversal

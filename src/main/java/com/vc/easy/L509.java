@@ -2,15 +2,15 @@ package com.vc.easy;
 
 class L509 {
     public int fib(int N) {
-        int f0 = 0;
-        int f1 = 1;
-        int f2 = 0;
-        if(N == 1) return 1;
-        for(int i = 0; i <= N - 2; i++) {
-            f2 = f0 + f1;
-            f0 = f1;
+        if(N <= 1) return N;
+        int f1 = 0;
+        int f2 = 1;
+        int f3 = 0;
+        for(int i = 0; i < N - 1; i++) {
+            f3 = f1 + f2;
             f1 = f2;
+            f2 = f3;
         }
-        return f2;
+        return f3;
     }
 }
