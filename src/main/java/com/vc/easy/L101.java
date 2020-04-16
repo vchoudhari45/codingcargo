@@ -6,22 +6,25 @@ import java.util.*;
 
 class L101 {
     public boolean isSymmetric(TreeNode root) {
+        if(root == null) return true;
+
         Queue<TreeNode> q = new LinkedList<>();
-        q.offer(root);
-        q.offer(root);
+        q.offer(root.left);
+        q.offer(root.right);
+
         while(!q.isEmpty()) {
-            TreeNode t1 = q.poll();
-            TreeNode t2 = q.poll();
+            TreeNode left = q.poll();
+            TreeNode right = q.poll();
 
-            if(t1 == null ^ t2 == null) return false;
-            if(t1 == null && t2 == null) continue;
+            if(left == null ^ right == null) return false;
+            if(left == null && right == null) continue;
 
-            if(t1.val != t2.val) return false;
+            if(left.val != right.val) return false;
 
-            q.offer(t1.left);
-            q.offer(t2.right);
-            q.offer(t1.right);
-            q.offer(t2.left);
+            q.offer(left.left);
+            q.offer(right.right);
+            q.offer(left.right);
+            q.offer(right.left);
         }
         return true;
     }
