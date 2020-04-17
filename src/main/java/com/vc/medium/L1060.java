@@ -1,19 +1,26 @@
 package com.vc.medium;
 
 class L1060 {
-    public int missingElement(int[] arr, int k) {
-        int prev = arr[0];
-        for(int i = 1; i < arr.length; i++) {
-            int diff = arr[i] - prev - 1;
-            if(k - diff <= 0) {
-                for(int j = prev + 1; j < arr[i]; j++) {
-                    k--;
-                    if(k <= 0) return j;
-                }
+    public int missingElement(int[] nums, int k) {
+        int n = nums.length;
+        int lo = 0;
+        int hi = n;
+
+        while(lo + 1 < hi) {
+            int mid = lo + (hi - lo) / 2;
+
+            //System.out.println(lo+" "+mid+" "+hi);
+
+            int missing = nums[mid] - nums[lo] - (mid - lo);
+            if(missing >= k) {
+                hi = mid;
             }
-            else k -= diff;
-            prev = arr[i];
+            else {
+                k-= missing;
+                lo = mid;
+            }
         }
-        return prev + k;
+
+        return nums[lo] + k;
     }
 }

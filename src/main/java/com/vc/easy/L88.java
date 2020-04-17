@@ -1,26 +1,25 @@
 package com.vc.easy;
 
 class L88 {
-    public int missingElement(int[] nums, int k) {
-        int n = nums.length;
-        int lo = 0;
-        int hi = n;
-
-        while(lo + 1 < hi) {
-            int mid = lo + (hi - lo) / 2;
-
-            //System.out.println(lo+" "+mid+" "+hi);
-
-            int missing = nums[mid] - nums[lo] - (mid - lo);
-            if(missing >= k) {
-                hi = mid;
+    public void merge(int[] nums1, int m, int[] nums2, int n) {
+        int first = m - 1;
+        int second = n - 1;
+        int index = m + n - 1;
+        while(first >= 0 && second >= 0) {
+            if(nums1[first] > nums2[second]) {
+                nums1[index--] = nums1[first--];
             }
             else {
-                k-= missing;
-                lo = mid;
+                nums1[index--] = nums2[second--];
             }
         }
 
-        return nums[lo] + k;
+        while(first >= 0) {
+            nums1[index--] = nums1[first--];
+        }
+
+        while(second >= 0) {
+            nums1[index--] = nums2[second--];
+        }
     }
 }
