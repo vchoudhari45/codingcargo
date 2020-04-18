@@ -9,8 +9,8 @@ class L986 {
 
         while (i < A.length && j < B.length) {
             // Let's check if A[i] intersects B[j].
-            // lo - the startpoint of the intersection
-            // hi - the endpoint of the intersection
+            // lo - the start point of the intersection
+            // hi - the end point of the intersection
             int lo = Math.max(A[i][0], B[j][0]);
             int hi = Math.min(A[i][1], B[j][1]);
             if (lo <= hi)
