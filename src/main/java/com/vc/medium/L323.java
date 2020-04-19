@@ -1,33 +1,25 @@
 package com.vc.medium;
 
-import java.util.*;
-
 class L323 {
     public int countComponents(int n, int[][] edges) {
-        int[] parentArr = new int[n];
-        for(int i = 0; i < n; i++) parentArr[i] = i;
+        int[] parent = new int[n];
 
+        for(int i = 0; i < parent.length; i++) parent[i] = i;
+
+        int components = n;
         for(int[] edge: edges) {
-            int from = edge[0];
-            int to = edge[1];
-
-            int fromParent = find(from, parentArr);
-            int toParent = find(to, parentArr);
-
-            parentArr[toParent] = fromParent;
+            int fromParent = find(parent, edge[0]);
+            int toParent = find(parent, edge[1]);
+            if(fromParent == toParent) continue;
+            parent[fromParent] = toParent;
+            components--;
         }
 
-        //Update parentReference
-        for(int i = 0; i < parentArr.length; i++) parentArr[i] = find(i, parentArr);
-
-        HashSet<Integer> components = new HashSet<>();
-        for(int i = 0; i < parentArr.length; i++) components.add(parentArr[i]);
-
-        return components.size();
+        return components;
     }
 
-    private int find(int x, int[] parentArr) {
-        if(parentArr[x] == x) return x;
-        else return parentArr[x] = find(parentArr[x], parentArr);
+    private int find(int[] parent, int x) {
+        if(parent[x] == x) return x;
+        else return parent[x] = find(parent, parent[x]);
     }
 }
