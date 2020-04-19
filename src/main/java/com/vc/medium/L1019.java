@@ -1,44 +1,44 @@
 package com.vc.medium;
 
+import com.vc.hard.ListNode;
+
 import java.util.*;
 
-class ListNode1019 {
-    int val;
-    ListNode1019 next;
-    ListNode1019(int x) { val = x; }
-}
-
-class IndexedListNode1019 {
-    ListNode1019 listNode;
-    int index;
-
-    IndexedListNode1019(ListNode1019 l, int i) {
-        listNode = l;
-        index = i;
-    }
-}
 class L1019 {
-    public int[] nextLargerNodes(ListNode1019 head) {
-        ListNode1019 current = head;
-        int size = 0;
-        while(current != null) {
-            current = current.next;
-            size++;
-        }
+    int size = 1;
+    public int[] nextLargerNodes(ListNode head) {
+        if(head == null) return new int[0];
 
+        ListNode reversed = reverse(head);
+        Stack<Integer> st = new Stack<>();
+
+        ListNode current = reversed;
         int[] res = new int[size];
-        Stack<IndexedListNode1019> st = new Stack<IndexedListNode1019>();
-        current = head;
-        int i = 0;
         while(current != null) {
-            IndexedListNode1019 indexedListNode = new IndexedListNode1019(current, i++);
-            while(!st.isEmpty() && st.peek().listNode.val < current.val) {
-                IndexedListNode1019 pop = st.pop();
-                res[pop.index] = current.val;
-            }
-            st.push(indexedListNode);
+            while(!st.isEmpty() && st.peek() <= current.val) st.pop();
+
+            if(st.isEmpty()) res[--size] = 0;
+            else res[--size] = st.peek();
+
+            st.push(current.val);
             current = current.next;
         }
         return res;
+    }
+
+    private ListNode reverse(ListNode head) {
+        final ListNode dummyNode = new ListNode(-1);
+        dummyNode.next = head;
+        final ListNode prev = dummyNode;
+        final ListNode current = prev.next;
+        ListNode next = current.next;
+        while(next != null) {
+            current.next = next.next;
+            next.next = prev.next;
+            prev.next = next;
+            next = current.next;
+            size++;
+        }
+        return dummyNode.next;
     }
 }
