@@ -4,7 +4,7 @@ import java.util.*;
 
 class MagicDictionary {
 
-    static class Node {
+    class Node {
         HashMap<Character, Node> map = new HashMap<>();
         boolean isWord;
 
@@ -14,7 +14,7 @@ class MagicDictionary {
         }
     }
 
-    static class Trie {
+    class Trie {
 
         Node root = new Node();
 
