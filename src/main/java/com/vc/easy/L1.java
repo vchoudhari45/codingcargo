@@ -9,7 +9,10 @@ import java.util.*;
  *  Title: Two Sum
  *  Description: Given an array of integers, return indices of two numbers such that they adds up to specific target
  *
- *  Algorithm:
+ *  ## Problem Statement
+ *  Given an array of integers, return indices of two numbers such that they adds up to specific target
+ *
+ *  ## Algorithm:
  *  1. Create a HashMap to hold an element and it's corresponding index
  *  2. Iterate over an input array and
  *      2.1. Check if we have an element in HashMap which is equal to target - current array element
