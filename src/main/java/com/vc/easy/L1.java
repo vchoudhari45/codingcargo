@@ -11,6 +11,12 @@ import java.util.*;
  *
  *  ## Problem Statement
  *  Given an array of integers, return indices of two numbers such that they adds up to specific target
+ *  For e.g.
+ *  ```
+ *  Input Array: [2, 7, 8, 10, 11]
+ *  Target: 9
+ *  Output: [0, 1]
+ *  ```
  *
  *  ## Algorithm:
  *  1. Create a HashMap to hold an element and it's corresponding index

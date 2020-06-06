@@ -9,6 +9,11 @@ package com.vc.easy;
  *
  *  ## Problem Statement
  *  Given a 32-bit signed integer, reverse digits of integer
+ *  For e.g.
+ *  ```
+ *  Input: 321
+ *  Output: 123
+ *  ```
  *
  *  ## Gotchas
  *  Problem looks fairly simple, but there are two gotchas that we have to be careful about
