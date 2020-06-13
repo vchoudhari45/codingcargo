@@ -1,0 +1,10 @@
+@tailwind base;
+@tailwind components;
+
+body {
+    @apply antialiased;
+    @apply font-sans;
+    @apply text-black;
+}
+
+@tailwind utilities;

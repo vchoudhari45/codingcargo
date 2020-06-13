@@ -8,3 +8,35 @@ src/main/resources/serviceAccount.json
 src/main/resources/data/log/*
 src/main/resources/data/*_bkp.json
 src/main/resources/application.conf
+
+# ui
+# dependencies
+src/main/java/com/vc/web/ui/node_modules
+src/main/java/com/vc/web/ui/.pnp
+src/main/java/com/vc/web/ui/.pnp.js
+
+# testing
+src/main/java/com/vc/web/ui/coverage
+
+# next.js
+src/main/java/com/vc/web/ui/.next/
+src/main/java/com/vc/web/ui/out/
+
+# production
+src/main/java/com/vc/web/ui/build
+
+# misc
+.DS_Store
+*.class
+*.log
+target/*
+.idea/*
+*iml
+
+# debug
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# local env files
+.env*
