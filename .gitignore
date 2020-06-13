@@ -4,7 +4,7 @@ target/*
 .idea/*
 *iml
 .DS_Store
-resources/serviceAccount.json
-resources/data/log/*
-resources/data/*bkp.json
-resources/application.conf
+src/main/resources/serviceAccount.json
+src/main/resources/data/log/*
+src/main/resources/data/*_bkp.json
+src/main/resources/application.conf
