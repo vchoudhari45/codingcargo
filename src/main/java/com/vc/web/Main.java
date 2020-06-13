@@ -4,6 +4,8 @@ import com.google.api.core.ApiFuture;
 import com.google.cloud.firestore.*;
 import com.google.firebase.cloud.FirestoreClient;
 import com.google.gson.*;
+import com.typesafe.config.Config;
+import com.typesafe.config.ConfigFactory;
 import com.vc.web.connection.FireBaseApp;
 import com.vc.web.model.*;
 
@@ -18,22 +20,25 @@ public class Main {
 
     public static void main(String[] args) {
         Gson gson = new GsonBuilder().setPrettyPrinting().create();
-        String inputPaths = "/Users/vishal/Work/leetcode/src/main/java/com/vc/";
-        String errorPath = "/Users/vishal/Work/leetcode/src/main/resources/data/log/error.txt";
-        String noPostPath = "/Users/vishal/Work/leetcode/src/main/resources/data/log/noPost.txt";
-        String noJavaPath = "/Users/vishal/Work/leetcode/src/main/resources/data/log/noJava.txt";
-        String categoryPath = "/Users/vishal/Work/leetcode/src/main/resources/data/categories.json";
-        String tagPath = "/Users/vishal/Work/leetcode/src/main/resources/data/tags.json";
-        String postPath = "/Users/vishal/Work/leetcode/src/main/resources/data/post.json";
+        Config conf = ConfigFactory.load();
+
+        String inputPaths = conf.getString("inputPaths");
+        String errorPath = conf.getString("errorPath");
+        String noPostPath = conf.getString("noPostPath");
+        String noJavaPath = conf.getString("noJavaPath");
+        String categoryPath = conf.getString("categoryPath");
+        String tagPath = conf.getString("tagPath");
+        String postPath = conf.getString("postPath");
         Scanner scan = new Scanner(System.in);
 
         try {
-            //Read categories.json file
+            //Read categories.json
             HashSet<String> categoryLookup = getCategoryLookup(categoryPath);
 
             //Read tags.json
             HashSet<String> tagLookup = getTagLookup(tagPath);
 
+            //Read post.json
             HashSet<String> postLookup = getPostLookup(postPath);
 
             while (!writePostFile(gson, inputPaths, errorPath, postPath, noPostPath, noJavaPath, categoryLookup, tagLookup, postLookup)) {
