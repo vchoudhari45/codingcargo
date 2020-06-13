@@ -32,6 +32,9 @@ public class Main {
         Scanner scan = new Scanner(System.in);
 
         try {
+            //Take Backup of post.json
+            backupOrRollback(postPath, false);
+
             //Read categories.json
             HashSet<String> categoryLookup = getCategoryLookup(categoryPath);
 
@@ -80,8 +83,21 @@ public class Main {
             System.out.println("local files updated");
         }
         catch (Exception e) {
+            try {
+                System.out.println("Rolling back post.json file");
+                backupOrRollback(postPath, true);
+            }catch(IOException ex) {
+                System.out.println("Failed rolling back "+postPath+" Please rollback manually");
+            }
             e.printStackTrace();
         }
+    }
+
+    private static void backupOrRollback(String inputPath, boolean rollback) throws IOException {
+        Path path = Paths.get(inputPath);
+        Path bkpPath = Paths.get(path.toString().replaceAll("\\.json", "_bkp.json"));
+        if(rollback) Files.copy(bkpPath, path, StandardCopyOption.REPLACE_EXISTING, StandardCopyOption.COPY_ATTRIBUTES);
+        else Files.copy(path, bkpPath, StandardCopyOption.REPLACE_EXISTING, StandardCopyOption.COPY_ATTRIBUTES);
     }
 
     private static void updateSaved(String inputPath) throws IOException {
@@ -193,13 +209,16 @@ public class Main {
                         postContent.setCreatedAt(new FireStoreTimestamp(timestamp, 0));
                     }
                     if(post.getTitle() != null && !post.getTitle().equals("")) {
+                        JsonObject postElement = gson.toJsonTree(post).getAsJsonObject();
+                        postElement.addProperty("category", postContent.getCategory());
+                        postElement.addProperty("content", postContent.getContent());
                         if(!postLookup.contains(post.getTitle())) {
-                            JsonObject postElement = gson.toJsonTree(post).getAsJsonObject();
-                            postElement.addProperty("category", postContent.getCategory());
-                            postElement.addProperty("content", postContent.getContent());
                             postElement.addProperty("saved", false);
-                            postFile.append(gson.toJson(postElement));
                         }
+                        else {
+                            postElement.addProperty("saved", true);
+                        }
+                        postFile.append(gson.toJson(postElement));
                     }
                     else {
                         noPostFile.append(path.toString());

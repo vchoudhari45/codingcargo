@@ -1,3 +1,24 @@
 [
-
+{
+  "title": "Two Sum",
+  "author": "Vishal Choudhari",
+  "description": "Given an array of integers, return indices of two numbers such that they adds up to specific target",
+  "createdAt": {
+    "seconds": 1592081341931,
+    "nanoseconds": 0
+  },
+  "orderBy": 1,
+  "tags": {
+    "Array": true,
+    "Hash Table": true,
+    "Google": true,
+    "Microsoft": true,
+    "Amazon": true,
+    "Leetcode": true,
+    "Facebook": true
+  },
+  "category": "Data Structures And Algorithms",
+  "content": "\n## Problem Statement:\nGiven an array of integers, return indices of two numbers such that they adds up to specific target\nFor e.g.\n```\nInput Array: [2, 7, 8, 10, 11]\nTarget: 9\nOutput: [0, 1]\n```\n\n## Algorithm:\n1. Create a HashMap to hold an element and it\u0027s corresponding index\n2. Iterate over an input array and\n2.1. Check if we have an element in HashMap which is equal to target - current array element\n2.2. If we find such element in HashMap return it\u0027s index and current element\u0027s index as an answer\n2.3. Else add current array element and it\u0027s corresponding index into HashMap\n2.4 Continue until all the elements in an array are iterated",
+  "saved": true
+}
 ]
