@@ -142,24 +142,23 @@ public class WriteToFireStore {
 
                     BufferedReader bufferedReader = Files.newBufferedReader(path);
                     String line = null;
-                    boolean commentStarted = false, contentStart = false;
-                    StringBuilder content = new StringBuilder();
+                    boolean isComment = false;
+                    String content = String.join("\n", Files.readAllLines(path));
+                    content = content.replace("package com.vc.easy;", "");
+                    content = content.replace("package com.vc.medium;", "");
+                    content = content.replace("package com.vc.hard;", "");
+                    content = content.replace("/*****", "");
+                    content = content.replace("*****/", "");
+
                     while ((line = bufferedReader.readLine()) != null) {
-                        if(!line.contains("Problem Explanation") && !commentStarted) continue;
+                        if(line.contains("/*****")) isComment = true;
+                        if(line.contains("*****/")) isComment = false;
 
-                        commentStarted = true;
-                        if(line.contains("Problem Explanation End")) {
-                            contentStart = false;
-                            commentStarted = false;
-                        }
+                        if(!isComment) continue;
 
-                        if(contentStart) {
-                            content.append(System.lineSeparator());
-                            content.append(line.replaceAll("\\*", "").trim());
-                            postContent.setContent(content.toString());
-                        }
-                        if (line.contains("ProblemNo:")) {
-                            String problemNo = line.replaceAll("ProblemNo:", "").replaceAll("\\*", "").trim();
+                        content = content.replace(line, "");
+                        if (line.contains("Problem No:")) {
+                            String problemNo = line.replaceAll("Problem No:", "").replaceAll("\\*", "").trim();
                             int orderBy = Integer.parseInt(problemNo);
                             post.setOrderBy(orderBy);
                             postContent.setOrderBy(orderBy);
@@ -202,13 +201,17 @@ public class WriteToFireStore {
                             post.setDescription(description);
                             postContent.setDescription(description);
                         }
-                        if (line.contains("Content:")) contentStart = true;
-
                         long timestamp = System.currentTimeMillis();
                         post.setCreatedAt(new FireStoreTimestamp(timestamp, 0));
                         postContent.setCreatedAt(new FireStoreTimestamp(timestamp, 0));
                     }
                     if(post.getTitle() != null && !post.getTitle().equals("")) {
+                        content = content.replaceAll("\n\n\n\n\n","\n");
+                        postContent.setContent(content);
+                        if(post.getAuthor() == null || post.getAuthor().trim().equals("")) {
+                            postContent.setAuthor("Vishal Choudhari");
+                            post.setAuthor("Vishal Choudhari");
+                        }
                         JsonObject postElement = gson.toJsonTree(post).getAsJsonObject();
                         postElement.addProperty("category", postContent.getCategory());
                         postElement.addProperty("content", postContent.getContent());
