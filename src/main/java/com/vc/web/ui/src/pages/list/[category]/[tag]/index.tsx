@@ -26,7 +26,7 @@ const TagValue: NextPage<TagProps> = ({ postListWithTag, categoryName, tagName, 
                     description={postListWithTag.tag.description}
                     keywords={postListWithTag.tag.keywords}
                     url={metaUrl}
-                    robots="index, follow" />
+                    robots="index, nofollow" />
 
                 <PostListUI
                     currentPage={currentPage}

@@ -20,7 +20,7 @@ const CategoryPage: NextPage<Props> = ({ tagListWithCategory, metaUrl }) => {
                     description={tagListWithCategory.category.description}
                     keywords={tagListWithCategory.category.keywords}
                     url={metaUrl}
-                    robots="index, follow" />
+                    robots="index, nofollow" />
 
                 <PageTitle
                     title={tagListWithCategory.category.title + " Tags"}

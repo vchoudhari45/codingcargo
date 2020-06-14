@@ -6,9 +6,10 @@ interface MetadataProps {
     description: string,
     keywords: string,
     url: string,
-    robots: string
+    robots: string,
+    canonical?: string
 }
-const Metadata = ({title, description, keywords, url, robots}: MetadataProps) => {
+const Metadata = ({title, description, keywords, url, robots, canonical}: MetadataProps) => {
     const imgUrl = ""
     const imgWidth = ""
     const imgHeight = ""
@@ -39,6 +40,12 @@ const Metadata = ({title, description, keywords, url, robots}: MetadataProps) =>
             <meta key="twitter:card" name="twitter:card" content="summary" />
             <meta key="twitter:site" name="twitter:site" content={twitterHandle} /> 
             <meta key="twitter:image" name="twitter:image" content={imgUrl} />
+
+            {
+                typeof canonical == 'undefined' 
+                    ? ""
+                    : <link rel="canonical" href={canonical} />
+            }
         </Head>
     )
 }

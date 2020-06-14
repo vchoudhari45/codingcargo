@@ -15,12 +15,22 @@ const TagWithPagination: NextPage<TagProps> = ({ postListWithTag, categoryName, 
                     title={tagName + " Problem Set"}
                     description={postListWithTag.tag.description} />
 
-                <Metadata
-                    title={tagName + " Problem Set - " + Constant.siteName}
-                    description={postListWithTag.tag.description}
-                    keywords={postListWithTag.tag.keywords}
-                    url={metaUrl}
-                    robots="index, follow" />
+                {currentPage == 1
+                    ? <Metadata
+                            title={tagName + " Problem Set - " + Constant.siteName}
+                            description={postListWithTag.tag.description}
+                            keywords={postListWithTag.tag.keywords}
+                            url={metaUrl}
+                            robots="index, nofollow"
+                            canonical={metaUrl.replace("/1", "")} />
+                    : <Metadata
+                            title={tagName + " Problem Set - " + Constant.siteName}
+                            description={postListWithTag.tag.description}
+                            keywords={postListWithTag.tag.keywords}
+                            url={metaUrl}
+                            robots="index, nofollow" />
+
+                }
 
                 <PostListUI
                     currentPage={currentPage}
@@ -49,7 +59,7 @@ TagWithPagination.getInitialProps = async ({ query }: TagWithPaginationContext) 
         categoryName: categoryValue,
         tagName: tagValue,
         currentPage: Number.parseInt(pageValue),
-        metaUrl: generateTagUrl(categoryValue, tagValue, true)
+        metaUrl: generateTagUrl(categoryValue, tagValue, true) + "/" + pageValue
     }
 }
 export default TagWithPagination
