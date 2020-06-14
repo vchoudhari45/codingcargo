@@ -1,0 +1,10 @@
+{
+  "hosting": {
+    "public": "src/main/java/com/vc/web/ui/out",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ]
+  }
+}
