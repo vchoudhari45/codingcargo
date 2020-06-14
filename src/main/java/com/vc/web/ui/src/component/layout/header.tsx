@@ -9,29 +9,37 @@ const Header: React.FC = props => {
 
     const menuLinkArray = [
         {
-            "category": "dataStructureAndAlgorithm",
-            "tagValue": "amazon",
+            "category": "Home",
+            "tagValue": "Home",
+            "title": "Home"
+        },
+        {
+            "category": "Data Structures And Algorithms",
+            "tagValue": "Amazon",
             "title": "Asked in Amazon"
         },
         {
-            "category": "dataStructureAndAlgorithm",
-            "tagValue": "facebook",
+            "category": "Data Structures And Algorithms",
+            "tagValue": "Facebook",
             "title": "Asked in Facebook"
         },
         {
-            "category": "dataStructureAndAlgorithm",
-            "tagValue": "google",
+            "category": "Data Structures And Algorithms",
+            "tagValue": "Google",
             "title": "Asked in Google"
         },
         {
-            "category": "dataStructureAndAlgorithm",
-            "tagValue": "microsoft",
+            "category": "Data Structures And Algorithms",
+            "tagValue": "Microsoft",
             "title": "Asked in Microsoft"
         }
     ]
 
+    const menuCss = "text-sm rounded-md text-gray-500 hover:bg-gray-800 hover:text-white md:hover:bg-gray-900 mt-1 px-2 py-2 md:mt-0 md:px-0 md:py-0 block md:inline-block md:ml-3 md:mr-3"
     const menuHtml = menuLinkArray.map((link, i) => {
-        return <Link key={i} href={generateTagUrl(link.category, link.tagValue, false)}><a className="text-sm rounded-md text-gray-500 hover:bg-gray-800 hover:text-white md:hover:bg-gray-900 mt-1 px-2 py-2 md:mt-0 md:px-0 md:py-0 block md:inline-block md:ml-3 md:mr-3">{link.title}</a></Link>
+        return link.category == "Home" 
+        ? <Link key={i} href="/"><a className={menuCss}>{link.title}</a></Link>
+        : <Link key={i} href={generateTagUrl(link.category, link.tagValue, false)}><a className={menuCss}>{link.title}</a></Link>
     })
 
     return (
