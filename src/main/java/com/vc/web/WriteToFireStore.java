@@ -16,7 +16,7 @@ import java.util.*;
 import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.stream.Stream;
 
-public class Main {
+public class WriteToFireStore {
 
     public static void main(String[] args) {
         Gson gson = new GsonBuilder().setPrettyPrinting().create();

@@ -25,14 +25,6 @@ src/main/java/com/vc/web/ui/out/
 # production
 src/main/java/com/vc/web/ui/build
 
-# misc
-.DS_Store
-*.class
-*.log
-target/*
-.idea/*
-*iml
-
 # debug
 npm-debug.log*
 yarn-debug.log*
