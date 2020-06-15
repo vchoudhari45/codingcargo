@@ -15,7 +15,7 @@ const _Tag = ({ tag, category }: _TagProps) => {
             </Link>
             <div className="text-base text-gray-900 leading-snug">{tag.description}</div>
             <Link href={url}>
-                <a className="flex justify-start items-baseline tracking-tight text-sm text-gray-600 mt-2 no-underline hover:underline">
+                <a className="flex justify-start items-baseline tracking-tight text-sm text-gray-700 mt-2 no-underline hover:underline">
                     See Problem Set...
                 </a>
             </Link>
