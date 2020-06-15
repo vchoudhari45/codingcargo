@@ -10,11 +10,11 @@ const _Post = (props: _PostProps) => {
     return (
         <div className="rounded mb-8 mt-1">
             <Link href={url}>
-                <a className="text-lg capitalize leading-relaxed tracking-wide font-medium no-underline hover:underline">{props.post.title}</a>
+                <a className="text-base md:text-lg capitalize leading-relaxed tracking-wide font-medium no-underline hover:underline">{props.post.title}</a>
             </Link>
-            <div className="text-base text-gray-900 leading-snug">{props.post.description}</div>
+            <div className="text-sm md:text-base text-gray-900 leading-snug">{props.post.description}</div>
             <Link href={url}>
-                <a className="flex justify-start items-baseline tracking-tight text-sm text-gray-600 mt-2 no-underline hover:underline">
+                <a className="flex justify-start items-baseline tracking-tight text-xs md:text-sm text-gray-700 mt-2 no-underline hover:underline">
                     Read More...
                 </a>
             </Link>

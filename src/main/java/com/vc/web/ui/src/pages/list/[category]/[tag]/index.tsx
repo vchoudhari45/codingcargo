@@ -18,7 +18,7 @@ const TagValue: NextPage<TagProps> = ({ postListWithTag, categoryName, tagName, 
         return (
             <>
                 <PageTitle
-                    title={tagName + " Problem Set"}
+                    title={tagName}
                     description={postListWithTag.tag.description} />
 
                 <Metadata

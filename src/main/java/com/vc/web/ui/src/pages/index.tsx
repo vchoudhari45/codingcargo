@@ -24,7 +24,7 @@ const Home: NextPage<Props> = ({ tagListWithCategory, metaUrl }) => {
                     robots="index, nofollow" />
 
                 <PageTitle
-                    title={tagListWithCategory.category.title + " Tags"}
+                    title={tagListWithCategory.category.title}
                     description={tagListWithCategory.category.description} />
 
                 <TagListUI tagListWithCategory={tagListWithCategory} />

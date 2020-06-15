@@ -12,7 +12,7 @@ const TagWithPagination: NextPage<TagProps> = ({ postListWithTag, categoryName, 
         return (
             <>
                 <PageTitle
-                    title={tagName + " Problem Set"}
+                    title={tagName}
                     description={postListWithTag.tag.description} />
 
                 {currentPage == 1

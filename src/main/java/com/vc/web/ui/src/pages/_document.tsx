@@ -9,7 +9,7 @@ class CustomDocument extends Document {
                     <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
                     <meta name="theme-color" content="#FFFFFF"/>
                 </Head>
-                <body>
+                <body className="text-sm md:text-base">
                     <Main />
                     <NextScript />
                 </body>

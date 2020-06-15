@@ -26,10 +26,12 @@ const PostContentUI = ({postContent}: Props) => {
     
     return (
         <>
-           <div className="flex justify-start items-baseline text-sm text-gray-700 mb-6 whitespace-no-wrap">
+           {/* 
+            Needs to be fixed
+            <div className="flex justify-start items-baseline text-sm text-gray-700 mb-6 whitespace-no-wrap">
                 <div className="text-gray-900 font-bold mr-2">Tags</div>
                 <div className="whitespace-no-wrap">{tagHtml} </div>
-            </div>
+            </div> */}
             <div>
                 <pre>
                     <code className="language-java">

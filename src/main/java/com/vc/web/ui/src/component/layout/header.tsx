@@ -44,16 +44,15 @@ const Header: React.FC = props => {
 
     return (
         <div className="bg-gray-900 shadow-2xl">
-            <div ref={ref} className="max-w-screen-lg 
-                                      pt-3    pr-3    pb-3    pl-3
+            <div ref={ref} className="pt-3    pr-3    pb-3    pl-3
                                       md:pt-3 md:pr-10 md:pb-3 md:pl-10
                                       lg:pt-3 lg:pr-20 lg:pb-3 lg:pl-20 
-                                      mx-auto md:flex md:justify-around md:items-center bg-gray-900">
+                                      md:flex md:justify-around md:items-center bg-gray-900">
                 <div className="flex justify-end md:hidden">
                     <div id="logo" className="h-6 w-6 hidden">
                         <Link href="/">
                             <a className="no-underline hover:text-white">
-                                <svg className="fill-current text-gray-500 hover:text-white" xmlns="http://www.w3.org/2000/svg">
+                                <svg className="fill-current text-gray-500 hover:text-white" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
                                     <path d="M5.719 14.75a.997.997 0 01-.664-.252L-.005 10l5.341-4.748a1 1 0 011.328 1.495L3.005 10l3.378 3.002a1 1 0 01-.664 1.748zm8.945-.002L20.005 10l-5.06-4.498a.999.999 0 10-1.328 1.495L16.995 10l-3.659 3.252a1 1 0 001.328 1.496zm-4.678 1.417l2-12a1 1 0 10-1.972-.329l-2 12a1 1 0 101.972.329z" />
                                 </svg>
                             </a>
@@ -61,7 +60,7 @@ const Header: React.FC = props => {
                     </div>
 
                     <div id="menu-ham" className="h-6 w-6 cursor-pointer">
-                        <svg onClick={() => { setIsOpen(!isOpen) }} className="fill-current text-gray-500 hover:text-white" xmlns="http://www.w3.org/2000/svg">
+                        <svg onClick={() => { setIsOpen(!isOpen) }} className="fill-current text-gray-500 hover:text-white" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
                             {
                                 isOpen
                                     ? <path d="M14.348 14.849a1.2 1.2 0 01-1.697 0L10 11.819l-2.651 3.029a1.2 1.2 0 11-1.697-1.697l2.758-3.15-2.759-3.152a1.2 1.2 0 111.697-1.697L10 8.183l2.651-3.031a1.2 1.2 0 111.697 1.697l-2.758 3.152 2.758 3.15a1.2 1.2 0 010 1.698z" />
