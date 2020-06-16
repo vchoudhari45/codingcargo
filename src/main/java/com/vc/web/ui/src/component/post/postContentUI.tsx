@@ -18,8 +18,8 @@ const PostContentUI = ({postContent}: Props) => {
     const tags = Object.keys(postContent.tags).sort()
     for (const tagIndex in tags) {
        tagHtml.push(
-            <div className="inline-block py-2">
-                <Link key={tags[tagIndex]} href={generateTagUrl(postContent.category, tags[tagIndex], false)}>
+            <div key={tags[tagIndex]} className="inline-block py-2">
+                <Link href={generateTagUrl(postContent.category, tags[tagIndex], false)}>
                     <a className="capitalize mr-2 bg-gray-900 text-gray-500 hover:text-white nounderline text-xs px-3 py-2 rounded-full">{tags[tagIndex]}</a>
                 </Link>
             </div>

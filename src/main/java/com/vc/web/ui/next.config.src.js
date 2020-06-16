@@ -1,6 +1,11 @@
 // On production, variables are set with `now secrets`. On development, they use the .env file
 require('dotenv').config();
 module.exports = {
+  theme: {
+    colors: {
+      lightWhite: '#f8f8f2',
+    }
+  },
   //https://nextjs.org/docs/api-reference/next.config.js/exportPathMap
   //https://nextjs.org/docs/advanced-features/static-html-export
   exportPathMap: async function (defaultPathMap, { dev, dir, outDir, distDir, buildId }) {
@@ -10,7 +15,7 @@ module.exports = {
     console.log(outDir)
     console.log(distDir)
     console.log(buildId)
-    return ##NEXT_JS_EXPORT_MAPPING_PLACEHOLDER##
+    return '###NEXT_JS_EXPORT_MAPPING_PLACEHOLDER###'
   },
   compress: true,
   exportTrailingSlash: true,

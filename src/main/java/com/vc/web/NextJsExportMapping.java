@@ -144,7 +144,7 @@ public class NextJsExportMapping {
         Path nextJSConfigDestPath = Paths.get(nextJsConfigDest);
 
         String nextJsConfigSrcContent = new String(Files.readAllBytes(nextJSConfigSrcPath), StandardCharsets.UTF_8);
-        nextJsConfigSrcContent = nextJsConfigSrcContent.replaceAll("##NEXT_JS_EXPORT_MAPPING_PLACEHOLDER##", str.toString());
+        nextJsConfigSrcContent = nextJsConfigSrcContent.replaceAll("\'###NEXT_JS_EXPORT_MAPPING_PLACEHOLDER###\'", str.toString());
 
         Files.write(nextJSConfigDestPath, nextJsConfigSrcContent.getBytes(StandardCharsets.UTF_8));
     }
