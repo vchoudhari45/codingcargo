@@ -18,9 +18,9 @@ const PostContentUI = ({postContent}: Props) => {
     const tags = Object.keys(postContent.tags).sort()
     for (const tagIndex in tags) {
        tagHtml.push(
-            <div key={tags[tagIndex]} className="inline-block py-2">
+            <div key={tags[tagIndex]} className="px-0 md:px-2 py-2">
                 <Link href={generateTagUrl(postContent.category, tags[tagIndex], false)}>
-                    <a className="capitalize mr-2 bg-gray-900 text-gray-500 hover:text-white nounderline text-sm px-3 py-2 rounded-full">{tags[tagIndex]}</a>
+                    <a className="capitalize hover:underline nounderline text-sm md:text-base">{tags[tagIndex]}</a>
                 </Link>
             </div>
        )
@@ -28,15 +28,17 @@ const PostContentUI = ({postContent}: Props) => {
     
     return (
         <>
-            <div className="align-baseline">
-                <div className="inline-block pr-2 py-1 text-sm font-bold">Tags</div>
+            <div className="md:flex md:justify-center items-baseline">
+                <div className="pr-2 py-2 text-sm md:text-base font-bold">
+                    Tags
+                </div>
                 {tagHtml}
             </div>
 
-            <div className="mt-10">
+            <div className="mt-2 text-sm md:text-base">
                 <pre>
                     <code className="language-java">
-                        {postContent.content}    
+                        {postContent.content}
                     </code>
                 </pre>
             </div>
