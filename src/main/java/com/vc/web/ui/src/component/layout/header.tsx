@@ -35,7 +35,7 @@ const Header: React.FC = props => {
         }
     ]
 
-    const menuCss = "text-sm md:text-base rounded-md text-gray-500 hover:bg-gray-800 hover:text-white md:hover:bg-gray-900 mt-1 px-2 py-2 md:mt-0 md:px-0 md:py-0 block md:inline-block md:ml-3 md:mr-3"
+    const menuCss = "text-sm rounded-md text-gray-500 hover:bg-gray-800 hover:text-white md:hover:bg-gray-900 mt-1 px-2 py-2 md:mt-0 md:px-0 md:py-0 block md:inline-block md:ml-3 md:mr-3"
     const menuHtml = menuLinkArray.map((link, i) => {
         return link.category == "Home" 
         ? <Link key={i} href="/"><a className={menuCss}>{link.title}</a></Link>
@@ -44,9 +44,9 @@ const Header: React.FC = props => {
 
     return (
         <div>
-            <div ref={ref} className="pt-3    pr-3    pb-3    pl-3
-                                      md:pt-3 md:pr-10 md:pb-3 md:pl-10
-                                      lg:pt-3 lg:pr-20 lg:pb-3 lg:pl-20 
+            <div ref={ref} className="pt-2    pr-3    pb-2    pl-3
+                                      md:pt-2 md:pr-10 md:pb-2 md:pl-10
+                                      lg:pt-2 lg:pr-20 lg:pb-2 lg:pl-20 
                                       md:flex md:justify-around md:items-center bg-gray-900">
                 <div className="flex justify-end md:hidden">
                     <div id="logo" className="h-6 w-6 hidden">
