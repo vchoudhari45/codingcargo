@@ -10,7 +10,8 @@ export interface PostContent {
     content: string
     createdAt: Timestamp
     orderBy: number
-    tags: { [key: string]: string }
+    tags: { [key: string]: string },
+    suggestions: string[]
 }
 export const getPostByTitle = (postTitle: string): Promise<PostContent | undefined> => {
     try {
@@ -20,12 +21,26 @@ export const getPostByTitle = (postTitle: string): Promise<PostContent | undefin
         const dbRef = firestoreDb
         const post = dbRef
             .collection("postContent")
-            .where("title", "==", postTitle).get()
+            .doc(postTitle).get()
             .then(
-                snapshot => {
-                    if (snapshot.docs.length > 0) {
-                        const doc = snapshot.docs[0]
-                        const post = JSON.parse(JSON.stringify(doc.data()))
+                async(doc) => {
+                    if(doc.exists) {
+                        const post = JSON.parse(JSON.stringify(doc.data())) as PostContent
+                        
+                        //console.log(post)
+                        //Check if Suggestions Post Exists in FireStore, This is heavy feature remove if it doesn't work
+                        const suggestionsExists: string[] = []
+                        await Promise.all(post.suggestions.map(async(suggestionTitle) => {
+                            const suggestionPostRef = dbRef.collection("postContent").doc(suggestionTitle)
+                            const suggestionDoc = await suggestionPostRef.get()
+                            if(suggestionDoc.exists) {
+                                const suggestionPostContent = suggestionDoc.data() as PostContent;
+                                suggestionsExists.push(suggestionPostContent.title)
+                            }
+                        }))
+                        post.suggestions = suggestionsExists
+                        //This is heavy feature remove if it doesn't work
+
                         return (post as PostContent)
                     }
                     else return Promise.resolve(undefined)

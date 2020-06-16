@@ -172,6 +172,10 @@ public class WriteToFireStore {
                             }
                             postContent.setCategory(category);
                         }
+                        if (line.contains("Similar Question:")) {
+                            String[] suggestions = line.replaceAll("Similar Question:", "").replaceAll("\\*", "").trim().split(", ");
+                            postContent.setSuggestions(Arrays.asList(suggestions));
+                        }
                         if (line.contains("Tags:")) {
                             String[] tags = line.replaceAll("Tags:", "").replaceAll("\\*", "").trim().split(", ");
                             Map<String, Boolean> tagsMap = new HashMap<String, Boolean>();
@@ -215,6 +219,11 @@ public class WriteToFireStore {
                         JsonObject postElement = gson.toJsonTree(post).getAsJsonObject();
                         postElement.addProperty("category", postContent.getCategory());
                         postElement.addProperty("content", postContent.getContent());
+                        JsonArray suggestionArray = new JsonArray();
+                        for (String suggestion : postContent.getSuggestions()) {
+                            suggestionArray.add(suggestion.trim());
+                        }
+                        postElement.add("suggestions", suggestionArray);
                         if(!postLookup.contains(post.getTitle())) {
                             postElement.addProperty("saved", false);
                         }
@@ -355,6 +364,7 @@ public class WriteToFireStore {
                 String content = postJsonObject.get("content").getAsString();
                 String category = postJsonObject.get("category").getAsString();
                 Map<String, Boolean> tags = gson.fromJson(postJsonObject.get("tags").getAsJsonObject(), Map.class);
+                List<String> suggestions = gson.fromJson(postJsonObject.get("suggestions"), List.class);
                 FireStoreTimestamp createdAt = gson.fromJson(postJsonObject.get("createdAt").getAsJsonObject(), FireStoreTimestamp.class);
                 int orderBy = postJsonObject.get("orderBy").getAsInt();
 
@@ -379,6 +389,7 @@ public class WriteToFireStore {
                 postContent.setCreatedAt(createdAt);
                 postContent.setOrderBy(orderBy);
                 postContent.setTags(tags);
+                postContent.setSuggestions(suggestions);
                 DocumentReference postContentRef = db.collection("postContent").document(title);
                 batch.set(postContentRef, postContent);
 

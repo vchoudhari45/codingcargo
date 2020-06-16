@@ -37,7 +37,7 @@ const Home: NextPage<Props> = ({ tagListWithCategory, metaUrl }) => {
 export const getStaticProps: GetStaticProps = async () => {
     return {
         props: {
-            tagListWithCategory: await getAllTagByCategoryName("Data Structures And Algorithms"),
+            tagListWithCategory: await getAllTagByCategoryName("Data Structures And Algorithms", "Data Structures And Algorithms"),
             metaUrl: Constant.baseUrl
         }
     }

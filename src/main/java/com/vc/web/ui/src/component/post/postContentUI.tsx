@@ -1,6 +1,6 @@
 import Link from 'next/link'
 import { PostContent } from '../../model/PostContent'
-import { generateTagUrl } from '../../util/urlUtil'
+import { generateTagUrl, generatePostUrl } from '../../util/urlUtil'
 import Prism from 'prismjs'
 import "prismjs/components/prism-java"
 import React, { useEffect } from 'react'
@@ -25,6 +25,17 @@ const PostContentUI = ({postContent}: Props) => {
             </div>
        )
     }
+
+    const suggestionsHtml: JSX.Element[] = []
+    for (const suggestion in postContent.suggestions) {
+        suggestionsHtml.push(
+             <div key={postContent.suggestions[suggestion]} className="px-0 py-2">
+                 <Link href={generatePostUrl(postContent.suggestions[suggestion], false)}>
+                     <a className="capitalize hover:underline nounderline text-sm md:text-base">{postContent.suggestions[suggestion]}</a>
+                 </Link>
+             </div>
+        )
+     }
     
     return (
         <>
@@ -35,12 +46,17 @@ const PostContentUI = ({postContent}: Props) => {
                 {tagHtml}
             </div>
 
-            <div className="mt-2 text-sm md:text-base">
+            <div className="mt- text-sm md:text-base">
                 <pre>
                     <code className="language-java">
                         {postContent.content}
                     </code>
                 </pre>
+            </div>
+
+            <div className="mt-10 text-2xl md:text-3xl">Similar Questions</div>
+            <div className="text-sm md:text-base">
+                {suggestionsHtml}
             </div>
         </>
     )

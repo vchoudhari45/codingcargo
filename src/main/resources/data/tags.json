@@ -1,49 +1,64 @@
 [
   {
     "title": "Array",
+    "type" : "Data Structures And Algorithms",
     "description": "An Array is the simplest data structure that holds similar elements which are accessible by their indexes. This page lists Array data structure problems that go from very basic to complex.",
     "keywords": "Data Structures And Algorithms, Array, Leetcode",
     "saved": true
   },
   {
     "title": "Hash Table",
+    "type" : "Data Structures And Algorithms",
     "description": "Hash Table is a data structure that uses a Hash function to store the data as a pair of keys and values. This page covers the usage of Hash Table in data structure and algorithms problem that goes from easy lookup problems to complex graph problems.",
     "keywords": "Data Structures And Algorithms, Hash Table",
     "saved": true
   },
   {
     "title": "Math",
+    "type" : "Data Structures And Algorithms",
     "description": "Math is an essential part of learning data structures and algorithms. This page list a wide variety of data structures and algorithms problems which teaches you math concept like GCD, LCM, Factorial, etc.",
     "keywords": "Data Structures And Algorithms, Math",
     "saved": true
   },
   {
     "title": "Amazon",
+    "type" : "Company",
     "description": "This page list Amazon Interview questions and their simple solutions.",
     "keywords": "Data Structures And Algorithms, Amazon Interview Questions",
     "saved": true
   },
   {
     "title": "Facebook",
+    "type" : "Company",
     "description": "This page list Facebook Interview questions and their simple solutions.",
     "keywords": "Data Structures And Algorithms, Facebook Interview Questions",
     "saved": true
   },
   {
     "title": "Google",
+    "type" : "Company",
     "description": "This page list Google Interview questions and their simple solutions.",
     "keywords": "Data Structures And Algorithms, Google Interview Questions",
     "saved": true
   },
   {
     "title": "Microsoft",
+    "type" : "Company",
     "description": "This page list Microsoft Interview questions and their simple solutions.",
     "keywords": "Data Structures And Algorithms, Microsoft Interview Questions",
     "saved": true
   },
   {
     "title": "Leetcode",
+    "type" : "Website",
     "description": "This page list Interview questions from Leetcode and their simple solutions",
+    "keywords": "Data Structures And Algorithms, Leetcode",
+    "saved": true
+  },
+  {
+    "title": "Easy",
+    "type" : "Difficulty",
+    "description": "This page list Easy difficulty Interview questions from Leetcode",
     "keywords": "Data Structures And Algorithms, Leetcode",
     "saved": true
   }

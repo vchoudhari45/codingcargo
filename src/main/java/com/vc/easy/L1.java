@@ -5,9 +5,10 @@ import java.util.*;
 /*****
  *  Problem No: 1
  *  Category: Data Structures And Algorithms
- *  Tags: Array, Hash Table, Amazon, Facebook, Google, Microsoft, Leetcode
+ *  Tags: Array, Hash Table, Amazon, Facebook, Google, Microsoft, Leetcode, Easy
  *  Title: Two Sum
  *  Description: Given an array of integers, return indices of two numbers such that they adds up to specific target
+ *  Similar Question: 3Sum, 4Sum, Two Sum II - Input array is sorted, Two Sum III - Data structure design, Subarray Sum Equals K, Two Sum IV - Input is a BST, Two Sum Less Than K
  *****/
 
 class L1 {

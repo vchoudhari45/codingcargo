@@ -41,7 +41,7 @@ interface CategoryPageContext extends NextPageContext {
 CategoryPage.getInitialProps = async ({ query }: CategoryPageContext) => {
     const categoryValue = urlVariableToValue(query.category)
     return {
-        tagListWithCategory: await getAllTagByCategoryName(categoryValue),
+        tagListWithCategory: await getAllTagByCategoryName(categoryValue, categoryValue),
         metaUrl: generateCategoryUrl(categoryValue, false)
     }
 }

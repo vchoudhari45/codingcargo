@@ -1,5 +1,6 @@
 package com.vc.web.model;
 
+import java.util.List;
 import java.util.Map;
 
 public class PostContent {
@@ -11,10 +12,20 @@ public class PostContent {
     private FireStoreTimestamp createdAt;
     private int orderBy;
     private Map<String, Boolean> tags;
+    private List<String> suggestions;
 
     public PostContent() {
 
     }
+
+    public List<String> getSuggestions() {
+        return suggestions;
+    }
+
+    public void setSuggestions(List<String> suggestions) {
+        this.suggestions = suggestions;
+    }
+
     public String getTitle() {
         return title;
     }
@@ -79,7 +90,7 @@ public class PostContent {
         this.tags = tags;
     }
 
-    public PostContent(String title, String author, String category, String description, String content, FireStoreTimestamp createdAt, int orderBy, Map<String, Boolean> tags) {
+    public PostContent(String title, String author, String category, String description, String content, FireStoreTimestamp createdAt, int orderBy, Map<String, Boolean> tags, List<String> suggestions) {
         this.title = title;
         this.author = author;
         this.category = category;
@@ -88,5 +99,6 @@ public class PostContent {
         this.createdAt = createdAt;
         this.orderBy = orderBy;
         this.tags = tags;
+        this.suggestions = suggestions;
     }
 }

@@ -4,6 +4,7 @@ import { Category } from './Category'
 
 export interface Tag {
     title: string,
+    type: string,
     count: number,
     description: string,
     keywords: string
@@ -13,7 +14,7 @@ export interface TagListWithCategory {
     tagList: Tag[],
     category: Category
 }
-export const getAllTagByCategoryName = (categoryName: string): Promise<TagListWithCategory | undefined> => {
+export const getAllTagByCategoryName = (categoryName: string, type: string): Promise<TagListWithCategory | undefined> => {
     try {
         if(isUndefinedOrNull(categoryName)) return Promise.resolve(undefined)
         
@@ -27,8 +28,8 @@ export const getAllTagByCategoryName = (categoryName: string): Promise<TagListWi
             .then(snapshot => {
                 const list: Tag[] = []
                 snapshot.forEach(doc => {
-                    const tag = JSON.parse(JSON.stringify(doc.data()))
-                    list.push(tag as Tag)
+                    const tag = JSON.parse(JSON.stringify(doc.data())) as Tag
+                    if(tag.type == type) list.push(tag)
                 })
                 return list
             })
