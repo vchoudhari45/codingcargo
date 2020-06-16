@@ -18,20 +18,21 @@ const PostContentUI = ({postContent}: Props) => {
     const tags = Object.keys(postContent.tags).sort()
     for (const tagIndex in tags) {
        tagHtml.push(
-            <Link key={tags[tagIndex]} href={generateTagUrl(postContent.category, tags[tagIndex], false)}>
-                <a className="capitalize mr-2 nounderline hover:underline">{tags[tagIndex]}</a>
-            </Link>
+            <div className="inline-block py-2">
+                <Link key={tags[tagIndex]} href={generateTagUrl(postContent.category, tags[tagIndex], false)}>
+                    <a className="capitalize mr-2 bg-gray-900 text-gray-500 hover:text-white nounderline text-xs px-3 py-2 rounded-full">{tags[tagIndex]}</a>
+                </Link>
+            </div>
        )
     }
     
     return (
         <>
-           {/* 
-            Needs to be fixed
-            <div className="flex justify-start items-baseline text-sm text-gray-700 mb-6 whitespace-no-wrap">
-                <div className="text-gray-900 font-bold mr-2">Tags</div>
-                <div className="whitespace-no-wrap">{tagHtml} </div>
-            </div> */}
+            <div className="align-baseline">
+                <div className="inline-block pr-2 py-1 text-sm font-bold">Tags</div>
+                {tagHtml}
+            </div>
+
             <div>
                 <pre>
                     <code className="language-java">
