@@ -1,7 +1,7 @@
 module.exports = {
   purge: {
     //https://tailwindcss.com/docs/controlling-file-size/
-    //enabled: true,
+    enabled: true,
     content: [
       "./src/pages/**/*.js",
       "./src/pages/**/*.jsx",

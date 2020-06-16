@@ -206,7 +206,7 @@ public class WriteToFireStore {
                         postContent.setCreatedAt(new FireStoreTimestamp(timestamp, 0));
                     }
                     if(post.getTitle() != null && !post.getTitle().equals("")) {
-                        content = content.replaceAll("\n\n\n\n\n","\n");
+                        content = content.replaceAll("[\r\n]+","\n");
                         postContent.setContent(content);
                         if(post.getAuthor() == null || post.getAuthor().trim().equals("")) {
                             postContent.setAuthor("Vishal Choudhari");
