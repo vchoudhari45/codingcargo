@@ -39,7 +39,7 @@ const PostContentUI = ({postContent}: Props) => {
     
     return (
         <>
-            <div className="flex justify-center items-baseline">
+            <div className="md:flex md:justify-center items-baseline">
                 <div className="text-sm md:text-base font-bold px-2 py-2">
                     Tags
                 </div>
@@ -54,7 +54,7 @@ const PostContentUI = ({postContent}: Props) => {
                 </pre>
             </div>
 
-            <div className="mt-12 text-lg md:text-xl">Similar Questions</div>
+            <div className="mt-10 text-lg md:text-xl">Similar Questions</div>
             <div className="text-sm md:text-base">
                 {suggestionsHtml}
             </div>
