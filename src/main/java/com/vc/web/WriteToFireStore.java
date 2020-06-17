@@ -39,7 +39,7 @@ public class WriteToFireStore {
             HashSet<String> categoryLookup = getCategoryLookup(categoryPath);
 
             //Read tags.json
-            HashSet<String> tagLookup = getTagLookup(tagPath);
+            HashMap<String, String> tagLookup = getTagLookup(tagPath);
 
             //Read post.json
             HashSet<String> postLookup = getPostLookup(postPath);
@@ -115,7 +115,7 @@ public class WriteToFireStore {
             String noPostPath,
             String noJavaPath,
             HashSet<String> categoryLookup,
-            HashSet<String> tagLookup,
+            HashMap<String, String> tagLookup,
             HashSet<String> postLookup
     ) throws IOException {
 
@@ -178,14 +178,16 @@ public class WriteToFireStore {
                         }
                         if (line.contains("Tags:")) {
                             String[] tags = line.replaceAll("Tags:", "").replaceAll("\\*", "").trim().split(", ");
-                            Map<String, Boolean> tagsMap = new HashMap<String, Boolean>();
+                            Map<String, String> tagsMap = new HashMap<>();
                             for(String tag: tags) {
-                                if(!tagLookup.contains(tag)) {
+                                if(!tagLookup.containsKey(tag)) {
                                     hasValidationError.set(true);
                                     validationErrorFile.write(tag+" from "+path+" not recognized");
                                     validationErrorFile.write(System.lineSeparator());
                                 }
-                                tagsMap.put(tag, true);
+                                else {
+                                    tagsMap.put(tag, tagLookup.get(tag));
+                                }
                             }
                             post.setTags(tagsMap);
                             postContent.setTags(tagsMap);
@@ -285,8 +287,8 @@ public class WriteToFireStore {
         return str;
     }
 
-    private static HashSet<String> getTagLookup(String tagPath) throws Exception {
-        HashSet<String> str = new HashSet<>();
+    private static HashMap<String, String> getTagLookup(String tagPath) throws Exception {
+        HashMap<String, String> str = new HashMap<>();
         HashSet<String> duplicate = new HashSet<>();
         List<String> list = new ArrayList<>();
         BufferedReader br = new BufferedReader(new FileReader(tagPath));
@@ -294,7 +296,8 @@ public class WriteToFireStore {
         JsonArray array = parser.parse(br).getAsJsonArray();
         array.forEach(element -> {
             String tag = element.getAsJsonObject().get("title").getAsString();
-            str.add(tag);
+            String type = element.getAsJsonObject().get("type").getAsString();
+            str.put(tag, type);
             if(!duplicate.add(tag.toLowerCase())) list.add(tag);
         });
         if(!list.isEmpty()) throw new Exception("Duplicate tag found "+list);
@@ -363,7 +366,7 @@ public class WriteToFireStore {
                 String description = postJsonObject.get("description").getAsString();
                 String content = postJsonObject.get("content").getAsString();
                 String category = postJsonObject.get("category").getAsString();
-                Map<String, Boolean> tags = gson.fromJson(postJsonObject.get("tags").getAsJsonObject(), Map.class);
+                Map<String, String> tags = gson.fromJson(postJsonObject.get("tags").getAsJsonObject(), Map.class);
                 List<String> suggestions = gson.fromJson(postJsonObject.get("suggestions"), List.class);
                 FireStoreTimestamp createdAt = gson.fromJson(postJsonObject.get("createdAt").getAsJsonObject(), FireStoreTimestamp.class);
                 int orderBy = postJsonObject.get("orderBy").getAsInt();

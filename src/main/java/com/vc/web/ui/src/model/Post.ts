@@ -55,7 +55,8 @@ export const getPostListByCategoryAndTag = (
         const queryRef = dbRef
             .collection("category").doc(category)
             .collection("post")
-            .where("tags." + tagValue, "==", true)
+            .where("tags." + tagValue, ">", '')
+            .orderBy("tags."+ tagValue, "asc")
             .orderBy("createdAt", "desc")
 
         const listPromise = pageNumber != 0

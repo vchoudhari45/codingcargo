@@ -11,7 +11,7 @@ public class PostContent {
     private String content;
     private FireStoreTimestamp createdAt;
     private int orderBy;
-    private Map<String, Boolean> tags;
+    private Map<String, String> tags;
     private List<String> suggestions;
 
     public PostContent() {
@@ -82,15 +82,15 @@ public class PostContent {
         this.orderBy = orderBy;
     }
 
-    public Map<String, Boolean> getTags() {
+    public Map<String, String> getTags() {
         return tags;
     }
 
-    public void setTags(Map<String, Boolean> tags) {
+    public void setTags(Map<String, String> tags) {
         this.tags = tags;
     }
 
-    public PostContent(String title, String author, String category, String description, String content, FireStoreTimestamp createdAt, int orderBy, Map<String, Boolean> tags, List<String> suggestions) {
+    public PostContent(String title, String author, String category, String description, String content, FireStoreTimestamp createdAt, int orderBy, Map<String, String> tags, List<String> suggestions) {
         this.title = title;
         this.author = author;
         this.category = category;

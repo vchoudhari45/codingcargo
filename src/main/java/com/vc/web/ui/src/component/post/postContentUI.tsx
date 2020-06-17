@@ -18,7 +18,7 @@ const PostContentUI = ({postContent}: Props) => {
     const tags = Object.keys(postContent.tags).sort()
     for (const tagIndex in tags) {
        tagHtml.push(
-            <div key={tags[tagIndex]} className="px-2 py-2">
+            <div key={tags[tagIndex]} className="px-1 py-2">
                 <Link href={generateTagUrl(postContent.category, tags[tagIndex], false)}>
                     <a className="capitalize hover:underline nounderline text-sm md:text-base text-gray-700">{tags[tagIndex]}</a>
                 </Link>
@@ -39,8 +39,8 @@ const PostContentUI = ({postContent}: Props) => {
     
     return (
         <>
-            <div className="md:flex md:justify-center items-baseline">
-                <div className="text-sm md:text-base font-bold px-2 py-2">
+            <div className="md:flex md:justify-start items-baseline">
+                <div className="text-sm md:text-base font-bold px-1 py-2">
                     Tags
                 </div>
                 {tagHtml}
@@ -54,10 +54,16 @@ const PostContentUI = ({postContent}: Props) => {
                 </pre>
             </div>
 
-            <div className="mt-10 text-lg md:text-xl">Similar Questions</div>
-            <div className="text-sm md:text-base">
-                {suggestionsHtml}
-            </div>
+            {
+                suggestionsHtml.length > 0
+                ?   <>
+                        <div className="mt-10 text-lg md:text-xl">Similar Questions</div>
+                            <div className="text-sm md:text-base">
+                            {suggestionsHtml}
+                        </div>
+                    </>
+                :   ""
+            }
         </>
     )
 }
