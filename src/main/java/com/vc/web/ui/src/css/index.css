@@ -1041,8 +1041,8 @@ pre[class*="language-"] {
     align-items: center;
   }
 
-  .md\:justify-center {
-    justify-content: center;
+  .md\:justify-start {
+    justify-content: flex-start;
   }
 
   .md\:justify-around {
@@ -1117,6 +1117,10 @@ pre[class*="language-"] {
 
   .md\:pl-12 {
     padding-left: 3rem;
+  }
+
+  .md\:tracking-tight {
+    letter-spacing: -0.025em;
   }
 }
 

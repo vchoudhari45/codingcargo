@@ -35,7 +35,7 @@ const Header: React.FC = props => {
         }
     ]
 
-    const menuCss = "text-sm md:text-base rounded-md text-gray-500 hover:bg-gray-800 hover:text-white md:hover:bg-gray-900 mt-1 px-2 py-2 md:mt-0 md:px-0 md:py-0 block md:inline-block md:ml-3 md:mr-3"
+    const menuCss = "md:tracking-tight text-sm md:text-base rounded-md text-gray-500 hover:bg-gray-800 hover:text-white md:hover:bg-gray-900 mt-1 px-2 py-2 md:mt-0 md:px-0 md:py-0 block md:inline-block md:ml-3 md:mr-3"
     const menuHtml = menuLinkArray.map((link, i) => {
         return link.category == "Home" 
         ? <Link key={i} href="/"><a className={menuCss}>{link.title}</a></Link>
