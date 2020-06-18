@@ -39,7 +39,7 @@ const Header: React.FC = props => {
     const menuHtml = menuLinkArray.map((link, i) => {
         return link.category == "Home" 
         ? <Link key={i} href="/"><a className={menuCss}>{link.title}</a></Link>
-        : <Link key={i} href="/list/[category]/[tag]" as={generateTagUrl(link.category, link.tagValue, false)} prefetch={false}><a className={menuCss}>{link.title}</a></Link>
+        : <Link key={i} href="/list/[category]/[tag]/" as={generateTagUrl(link.category, link.tagValue, false)} prefetch={false}><a className={menuCss}>{link.title}</a></Link>
     })
 
     return (

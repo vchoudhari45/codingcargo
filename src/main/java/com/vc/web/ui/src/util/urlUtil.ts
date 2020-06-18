@@ -2,17 +2,17 @@ import * as Constants from '../const'
 
 export const generatePostUrl = (postTitle: string, full: boolean) => {
     const uri = _slug(postTitle)
-    return full ? Constants.baseUrl + "/post/" + uri : "/post/" + uri
+    return full ? Constants.baseUrl + "/post/" + uri : "/post/" + uri + "/"
 }
 
 export const generateTagUrl = (category: string, tag: string, full: boolean) => {
     const uri = _slug(category) + "/" + _slug(tag)
-    return full ? Constants.baseUrl + "/list/" + uri : "/list/" + uri
+    return full ? Constants.baseUrl + "/list/" + uri : "/list/" + uri + "/"
 }
 
 export const generateCategoryUrl = (category: string, full: boolean) => {
     const uri = "/list/" + _slug(category)
-    return full ? Constants.baseUrl + "/" + uri : "/" + uri
+    return full ? Constants.baseUrl + "/" + uri : "/" + uri + "/"
 }
 
 export const urlVariableToValue = (urlVariable: string) => {
