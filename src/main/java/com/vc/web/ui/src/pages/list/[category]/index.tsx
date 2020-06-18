@@ -1,11 +1,14 @@
-import { NextPage, GetStaticProps, NextPageContext } from "next"
+import { NextPage, GetStaticProps, GetStaticPaths, GetStaticPropsContext } from "next"
 import * as Constant from '../../../const'
 import { getAllTagByCategoryName } from "../../../model/Tag"
 import PageTitle from "../../../component/layout/pageTitle"
 import { TagListWithCategory } from '../../../model/Tag'
 import Metadata from "../../../component/layout/metadata"
-import { generateCategoryUrl, urlVariableToValue } from "../../../util/urlUtil"
+import { generateCategoryUrl, urlVariableToValue, _slug } from "../../../util/urlUtil"
 import TagListUI from "../../../component/tag/tagListUI"
+import { ParsedUrlQuery } from "querystring"
+import { firestoreDb } from '../../../firebase/clientApp'
+import { Category } from "../../../model/Category"
 
 interface Props {
     tagListWithCategory?: TagListWithCategory
@@ -33,16 +36,43 @@ const CategoryPage: NextPage<Props> = ({ tagListWithCategory, metaUrl }) => {
     else return (<div>{Constant.errorMessage}</div>)
 }
 
-interface CategoryPageContext extends NextPageContext {
-    query: {
-        category: string
+// interface CategoryPageContext extends NextPageContext {
+//     query: {
+//         category: string
+//     }
+// }
+// CategoryPage.getInitialProps = async ({ query }: CategoryPageContext) => {
+//     const categoryValue = urlVariableToValue(query.category)
+//     return {
+//         tagListWithCategory: await getAllTagByCategoryName(categoryValue, categoryValue),
+//         metaUrl: generateCategoryUrl(categoryValue, false)
+//     }
+// }
+
+interface CategoryPageUrlQuery extends ParsedUrlQuery {
+    category?: string
+}
+export const getStaticPaths: GetStaticPaths<CategoryPageUrlQuery> = async () => {
+    const paths : { params: { category: string } }[] = []
+    const dbRef = firestoreDb
+    const categories = await dbRef.collection("category").get()
+    categories.docs.forEach(async(categoryDoc) => {
+        const category = JSON.parse(JSON.stringify(categoryDoc.data())) as Category  
+        paths.push({ params: { category: _slug(category.title) } })
+    })
+
+    return {
+        paths: paths,
+        fallback: false
     }
 }
-CategoryPage.getInitialProps = async ({ query }: CategoryPageContext) => {
-    const categoryValue = urlVariableToValue(query.category)
+export const getStaticProps: GetStaticProps<Props> = async ({ params }: GetStaticPropsContext<CategoryPageUrlQuery>) => {
+    const categoryValue = urlVariableToValue(params?.category as string)
     return {
-        tagListWithCategory: await getAllTagByCategoryName(categoryValue, categoryValue),
-        metaUrl: generateCategoryUrl(categoryValue, false)
+        props: {
+            tagListWithCategory: await getAllTagByCategoryName(categoryValue, categoryValue),
+            metaUrl: generateCategoryUrl(categoryValue, false) + "/"
+        }
     }
 }
 export default CategoryPage
