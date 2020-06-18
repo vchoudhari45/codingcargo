@@ -1,4 +1,4 @@
-import { NextPageContext, NextPage, GetStaticPaths, GetStaticProps, GetStaticPropsContext } from "next"
+import { NextPage, GetStaticPaths, GetStaticProps, GetStaticPropsContext } from "next"
 import { getPostListByCategoryAndTag } from "../../../../model/Post"
 import PostListUI from "../../../../component/post/postListUI"
 import PageTitle from "../../../../component/layout/pageTitle"
