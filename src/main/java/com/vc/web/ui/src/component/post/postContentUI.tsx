@@ -19,7 +19,7 @@ const PostContentUI = ({postContent}: Props) => {
     for (const tagIndex in tags) {
        tagHtml.push(
             <div key={tags[tagIndex]} className="px-1 py-2">
-                <Link href={generateTagUrl(postContent.category, tags[tagIndex], false)}>
+                <Link href={generateTagUrl(postContent.category, tags[tagIndex], false)} prefetch={false}>
                     <a className="capitalize hover:underline nounderline text-sm md:text-base text-gray-700">{tags[tagIndex]}</a>
                 </Link>
             </div>
@@ -30,7 +30,7 @@ const PostContentUI = ({postContent}: Props) => {
     for (const suggestion in postContent.suggestions) {
         suggestionsHtml.push(
              <div key={postContent.suggestions[suggestion]} className="capitalize hover:underline nounderline text-sm md:text-base leading-relaxed">
-                 <Link href={generatePostUrl(postContent.suggestions[suggestion], false)}>
+                 <Link href={generatePostUrl(postContent.suggestions[suggestion], false)} prefetch={false}>
                      <a>{postContent.suggestions[suggestion]}</a>
                  </Link>
              </div>
