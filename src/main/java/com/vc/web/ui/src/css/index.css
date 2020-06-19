@@ -830,12 +830,12 @@ body {
   padding-left: 0.75rem;
 }
 
-.pr-10 {
-  padding-right: 2.5rem;
+.pr-8 {
+  padding-right: 2rem;
 }
 
-.pl-10 {
-  padding-left: 2.5rem;
+.pl-8 {
+  padding-left: 2rem;
 }
 
 .fill-current {
