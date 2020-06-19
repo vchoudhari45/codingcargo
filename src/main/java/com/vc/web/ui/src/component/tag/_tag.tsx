@@ -11,7 +11,7 @@ const _Tag = ({ tag, category }: _TagProps) => {
     return (
         <div className="mb-8 mt-1">
             <Link href="/list/[category]/[tag]/" as={url} prefetch={false}>
-                <a className="text-base md:text-lg capitalize leading-relaxed tracking-wide font-medium no-underline hover:underline">{tag.title}</a>
+                <a className="text-base md:text-lg capitalize leading-relaxed font-medium no-underline hover:underline">{tag.title}</a>
             </Link>
             <div className="text-sm md:text-base text-gray-900 leading-snug">{tag.description}</div>
             <Link href="/list/[category]/[tag]/" as={url} prefetch={false}> 

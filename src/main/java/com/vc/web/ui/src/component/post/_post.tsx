@@ -10,7 +10,7 @@ const _Post = (props: _PostProps) => {
     return (
         <div className="rounded mb-8 mt-1">
             <Link href="/post/[postTitle]/" as={url} prefetch={false}>
-                <a className="text-base md:text-lg capitalize leading-relaxed tracking-wide font-medium no-underline hover:underline">{props.post.title}</a>
+                <a className="text-base md:text-lg capitalize leading-relaxed font-medium no-underline hover:underline">{props.post.title}</a>
             </Link>
             <div className="text-sm md:text-base text-gray-900 leading-snug">{props.post.description}</div>
             <Link href="/post/[postTitle]/" as={url} prefetch={false}>
