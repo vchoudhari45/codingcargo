@@ -1,10 +1,10 @@
 import { NextPage, GetStaticProps } from 'next'
 import * as Constant from '../const'
-import { getAllTagByCategoryName } from '../model/Tag'
-import PageTitle from '../component/layout/pageTitle'
 import { TagListWithCategory } from '../model/Tag'
 import Metadata from '../component/layout/metadata'
 import TagListUI from '../component/tag/tagListUI'
+import PageTitle from '../component/layout/pageTitle'
+import { getAllTagByCategoryName } from '../model/Tag'
 
 interface Props {
     tagListWithCategory?: TagListWithCategory
