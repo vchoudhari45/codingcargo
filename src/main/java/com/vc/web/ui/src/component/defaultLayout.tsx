@@ -7,7 +7,7 @@ const DefaultLayout: React.FC = ({ children }) => {
             <Header />
                 <main>
                     <div className="mx-auto 
-                                        pt-3    pr-10    pb-3    pl-10
+                                        pt-3    pr-8    pb-3    pl-8
                                         md:pt-3 md:pr-20 md:pb-3 md:pl-20
                                         lg:pt-3 lg:pr-40 lg:pb-3 lg:pl-40">
                         {children}
