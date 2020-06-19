@@ -830,8 +830,8 @@ body {
   padding-left: 0.75rem;
 }
 
-.pr-6 {
-  padding-right: 1.5rem;
+.pr-8 {
+  padding-right: 2rem;
 }
 
 .pl-8 {
@@ -1153,8 +1153,8 @@ pre[class*="language-"] {
     padding-left: 2.5rem;
   }
 
-  .md\:pr-16 {
-    padding-right: 4rem;
+  .md\:pr-20 {
+    padding-right: 5rem;
   }
 
   .md\:pl-20 {
@@ -1195,8 +1195,8 @@ pre[class*="language-"] {
     padding-left: 5rem;
   }
 
-  .lg\:pr-32 {
-    padding-right: 8rem;
+  .lg\:pr-40 {
+    padding-right: 10rem;
   }
 
   .lg\:pl-40 {
