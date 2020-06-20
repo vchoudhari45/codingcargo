@@ -21,7 +21,7 @@ class L1 {
          *      2.1. Check if we have an element in HashMap which is equal to target - current array element
          *      2.2. If we find such element in HashMap return it's index and current element's index as an answer
          *      2.3. Else add current array element and it's corresponding index into HashMap
-         *      2.4 Continue until all the elements in an array are iterated
+         *      2.4  Continue running Step 2.1 to 2.3 until all the elements in an array are iterated
          **/
         for(int i = 0; i < arr.length; i++) {
             if(map.containsKey(target - arr[i])) return new int[] {map.get(target - arr[i]), i};

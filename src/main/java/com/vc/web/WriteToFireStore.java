@@ -207,6 +207,10 @@ public class WriteToFireStore {
                             post.setDescription(description);
                             postContent.setDescription(description);
                         }
+                        if (line.contains("MetaDescription:")) {
+                            String metaDescription = line.replace("MetaDescription:", "").replaceAll("\\*", "").trim();
+                            postContent.setMetaDescription(metaDescription);
+                        }
                         long timestamp = System.currentTimeMillis();
                         post.setCreatedAt(new FireStoreTimestamp(timestamp, 0));
                         postContent.setCreatedAt(new FireStoreTimestamp(timestamp, 0));
@@ -221,6 +225,12 @@ public class WriteToFireStore {
                         JsonObject postElement = gson.toJsonTree(post).getAsJsonObject();
                         postElement.addProperty("category", postContent.getCategory());
                         postElement.addProperty("content", postContent.getContent());
+                        if(postContent.getMetaDescription() != null && !postContent.getMetaDescription().equals("")) {
+                            postElement.addProperty("metaDescription", postContent.getMetaDescription());
+                        }
+                        else {
+                            postElement.addProperty("metaDescription", postContent.getDescription());
+                        }
                         JsonArray suggestionArray = new JsonArray();
                         for (String suggestion : postContent.getSuggestions()) {
                             suggestionArray.add(suggestion.trim());
@@ -366,6 +376,7 @@ public class WriteToFireStore {
                 String description = postJsonObject.get("description").getAsString();
                 String content = postJsonObject.get("content").getAsString();
                 String category = postJsonObject.get("category").getAsString();
+                String metaDescription = postJsonObject.get("metaDescription").getAsString();
                 Map<String, String> tags = gson.fromJson(postJsonObject.get("tags").getAsJsonObject(), Map.class);
                 List<String> suggestions = gson.fromJson(postJsonObject.get("suggestions"), List.class);
                 FireStoreTimestamp createdAt = gson.fromJson(postJsonObject.get("createdAt").getAsJsonObject(), FireStoreTimestamp.class);
@@ -388,6 +399,7 @@ public class WriteToFireStore {
                 postContent.setAuthor(author);
                 postContent.setCategory(category);
                 postContent.setDescription(description);
+                postContent.setMetaDescription(metaDescription);
                 postContent.setContent(content);
                 postContent.setCreatedAt(createdAt);
                 postContent.setOrderBy(orderBy);

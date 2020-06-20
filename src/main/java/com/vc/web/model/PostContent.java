@@ -7,6 +7,7 @@ public class PostContent {
     private String title;
     private String author;
     private String category;
+    private String metaDescription;
     private String description;
     private String content;
     private FireStoreTimestamp createdAt;
@@ -16,6 +17,14 @@ public class PostContent {
 
     public PostContent() {
 
+    }
+
+    public String getMetaDescription() {
+        return metaDescription;
+    }
+
+    public void setMetaDescription(String metaDescription) {
+        this.metaDescription = metaDescription;
     }
 
     public List<String> getSuggestions() {

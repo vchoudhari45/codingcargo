@@ -24,7 +24,7 @@ const PostPage: NextPage<Props> = ({ postContent, metaUrl }) => {
             <>
                 <Metadata
                     title={postContent.title + " - " + Constant.siteName}
-                    description={postContent.description}
+                    description={postContent.metaDescription}
                     keywords={tagArr.join(", ")}
                     url={metaUrl}
                     robots="index, nofollow" />

@@ -6,6 +6,7 @@ export interface PostContent {
     title: string
     author: string
     category: string
+    metaDescription: string
     description: string
     content: string
     createdAt: Timestamp

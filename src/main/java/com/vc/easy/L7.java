@@ -1,34 +1,28 @@
 package com.vc.easy;
 
-/**
+/*****
  *  Problem No: 7
- *  Category: data structures and algorithms
- *  Tags: Math, amazon, facebook, google, microsoft, leetcode
+ *  Category: Data Structures And Algorithms
+ *  Tags: Math, Amazon, Facebook, Google, Microsoft, Leetcode, Easy
  *  Title: Reverse Integer
  *  Description: Given a 32-bit signed integer, reverse digits of integer
- *
- *  ## Problem Statement
- *  Given a 32-bit signed integer, reverse digits of integer
- *  For e.g.
- *  ```
- *  Input: 321
- *  Output: 123
- *  ```
- *
- *  ## Gotchas
- *  Problem looks fairly simple, but there are two gotchas that we have to be careful about
- *  1. Given number can be negative
- *  2. Reversed number might overflow out the range of integer
- *
- *  ## Algorithm
- *  With that in mind, the algorithm is as below
- *  1. If Given number is negative, set a flag and reverse the sign of current number
- *  2. While Given number > 0
- *     2.1. Take last digit of given number and append the digit to new number
- *     2.2. Divide the given number by 10
- *     2.3. Continue until Given Number > 0
- **/
+ *  Similar Question: String to Integer (atoi), Reverse Bits, Palindrome Number
+ *****/
+
 class L7 {
+    /**
+     *  Gotchas
+     *  Problem looks fairly simple, but there are two gotchas that we have to be careful about
+     *  1. Given number can be negative
+     *  2. Reversed number might overflow out the range of integer
+     *
+     *  Algorithm
+     *  1. If the given number is negative, set a flag and reverse the sign of a current number.
+     *  2. While Given number > 0
+     *     2.1. Take the last digit of a given number by doing modulo operation and append that digit to a new number
+     *     2.2. Divide the given number by 10
+     *     2.3. Continue running Step 2.1 to 2.2 until Given Number > 0
+     **/
     public int reverse(int x) {
         long res = 0;
         boolean isNeg = false;

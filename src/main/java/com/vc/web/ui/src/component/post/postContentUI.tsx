@@ -47,6 +47,10 @@ const PostContentUI = ({postContent}: Props) => {
             </div>
 
             <div className="text-sm md:text-base">
+                {postContent.description}
+            </div>
+
+            <div className="text-sm md:text-base">
                 <pre>
                     <code className="language-java">
                         {postContent.content}
