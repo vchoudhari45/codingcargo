@@ -654,6 +654,12 @@ body {
   background-color: rgba(45, 55, 72, var(--bg-opacity));
 }
 
+.border-gray-100 {
+  --border-opacity: 1;
+  border-color: #f7fafc;
+  border-color: rgba(247, 250, 252, var(--border-opacity));
+}
+
 .border-gray-400 {
   --border-opacity: 1;
   border-color: #cbd5e0;
@@ -666,6 +672,10 @@ body {
 
 .rounded-md {
   border-radius: 0.375rem;
+}
+
+.rounded-lg {
+  border-radius: 0.5rem;
 }
 
 .border-solid {
@@ -720,10 +730,6 @@ body {
   font-weight: 500;
 }
 
-.font-bold {
-  font-weight: 700;
-}
-
 .h-6 {
   height: 1.5rem;
 }
@@ -738,10 +744,6 @@ body {
 
 .text-base {
   font-size: 1rem;
-}
-
-.text-lg {
-  font-size: 1.125rem;
 }
 
 .text-2xl {
@@ -765,20 +767,28 @@ body {
   margin-top: 0.25rem;
 }
 
+.mb-1 {
+  margin-bottom: 0.25rem;
+}
+
 .mt-2 {
   margin-top: 0.5rem;
+}
+
+.mb-2 {
+  margin-bottom: 0.5rem;
 }
 
 .mt-6 {
   margin-top: 1.5rem;
 }
 
-.mb-8 {
-  margin-bottom: 2rem;
+.mt-8 {
+  margin-top: 2rem;
 }
 
-.mt-10 {
-  margin-top: 2.5rem;
+.mb-8 {
+  margin-bottom: 2rem;
 }
 
 .mb-10 {
@@ -787,11 +797,6 @@ body {
 
 .mt-20 {
   margin-top: 5rem;
-}
-
-.px-1 {
-  padding-left: 0.25rem;
-  padding-right: 0.25rem;
 }
 
 .py-2 {
@@ -836,6 +841,10 @@ body {
 
 .pl-8 {
   padding-left: 2rem;
+}
+
+.shadow {
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
 }
 
 .fill-current {
@@ -891,22 +900,21 @@ body {
 }
 
 /**
- * okaidia theme for JavaScript, CSS and HTML
+ * CSS for Code
  */
 
 code[class*="language-"],
  pre[class*="language-"] {
-  color: #f8f8f2;
+  color: #1a202c;
   background: none;
-  /*text-shadow: 0 1px rgba(0, 0, 0, 0.3);
-     font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
-     font-size: 1em;
-     text-align: left;
-     white-space: pre;
-     word-spacing: normal;
-     word-break: normal;
-     word-wrap: normal;
-     line-height: 1.5;*/
+  font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', 'Consolas', 'source-code-pro', 'monospace';
+  font-size: 1em;
+  text-align: left;
+  white-space: pre;
+  word-spacing: normal;
+  word-break: normal;
+  word-wrap: normal;
+  line-height: 1.5;
   -moz-tab-size: 4;
   -o-tab-size: 4;
   tab-size: 4;
@@ -926,7 +934,7 @@ pre[class*="language-"] {
 
 :not(pre) > code[class*="language-"],
  pre[class*="language-"] {
-  background: #1A202C;
+  background: #fff;
 }
 
 /* Inline code */
@@ -941,17 +949,15 @@ pre[class*="language-"] {
  .token.prolog,
  .token.doctype,
  .token.cdata {
-  --text-opacity: 1;
-  color: #a0aec0;
-  color: rgba(160, 174, 192, var(--text-opacity));
+  color: #008E00;
 }
 
 .token.punctuation {
-  color: #f8f8f2;
+  color: #1a202c;
 }
 
 .token.namespace {
-  opacity: .7;
+  /*opacity: .7;*/
 }
 
 .token.property,
@@ -959,12 +965,12 @@ pre[class*="language-"] {
  .token.constant,
  .token.symbol,
  .token.deleted {
-  color: #f92672;
+  color: #c5060b;
 }
 
 .token.boolean,
  .token.number {
-  color: #ae81ff;
+  color: #3A00DC;
 }
 
 .token.selector,
@@ -973,7 +979,7 @@ pre[class*="language-"] {
  .token.char,
  .token.builtin,
  .token.inserted {
-  color: #a6e22e;
+  color: #036a07;
 }
 
 .token.operator,
@@ -982,23 +988,23 @@ pre[class*="language-"] {
  .language-css .token.string,
  .style .token.string,
  .token.variable {
-  color: #f8f8f2;
+  color: #008E00;
 }
 
 .token.atrule,
  .token.attr-value,
  .token.function,
  .token.class-name {
-  color: #e6db74;
+  color: #3A00DC;
 }
 
 .token.keyword {
-  color: #F6830E;
+  color: #C800A4;
 }
 
 .token.regex,
  .token.important {
-  color: #fd971f;
+  color: rgb(255, 0, 0);
 }
 
 .token.important,
@@ -1032,15 +1038,55 @@ pre[class*="language-"] {
 
 /* Fancy blur effect */
 
+/* Make clicks pass-through */
+
+#nprogress {
+  pointer-events: none;
+}
+
+#nprogress .bar {
+  background: #29d;
+  position: fixed;
+  z-index: 1031;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+}
+
+/* Fancy blur effect */
+
 #nprogress .peg {
   display: block;
   position: absolute;
   right: 0px;
   width: 100px;
   height: 100%;
-  box-shadow: 0 0 10px #A0AFC0, 0 0 5px #A0AFC0;
+  box-shadow: 0 0 10px #29d, 0 0 5px #29d;
   opacity: 1.0;
   transform: rotate(3deg) translate(0px, -4px);
+}
+
+/* Remove these to get rid of the spinner */
+
+#nprogress .spinner {
+  display: block;
+  position: fixed;
+  z-index: 1031;
+  top: 15px;
+  right: 15px;
+}
+
+#nprogress .spinner-icon {
+  width: 18px;
+  height: 18px;
+  box-sizing: border-box;
+  border: solid 2px transparent;
+  border-top-color: #29d;
+  border-left-color: #29d;
+  border-radius: 50%;
+  -webkit-animation: nprogress-spinner 400ms linear infinite;
+  animation: nprogress-spinner 400ms linear infinite;
 }
 
 .nprogress-custom-parent {
@@ -1048,15 +1094,42 @@ pre[class*="language-"] {
   position: relative;
 }
 
-.nprogress-custom-parent #nprogress .bar {
+.nprogress-custom-parent #nprogress .spinner,
+  .nprogress-custom-parent #nprogress .bar {
   position: absolute;
 }
 
+@-webkit-keyframes nprogress-spinner {
+  0%   { -webkit-transform: rotate(0deg);
+  }
+
+  100% { -webkit-transform: rotate(360deg);
+  }
+}
+
+@keyframes nprogress-spinner {
+  0%   { transform: rotate(0deg);
+  }
+
+  100% { transform: rotate(360deg);
+  }
+}
+
 @media (min-width: 768px) {
+  .md\:bg-gray-900 {
+    --bg-opacity: 1;
+    background-color: #1a202c;
+    background-color: rgba(26, 32, 44, var(--bg-opacity));
+  }
+
   .md\:hover\:bg-gray-900:hover {
     --bg-opacity: 1;
     background-color: #1a202c;
     background-color: rgba(26, 32, 44, var(--bg-opacity));
+  }
+
+  .md\:rounded-lg {
+    border-radius: 0.5rem;
   }
 
   .md\:block {
@@ -1099,16 +1172,16 @@ pre[class*="language-"] {
     font-size: 1.125rem;
   }
 
-  .md\:text-xl {
-    font-size: 1.25rem;
-  }
-
   .md\:text-3xl {
     font-size: 1.875rem;
   }
 
   .md\:mt-0 {
     margin-top: 0;
+  }
+
+  .md\:mr-2 {
+    margin-right: 0.5rem;
   }
 
   .md\:mr-3 {
@@ -1137,6 +1210,16 @@ pre[class*="language-"] {
     padding-right: 0;
   }
 
+  .md\:py-1 {
+    padding-top: 0.25rem;
+    padding-bottom: 0.25rem;
+  }
+
+  .md\:px-4 {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
   .md\:pt-3 {
     padding-top: 0.75rem;
   }
@@ -1159,6 +1242,18 @@ pre[class*="language-"] {
 
   .md\:pl-20 {
     padding-left: 5rem;
+  }
+
+  .md\:text-gray-500 {
+    --text-opacity: 1;
+    color: #a0aec0;
+    color: rgba(160, 174, 192, var(--text-opacity));
+  }
+
+  .md\:hover\:text-white:hover {
+    --text-opacity: 1;
+    color: #fff;
+    color: rgba(255, 255, 255, var(--text-opacity));
   }
 
   .md\:tracking-tight {
@@ -1202,6 +1297,5 @@ pre[class*="language-"] {
   .lg\:pl-40 {
     padding-left: 10rem;
   }
-}
-  
+}  
   

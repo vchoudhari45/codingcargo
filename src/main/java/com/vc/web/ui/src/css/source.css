@@ -11,22 +11,21 @@ body {
 
 
 /**
- * okaidia theme for JavaScript, CSS and HTML
+ * CSS for Code
  */
 
  code[class*="language-"],
  pre[class*="language-"] {
-     color: #f8f8f2;
+     color: #1a202c;
      background: none;
-     /*text-shadow: 0 1px rgba(0, 0, 0, 0.3);
-     font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+     font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', 'Consolas', 'source-code-pro', 'monospace';
      font-size: 1em;
      text-align: left;
      white-space: pre;
      word-spacing: normal;
      word-break: normal;
      word-wrap: normal;
-     line-height: 1.5;*/
+     line-height: 1.5;
  
      -moz-tab-size: 4;
      -o-tab-size: 4;
@@ -48,7 +47,7 @@ body {
  
  :not(pre) > code[class*="language-"],
  pre[class*="language-"] {
-    background: #1A202C;
+    background: #fff;
  }
  
  /* Inline code */
@@ -62,17 +61,15 @@ body {
  .token.prolog,
  .token.doctype,
  .token.cdata {
-    --text-opacity: 1;
-    color: #a0aec0;
-    color: rgba(160, 174, 192, var(--text-opacity));
+    color: #008E00;
  }
  
  .token.punctuation {
-     color: #f8f8f2;
+     color: #1a202c;
  }
  
  .token.namespace {
-     opacity: .7;
+     /*opacity: .7;*/
  }
  
  .token.property,
@@ -80,12 +77,12 @@ body {
  .token.constant,
  .token.symbol,
  .token.deleted {
-     color: #f92672;
+     color: #c5060b;
  }
  
  .token.boolean,
  .token.number {
-     color: #ae81ff;
+     color: #3A00DC;
  }
  
  .token.selector,
@@ -94,7 +91,7 @@ body {
  .token.char,
  .token.builtin,
  .token.inserted {
-     color: #a6e22e;
+     color: #036a07;
  }
  
  .token.operator,
@@ -103,23 +100,23 @@ body {
  .language-css .token.string,
  .style .token.string,
  .token.variable {
-     color: #f8f8f2;
+     color: #008E00;
  }
  
  .token.atrule,
  .token.attr-value,
  .token.function,
  .token.class-name {
-     color: #e6db74;
+     color: #3A00DC;
  }
  
  .token.keyword {
-     color: #F6830E;
+     color: #C800A4;
  }
  
  .token.regex,
  .token.important {
-     color: #fd971f;
+     color: rgb(255, 0, 0);
  }
  
  .token.important,
@@ -153,13 +150,31 @@ body {
   }
   
   /* Fancy blur effect */
+  /* Make clicks pass-through */
+#nprogress {
+    pointer-events: none;
+  }
+  
+  #nprogress .bar {
+    background: #29d;
+  
+    position: fixed;
+    z-index: 1031;
+    top: 0;
+    left: 0;
+  
+    width: 100%;
+    height: 2px;
+  }
+  
+  /* Fancy blur effect */
   #nprogress .peg {
     display: block;
     position: absolute;
     right: 0px;
     width: 100px;
     height: 100%;
-    box-shadow: 0 0 10px #A0AFC0, 0 0 5px #A0AFC0;
+    box-shadow: 0 0 10px #29d, 0 0 5px #29d;
     opacity: 1.0;
   
     -webkit-transform: rotate(3deg) translate(0px, -4px);
@@ -167,13 +182,45 @@ body {
             transform: rotate(3deg) translate(0px, -4px);
   }
   
+  /* Remove these to get rid of the spinner */
+  #nprogress .spinner {
+    display: block;
+    position: fixed;
+    z-index: 1031;
+    top: 15px;
+    right: 15px;
+  }
+  
+  #nprogress .spinner-icon {
+    width: 18px;
+    height: 18px;
+    box-sizing: border-box;
+  
+    border: solid 2px transparent;
+    border-top-color: #29d;
+    border-left-color: #29d;
+    border-radius: 50%;
+  
+    -webkit-animation: nprogress-spinner 400ms linear infinite;
+            animation: nprogress-spinner 400ms linear infinite;
+  }
+  
   .nprogress-custom-parent {
     overflow: hidden;
     position: relative;
   }
   
+  .nprogress-custom-parent #nprogress .spinner,
   .nprogress-custom-parent #nprogress .bar {
     position: absolute;
   }
   
+  @-webkit-keyframes nprogress-spinner {
+    0%   { -webkit-transform: rotate(0deg); }
+    100% { -webkit-transform: rotate(360deg); }
+  }
+  @keyframes nprogress-spinner {
+    0%   { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }  
   

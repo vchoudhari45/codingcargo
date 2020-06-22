@@ -18,9 +18,10 @@ const PostContentUI = ({postContent}: Props) => {
     const tags = Object.keys(postContent.tags).sort()
     for (const tagIndex in tags) {
        tagHtml.push(
-            <div key={tags[tagIndex]} className="px-1 py-2">
+            <div key={tags[tagIndex]}>
                 <Link href="/list/[category]/[tag]/" as={generateTagUrl(postContent.category, tags[tagIndex], false)} prefetch={false}>
-                    <a className="capitalize hover:underline nounderline text-sm md:text-base text-gray-700 md:tracking-tight">{tags[tagIndex]}</a>
+                    <a className="capitalize
+                       md:bg-gray-900 md:text-gray-500 md:hover:text-white md:rounded-lg md:px-4 md:py-1 md:mr-2">{tags[tagIndex]}</a>
                 </Link>
             </div>
        )
@@ -39,33 +40,34 @@ const PostContentUI = ({postContent}: Props) => {
     
     return (
         <>
-            <div className="md:flex md:justify-start items-baseline">
-                <div className="text-sm md:text-base font-bold px-1 py-2 tracking-tight">
-                    Tags
+            <>
+                <div className="text-base md:text-lg capitalize leading-relaxed font-medium mb-2">Tags</div>
+                <div className="text-sm text-gray-900 leading-snug md:flex md:justify-start items-baseline tracking-tight">{tagHtml}</div>
+            </>
+
+            <div className="mt-8">
+                <div className="text-base md:text-lg capitalize leading-relaxed font-medium mb-1">Problem Statement</div>
+                <div className="text-sm md:text-base text-gray-900 leading-snug">{postContent.description}</div>
+            </div>
+
+            <div className="mt-8">
+                <div className="text-base md:text-lg capitalize leading-relaxed font-medium mb-1">Problem Solution</div>
+                <div className="text-sm border border-gray-100 shadow rounded-lg">
+                    <pre>
+                        <code className="language-java">
+                            {postContent.content}
+                        </code>
+                    </pre>
                 </div>
-                {tagHtml}
-            </div>
-
-            <div className="text-sm md:text-base">
-                {postContent.description}
-            </div>
-
-            <div className="text-sm md:text-base">
-                <pre>
-                    <code className="language-java">
-                        {postContent.content}
-                    </code>
-                </pre>
             </div>
 
             {
                 suggestionsHtml.length > 0
-                ?   <>
-                        <div className="mt-10 text-lg md:text-xl">Similar Questions</div>
-                            <div className="text-sm md:text-base">
-                            {suggestionsHtml}
-                        </div>
-                    </>
+                ?   
+                    <div className="mt-8">
+                        <div className="text-base md:text-lg capitalize leading-relaxed font-medium mb-1">Similar Questions</div>
+                        <div className="text-sm md:text-base text-gray-900">{suggestionsHtml}</div>
+                    </div>
                 :   ""
             }
         </>
