@@ -5,7 +5,6 @@ import NProgress from 'nprogress'
 import '../css/index.css'
 
 NProgress.configure({ showSpinner: false, easing: 'ease', speed: 1});
-NProgress.inc(0.3)
 
 Router.events.on('routeChangeStart', () => NProgress.start()) 
 Router.events.on('routeChangeComplete', () => NProgress.done())
