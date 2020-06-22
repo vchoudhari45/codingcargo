@@ -5,7 +5,7 @@ import java.util.*;
 /*****
  *  Problem No: 1
  *  Category: Data Structures And Algorithms
- *  Tags: Array, HashTable, Amazon, Facebook, Google, Microsoft, Leetcode, Easy
+ *  Tags: Array, Hash Table, Amazon, Facebook, Google, Microsoft, Leetcode, Easy
  *  Title: Two Sum
  *  MetaDescription: Java Solution to a Data Structures And Algorithms problem, Given an array of integers, return indices of two numbers such that they add up to specific target. It is an easy problem that is part of Amazon, Facebook, Google, Microsoft Technical Interview Question list, and can be solved using Array & HashMap Data Structure.
  *  Description: Given an array of integers, return indices of two numbers such that they adds up to specific target.

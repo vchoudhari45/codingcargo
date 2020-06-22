@@ -134,6 +134,8 @@ public class WriteToFireStore {
         postFile.write("[");
         postFile.write(System.lineSeparator());
 
+        AtomicBoolean isFirst = new AtomicBoolean(true);
+
         stream.forEach(path -> {
             try {
                 if (Files.isRegularFile(path) & path.toString().endsWith(".java")) {
@@ -242,6 +244,13 @@ public class WriteToFireStore {
                         }
                         else {
                             postElement.addProperty("saved", true);
+                        }
+                        if(isFirst.get()) {
+                            isFirst.set(false);
+                        }
+                        else {
+                            postFile.append(", ");
+                            postFile.append(System.lineSeparator());
                         }
                         postFile.append(gson.toJson(postElement));
                     }
