@@ -5,13 +5,17 @@ import java.util.*;
 /*****
  *  Problem No: 1
  *  Category: Data Structures And Algorithms
- *  Tags: Array, Hash Table, Amazon, Facebook, Google, Microsoft, Leetcode, Easy
+ *  Tags: Array, HashTable, Amazon, Facebook, Google, Microsoft, Leetcode, Easy
  *  Title: Two Sum
- *  Description: Given an array of integers, return indices of two numbers such that they adds up to specific target
+ *  MetaDescription: Java Solution to a Data Structures And Algorithms problem, Given an array of integers, return indices of two numbers such that they add up to specific target. It is an easy problem that is part of Amazon, Facebook, Google, Microsoft Technical Interview Question list, and can be solved using Array & HashMap Data Structure.
+ *  Description: Given an array of integers, return indices of two numbers such that they adds up to specific target.
  *  Similar Question: 3Sum, 4Sum, Two Sum II - Input array is sorted, Two Sum III - Data structure design, Subarray Sum Equals K, Two Sum IV - Input is a BST, Two Sum Less Than K
  *****/
 
 class L1 {
+    /**
+     *  Question: Given an array of integers, return indices of two numbers such that they adds up to specific target.
+     **/
     public int[] twoSum(int[] arr, int target) {
         HashMap<Integer, Integer> map = new HashMap<>();
         /**

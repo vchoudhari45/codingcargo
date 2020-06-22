@@ -217,6 +217,7 @@ public class WriteToFireStore {
                     }
                     if(post.getTitle() != null && !post.getTitle().equals("")) {
                         content = content.replaceAll("[\r\n]+","\n");
+                        content = content.trim();
                         postContent.setContent(content);
                         if(post.getAuthor() == null || post.getAuthor().trim().equals("")) {
                             postContent.setAuthor("Vishal Choudhari");
