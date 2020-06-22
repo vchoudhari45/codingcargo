@@ -6,7 +6,6 @@ import { generateTagUrl } from '../../util/urlUtil'
 const Header: React.FC = props => {
     const [isOpen, setIsOpen] = useState(false)
     const ref = useClickOutsideListenerRef(setIsOpen)
-
     const menuLinkArray = [
         {
             "category": "Home",
