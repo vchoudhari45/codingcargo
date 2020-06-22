@@ -4,7 +4,7 @@ import { Router } from 'next/dist/client/router'
 import NProgress from 'nprogress'
 import '../css/index.css'
 
-NProgress.configure({ showSpinner: false, speed: 400 });
+NProgress.configure({ showSpinner: false, easing: 'ease', speed: 500 });
 
 Router.events.on('routeChangeStart', () => NProgress.start()) 
 Router.events.on('routeChangeComplete', () => NProgress.done())
