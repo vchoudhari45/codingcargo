@@ -7,6 +7,8 @@ package com.vc.easy;
  *  Title: Reverse Integer
  *  MetaDescription: Java Solution to a Data Structures And Algorithms problem, Given a 32-bit signed integer, reverse digits of integer. It is an easy problem that is part of Amazon, Facebook, Google, Microsoft Technical Interview Question list, and the solution involves using math.
  *  Description: Given a 32-bit signed integer, reverse digits of integer.
+ *  Input:  123
+ *  Output: 321
  *  Similar Question: String to Integer (atoi), Reverse Bits, Palindrome Number
  *****/
 

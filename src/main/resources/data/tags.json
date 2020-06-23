@@ -58,7 +58,14 @@
   {
     "title": "Easy",
     "type" : "Difficulty",
-    "description": "This page list Easy difficulty Interview questions from Leetcode",
+    "description": "This page list Easy difficulty Interview questions",
+    "keywords": "Data Structures And Algorithms, Leetcode",
+    "saved": true
+  },
+  {
+    "title": "String",
+    "type" : "Data Structures And Algorithms",
+    "description": "A String is a sequence of characters, either as a literal constant or as some kind of variable.This page list string problems",
     "keywords": "Data Structures And Algorithms, Leetcode",
     "saved": true
   }

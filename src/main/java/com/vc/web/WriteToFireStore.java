@@ -209,6 +209,14 @@ public class WriteToFireStore {
                             post.setDescription(description);
                             postContent.setDescription(description);
                         }
+                        if(line.contains("Input:")){
+                            String input = line.replace("Input:", "").replaceAll("\\*", "").trim();
+                            postContent.setDescription(postContent.getDescription() + "\n" + input);
+                        }
+                        if(line.contains("Output:")){
+                            String output = line.replace("Output:", "").replaceAll("\\*", "").trim();
+                            postContent.setDescription(postContent.getDescription() + "\n" + output);
+                        }
                         if (line.contains("MetaDescription:")) {
                             String metaDescription = line.replace("MetaDescription:", "").replaceAll("\\*", "").trim();
                             postContent.setMetaDescription(metaDescription);
@@ -228,6 +236,7 @@ public class WriteToFireStore {
                         JsonObject postElement = gson.toJsonTree(post).getAsJsonObject();
                         postElement.addProperty("category", postContent.getCategory());
                         postElement.addProperty("content", postContent.getContent());
+                        postElement.addProperty("descriptionPostContent", postContent.getDescription());
                         if(postContent.getMetaDescription() != null && !postContent.getMetaDescription().equals("")) {
                             postElement.addProperty("metaDescription", postContent.getMetaDescription());
                         }
@@ -384,6 +393,7 @@ public class WriteToFireStore {
                 String title = postJsonObject.get("title").getAsString();
                 String author = postJsonObject.get("author").getAsString();
                 String description = postJsonObject.get("description").getAsString();
+                String descriptionPostContent = postJsonObject.get("descriptionPostContent").getAsString();
                 String content = postJsonObject.get("content").getAsString();
                 String category = postJsonObject.get("category").getAsString();
                 String metaDescription = postJsonObject.get("metaDescription").getAsString();
@@ -408,7 +418,7 @@ public class WriteToFireStore {
                 postContent.setTitle(title);
                 postContent.setAuthor(author);
                 postContent.setCategory(category);
-                postContent.setDescription(description);
+                postContent.setDescription(descriptionPostContent);
                 postContent.setMetaDescription(metaDescription);
                 postContent.setContent(content);
                 postContent.setCreatedAt(createdAt);

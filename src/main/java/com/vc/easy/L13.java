@@ -2,42 +2,67 @@ package com.vc.easy;
 
 import java.util.*;
 
+/*****
+ *  Problem No: 13
+ *  Category: Data Structures And Algorithms
+ *  Tags: Math, String, Leetcode, Easy
+ *  Title: Palindrome Number
+ *  MetaDescription: Java Solution to Data Structures And Algorithms problem which, convert Roman literal to an integer number. It is an easy problem that uses lookup and Roman Literal Conversation technique
+ *  Description: Convert given Roman literal to an integer number
+ *  Input: "III"
+ *  Output: 3
+ *  Similar Question: Integer to Roman
+ *****/
+
 class L13 {
-
+    /**
+     *  To convert Roman Literal to Integer value we have to make use of the lookup values as below
+     *      Symbol       Value
+     *        I             1
+     *        V             5
+     *        X             10
+     *        L             50
+     *        C             100
+     *        D             500
+     *        M             1000
+     *
+     *  Algorithm:
+     *  1. Read ith character as "FIRST" character and lookup corresponding integer value
+     *  2. Read (i + 1)th character as "SECOND" character, if (i + 1) < given roman string length and lookup corresponding integer value
+     *  3. If SECOND > FIRST then add SECOND - FIRST to answer
+     *     ELSE add FIRST to answer
+     *  4. Continue running Step 1 to 3 on whole given string
+     **/
     public int romanToInt(String s) {
+        if(s == null || s.length() == 0) return 0;
 
-        Map<String, Integer> values = new HashMap<>();
+        HashMap<Character, Integer> lookup = new HashMap<>();
+        lookup.put('I', 1);
+        lookup.put('V', 5);
+        lookup.put('X', 10);
+        lookup.put('L', 50);
+        lookup.put('C', 100);
+        lookup.put('D', 500);
+        lookup.put('M', 1000);
 
-        values.put("M", 1000);
-        values.put("D", 500);
-        values.put("C", 100);
-        values.put("L", 50);
-        values.put("X", 10);
-        values.put("V", 5);
-        values.put("I", 1);
-
-        int sum = 0;
         int i = 0;
-        while (i < s.length()) {
-            String currentSymbol = s.substring(i, i + 1);
-
-            int currentValue = values.get(currentSymbol);
-            int nextValue = 0;
-            if (i + 1 < s.length()) {
-                String nextSymbol = s.substring(i + 1, i + 2);
-                nextValue = values.get(nextSymbol);
+        int res = 0;
+        while(i < s.length()) {
+            int first = lookup.get(s.charAt(i));
+            int second = 0;
+            if(i + 1 < s.length()) {
+                second = lookup.get(s.charAt(i + 1));
             }
 
-            if (currentValue < nextValue) {
-                sum += (nextValue - currentValue);
+            if(second > first) {
+                res += (second - first);
                 i += 2;
             }
             else {
-                sum += currentValue;
-                i += 1;
+                res += first;
+                i++;
             }
-
         }
-        return sum;
+        return res;
     }
 }

@@ -38,6 +38,18 @@ const PostContentUI = ({postContent}: Props) => {
         )
      }
     
+    const postDescriptionWithInput = postContent.description.split("\n")
+    const inputOutput: JSX.Element[] = []
+    for (let i = 3; i < postDescriptionWithInput.length; i+=2) {
+        inputOutput.push(
+            <>
+                <br /><br />
+                Input&nbsp;&nbsp;:&nbsp;{postDescriptionWithInput[i]}<br />
+                Ouput:&nbsp;{postDescriptionWithInput[i + 1]}
+            </>
+        )
+    }
+
     return (
         <>
             <>
@@ -47,11 +59,26 @@ const PostContentUI = ({postContent}: Props) => {
 
             <div className="mt-8">
                 <div className="text-base md:text-lg capitalize leading-relaxed font-medium mb-1">Problem Statement</div>
-                <div className="text-sm md:text-base text-gray-900 leading-snug">{postContent.description}</div>
+                <div className="text-sm md:text-base text-gray-900 leading-snug">
+                    {postDescriptionWithInput[0]}
+                </div>
             </div>
 
             <div className="mt-8">
-                <div className="text-base md:text-lg capitalize leading-relaxed font-medium mb-1">Problem Solution</div>
+                <div className="text-base md:text-lg capitalize leading-relaxed font-medium mb-1">Example</div>
+                <div className="text-sm md:text-base text-gray-900">
+                    Input&nbsp;&nbsp;:&nbsp;{postDescriptionWithInput[1]}<br />
+                    Ouput:&nbsp;{postDescriptionWithInput[2]}
+                    {
+                        postDescriptionWithInput.length > 3 
+                        ? <>{inputOutput}</>
+                        : ""
+                    }
+                </div>
+            </div>
+
+            <div className="mt-8">
+                <div className="text-base md:text-lg capitalize leading-relaxed font-medium mb-1">Solution</div>
                 <div className="text-sm border border-gray-100 shadow rounded-lg">
                     <pre>
                         <code className="language-java">
