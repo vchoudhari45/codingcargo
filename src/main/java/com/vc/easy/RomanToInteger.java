@@ -6,15 +6,23 @@ import java.util.*;
  *  Problem No: 13
  *  Category: Data Structures And Algorithms
  *  Tags: Math, String, Leetcode, Easy
- *  Title: Palindrome Number
- *  MetaDescription: Java Solution to Data Structures And Algorithms problem which, convert Roman literal to an integer number. It is an easy problem that uses lookup and Roman Literal Conversation technique
- *  Description: Convert given Roman literal to an integer number
- *  Input: "III"
+ *  Title: Roman to Integer
+ *  MetaDescription: Java Solution to Data Structures And Algorithms problem, which converts Roman literal to an integer number, It is an easy problem that uses the HashTable lookup and Roman Literal conversation technique.
+ *  Description: Convert given Roman literal to an integer number.
+ *  Input: III
  *  Output: 3
+ *  Input: IV
+ *  Output: 4
+ *  Input: IX
+ *  Output: 9
+ *  Input: LVIII
+ *  Output: 58
+ *  Input: MCMXCIV
+ *  Output: 1994
  *  Similar Question: Integer to Roman
  *****/
 
-class L13 {
+class RomanToInteger {
     /**
      *  To convert Roman Literal to Integer value we have to make use of the lookup values as below
      *      Symbol       Value

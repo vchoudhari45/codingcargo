@@ -9,10 +9,12 @@ package com.vc.easy;
  *  Description: Determine whether an integer is a palindrome. An integer is a palindrome when it reads the same backward as forward.
  *  Input: 121
  *  Output: true
+ *  Input: -121
+ *  Output: false
  *  Similar Question: String to Integer (atoi), Reverse Bits, Palindrome Number
  *****/
 
-class L9 {
+class PalindromeNumber {
     /**
      *  Gotchas
      *  1. Given number can be negative

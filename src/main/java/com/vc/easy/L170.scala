@@ -1,6 +1,6 @@
 package com.vc.easy
 
-class TwoSum() {
+class TwoSumProblem() {
 
   /** Initialize your data structure here. */
   import scala.collection.mutable

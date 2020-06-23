@@ -149,6 +149,7 @@ public class WriteToFireStore {
                     content = content.replace("package com.vc.easy;", "");
                     content = content.replace("package com.vc.medium;", "");
                     content = content.replace("package com.vc.hard;", "");
+                    content = content.replace("import com.vc.hard.ListNode;", "");
                     content = content.replace("/*****", "");
                     content = content.replace("*****/", "");
 

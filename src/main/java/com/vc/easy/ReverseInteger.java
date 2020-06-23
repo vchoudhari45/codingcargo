@@ -9,15 +9,20 @@ package com.vc.easy;
  *  Description: Given a 32-bit signed integer, reverse digits of integer.
  *  Input:  123
  *  Output: 321
+ *  Input: -123
+ *  Output: -321
+ *  Input: 120
+ *  Output: 21
  *  Similar Question: String to Integer (atoi), Reverse Bits, Palindrome Number
  *****/
 
-class L7 {
+class ReverseInteger {
     /**
      *  Gotchas
      *  Problem looks fairly simple, but there are two gotchas that we have to be careful about
      *  1. Given number can be negative
      *  2. Reversed number might overflow out the range of integer
+     *  3. Reversed number might have zeros in the beginning
      *
      *  Algorithm
      *  1. If the given number is negative, set a flag and reverse the sign of a current number.
