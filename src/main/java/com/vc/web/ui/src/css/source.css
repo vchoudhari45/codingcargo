@@ -13,13 +13,11 @@ body {
 /**
  * CSS for Code
  */
-
  code[class*="language-"],
  pre[class*="language-"] {
      color: #1a202c;
      background: none;
      font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', 'Consolas', 'source-code-pro', 'monospace';
-     font-size: 1em;
      text-align: left;
      white-space: pre;
      word-spacing: normal;

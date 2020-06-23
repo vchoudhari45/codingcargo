@@ -18,10 +18,9 @@ const PostContentUI = ({postContent}: Props) => {
     const tags = Object.keys(postContent.tags).sort()
     for (const tagIndex in tags) {
        tagHtml.push(
-            <div key={tags[tagIndex]}>
+            <div key={tags[tagIndex]} className="py-1 md:px-4 md:py-1 md:mr-2 md:rounded-lg md:bg-gray-900 md:text-gray-500 md:hover:text-white md:hover:nounderline">
                 <Link href="/list/[category]/[tag]/" as={generateTagUrl(postContent.category, tags[tagIndex], false)} prefetch={false}>
-                    <a className="capitalize
-                       md:bg-gray-900 md:text-gray-500 md:hover:text-white md:rounded-lg md:px-4 md:py-1 md:mr-2">{tags[tagIndex]}</a>
+                    <a className="capitalize nounderline hover:underline">{tags[tagIndex]}</a>
                 </Link>
             </div>
        )
@@ -44,8 +43,8 @@ const PostContentUI = ({postContent}: Props) => {
         inputOutput.push(
             <>
                 <br /><br />
-                Input&nbsp;&nbsp;:&nbsp;{postDescriptionWithInput[i]}<br />
-                Ouput:&nbsp;{postDescriptionWithInput[i + 1]}
+                <b>Input</b>&nbsp;&nbsp;&nbsp;&nbsp;{postDescriptionWithInput[i]}<br />
+                <b>Ouput</b>&nbsp;&nbsp;{postDescriptionWithInput[i + 1]}
             </>
         )
     }
@@ -66,9 +65,9 @@ const PostContentUI = ({postContent}: Props) => {
 
             <div className="mt-8">
                 <div className="text-base md:text-lg capitalize leading-relaxed font-medium mb-1">Example</div>
-                <div className="text-sm md:text-base text-gray-900">
-                    Input&nbsp;&nbsp;:&nbsp;{postDescriptionWithInput[1]}<br />
-                    Ouput:&nbsp;{postDescriptionWithInput[2]}
+                <div className="text-sm md:text-base text-gray-900 tracking-tight border border-gray-100 shadow rounded-lg overflow-auto px-3 py-3">
+                    <b>Input</b>&nbsp;&nbsp;&nbsp;&nbsp;{postDescriptionWithInput[1]}<br />
+                    <b>Ouput</b>&nbsp;&nbsp;{postDescriptionWithInput[2]}
                     {
                         postDescriptionWithInput.length > 3 
                         ? <>{inputOutput}</>
