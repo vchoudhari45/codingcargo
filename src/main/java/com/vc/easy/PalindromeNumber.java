@@ -5,7 +5,7 @@ package com.vc.easy;
  *  Category: Data Structures And Algorithms
  *  Tags: Math, Leetcode, Easy
  *  Title: Palindrome Number
- *  MetaDescription: Java Solution to Data Structures And Algorithms problem, To determine whether an integer is a palindrome. It is an easy problem that uses the modulo Math technique to solve the problem.
+ *  MetaDescription: Java Solution to Data Structures And Algorithms problem, to determine whether an integer is a palindrome. It is an easy problem that uses the modulo Math technique to solve the problem.
  *  Description: Determine whether an integer is a palindrome. An integer is a palindrome when it reads the same backward as forward.
  *  Input: 121
  *  Output: true
