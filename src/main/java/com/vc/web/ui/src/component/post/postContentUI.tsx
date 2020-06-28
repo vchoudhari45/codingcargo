@@ -44,7 +44,7 @@ const PostContentUI = ({postContent}: Props) => {
             <>
                 <br /><br />
                 <b>Input</b>&nbsp;&nbsp;&nbsp;&nbsp;{postDescriptionWithInput[i]}<br />
-                <b>Ouput</b>&nbsp;&nbsp;{postDescriptionWithInput[i + 1]}
+                <b>Output</b>&nbsp;&nbsp;{postDescriptionWithInput[i + 1]}
             </>
         )
     }
@@ -67,7 +67,7 @@ const PostContentUI = ({postContent}: Props) => {
                 <div className="text-base md:text-lg capitalize leading-relaxed font-medium mb-1">Example</div>
                 <div className="text-sm md:text-base text-gray-900 tracking-tight border border-gray-100 shadow rounded-lg overflow-auto px-3 py-3">
                     <b>Input</b>&nbsp;&nbsp;&nbsp;&nbsp;{postDescriptionWithInput[1]}<br />
-                    <b>Ouput</b>&nbsp;&nbsp;{postDescriptionWithInput[2]}
+                    <b>Output</b>&nbsp;&nbsp;{postDescriptionWithInput[2]}
                     {
                         postDescriptionWithInput.length > 3 
                         ? <>{inputOutput}</>
