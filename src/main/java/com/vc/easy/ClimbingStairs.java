@@ -6,12 +6,14 @@ package com.vc.easy;
  *  Category: Data Structures And Algorithms
  *  Tags: Dynamic Programming, Fibonacci Series, Amazon, Facebook, Google, Microsoft, Leetcode, Easy
  *  Title: Climbing Stairs
- *  MetaDescription: Java Solution to Data Structures And Algorithms problem, You are climbing a stair case and It takes n steps to reach to the top. Each time you can either climb 1 or 2 steps. In how many distinct ways can you climb to the top? It is an easy problem that uses Dynamic Programming to solve the problem.
+ *  MetaDescription: Java Solution to Data Structures And Algorithms problem, You are climbing a stair case and It takes n steps to reach to the top. Each time you can either climb 1 or 2 steps. In how many distinct ways can you climb to the top? It is an easy problem that uses Fibonacci Series to solve the problem.
  *  Description: You are climbing a stair case. It takes n steps to reach to the top. Each time you can either climb 1 or 2 steps. In how many distinct ways can you climb to the top?
  *  Input: 2
  *  Output: 2
  *  Input: 3
  *  Output: 3
+ *  Input: 4
+ *  Output: 5
  *  Similar Question: Shortest Palindrome, Repeated Substring Pattern
  *****/
 
