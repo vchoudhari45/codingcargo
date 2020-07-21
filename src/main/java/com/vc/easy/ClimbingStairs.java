@@ -19,7 +19,6 @@ package com.vc.easy;
 
 class ClimbingStairs {
     /**
-     *
      *  Algorithm:
      *
      *  As the problem statements states, you can either climb 1 steps or 2 steps from any position.
