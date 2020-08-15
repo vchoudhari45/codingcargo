@@ -11,18 +11,25 @@ src/main/resources/application.conf
 
 # ui
 # dependencies
+src/main/java/com/vc/docs/src/node_modules
 src/main/java/com/vc/web/ui/node_modules
+src/main/java/com/vc/docs/ui/.pnp
 src/main/java/com/vc/web/ui/.pnp
+src/main/java/com/vc/docs/ui/.pnp.js
 src/main/java/com/vc/web/ui/.pnp.js
 
 # testing
+src/main/java/com/vc/docs/ui/coverage
 src/main/java/com/vc/web/ui/coverage
 
 # next.js
+src/main/java/com/vc/docs/ui/.next/
 src/main/java/com/vc/web/ui/.next/
+src/main/java/com/vc/docs/ui/out/
 src/main/java/com/vc/web/ui/out/
 
 # production
+src/main/java/com/vc/docs/ui/build
 src/main/java/com/vc/web/ui/build
 
 # debug
