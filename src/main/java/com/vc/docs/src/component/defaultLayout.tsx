@@ -204,4 +204,5 @@ const DefaultLayout: React.FC = ({ children }) => {
 			</>
   )
 }
+
 export const defaultLayout = (page: JSX.Element) => <DefaultLayout>{page}</DefaultLayout>
