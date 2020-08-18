@@ -1,7 +1,13 @@
 import SearchBox from './searchBox'
 import Menu from './menu'
+import { MenuItem } from '../../model/MenuItem'
 
-const mobileSidebar: React.FC = () => {
+interface Props {
+	menu: MenuItem[]
+	selected: MenuItem
+}
+
+const mobileSidebar: React.FC<Props> = ({menu, selected}) => {
 	return (
 		<div className="jsx-249575869 shadow">
 			<div className="jsx-1998690184">
@@ -22,7 +28,7 @@ const mobileSidebar: React.FC = () => {
 				<div className="jsx-567598700 docs-dropdown">
 					<div className="jsx-1998690184">
 						<nav className="jsx-567598700">
-								<Menu />
+							<Menu data={menu} selected={selected} />
 						</nav>
 					</div>
 				</div>

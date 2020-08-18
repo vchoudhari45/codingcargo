@@ -1,7 +1,13 @@
 import SearchBox from './searchBox'
 import Menu from './menu'
+import { MenuItem } from '../../model/MenuItem'
 
-const Sidebar: React.FC = () => {
+interface Props {
+	menu: MenuItem[]
+	selected: MenuItem
+}
+
+const Sidebar: React.FC<Props> = ({menu, selected}) => {
 	return (
 		<aside className="jsx-867702785 sidebar fixed">
 			<div className="jsx-867702785 sidebar-search">
@@ -9,7 +15,7 @@ const Sidebar: React.FC = () => {
 			</div>
 
 			<div className="jsx-867702785 sidebar-content">
-				<Menu />
+				<Menu data={menu} selected={selected} />
 			</div>
 		</aside>
 	)							
