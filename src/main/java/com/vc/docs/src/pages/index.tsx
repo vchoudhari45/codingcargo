@@ -75,30 +75,35 @@ const response = {
 		title: "Pages",
 		path: "/docs/basic-features/getting-started.md"
 	},
-	metadata: "Getting Started",
-	main: <>
-					<h1>Getting Started</h1>
-					<p>Welcome to CodingCargo.com, and add your .md content here from github so that you can have an option to edit the .md file and that it</p>	
-				</>
+	metadata: "Getting Started"
 }
 
 export default function Home() {
-	const menuHtml = renderMenu(response.sidebar, response.menu, 1)
+	const res = renderMenu(response.sidebar, response.menu, 1)
   return (
 		<>
-			<MobileSidebar menu={menuHtml} />
+			<MobileSidebar menu={res.menuHtml} />
 			<div className="jsx-1998690184">
 				<div className="jsx-1294800792 content">
-					<Sidebar menu={menuHtml} />
-					<Main main={response.main} prev={null} current={response.menu} next={response.menu} />
+					<Sidebar menu={res.menuHtml} />
+					<Main prev={null} current={response.menu} next={response.menu} />
 				</div>
 			</div>
 		</>
   )
 }
 
+interface RenderMenuResponse {
+	prev: MenuItem
+	next: MenuItem
+	menuHtml: JSX.Element
+}
+
 //DFS
-function renderMenu(data: MenuItem[], selected: MenuItem, depth: number) {
+function renderMenu(data: MenuItem[], selected: MenuItem, depth: number): RenderMenuResponse {
+	let prev = {title: ""}
+	let next = {title: ""}
+
 	const menuHtml = data.map(menuItem => {
 		const [isMenuItemSelected, setIsMenuItemSelected] = useState(false)
 		const [isCategoryOpen, setCategoryOpen] = useState(menuItem.open != null ? menuItem.open : false)
@@ -108,7 +113,7 @@ function renderMenu(data: MenuItem[], selected: MenuItem, depth: number) {
 			return (
 				<>
 				<h4 className="jsx-3875994729">{menuItem.title}</h4>
-				{childrenHtml}
+				{childrenHtml.menuHtml}
 				</>
 			)
 		}
@@ -123,7 +128,7 @@ function renderMenu(data: MenuItem[], selected: MenuItem, depth: number) {
 							</svg>
 							{menuItem.title}
 						</a>
-						<div className="jsx-2502836651 posts">{childrenHtml}</div>
+						<div className="jsx-2502836651 posts">{childrenHtml.menuHtml}</div>
 					</div>
 				)
 			}
@@ -138,5 +143,9 @@ function renderMenu(data: MenuItem[], selected: MenuItem, depth: number) {
 			}
 		}
 	})
-	return menuHtml
+	return {
+		prev: prev,
+		next: next,
+		menuHtml: <>{menuHtml}</>
+	}
 }

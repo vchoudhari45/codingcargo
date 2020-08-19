@@ -2,19 +2,19 @@ import { createSecureContext } from "tls"
 import { MenuItem } from "../../model/MenuItem"
 
 interface Props {
-	main: JSX.Element
 	prev: MenuItem
 	current: MenuItem
 	next: MenuItem
 }
 
-const main: React.FC<Props> = ({main, prev, current, next}: Props) => {
+const main: React.FC<Props> = ({prev, current, next}: Props) => {
 	return (
 		<div className="container">
 			<div className="jsx-29590182 docs">
 				
 				<div className="jsx-29590182 docs-content">
-					Get the data from this file read it ok don't .................................... just slap the name ok {current.title}
+					<h1>Getting Started</h1>
+					<p>Get the data from this file read it ok don't .................................... just slap the name ok {current.title}</p>
 				</div>
 
 				<div className="jsx-29590182 page-nav">
@@ -44,7 +44,7 @@ const main: React.FC<Props> = ({main, prev, current, next}: Props) => {
 				</div>
 
 				<footer className="jsx-29590182">
-						<a href={"https://github.com/vchoudhari45/leetcode/blob/master/src/main/java/com/vc/docs/md/" + current.title} target="_blank" rel="noopener noreferrer" className="jsx-29590182">Edit this page on GitHub</a>
+						<a href={"https://github.com/vchoudhari45/leetcode/blob/master/src/main/java/com/vc/docs/md/" + current.title + ".md"} target="_blank" rel="noopener noreferrer" className="jsx-29590182">Edit this page on GitHub</a>
 				</footer>
 				
 			</div>
