@@ -1,6 +1,8 @@
 import Sidebar from '../component/layout/sidebar'
 import MobileSidebar from '../component/layout/mobileSidebar'
 import { MenuItem } from '../model/MenuItem'
+import Main from '../component/layout/main'
+import { useState } from 'react'
 
 interface Props {
 	sidebar: MenuItem[],
@@ -81,50 +83,60 @@ const response = {
 }
 
 export default function Home() {
+	const menuHtml = renderMenu(response.sidebar, response.menu, 1)
   return (
 		<>
-			<MobileSidebar menu={response.sidebar} selected={response.menu} />
+			<MobileSidebar menu={menuHtml} />
 			<div className="jsx-1998690184">
 				<div className="jsx-1294800792 content">
-					<Sidebar menu={response.sidebar} selected={response.menu} />
-					<div className="container">
-						<div className="jsx-29590182 docs">
-							
-							<div className="jsx-29590182 docs-content">
-
-							</div>
-
-							<div className="jsx-29590182 page-nav">
-								<a href="/docs/getting-started" className="jsx-4279592588 btn fw4 no-drag">
-										<span className="jsx-113938279">
-												<svg viewBox="0 0 24 24" width="24" height="24">
-														<g fill="#0070f3">
-																<path fill="#0070f3" d="M14,17.414l-4.707-4.707c-0.391-0.391-0.391-1.023,0-1.414L14,6.586L15.414,8l-4,4l4,4L14,17.414z" />
-														</g>
-												</svg>
-										</span>Getting Started
-								</a>
-
-								<a href="/docs/basic-features/data-fetching" className="jsx-4279592588 btn fw4 no-drag">
-										Data fetching
-										<span className="jsx-3578282791">
-												<svg width="24" height="24" viewBox="0 0 24 24">
-														<g fill="#0070f3">
-																<path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z" />
-														</g>
-												</svg>
-										</span>
-								</a>
-							</div>
-
-							<footer className="jsx-29590182">
-									<a href="https://github.com/vercel/next.js/edit/canary/docs/basic-features/pages.md" target="_blank" rel="noopener noreferrer" className="jsx-29590182">Edit this page on GitHub</a>
-							</footer>
-							
-						</div>
-					</div>
+					<Sidebar menu={menuHtml} />
+					<Main main={response.main} prev={null} current={response.menu} next={response.menu} />
 				</div>
 			</div>
 		</>
   )
+}
+
+//DFS
+function renderMenu(data: MenuItem[], selected: MenuItem, depth: number) {
+	const menuHtml = data.map(menuItem => {
+		const [isMenuItemSelected, setIsMenuItemSelected] = useState(false)
+		const [isCategoryOpen, setCategoryOpen] = useState(menuItem.open != null ? menuItem.open : false)
+
+		if(menuItem.heading) {
+			const childrenHtml = renderMenu(menuItem.menuItems, selected, depth)
+			return (
+				<>
+				<h4 className="jsx-3875994729">{menuItem.title}</h4>
+				{childrenHtml}
+				</>
+			)
+		}
+		else {
+			if(menuItem.menuItems != null) {
+				const childrenHtml = renderMenu(menuItem.menuItems, selected, depth + 1)
+				return (
+					<div className={"jsx-2502836651 category level-" + (depth + 1) + (isCategoryOpen ? " open" : "")} onClick={() => { setCategoryOpen(!isCategoryOpen) }}>
+						<a className="jsx-2502836651 label">
+							<svg width="6" height="10" viewBox="0 0 6 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+								<path d="M1.4 8.56L4.67 5M1.4 1.23L4.66 4.7" stroke="#999" strokeLinecap="square" />
+							</svg>
+							{menuItem.title}
+						</a>
+						<div className="jsx-2502836651 posts">{childrenHtml}</div>
+					</div>
+				)
+			}
+			else {
+				return (
+					<div className={"jsx-616696232 link level-" + depth}>
+						<div className={"jsx-3253412043 nav-link " + (selected.title === menuItem.title ? "selected": "")} onClick={() => { setIsMenuItemSelected(!isMenuItemSelected)}}>
+							<a className="jsx-3253412043" href={menuItem.path}>{menuItem.title}</a>
+						</div>
+					</div>
+				)
+			}
+		}
+	})
+	return menuHtml
 }
