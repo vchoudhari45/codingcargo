@@ -13,7 +13,7 @@ const main: React.FC<Props> = ({prev, current, next}: Props) => {
 			<div className="jsx-29590182 docs">
 				
 				<div className="jsx-29590182 docs-content">
-					<h1>Getting Started</h1>
+					<h1>{current.title}</h1>
 					<p>Get the data from this file read it ok don't .................................... just slap the name ok {current.title}</p>
 				</div>
 
@@ -30,17 +30,20 @@ const main: React.FC<Props> = ({prev, current, next}: Props) => {
 								</span>{prev.title}
 						</a>
 					}
-			
-					<a href={"/docs/md/"+ next.title} className="jsx-4279592588 btn fw4 no-drag">
-							{next.title}
-							<span className="jsx-3578282791">
-									<svg width="24" height="24" viewBox="0 0 24 24">
-											<g fill="#0070f3">
-													<path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z" />
-											</g>
-									</svg>
-							</span>
-					</a>
+
+					{
+						next == null ? <span className="jsx-29590182"></span> :
+						<a href={"/docs/md/"+ next.title} className="jsx-4279592588 btn fw4 no-drag">
+								{next.title}
+								<span className="jsx-3578282791">
+										<svg width="24" height="24" viewBox="0 0 24 24">
+												<g fill="#0070f3">
+														<path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z" />
+												</g>
+										</svg>
+								</span>
+						</a>
+					}
 				</div>
 
 				<footer className="jsx-29590182">

@@ -15,6 +15,7 @@ const menu = [
 	{
 		title: "Documentation",
 		heading: true,
+
 		menuItems: [
 			{
 				title: "Getting Started",
@@ -69,24 +70,25 @@ const menu = [
 	}
 ]
 
-const response = {
-	sidebar: menu,
-	menu: {
-		title: "Pages",
-		path: "/docs/basic-features/getting-started.md"
-	},
-	metadata: "Getting Started"
+//This is Input
+const selected = {
+	title: "next/router",
+	path: "/docs/basic-features/getting-started.md"
 }
+const metadata =  "Getting Started"
 
 export default function Home() {
-	const res = renderMenu(response.sidebar, response.menu, 1)
-  return (
+	const res = renderMenu(menu, selected, 1)
+	const prevTitle = res.prev != null ? res.prev.title : "NULL"
+	const nextTitle = res.next != null ? res.next.title : "NULL"
+	console.log("res: "+prevTitle+" "+nextTitle)
+	return (
 		<>
 			<MobileSidebar menu={res.menuHtml} />
 			<div className="jsx-1998690184">
 				<div className="jsx-1294800792 content">
 					<Sidebar menu={res.menuHtml} />
-					<Main prev={null} current={response.menu} next={response.menu} />
+					<Main prev={res.prev} current={selected} next={res.next} />
 				</div>
 			</div>
 		</>
@@ -101,26 +103,91 @@ interface RenderMenuResponse {
 
 //DFS
 function renderMenu(data: MenuItem[], selected: MenuItem, depth: number): RenderMenuResponse {
-	let prev = {title: ""}
-	let next = {title: ""}
+	let prev = null
+	let next = null
+	let menuHtml = []
 
-	const menuHtml = data.map(menuItem => {
+	for(var i = 0; i < data.length; i++) {
+		const menuItem = data[i]
 		const [isMenuItemSelected, setIsMenuItemSelected] = useState(false)
 		const [isCategoryOpen, setCategoryOpen] = useState(menuItem.open != null ? menuItem.open : false)
-
+		
 		if(menuItem.heading) {
 			const childrenHtml = renderMenu(menuItem.menuItems, selected, depth)
-			return (
+			
+			/** Start: Assign prev & next */
+				let found = false
+				if(prev == null && childrenHtml.prev != null) {
+					prev = childrenHtml.prev
+					found = true
+				}
+				if(next == null && childrenHtml.next != null) {
+					next = childrenHtml.next 
+					found = true 
+				}
+				if(found && prev == null) {
+					if(i - 1 >= 0) {
+						prev = data[i - 1]
+						while(prev.menuItems != null) {
+							console.log("Assiging Prev: "+prev.title+":"+prev.menuItems[prev.menuItems.length - 1].title)
+							prev = prev.menuItems[prev.menuItems.length - 1]
+						}
+					}
+				}
+				if(found && next == null) {
+					if(i + 1 < data.length) {
+						next = data[i + 1]
+						while(next.menuItems != null) {
+							console.log("Assiging Next: "+next.title+":"+next.menuItems[0].title)
+							next = next.menuItems[0]
+						}
+					}
+				}
+			/** End: Assign prev & next */
+
+			menuHtml.push(
 				<>
-				<h4 className="jsx-3875994729">{menuItem.title}</h4>
-				{childrenHtml.menuHtml}
+					<h4 className="jsx-3875994729">{menuItem.title}</h4>
+					{childrenHtml.menuHtml}
 				</>
-			)
+		  )
 		}
 		else {
 			if(menuItem.menuItems != null) {
 				const childrenHtml = renderMenu(menuItem.menuItems, selected, depth + 1)
-				return (
+
+				/** Start: Assign prev & next */
+				let found = false
+				if(prev == null && childrenHtml.prev != null) {
+					prev = childrenHtml.prev
+					found = true
+				}
+				if(next == null && childrenHtml.next != null) {
+					next = childrenHtml.next 
+					found = true 
+				}
+				if(found && prev == null) {
+					if(i - 1 >= 0) {
+						prev = data[i - 1]
+						while(prev.menuItems != null) {
+							console.log("Assiging Prev: "+prev.title+":"+prev.menuItems[prev.menuItems.length - 1].title)
+							prev = prev.menuItems[prev.menuItems.length - 1]
+						}
+						console.log("Found : "+prev.title)
+					}
+				}
+				if(found && next == null) {
+					if(i + 1 < data.length) {
+						next = data[i + 1]
+						while(next.menuItems != null) {
+							console.log("Assiging Next: "+next.title+":"+next.menuItems[0].title)
+							next = next.menuItems[0]
+						}
+					}
+				}
+				/** End: Assign prev & next */
+
+				menuHtml.push(
 					<div className={"jsx-2502836651 category level-" + (depth + 1) + (isCategoryOpen ? " open" : "")} onClick={() => { setCategoryOpen(!isCategoryOpen) }}>
 						<a className="jsx-2502836651 label">
 							<svg width="6" height="10" viewBox="0 0 6 10" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -133,7 +200,36 @@ function renderMenu(data: MenuItem[], selected: MenuItem, depth: number): Render
 				)
 			}
 			else {
-				return (
+				
+				/** Start: Assign prev & next */
+				if(selected.title === menuItem.title) {
+					if(i - 1 >= 0) {
+						prev = data[i - 1]
+						while(prev.menuItems != null) {
+							console.log("Assiging Prev: "+prev.menuItems[prev.menuItems.length - 1].title)
+							prev = prev.menuItems[prev.menuItems.length - 1]
+						}
+					}
+					else {
+						console.log("Assiging prev to null")
+						prev = null
+					}
+
+					if(i + 1 < data.length) {
+						next = data[i + 1]
+						while(next.menuItems != null) {
+							console.log("Assiging Next: "+next.menuItems[0].title)
+							next = next.menuItems[0]
+						}
+					}
+					else {
+						console.log("Assiging next to null")
+						next = null
+					}
+				}
+				/** End: Assign prev & next */
+
+				menuHtml.push(
 					<div className={"jsx-616696232 link level-" + depth}>
 						<div className={"jsx-3253412043 nav-link " + (selected.title === menuItem.title ? "selected": "")} onClick={() => { setIsMenuItemSelected(!isMenuItemSelected)}}>
 							<a className="jsx-3253412043" href={menuItem.path}>{menuItem.title}</a>
@@ -142,7 +238,7 @@ function renderMenu(data: MenuItem[], selected: MenuItem, depth: number): Render
 				)
 			}
 		}
-	})
+	}
 	return {
 		prev: prev,
 		next: next,
