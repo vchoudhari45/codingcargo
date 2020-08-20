@@ -10,9 +10,7 @@ const mobileSidebar: React.FC<Props> = ({menu}) => {
 	return (
 		<div className="jsx-249575869 shadow">
 			<div className="jsx-1998690184">
-				<div className="jsx-567598700 sidebar-search">
-					<SearchBox />
-				</div>
+				<div className="jsx-567598700 sidebar-search"><SearchBox /></div>
 
 				<label className={"jsx-567598700 dropdown-toggle"+ (isMobileMenuItemOpen ? " opened" : "")}>
 				  <input type="checkbox" id="dropdown-input" className="jsx-567598700"/>
