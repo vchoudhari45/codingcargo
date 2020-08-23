@@ -1,10 +1,11 @@
 import { MenuItem } from "../../model/MenuItem"
+import ReactHtmlParser from 'react-html-parser';
 
 interface Props {
 	prev: MenuItem
 	current: MenuItem
 	next: MenuItem
-	content: JSX.Element
+	content: string
 }
 
 const main: React.FC<Props> = ({prev, current, next, content}: Props) => {
@@ -13,7 +14,7 @@ const main: React.FC<Props> = ({prev, current, next, content}: Props) => {
 			<div className="jsx-29590182 docs">
 				
 				<div className="jsx-29590182 docs-content">
-					{content}
+					{ ReactHtmlParser(content) }
 				</div>
 
 				<div className="jsx-29590182 page-nav">

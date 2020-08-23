@@ -7,14 +7,12 @@ import { MenuItem } from '../model/MenuItem'
 import fetch from 'isomorphic-unfetch';
 
 interface Props {
-	content: JSX.Element 
+	content: string,
 	selected: MenuItem,
 }
 
 function Post({selected, content}: Props) {
-	
 	const renderMenuResponse = renderMenu(menu, selected, 1)
-
   return (
 		<>
 			<MobileSidebar menu={renderMenuResponse.menuHtml} />
@@ -43,20 +41,12 @@ export async function getStaticProps({params}) {
 	const selected = {title: params.post}
 
 	const url = "https://raw.githubusercontent.com/vchoudhari45/leetcode/master/src/main/java/com/vc/docs/md/GettingStarted.md"
-	
-	// const mdFile = fetch(url)
-  // .then( r => r.json() )
-  // .then( data => {
-  //   console.log(data);
-	// });
-	
 	const res = await fetch(url)
-	console.log(res)
-	const content = await res.json()
-
-  return {
+	const text = await res.text()
+	
+	return {
 		 props: { 
-			content: content,
+			content: text,
 			selected: selected,
 		}
 	} 
