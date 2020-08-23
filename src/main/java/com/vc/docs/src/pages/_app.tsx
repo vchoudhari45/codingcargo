@@ -1,8 +1,8 @@
 import { AppProps } from 'next/app'
-import { defaultLayout } from '../component/defaultLayout'
+import DefaultLayout from '../component/defaultLayout'
 import '../css/index.css'
 
-const App = ({ Component, pageProps}: AppProps) => {
-    return defaultLayout(<Component {...pageProps} />)
+const App = ({pageProps}: AppProps) => {
+	return <DefaultLayout {...pageProps} />
 }
 export default App

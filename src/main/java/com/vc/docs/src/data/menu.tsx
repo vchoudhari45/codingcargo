@@ -2,7 +2,6 @@ export const menu = [
 	{
 		title: "Documentation",
 		heading: true,
-
 		menuItems: [
 			{
 				title: "Getting Started",
