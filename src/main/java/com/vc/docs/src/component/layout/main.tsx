@@ -5,16 +5,16 @@ interface Props {
 	prev: MenuItem
 	current: MenuItem
 	next: MenuItem
+	content: JSX.Element
 }
 
-const main: React.FC<Props> = ({prev, current, next}: Props) => {
+const main: React.FC<Props> = ({prev, current, next, content}: Props) => {
 	return (
 		<div className="container">
 			<div className="jsx-29590182 docs">
 				
 				<div className="jsx-29590182 docs-content">
-					<h1>{current.title}</h1>
-					<p>Get the data from this file read it ok don't .................................... just slap the name ok {current.title}</p>
+					{content}
 				</div>
 
 				<div className="jsx-29590182 page-nav">
