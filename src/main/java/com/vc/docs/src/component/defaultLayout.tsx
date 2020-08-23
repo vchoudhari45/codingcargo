@@ -12,7 +12,7 @@ interface Props {
 }
 
 const DefaultLayout: React.FC<Props> = ({ content, selected }: Props) => {
-	console.log("Selected from DefaultLayout "+selected+" content: "+content)
+	//console.log("Selected from DefaultLayout "+selected+" content: "+content)
 
 	const renderMenuResponse = renderMenu(menu, selected, 1)
 	return (

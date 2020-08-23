@@ -13,7 +13,7 @@ export default function Home({content, selected}: Props) {
 	}
 }
 
-export async function getInitialProps() {
+export async function getStaticProps() {
 	const selected = {title: "Getting Started"}
 	const url = "https://raw.githubusercontent.com/vchoudhari45/leetcode/master/src/main/java/com/vc/docs/md/GettingStarted.md"
 	const res = await fetch(url)
