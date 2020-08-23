@@ -4,24 +4,24 @@ import renderMenu from '../util/render'
 import Main from '../component/layout/main'
 import {menu} from '../data/menu'
 import { MenuItem } from '../model/MenuItem'
-import fetch from 'isomorphic-unfetch'
+import fetch from 'isomorphic-unfetch';
 
 interface Props {
-	menuHtml: JSX.Element
 	content: JSX.Element 
-	prev: MenuItem,
 	selected: MenuItem,
-	next: MenuItem
 }
 
-function Post({ menuHtml, content, prev, selected, next }: Props) {
+function Post({selected, content}: Props) {
+	
+	const renderMenuResponse = renderMenu(menu, selected, 1)
+
   return (
 		<>
-			<MobileSidebar menu={menuHtml} />
+			<MobileSidebar menu={renderMenuResponse.menuHtml} />
 			<div className="jsx-1998690184">
 				<div className="jsx-1294800792 content">
-					<Sidebar menu={menuHtml} />
-					<Main content={content} prev={prev} current={selected} next={next} />
+					<Sidebar menu={renderMenuResponse.menuHtml} />
+					<Main content={content} prev={renderMenuResponse.prev} current={selected} next={renderMenuResponse.next} />
 				</div>
 			</div>
 		</>
@@ -31,36 +31,35 @@ function Post({ menuHtml, content, prev, selected, next }: Props) {
 export async function getStaticPaths() {
   return {
     paths: [
-      { params: { post: "GettingStarted" } }
+			{ params: { post: "Getting Started" } },
+			{ params: { post: "Data Fetching" } },
+			{ params: { post: "Pages" } }
     ],
     fallback: false
   }
 }
 
 export async function getStaticProps({params}) {
-	console.log("Printing params: "+params)
-
 	const selected = {title: params.post}
-	const menuResponse = {menuHtml: <></>, prev: {title: ""}, next: {title: ""}}//renderMenu(menu, {title: params.post}, 1)
-	const url = "https://raw.githubusercontent.com/vchoudhari45/leetcode/master/src/main/java/com/vc/docs/md/"+params.post+".md"
-	console.log("Printing URL: "+url)
+
+	const url = "https://raw.githubusercontent.com/vchoudhari45/leetcode/master/src/main/java/com/vc/docs/md/GettingStarted.md"
+	
+	// const mdFile = fetch(url)
+  // .then( r => r.json() )
+  // .then( data => {
+  //   console.log(data);
+	// });
 	
 	const res = await fetch(url)
 	console.log(res)
 	const content = await res.json()
-		
-	console.log(selected)
-	console.log(menuResponse.menuHtml)
-	console.log(content)
 
-	const response = {
-		menuHtml: menuResponse.menuHtml,
-		content: content,
-		prev : menuResponse.prev,
-		selected: selected,
-		next : menuResponse.next
-	}
-  return { props: { response} }
+  return {
+		 props: { 
+			content: content,
+			selected: selected,
+		}
+	} 
 }
 
 export default Post

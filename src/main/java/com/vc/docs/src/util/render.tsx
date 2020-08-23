@@ -127,7 +127,7 @@ export default function renderMenu(data: MenuItem[], selected: MenuItem, depth: 
 				const [isMenuItemSelected, setIsMenuItemSelected] = useState(false)
 				menuHtml.push(
 					<div className={"jsx-616696232 link level-" + depth}>
-						<div className={"jsx-3253412043 nav-link " + (selected.title === menuItem.title ? "selected": "")}>
+						<div className={"jsx-3253412043 nav-link" + (selected.title === menuItem.title ? " selected": "")}>
 							<a className="jsx-3253412043" href={menuItem.path} onClick={() => { setIsMenuItemSelected(!isMenuItemSelected)}}>{menuItem.title}</a>
 						</div>
 					</div>

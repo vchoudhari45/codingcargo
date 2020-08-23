@@ -6,22 +6,22 @@ export const menu = [
 		menuItems: [
 			{
 				title: "Getting Started",
-				path: "/"
+				path: "/Getting Started"
 			},
 			{
 				title: "Basic Features",
 				menuItems: [
 					{
 						title: "Pages",
-						path: "/"
+						path: "/Pages"
 					},
 					{
 						title: "Data Fetching",
-						path: "/"
+						path: "/Data Fetching"
 					},
 					{
 						title: "Built-in CSS Support",
-						path: "/"
+						path: "/Built-in CSS Support"
 					}
 				]
 			},
@@ -30,11 +30,11 @@ export const menu = [
 				menuItems: [
 					{
 						title: "Introduction",
-						path: "/"
+						path: "/Introduction"
 					},
 					{
 						title: "Dynamic Routes",
-						path: "/"
+						path: "/Dynamic Routes"
 					}
 				]
 			},
@@ -46,17 +46,17 @@ export const menu = [
 						menuItems: [
 							{
 								title: "Introduction1",
-								path: "/"
+								path: "/Introduction1"
 							},
 							{
 								title: "Dynamic Routes1",
-								path: "/"
+								path: "/Dynamic Routes1"
 							}
 						]
 					},
 					{
 						title: "Dynamic Routes2",
-						path: "/"
+						path: "/Dynamic Routes2"
 					}
 				]
 			}
@@ -68,11 +68,11 @@ export const menu = [
 		menuItems: [
 			{
 				title: "CLI",
-				path: "/"
+				path: "/CLI"
 			},
 			{
 				title: "next/router",
-				path: "/"
+				path: "/next/router"
 			}
 		]
 	}

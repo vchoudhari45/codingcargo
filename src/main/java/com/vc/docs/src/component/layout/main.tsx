@@ -1,4 +1,3 @@
-import { createSecureContext } from "tls"
 import { MenuItem } from "../../model/MenuItem"
 
 interface Props {
