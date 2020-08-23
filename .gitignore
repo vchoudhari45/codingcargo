@@ -11,7 +11,7 @@ src/main/resources/application.conf
 
 # ui
 # dependencies
-src/main/java/com/vc/docs/node_modules/*
+src/main/java/com/vc/docs/src/node_modules/
 src/main/java/com/vc/web/ui/node_modules/*
 src/main/java/com/vc/docs/src/.pnp
 src/main/java/com/vc/web/ui/.pnp
