@@ -26,10 +26,12 @@ export async function getStaticPaths() {
 
 export async function getStaticProps({params}) {
 	const selected = {title: params.post}
+	console.log("Printing :"+selected)
+
 	const url = "https://raw.githubusercontent.com/vchoudhari45/leetcode/master/src/main/java/com/vc/docs/md/GettingStarted.md"
 	const res = await fetch(url)
 	const text = await res.text()
-	
+
 	return {
 		 props: { 
 			content: text,
