@@ -1,6 +1,7 @@
 import { MenuItem } from '../model/MenuItem'
 import fetch from 'isomorphic-unfetch'
-import { unslug } from '../util/url'
+import { slug, unslug } from '../util/url'
+import { menu } from '../data/menu'
 
 interface Props {
 	content: string,
@@ -15,20 +16,39 @@ function Post({selected, content}: Props) {
 }
 
 export async function getStaticPaths() {
-  return {
-    paths: [
-			{ params: { post: "getting-started" } },
-			{ params: { post: "data-fetching" } },
-			{ params: { post: "pages" } }
-    ],
+	const paths = generatePaths(menu)
+	return {
+    paths: paths,
     fallback: false
   }
+}
+
+interface Path {
+	params: {
+		post: string
+	}
+}
+function generatePaths(menu: MenuItem[]): Path[] {
+	let paths = []
+	menu.forEach(menuItem => {
+		if(menuItem.heading == null || menuItem.heading != true) {
+			paths.push({
+				params: {
+					post: slug(menuItem.title)
+				}
+			})
+		} 
+		if(menuItem.menuItems != null && menuItem.menuItems.length > 0) {
+			paths.push(...generatePaths(menuItem.menuItems))
+		}
+	})
+	return paths
 }
 
 export async function getStaticProps({params}) {
 	const title = unslug(params.post)
 	const selected = {title: title}
-	const url = "https://raw.githubusercontent.com/vchoudhari45/leetcode/master/src/main/java/com/vc/docs/md/getting-started.md"
+	const url = "https://raw.githubusercontent.com/vchoudhari45/leetcode/master/src/main/java/com/vc/docs/md/"+params.post+".md"
 	const res = await fetch(url)
 	const text = await res.text()
 	return {
