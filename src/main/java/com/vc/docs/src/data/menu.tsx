@@ -8,7 +8,6 @@ export const menu = [
 			},
 			{
 				title: "Basic Features",
-				open: true,
 				menuItems: [
 					{
 						title: "Pages",

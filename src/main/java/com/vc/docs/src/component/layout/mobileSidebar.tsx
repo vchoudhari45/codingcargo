@@ -5,7 +5,7 @@ interface Props {
 	menu: JSX.Element
 }
 
-const mobileSidebar: React.FC<Props> = ({menu}) => {
+const MobileSidebar: React.FC<Props> = ({menu}) => {
 	const [isMobileMenuItemOpen, setIsMobileMenuItemOpen] = useState(false)
 	return (
 		<div className="jsx-249575869 shadow">
@@ -32,4 +32,4 @@ const mobileSidebar: React.FC<Props> = ({menu}) => {
 	)
 }
 
-export default mobileSidebar
+export default MobileSidebar
