@@ -17,9 +17,9 @@ function Post({selected, content}: Props) {
 export async function getStaticPaths() {
   return {
     paths: [
-			{ params: { post: "Getting Started" } },
-			{ params: { post: "Data Fetching" } },
-			{ params: { post: "Pages" } }
+			{ params: { post: "getting-started" } },
+			{ params: { post: "data-fetching" } },
+			{ params: { post: "pages" } }
     ],
     fallback: false
   }
@@ -28,7 +28,7 @@ export async function getStaticPaths() {
 export async function getStaticProps({params}) {
 	const title = unslug(params.post)
 	const selected = {title: title}
-	const url = "https://raw.githubusercontent.com/vchoudhari45/leetcode/master/src/main/java/com/vc/docs/md/"+params.post+".md"
+	const url = "https://raw.githubusercontent.com/vchoudhari45/leetcode/master/src/main/java/com/vc/docs/md/getting-started.md"
 	const res = await fetch(url)
 	const text = await res.text()
 	return {
