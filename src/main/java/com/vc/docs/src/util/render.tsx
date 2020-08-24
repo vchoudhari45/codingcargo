@@ -1,5 +1,6 @@
 import { MenuItem } from '../model/MenuItem'
 import { useState } from 'react'
+import { slug } from '../util/url'
 
 interface RenderMenuResponse {
 	prev: MenuItem
@@ -128,7 +129,7 @@ export default function renderMenu(data: MenuItem[], selected: MenuItem, depth: 
 				menuHtml.push(
 					<div key={menuItem.title} className={"jsx-616696232 link level-" + depth}>
 						<div className={"jsx-3253412043 nav-link" + (selected.title === menuItem.title ? " selected": "")}>
-							<a className="jsx-3253412043" href={menuItem.path} onClick={() => { setIsMenuItemSelected(!isMenuItemSelected)}}>{menuItem.title}</a>
+							<a className="jsx-3253412043" href={slug(menuItem.title)} onClick={() => { setIsMenuItemSelected(!isMenuItemSelected)}}>{menuItem.title}</a>
 						</div>
 					</div>
 				)

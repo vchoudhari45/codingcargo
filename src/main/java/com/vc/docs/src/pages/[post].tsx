@@ -1,5 +1,6 @@
 import { MenuItem } from '../model/MenuItem'
 import fetch from 'isomorphic-unfetch'
+import { unslug } from '../util/url'
 
 interface Props {
 	content: string,
@@ -25,13 +26,11 @@ export async function getStaticPaths() {
 }
 
 export async function getStaticProps({params}) {
-	const selected = {title: params.post}
-	console.log("Printing :"+selected)
-
-	const url = "https://raw.githubusercontent.com/vchoudhari45/leetcode/master/src/main/java/com/vc/docs/md/GettingStarted.md"
+	const title = unslug(params.post)
+	const selected = {title: title}
+	const url = "https://raw.githubusercontent.com/vchoudhari45/leetcode/master/src/main/java/com/vc/docs/md/"+params.post+".md"
 	const res = await fetch(url)
 	const text = await res.text()
-
 	return {
 		 props: { 
 			content: text,
