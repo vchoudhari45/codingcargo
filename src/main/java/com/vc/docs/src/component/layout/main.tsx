@@ -1,5 +1,6 @@
 import { MenuItem } from "../../model/MenuItem"
 import ReactHtmlParser from 'react-html-parser';
+import { slug } from "../../util/url";
 
 interface Props {
 	prev: MenuItem
@@ -20,7 +21,7 @@ const main: React.FC<Props> = ({prev, current, next, content}: Props) => {
 				<div className="jsx-29590182 page-nav">
 					{
 						prev == null ? <span className="jsx-29590182"></span> : 
-						<a href={"/docs/md/" + prev.title} className="jsx-4279592588 btn fw4 no-drag">
+						<a href={slug(prev.title)} className="jsx-4279592588 btn fw4 no-drag">
 								<span className="jsx-113938279">
 										<svg viewBox="0 0 24 24" width="24" height="24">
 												<g fill="#0070f3">
@@ -33,7 +34,7 @@ const main: React.FC<Props> = ({prev, current, next, content}: Props) => {
 
 					{
 						next == null ? <span className="jsx-29590182"></span> :
-						<a href={"/docs/md/"+ next.title} className="jsx-4279592588 btn fw4 no-drag">
+						<a href={slug(next.title)} className="jsx-4279592588 btn fw4 no-drag">
 								{next.title}
 								<span className="jsx-3578282791">
 										<svg width="24" height="24" viewBox="0 0 24 24">

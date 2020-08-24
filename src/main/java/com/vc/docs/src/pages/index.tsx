@@ -18,7 +18,6 @@ export async function getStaticProps() {
 	const url = "https://raw.githubusercontent.com/vchoudhari45/leetcode/master/src/main/java/com/vc/docs/md/getting-started.md"
 	const res = await fetch(url)
 	const text = await res.text()
-	
 	return {
 		 props: { 
 			content: text,
