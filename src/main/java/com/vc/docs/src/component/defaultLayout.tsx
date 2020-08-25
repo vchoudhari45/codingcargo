@@ -18,8 +18,10 @@ const DefaultLayout: React.FC<Props> = ({ content, selected }: Props) => {
 	const renderMenuResponse = renderMenu(menu, selected, 1, itemRef)
 	
 	useEffect(() => {
-		itemRef.current.scrollIntoView()
-		window.scrollTo(0, 0)
+		if(itemRef && itemRef.current && window) {
+			itemRef.current.scrollIntoView()
+			window.scrollTo(0, 0)
+		}
 	}, [])
 
 	return (

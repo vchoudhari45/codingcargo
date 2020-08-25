@@ -1,3 +1,5 @@
+import React from "react"
+
 const Header: React.FC = () => {
 	return(
       <>
@@ -65,4 +67,5 @@ const Header: React.FC = () => {
     )
 }
 
-export default Header
+const memoHeader = React.memo(Header)
+export default memoHeader

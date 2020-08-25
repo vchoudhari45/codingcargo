@@ -1,3 +1,5 @@
+import React from "react"
+
 const searchBox: React.FC = () => {
 	return (
 		<label className="jsx-3672029349 input-container">
@@ -18,4 +20,5 @@ const searchBox: React.FC = () => {
 	)
 }
 
-export default searchBox
+const memoSearchBox = React.memo(searchBox)
+export default memoSearchBox

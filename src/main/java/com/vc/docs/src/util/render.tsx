@@ -1,5 +1,4 @@
 import { MutableRefObject, useState } from 'react'
-import { menu } from '../data/menu'
 import { MenuItem } from '../model/MenuItem'
 import { slug } from '../util/url'
 
@@ -23,26 +22,26 @@ export default function renderMenu(data: MenuItem[], selected: MenuItem, depth: 
 			
 			/** Start: Assign prev & next */
 				let found = false
-				if(prev == null && childrenHtml.prev != null) {
+				if(!prev && childrenHtml.prev) {
 					prev = childrenHtml.prev
 					found = true
 				}
-				if(next == null && childrenHtml.next != null) {
+				if(!next && childrenHtml.next) {
 					next = childrenHtml.next 
 					found = true 
 				}
-				if(found && prev == null) {
+				if(found && !prev) {
 					if(i - 1 >= 0) {
 						prev = data[i - 1]
-						while(prev.menuItems != null) {
+						while(prev.menuItems) {
 							prev = prev.menuItems[prev.menuItems.length - 1]
 						}
 					}
 				}
-				if(found && next == null) {
+				if(found && !next) {
 					if(i + 1 < data.length) {
 						next = data[i + 1]
-						while(next.menuItems != null) {
+						while(next.menuItems) {
 							next = next.menuItems[0]
 						}
 					}
@@ -57,38 +56,38 @@ export default function renderMenu(data: MenuItem[], selected: MenuItem, depth: 
 		  )
 		}
 		else {
-			if(menuItem.menuItems != null) {
+			if(menuItem.menuItems) {
 				const childrenHtml = renderMenu(menuItem.menuItems, selected, depth + 1, ref)
 
 				/** Start: Assign prev & next */
 				let found = false
-				if(prev == null && childrenHtml.prev != null) {
+				if(!prev && childrenHtml.prev) {
 					prev = childrenHtml.prev
 					found = true
 				}
-				if(next == null && childrenHtml.next != null) {
+				if(!next && childrenHtml.next) {
 					next = childrenHtml.next 
 					found = true 
 				}
-				if(found && prev == null) {
+				if(found && !prev) {
 					if(i - 1 >= 0) {
 						prev = data[i - 1]
-						while(prev.menuItems != null) {
+						while(prev.menuItems) {
 							prev = prev.menuItems[prev.menuItems.length - 1]
 						}
 					}
 				}
-				if(found && next == null) {
+				if(found && !next) {
 					if(i + 1 < data.length) {
 						next = data[i + 1]
-						while(next.menuItems != null) {
+						while(next.menuItems) {
 							next = next.menuItems[0]
 						}
 					}
 				}
 				/** End: Assign prev & next */
 
-				const [isCategoryOpen, setCategoryOpen] = useState(menuItem.open != null ? menuItem.open || found : false || found)
+				const [isCategoryOpen, setCategoryOpen] = useState(menuItem.open ? menuItem.open || found : false || found)
 				menuHtml.push(
 					<div key={menuItem.title} className={"jsx-2502836651 category level-" + (depth + 1) + (isCategoryOpen ? " open" : "") + (found ? " selected" : "")}>
 						<a className="jsx-2502836651 label" onClick={() => { setCategoryOpen(!isCategoryOpen) }}>
@@ -106,7 +105,7 @@ export default function renderMenu(data: MenuItem[], selected: MenuItem, depth: 
 				if(selected.title === menuItem.title) {
 					if(i - 1 >= 0) {
 						prev = data[i - 1]
-						while(prev.menuItems != null) {
+						while(prev.menuItems) {
 							prev = prev.menuItems[prev.menuItems.length - 1]
 						}
 					}
@@ -116,7 +115,7 @@ export default function renderMenu(data: MenuItem[], selected: MenuItem, depth: 
 
 					if(i + 1 < data.length) {
 						next = data[i + 1]
-						while(next.menuItems != null) {
+						while(next.menuItems) {
 							next = next.menuItems[0]
 						}
 					}
