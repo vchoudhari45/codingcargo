@@ -5,6 +5,7 @@ import MobileSidebar from '../component/layout/mobileSidebar'
 import renderMenu from '../util/render'
 import Main from '../component/layout/main'
 import {menu} from '../data/menu'
+import { useEffect, useRef } from 'react'
 
 interface Props {
 	content: string,
@@ -12,7 +13,15 @@ interface Props {
 }
 
 const DefaultLayout: React.FC<Props> = ({ content, selected }: Props) => {
-	const renderMenuResponse = renderMenu(menu, selected, 1)
+
+	const categoryDivRef = useRef<HTMLInputElement>()
+	const renderMenuResponse = renderMenu(menu, selected, 1, categoryDivRef)
+	
+	useEffect(() => {
+		categoryDivRef.current.scrollIntoView()
+		window.scrollTo(0, -1000)
+	}, [])
+
 	return (
 			<>
 				<Header />

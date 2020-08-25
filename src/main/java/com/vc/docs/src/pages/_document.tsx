@@ -7,7 +7,6 @@ class CustomDocument extends Document {
                 <Head>
 										<link rel="manifest" href="/manifest.json" />
 										<link rel="apple-touch-icon" href="/apple-touch-icon.png" />
-										<link rel="preload" href="fonts/inter-cyrillic-ext.woff2" as="font" type="font/woff2" />
                     <meta name="theme-color" content="#FFFFFF"/>
                     <meta content="width=device-width, initial-scale=1" name="viewport" />
                 </Head>

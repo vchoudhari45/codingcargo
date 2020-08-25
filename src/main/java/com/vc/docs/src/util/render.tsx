@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { MutableRefObject, useState } from 'react'
 import { MenuItem } from '../model/MenuItem'
 import { slug } from '../util/url'
 
@@ -9,7 +9,7 @@ interface RenderMenuResponse {
 }
 
 //DFS
-export default function renderMenu(data: MenuItem[], selected: MenuItem, depth: number): RenderMenuResponse {
+export default function renderMenu(data: MenuItem[], selected: MenuItem, depth: number, ref: MutableRefObject<any>): RenderMenuResponse {
 	let prev = null
 	let next = null
 	let menuHtml = []
@@ -18,7 +18,7 @@ export default function renderMenu(data: MenuItem[], selected: MenuItem, depth: 
 		const menuItem = data[i]
 		
 		if(menuItem.heading) {
-			const childrenHtml = renderMenu(menuItem.menuItems, selected, depth)
+			const childrenHtml = renderMenu(menuItem.menuItems, selected, depth, ref)
 			
 			/** Start: Assign prev & next */
 				let found = false
@@ -57,7 +57,7 @@ export default function renderMenu(data: MenuItem[], selected: MenuItem, depth: 
 		}
 		else {
 			if(menuItem.menuItems != null) {
-				const childrenHtml = renderMenu(menuItem.menuItems, selected, depth + 1)
+				const childrenHtml = renderMenu(menuItem.menuItems, selected, depth + 1, ref)
 
 				/** Start: Assign prev & next */
 				let found = false
@@ -87,9 +87,9 @@ export default function renderMenu(data: MenuItem[], selected: MenuItem, depth: 
 				}
 				/** End: Assign prev & next */
 
-				const [isCategoryOpen, setCategoryOpen] = useState(menuItem.open != null ? menuItem.open : false)
+				const [isCategoryOpen, setCategoryOpen] = useState(menuItem.open != null ? menuItem.open || found : false || found)
 				menuHtml.push(
-					<div key={menuItem.title} className={"jsx-2502836651 category level-" + (depth + 1) + (isCategoryOpen ? " open" : "") + (found ? " selected" : "")}>
+					<div ref={ref} key={menuItem.title} className={"jsx-2502836651 category level-" + (depth + 1) + (isCategoryOpen ? " open" : "") + (found ? " selected" : "")}>
 						<a className="jsx-2502836651 label" onClick={() => { setCategoryOpen(!isCategoryOpen) }}>
 							<svg width="6" height="10" viewBox="0 0 6 10" fill="none" xmlns="http://www.w3.org/2000/svg">
 								<path d="M1.4 8.56L4.67 5M1.4 1.23L4.66 4.7" stroke="#999" strokeLinecap="square" />
