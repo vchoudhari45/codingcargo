@@ -1,4 +1,5 @@
 import { MutableRefObject, useState } from 'react'
+import { menu } from '../data/menu'
 import { MenuItem } from '../model/MenuItem'
 import { slug } from '../util/url'
 
@@ -89,7 +90,7 @@ export default function renderMenu(data: MenuItem[], selected: MenuItem, depth: 
 
 				const [isCategoryOpen, setCategoryOpen] = useState(menuItem.open != null ? menuItem.open || found : false || found)
 				menuHtml.push(
-					<div ref={ref} key={menuItem.title} className={"jsx-2502836651 category level-" + (depth + 1) + (isCategoryOpen ? " open" : "") + (found ? " selected" : "")}>
+					<div key={menuItem.title} className={"jsx-2502836651 category level-" + (depth + 1) + (isCategoryOpen ? " open" : "") + (found ? " selected" : "")}>
 						<a className="jsx-2502836651 label" onClick={() => { setCategoryOpen(!isCategoryOpen) }}>
 							<svg width="6" height="10" viewBox="0 0 6 10" fill="none" xmlns="http://www.w3.org/2000/svg">
 								<path d="M1.4 8.56L4.67 5M1.4 1.23L4.66 4.7" stroke="#999" strokeLinecap="square" />
@@ -127,9 +128,17 @@ export default function renderMenu(data: MenuItem[], selected: MenuItem, depth: 
 
 				menuHtml.push(
 					<div key={menuItem.title} className={"jsx-616696232 link level-" + depth}>
-						<div className={"jsx-3253412043 nav-link" + (selected.title === menuItem.title ? " selected": "")}>
-							<a className="jsx-3253412043" href={slug(menuItem.title)}>{menuItem.title}</a>
-						</div>
+						{
+							selected.title == menuItem.title 
+							?
+								<div ref={ref} className={"jsx-3253412043 nav-link selected"}>
+									<a className="jsx-3253412043" href={slug(menuItem.title)}>{menuItem.title}</a>
+								</div>
+							:
+								<div className={"jsx-3253412043 nav-link"}>
+									<a className="jsx-3253412043" href={slug(menuItem.title)}>{menuItem.title}</a>
+								</div>
+						}
 					</div>
 				)
 			}

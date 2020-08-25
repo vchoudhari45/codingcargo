@@ -14,12 +14,12 @@ interface Props {
 
 const DefaultLayout: React.FC<Props> = ({ content, selected }: Props) => {
 
-	const categoryDivRef = useRef<HTMLInputElement>()
-	const renderMenuResponse = renderMenu(menu, selected, 1, categoryDivRef)
+	const itemRef = useRef<HTMLInputElement>()
+	const renderMenuResponse = renderMenu(menu, selected, 1, itemRef)
 	
 	useEffect(() => {
-		categoryDivRef.current.scrollIntoView()
-		window.scrollTo(0, -1000)
+		itemRef.current.scrollIntoView()
+		window.scrollTo(0, 0)
 	}, [])
 
 	return (
