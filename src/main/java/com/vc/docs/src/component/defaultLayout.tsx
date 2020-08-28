@@ -12,10 +12,10 @@ interface Props {
 	selected: MenuItem,
 }
 
-const DefaultLayout: React.FC<Props> = ({ content, selected }: Props) => {
+const DefaultLayout: React.FC<Props> = ({ content, selected}: Props) => {
 	const itemRef = useRef<HTMLInputElement>()
-	const renderMenuResponse = renderMenu(menu, selected, 1, itemRef)
-	
+	const renderMenuResponse = renderMenu(menu, selected, 1, itemRef, "1")
+
 	useEffect(() => {
 		if(itemRef && itemRef.current && window) {
 			itemRef.current.scrollIntoView()
@@ -27,10 +27,10 @@ const DefaultLayout: React.FC<Props> = ({ content, selected }: Props) => {
 			<>
 				<Header />
 				<div className="jsx-4169323174">
-					<MobileSidebar menu={renderMenuResponse.menuHtml} />
+					<MobileSidebar menu={renderMenuResponse.menuHtml} trieData={renderMenuResponse.menuData} />
 					<div className="jsx-1998690184">
 						<div className="jsx-1294800792 content">
-							<Sidebar menu={renderMenuResponse.menuHtml} />
+							<Sidebar menu={renderMenuResponse.menuHtml} trieData={renderMenuResponse.menuData} />
 							<Main content={content} prev={renderMenuResponse.prev} current={selected} next={renderMenuResponse.next} />
 						</div>
 					</div>

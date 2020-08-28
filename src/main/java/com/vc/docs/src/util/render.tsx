@@ -1,24 +1,28 @@
 import { MutableRefObject, useState } from 'react'
 import { MenuItem } from '../model/MenuItem'
+import TrieItem from '../model/TrieItem'
 import { slug } from '../util/url'
 
 interface RenderMenuResponse {
 	prev: MenuItem
 	next: MenuItem
 	menuHtml: JSX.Element
+	menuData: TrieItem[]
 }
 
 //DFS
-export default function renderMenu(data: MenuItem[], selected: MenuItem, depth: number, ref: MutableRefObject<any>): RenderMenuResponse {
+export default function renderMenu(data: MenuItem[], selected: MenuItem, depth: number, ref: MutableRefObject<any>, idPrefix: string): RenderMenuResponse {
 	let prev = null
 	let next = null
 	let menuHtml = []
+	let menuData = []
 
 	for(var i = 0; i < data.length; i++) {
 		const menuItem = data[i]
 		
 		if(menuItem.heading) {
-			const childrenHtml = renderMenu(menuItem.menuItems, selected, depth, ref)
+			const childrenHtml = renderMenu(menuItem.menuItems, selected, depth, ref, idPrefix +""+i)
+			menuData = menuData.concat(childrenHtml.menuData)
 			
 			/** Start: Assign prev & next */
 				let found = false
@@ -57,8 +61,8 @@ export default function renderMenu(data: MenuItem[], selected: MenuItem, depth: 
 		}
 		else {
 			if(menuItem.menuItems) {
-				const childrenHtml = renderMenu(menuItem.menuItems, selected, depth + 1, ref)
-
+				const childrenHtml = renderMenu(menuItem.menuItems, selected, depth + 1, ref, idPrefix +""+i)
+				menuData = menuData.concat(childrenHtml.menuData)
 				/** Start: Assign prev & next */
 				let found = false
 				if(!prev && childrenHtml.prev) {
@@ -140,12 +144,18 @@ export default function renderMenu(data: MenuItem[], selected: MenuItem, depth: 
 						}
 					</div>
 				)
+				const newObj = {
+					id: idPrefix + i,
+					title: menuItem.title
+				}
+				menuData = menuData.concat(newObj)
 			}
 		}
 	}
 	return {
 		prev: prev,
 		next: next,
-		menuHtml: <>{menuHtml}</>
+		menuHtml: <>{menuHtml}</>,
+		menuData: menuData
 	}
 }

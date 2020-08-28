@@ -15,7 +15,8 @@
     "nprogress": "^0.2.0",
     "react": "16.13.1",
     "react-dom": "16.13.1",
-    "react-html-parser": "^2.0.2"
+    "react-html-parser": "^2.0.2",
+    "trie-search": "^1.2.11"
   },
   "devDependencies": {
     "@types/node": "^14.6.0",

@@ -1,18 +1,20 @@
 import { useState } from 'react'
+import TrieItem from '../../model/TrieItem'
 import SearchBox from './searchBox'
 
 interface Props {
 	menu: JSX.Element
+	trieData: TrieItem[]
 }
 
-const MobileSidebar: React.FC<Props> = ({menu}) => {
+const MobileSidebar: React.FC<Props> = ({menu, trieData}) => {
 	const [isMobileMenuItemOpen, setIsMobileMenuItemOpen] = useState(false)
 	const[showSearching, setShowSearching] = useState(false)
 
 	return (
 		<div className="jsx-249575869 shadow">
 			<div className="jsx-1998690184">
-				<div className="jsx-567598700 sidebar-search"><SearchBox setShowSearching={setShowSearching} /></div>
+				<div className="jsx-567598700 sidebar-search"><SearchBox setShowSearching={setShowSearching}  trieData={trieData} /></div>
 
 				<label className={"jsx-567598700 dropdown-toggle"+ (isMobileMenuItemOpen ? " opened" : "")}>
 				  <input type="checkbox" id="dropdown-input" className="jsx-567598700"/>

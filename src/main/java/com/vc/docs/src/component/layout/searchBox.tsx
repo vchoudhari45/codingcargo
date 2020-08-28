@@ -1,31 +1,68 @@
 import React, { Dispatch, SetStateAction, useEffect, useState } from "react"
+import TrieItem from "../../model/TrieItem"
+import { slug } from "../../util/url"
+
+const TrieSearch = require('trie-search')
 
 interface Props {
 	setShowSearching: Dispatch<SetStateAction<boolean>>
+	trieData: TrieItem[]
 }
 
 interface SearchState {
 	showSearchPopup: boolean
+	searchTerm: string
+	results: TrieItem[]
 }
 
-const searchBox: React.FC<Props> = ({setShowSearching}: Props) => {
-	const [searchState, setSearchState] = useState<SearchState>({showSearchPopup: false})
+const searchBox: React.FC<Props> = ({setShowSearching, trieData}: Props) => {
+	const [searchState, setSearchState] = useState<SearchState>({showSearchPopup: false, results: [], searchTerm: ""})
 
-	useEffect(() => {
-		//Generate trie
-	}, [])
+	const trie = new TrieSearch('title')
+	trie.addAll(trieData)
 
 	function handleOnChange(e: React.ChangeEvent<HTMLInputElement>) {
 		if(e.target.value && e.target.value.length > 0) {
 			setShowSearching(true)
-			setSearchState({...searchState, showSearchPopup: true})
+			setSearchState({results: trie.get(e.target.value), showSearchPopup: true, searchTerm: e.target.value})
 		}
 		else {
 			setShowSearching(false)
-			setSearchState({...searchState, showSearchPopup: false})
+			setSearchState({...searchState, searchTerm: "", showSearchPopup: false})
 		}
-		console.log(e.target.value)
-		//Update Value in searchBox State
+	}
+
+	function renderSearchResult(trieData: TrieItem[], searchTerm: string) : JSX.Element {
+		const searchResultHtml = trieData.map(trieItem => {
+			return (
+				<>
+					<li role="option" id="react-autowhatever-desktop-search--item-0" aria-selected="false" className="react-autosuggest__suggestion react-autosuggest__suggestion--first" data-suggestion-index="0">
+						<a className="jsx-2670105940" href={slug(trieItem.title)}>
+								<span className="jsx-2670105940 suggestion__title">
+									<span className="ais-Highlight">
+										{
+											trieItem.title.split(" ").map(s => {
+												console.log(s)
+												return (
+													s.toLowerCase().startsWith(searchTerm.toLocaleLowerCase()) 
+													?
+													<> 
+														<mark className="ais-Highlight-highlighted">{s.substring(0, searchTerm.length)}</mark>
+														<span className="ais-Highlight-nonHighlighted">{s.substring(searchTerm.length) + " "}</span>
+													</>
+													: <span className="ais-Highlight-nonHighlighted">{s + " "}</span>
+												)
+											})
+										}
+									</span>
+								</span>
+								<span className="jsx-2670105940 suggestion__content"></span>
+						</a>
+					</li>
+				</>	
+			)
+		})
+		return <ul role="listbox" className="react-autosuggest__suggestions-list">{searchResultHtml}</ul>
 	}
 
 	return (
@@ -39,34 +76,9 @@ const searchBox: React.FC<Props> = ({setShowSearching}: Props) => {
 				<div role="combobox" aria-haspopup="listbox" aria-owns="react-autowhatever-desktop-search" aria-expanded="true" className={"react-autosuggest__container" + (searchState.showSearchPopup ? " react-autosuggest__container--open": "")}> 
 					<input type="search" autoComplete="off" aria-autocomplete="list" aria-controls="react-autowhatever-desktop-search" className={"react-autosuggest__input" + (searchState.showSearchPopup ? " react-autosuggest__input--open": "")} placeholder="Search..." onChange={(e) => handleOnChange(e)}/>
 					<div id="react-autowhatever-desktop-search" role="listbox" className={"react-autosuggest__suggestions-container" + (searchState.showSearchPopup ? " react-autosuggest__suggestions-container--open": "")}>
-					<ul role="listbox" className="react-autosuggest__suggestions-list">
-						<li role="option" id="react-autowhatever-desktop-search--item-0" aria-selected="false" className="react-autosuggest__suggestion react-autosuggest__suggestion--first" data-suggestion-index="0">
-								<a className="jsx-2670105940" href="/docs/faq">
-										<span className="jsx-2670105940 suggestion__title">
-											<span className="ais-Highlight">
-												<span className="ais-Highlight-nonHighlighted">Two </span>
-													<mark className="ais-Highlight-highlighted">Sum</mark>
-												<span className="ais-Highlight-nonHighlighted"> Problem</span>
-											</span>
-										</span>
-										<span className="jsx-2670105940 suggestion__content">
-										</span>
-								</a>
-							</li>
-							<li role="option" id="react-autowhatever-desktop-search--item-1" aria-selected="false" className="react-autosuggest__suggestion react-autosuggest__suggestion--highlighted" data-suggestion-index="1">
-								<a className="jsx-2670105940" href="/docs/basic-features/supported-browsers-features">
-									<span className="jsx-2670105940 suggestion__title">
-										<span className="ais-Highlight">
-											<span className="ais-Highlight-nonHighlighted">Three </span>
-												<mark className="ais-Highlight-highlighted">Sum</mark>
-											<span className="ais-Highlight-nonHighlighted"> Problem</span>
-										</span>
-									</span>
-									<span className="jsx-2670105940 suggestion__content">
-									</span>
-								</a>
-							</li>
-						</ul>
+						{
+							searchState.results && searchState.results.length > 0 ? renderSearchResult(searchState.results, searchState.searchTerm) : ""
+						}
 					</div>
 				</div>
 		</label>
