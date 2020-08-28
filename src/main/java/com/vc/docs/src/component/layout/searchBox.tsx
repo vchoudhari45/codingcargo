@@ -1,4 +1,4 @@
-import React, { Dispatch, SetStateAction, useEffect, useState } from "react"
+import React, { Dispatch, MouseEvent, SetStateAction, useState } from "react"
 import TrieItem from "../../model/TrieItem"
 import { slug } from "../../util/url"
 
@@ -12,11 +12,12 @@ interface Props {
 interface SearchState {
 	showSearchPopup: boolean
 	searchTerm: string
+	hovered: number
 	results: TrieItem[]
 }
 
 const searchBox: React.FC<Props> = ({setShowSearching, trieData}: Props) => {
-	const [searchState, setSearchState] = useState<SearchState>({showSearchPopup: false, results: [], searchTerm: ""})
+	const [searchState, setSearchState] = useState<SearchState>({showSearchPopup: false, results: [], searchTerm: "", hovered: 0})
 
 	const trie = new TrieSearch('title')
 	trie.addAll(trieData)
@@ -24,41 +25,40 @@ const searchBox: React.FC<Props> = ({setShowSearching, trieData}: Props) => {
 	function handleOnChange(e: React.ChangeEvent<HTMLInputElement>) {
 		if(e.target.value && e.target.value.length > 0) {
 			setShowSearching(true)
-			setSearchState({results: trie.get(e.target.value), showSearchPopup: true, searchTerm: e.target.value})
+			setSearchState({...searchState, hovered: 0, results: trie.get(e.target.value), showSearchPopup: true, searchTerm: e.target.value})
 		}
 		else {
 			setShowSearching(false)
-			setSearchState({...searchState, searchTerm: "", showSearchPopup: false})
+			setSearchState({...searchState, hovered: -1, searchTerm: "", showSearchPopup: false})
 		}
 	}
 
 	function renderSearchResult(trieData: TrieItem[], searchTerm: string) : JSX.Element {
-		const searchResultHtml = trieData.map(trieItem => {
+		const searchResultHtml = trieData.map((trieItem, index) => {
 			return (
 				<>
-					<li role="option" id="react-autowhatever-desktop-search--item-0" aria-selected="false" className="react-autosuggest__suggestion react-autosuggest__suggestion--first" data-suggestion-index="0">
-						<a className="jsx-2670105940" href={slug(trieItem.title)}>
-								<span className="jsx-2670105940 suggestion__title">
-									<span className="ais-Highlight">
-										{
-											trieItem.title.split(" ").map(s => {
-												console.log(s)
-												return (
-													s.toLowerCase().startsWith(searchTerm.toLocaleLowerCase()) 
-													?
-													<> 
-														<mark className="ais-Highlight-highlighted">{s.substring(0, searchTerm.length)}</mark>
-														<span className="ais-Highlight-nonHighlighted">{s.substring(searchTerm.length) + " "}</span>
-													</>
-													: <span className="ais-Highlight-nonHighlighted">{s + " "}</span>
-												)
-											})
-										}
+				  {
+						<li role="option" id={"react-autowhatever-desktop-search--item-"+{index}} aria-selected="false" className={"react-autosuggest__suggestion "+(index == 0 ? "react-autosuggest__suggestion--first ": " ")+ (searchState.hovered == index ? "react-autosuggest__suggestion--highlighted ": "")} data-suggestion-index={index} onMouseEnter={() => setSearchState({...searchState, hovered: index})} onMouseLeave={() => setSearchState({...searchState, hovered: -1})}>
+							<a className="jsx-2670105940" href={slug(trieItem.title)}>
+									<span className="jsx-2670105940 suggestion__title">
+										<span className="ais-Highlight">
+											{
+												trieItem.title.split(" ").map(s => {
+													return (
+														s.toLowerCase().startsWith(searchTerm.toLocaleLowerCase()) 
+														? <> <mark className="ais-Highlight-highlighted">{s.substring(0, searchTerm.length)}</mark><span className="ais-Highlight-nonHighlighted">{s.substring(searchTerm.length) + " "}</span></>
+														: <span className="ais-Highlight-nonHighlighted">{s + " "}</span>
+													)
+												})
+											}
+										</span>
 									</span>
-								</span>
-								<span className="jsx-2670105940 suggestion__content"></span>
-						</a>
-					</li>
+									<span className="jsx-2670105940 suggestion__content">
+
+									</span>
+							</a>
+						</li>	
+					}
 				</>	
 			)
 		})

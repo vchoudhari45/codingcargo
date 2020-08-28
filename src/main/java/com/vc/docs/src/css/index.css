@@ -906,7 +906,7 @@ a[role='button']{
     -webkit-user-drag:none;
     -moz-user-drag:none;
     -ms-user-drag:none;
-    user-drag:none;
+    -webkit-user-drag:none;
     -webkit-user-select:none;
     -moz-user-select:none;
     -ms-user-select:none;
@@ -1428,10 +1428,10 @@ input.jsx-1156163139 {
 }
 
 @media only screen and (max-device-width:780px) and (-webkit-min-device-pixel-ratio:0) {
-    input.jsx-1156163139{
+    input.jsx-1156163139 {
         font-size:16px;
     }
-    line-height:1;
+    line-height: 1;
 }
 
 .wrapper.jsx-1156163139 {
