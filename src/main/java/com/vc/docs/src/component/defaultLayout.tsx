@@ -13,7 +13,6 @@ interface Props {
 }
 
 const DefaultLayout: React.FC<Props> = ({ content, selected }: Props) => {
-
 	const itemRef = useRef<HTMLInputElement>()
 	const renderMenuResponse = renderMenu(menu, selected, 1, itemRef)
 	
