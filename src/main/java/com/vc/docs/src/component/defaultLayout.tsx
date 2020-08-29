@@ -12,14 +12,16 @@ interface Props {
 	selected: MenuItem,
 }
 
-const DefaultLayout: React.FC<Props> = ({ content, selected}: Props) => {
+const DefaultLayout: React.FC<Props> = ({ content, selected } : Props) => {
 	const itemRef = useRef<HTMLInputElement>()
 	const renderMenuResponse = renderMenu(menu, selected, 1, itemRef, "1")
 
 	useEffect(() => {
 		if(itemRef && itemRef.current && window) {
-			itemRef.current.scrollIntoView()
-			window.scrollTo(0, 0)
+			if(selected != null && selected.title != 'Getting Started') {
+				itemRef.current.scrollIntoView()
+				window.scrollTo(0, 0)
+			}
 		}
 	}, [])
 
