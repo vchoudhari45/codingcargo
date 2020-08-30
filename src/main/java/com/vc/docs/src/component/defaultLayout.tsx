@@ -4,7 +4,7 @@ import Sidebar from '../component/layout/sidebar'
 import MobileSidebar from '../component/layout/mobileSidebar'
 import renderMenu from '../util/render'
 import Main from '../component/layout/main'
-import {menu} from '../data/menu'
+import {HOMEPAGE, MENU} from '../data/menu'
 import { useEffect, useRef } from 'react'
 
 interface Props {
@@ -14,11 +14,11 @@ interface Props {
 
 const DefaultLayout: React.FC<Props> = ({ content, selected } : Props) => {
 	const itemRef = useRef<HTMLInputElement>()
-	const renderMenuResponse = renderMenu(menu, selected, 1, itemRef, "1")
+	const renderMenuResponse = renderMenu(MENU, selected, 1, itemRef, "1")
 
 	useEffect(() => {
 		if(itemRef && itemRef.current && window) {
-			if(selected != null && selected.title != 'Getting Started') {
+			if(selected != null && selected.title != HOMEPAGE) {
 				itemRef.current.scrollIntoView()
 				window.scrollTo(0, 0)
 			}

@@ -1,5 +1,7 @@
 import { MenuItem } from '../model/MenuItem'
 import fetch from 'isomorphic-unfetch'
+import { HOMEPAGE } from '../data/menu'
+import { slug } from '../util/url'
 
 interface Props {
 	content: string,
@@ -14,8 +16,8 @@ export default function Home({content, selected}: Props) {
 }
 
 export async function getStaticProps() {
-	const selected = {title: "Getting Started"}
-	const url = "https://raw.githubusercontent.com/vchoudhari45/leetcode/master/src/main/java/com/vc/docs/md/getting-started.md"
+	const selected = {title: HOMEPAGE}
+	const url = "https://raw.githubusercontent.com/vchoudhari45/leetcode/master/src/main/java/com/vc/docs/md/"+slug(HOMEPAGE)+".md"
 	const res = await fetch(url)
 	const text = await res.text()
 	return {

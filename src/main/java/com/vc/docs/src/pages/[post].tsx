@@ -1,7 +1,7 @@
 import { MenuItem } from '../model/MenuItem'
 import fetch from 'isomorphic-unfetch'
 import { slug, unslug } from '../util/url'
-import { menu } from '../data/menu'
+import { MENU } from '../data/menu'
 
 interface Props {
 	content: string,
@@ -16,7 +16,7 @@ function Post({selected, content}: Props) {
 }
 
 export async function getStaticPaths() {
-	const paths = generatePaths(menu)
+	const paths = generatePaths(MENU)
 	return {
     paths: paths,
     fallback: false

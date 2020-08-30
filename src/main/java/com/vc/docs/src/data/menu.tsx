@@ -1,10 +1,11 @@
-export const menu = [
+export const HOMEPAGE = "Getting Started"
+export const MENU = [
 	{
 		title: "Documentation",
 		heading: true,
 		menuItems: [
 			{
-				title: "Getting Started",
+				title: HOMEPAGE,
 			},
 			{
 				title: "Basic Features",

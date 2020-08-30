@@ -1428,10 +1428,10 @@ input.jsx-1156163139 {
 }
 
 @media only screen and (max-device-width:780px) and (-webkit-min-device-pixel-ratio:0) {
-    input.jsx-1156163139 {
-        font-size:16px;
-    }
-    line-height: 1;
+	input.jsx-1156163139{
+		font-size:16px;
+		line-height:1
+	}
 }
 
 .wrapper.jsx-1156163139 {
