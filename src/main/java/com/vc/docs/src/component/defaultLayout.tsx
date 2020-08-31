@@ -4,8 +4,10 @@ import Sidebar from '../component/layout/sidebar'
 import MobileSidebar from '../component/layout/mobileSidebar'
 import renderMenu from '../util/render'
 import Main from '../component/layout/main'
-import {HOMEPAGE, MENU} from '../data/menu'
+import { HOMEPAGE, MENU } from '../data/menu'
 import { useEffect, useRef } from 'react'
+import ReactGA from 'react-ga'
+import { slug } from '../util/url'
 
 interface Props {
 	content: string,
@@ -23,6 +25,7 @@ const DefaultLayout: React.FC<Props> = ({ content, selected } : Props) => {
 				window.scrollTo(0, 0)
 			}
 		}
+		ReactGA.pageview(selected && selected.title ? slug(selected.title) : slug(HOMEPAGE))
 	}, [])
 
 	return (

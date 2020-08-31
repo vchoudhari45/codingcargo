@@ -620,41 +620,6 @@ div.jsx-4169323174{
 	min-height:100vh;
 }
 
-
-
-#nprogress {
-    pointer-events:none;
-}
-
-#nprogress .bar {
-    background:#0070f3;
-    position:fixed;
-    z-index:1031;
-    top:0;
-    left:0;
-    width:100%;
-    height:2px;
-}
-
-#nprogress .peg{
-    display:block;
-    position:absolute;
-    right:0px;
-    width:100px;
-    height:100%;
-    box-shadow:0 0 10px #0070f3,0 0 5px #0070f3;
-    opacity:1;
-    -webkit-transform:rotate(3deg) translate(0px,-4px);
-    -ms-transform:rotate(3deg) translate(0px,-4px);
-    -webkit-transform:rotate(3deg) translate(0px,-4px);
-    -ms-transform:rotate(3deg) translate(0px,-4px);
-    transform:rotate(3deg) translate(0px,-4px);
-}
-
-
-
-
-
 html{
     line-height:1.15;
     -webkit-text-size-adjust:100%;
@@ -3011,3 +2976,8 @@ footer.jsx-29590182{
     margin-top:0;
 }
 
+
+.share-button {
+	margin-right: 12px;
+	border:none;
+}

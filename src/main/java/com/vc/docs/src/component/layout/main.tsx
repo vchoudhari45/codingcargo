@@ -1,6 +1,16 @@
 import { MenuItem } from "../../model/MenuItem"
-import ReactHtmlParser from 'react-html-parser';
-import { slug } from "../../util/url";
+import ReactHtmlParser from 'react-html-parser'
+import { slug } from "../../util/url"
+
+import {
+	FacebookShareButton,FacebookIcon,
+	LinkedinShareButton, LinkedinIcon,
+	TwitterShareButton, TwitterIcon,
+	RedditShareButton, RedditIcon,
+	TumblrShareButton, TumblrIcon
+} from "react-share"
+
+import { BASEURL } from "../../data/menu"
 
 interface Props {
 	prev: MenuItem
@@ -10,6 +20,10 @@ interface Props {
 }
 
 const main: React.FC<Props> = ({prev, current, next, content}: Props) => {
+
+	const shareUrl = current.title ? BASEURL + slug(current.title) : null
+	const title = current.title
+
 	return (
 		<div className="container">
 			<div className="jsx-29590182 docs">
@@ -20,7 +34,7 @@ const main: React.FC<Props> = ({prev, current, next, content}: Props) => {
 
 				<div className="jsx-29590182 page-nav">
 					{
-						prev == null ? <span className="jsx-29590182"></span> : 
+						prev == null ? <span className="jsx-113938279"></span> : 
 						<a href={slug(prev.title)} className="jsx-4279592588 btn fw4 no-drag">
 								<span className="jsx-113938279">
 										<svg viewBox="0 0 24 24" width="24" height="24">
@@ -46,6 +60,35 @@ const main: React.FC<Props> = ({prev, current, next, content}: Props) => {
 						</a>
 					}
 				</div>
+
+				{
+					title && shareUrl ? 
+						<div className="jsx-29590182 page-nav">
+							<span className="jsx-113938279"></span>
+							<span className="jsx-3578282791">
+								<FacebookShareButton url={shareUrl} title={title} quote={title} className="share-button">
+									<FacebookIcon size={32} round />
+								</FacebookShareButton>
+
+								<TwitterShareButton url={shareUrl} title={title} className="share-button">
+									<TwitterIcon size={32} round />
+								</TwitterShareButton>
+
+								<LinkedinShareButton url={shareUrl} title={title} className="share-button">
+									<LinkedinIcon size={32} round />
+								</LinkedinShareButton>
+
+								<RedditShareButton url={shareUrl} title={title} className="share-button">
+									<RedditIcon size={32} round />
+								</RedditShareButton>
+
+								<TumblrShareButton url={shareUrl} title={title} className="share-button">
+									<TumblrIcon size={32} round />
+								</TumblrShareButton>
+							</span>
+						</div>
+						: ""
+				}
 
 				<footer className="jsx-29590182">
 						<a href={"https://github.com/vchoudhari45/leetcode/blob/master/src/main/java/com/vc/docs/md/" + current.title + ".md"} target="_blank" rel="noopener noreferrer" className="jsx-29590182">Edit this page on GitHub</a>

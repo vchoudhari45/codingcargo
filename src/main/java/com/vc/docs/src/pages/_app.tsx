@@ -1,14 +1,9 @@
 import { AppProps } from 'next/app'
 import DefaultLayout from '../component/defaultLayout'
 import '../css/index.css'
-import { Router } from 'next/dist/client/router'
-import NProgress from 'nprogress'
+import ReactGA from 'react-ga'
 
-NProgress.configure({ showSpinner: false, easing: 'ease', speed: 1});
-Router.events.on('routeChangeStart', () => NProgress.start()) 
-Router.events.on('routeChangeComplete', () => NProgress.done())
-Router.events.on('routeChangeError', () => NProgress.done())
-
+ReactGA.initialize('UA-157613961-1', {titleCase: false, debug: false})
 const App = (appProps: AppProps) => {
 	return <DefaultLayout {...appProps.pageProps} />
 }
