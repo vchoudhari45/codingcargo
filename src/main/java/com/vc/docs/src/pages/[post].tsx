@@ -4,13 +4,10 @@ import { slug, unslug } from '../util/url'
 import { MENU } from '../data/menu'
 import PageResponse from '../model/PageResponse'
 
-function Post({selected, content, metadata, keywords, robots}: PageResponse) {
+function Post({selected, content}: PageResponse) {
 	return {
 		content: content,
-		selected: selected,
-		metadata: metadata,
-		keywords: keywords,
-		robots: robots
+		selected: selected
 	}
 }
 
@@ -50,15 +47,10 @@ export async function getStaticProps(context) {
 	const url = "https://raw.githubusercontent.com/vchoudhari45/leetcode/master/src/main/java/com/vc/docs/md/"+context.params.post+".md"
 	const res = await fetch(url)
 	const text = await res.text()
-	
-	const contentArr = text.split("\n")
 	return {
 		 props: { 
 			content: text,
-			selected: selected,
-			metadata: contentArr[0],
-			keywords: contentArr[1],
-			robots: contentArr[2]
+			selected: selected
 		}
 	} 
 }

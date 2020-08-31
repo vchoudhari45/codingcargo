@@ -29,18 +29,18 @@ const DefaultLayout: React.FC<Props> = ({ content, selected } : Props) => {
 	}, [])
 
 	return (
-			<>
-				<Header />
-				<div className="jsx-4169323174">
-					<MobileSidebar menu={renderMenuResponse.menuHtml} trieData={renderMenuResponse.menuData} />
-					<div className="jsx-1998690184">
-						<div className="jsx-1294800792 content">
-							<Sidebar menu={renderMenuResponse.menuHtml} trieData={renderMenuResponse.menuData} />
-							<Main content={content} prev={renderMenuResponse.prev} current={selected} next={renderMenuResponse.next} />
-						</div>
+		<>
+			<Header />
+			<div className="jsx-4169323174">
+				<MobileSidebar menu={renderMenuResponse.menuHtml} trieData={renderMenuResponse.menuData} />
+				<div className="jsx-1998690184">
+					<div className="jsx-1294800792 content">
+						<Sidebar menu={renderMenuResponse.menuHtml} trieData={renderMenuResponse.menuData} />
+						<Main content={content} prev={renderMenuResponse.prev} current={selected} next={renderMenuResponse.next} />
 					</div>
 				</div>
-			</>
+			</div>
+		</>
   )
 }
 export default DefaultLayout

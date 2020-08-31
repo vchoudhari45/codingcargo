@@ -5,10 +5,7 @@ Error.getInitialProps = ({ res, err }) => {
 	const title = statusCode
   return { 
 		content: statusCode == 404 ? "<h1>404</h1><p>Opps!!! Page you are looking for is not found</p>" : "<h1>"+statusCode+"</h1><p></p>",
-		selected: { title: title },
-		metadata: {},
-		keywords: {},
-		robots: {}
+		selected: { title: title }
 	}
 }
 

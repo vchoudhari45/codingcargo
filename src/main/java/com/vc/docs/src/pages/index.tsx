@@ -5,13 +5,10 @@ import { slug } from '../util/url'
 import PageResponse from '../model/PageResponse'
 
 
-export default function Home({content, selected, metadata, keywords, robots}: PageResponse) {
+export default function Home({content, selected}: PageResponse) {
 	return {
 		content: content,
-		selected: selected,
-		metadata: metadata,
-		keywords: keywords,
-		robots: robots
+		selected: selected
 	}
 }
 
@@ -20,15 +17,10 @@ export async function getStaticProps() {
 	const url = "https://raw.githubusercontent.com/vchoudhari45/leetcode/master/src/main/java/com/vc/docs/md/"+slug(HOMEPAGE)+".md"
 	const res = await fetch(url)
 	const text = await res.text()
-
-	const contentArr = text.split("\n")
 	return {
 		 props: { 
 			content: text,
-			selected: selected,
-			metadata: contentArr[0],
-			keywords: contentArr[1],
-			robots: contentArr[2]
+			selected: selected
 		}
 	} 	
 }
