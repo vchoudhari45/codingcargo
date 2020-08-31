@@ -9,9 +9,9 @@ class CustomDocument extends Document {
 		//extract fields from pageProps
 		const title = pageProps.selected ? pageProps.selected.title : HOMEPAGE
 		const contentArr = pageProps.content ? pageProps.content.split("\n") : ['','','']
-		const metadata = contentArr[0]
-		const keywords = contentArr[1]
-		const robots = contentArr[2]
+		const metadata = contentArr[0] ? contentArr[0].replace("[comment]: metadata=", "") : ""
+		const keywords = contentArr[1] ? contentArr[1].replace("[comment]: keywords=", "") : ""
+		const robots = contentArr[2] ? contentArr[2].replace("[comment]: robots=", "") : ""
 		const url = BASEURL + slug(title)
 
 		//imgUrl 
@@ -25,7 +25,6 @@ class CustomDocument extends Document {
 					<link rel="manifest" href="/manifest.json" />
 					<link rel="apple-touch-icon" href="/apple-touch-icon.png" />
 
-					<meta key="charSet" charSet="UTF-9" />
 					<meta name="theme-color" content="#FFFFFF"/>
 					<meta name="viewport" content="width=device-width, initial-scale=1" />
 					<meta name="description" content={metadata} />
