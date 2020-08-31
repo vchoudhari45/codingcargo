@@ -23,13 +23,14 @@ const main: React.FC<Props> = ({prev, current, next, content}: Props) => {
 
 	const shareUrl = current.title ? BASEURL + slug(current.title) : null
 	const title = current.title
+	const contentArr = content ? content.split("\n") : ['','','','']
 
 	return (
 		<div className="container">
 			<div className="jsx-29590182 docs">
 				
 				<div className="jsx-29590182 docs-content">
-					{ ReactHtmlParser(content) }
+					{ contentArr.length < 4 ? ReactHtmlParser(contentArr.join("")) : ReactHtmlParser(contentArr.slice(3).join("")) }
 				</div>
 
 				<div className="jsx-29590182 page-nav">

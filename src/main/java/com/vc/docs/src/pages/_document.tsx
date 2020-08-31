@@ -15,9 +15,9 @@ class CustomDocument extends Document {
 		const url = BASEURL + slug(title)
 
 		//imgUrl 
-		const imgUrl = ""
-		const imgWidth = "40"
-		const imgHeight = "40"
+		const imgUrl = BASEURL + "social-share-image.png"
+		const imgWidth = "180"
+		const imgHeight = "180"
 
 		return (
 			<Html lang="en">
