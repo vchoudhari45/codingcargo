@@ -1,3 +1,6 @@
+metadata=""
+keywords=""
+robots=""
 <h1>Pages</h1>
 <blockquote>
 	<p>This document is for Next.js versions 9.3 and up. If you're using older versions of Next.js, refer to our <a href="/docs/tag/v9.2.2/basic-features/pages" class="relative">previous documentation</a>.</p>
