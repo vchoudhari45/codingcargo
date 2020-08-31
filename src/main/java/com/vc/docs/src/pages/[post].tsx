@@ -2,16 +2,15 @@ import { MenuItem } from '../model/MenuItem'
 import fetch from 'isomorphic-unfetch'
 import { slug, unslug } from '../util/url'
 import { MENU } from '../data/menu'
+import PageResponse from '../model/PageResponse'
 
-interface Props {
-	content: string,
-	selected: MenuItem,
-}
-
-function Post({selected, content}: Props) {
+function Post({selected, content, metadata, keywords, robots}: PageResponse) {
 	return {
 		content: content,
-		selected: selected
+		selected: selected,
+		metadata: metadata,
+		keywords: keywords,
+		robots: robots
 	}
 }
 
@@ -51,10 +50,15 @@ export async function getStaticProps(context) {
 	const url = "https://raw.githubusercontent.com/vchoudhari45/leetcode/master/src/main/java/com/vc/docs/md/"+context.params.post+".md"
 	const res = await fetch(url)
 	const text = await res.text()
+	
+	const contentArr = text.split("\n")
 	return {
 		 props: { 
 			content: text,
 			selected: selected,
+			metadata: contentArr[0],
+			keywords: contentArr[1],
+			robots: contentArr[2]
 		}
 	} 
 }

@@ -1,5 +1,6 @@
 export const HOMEPAGE = "Getting Started"
 export const BASEURL = "https://www.codingcargo.com/"
+export const SITENAME = "Coding Cargo"
 export const MENU = [
 	{
 		title: "Documentation",
