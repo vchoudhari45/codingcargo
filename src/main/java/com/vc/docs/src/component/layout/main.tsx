@@ -90,10 +90,13 @@ const main: React.FC<Props> = ({prev, current, next, content}: Props) => {
 						: ""
 				}
 
-				<footer className="jsx-29590182">
-						<a href={"https://github.com/vchoudhari45/leetcode/blob/master/src/main/java/com/vc/docs/md/" + current.title + ".md"} target="_blank" rel="noopener noreferrer" className="jsx-29590182">Edit this page on GitHub</a>
-				</footer>
-				
+				{
+					current.title ? 
+					<footer className="jsx-29590182">
+						<a href={"https://github.com/vchoudhari45/codingcargo/edit/master/src/main/java/com/vc/docs/md/" + slug(current.title) + ".md"} target="_blank" rel="noopener noreferrer" className="jsx-29590182">Edit this page on GitHub</a>
+					</footer>
+					: ""
+				}
 			</div>
 		</div>
 	)
