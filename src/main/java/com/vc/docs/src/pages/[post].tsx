@@ -44,7 +44,7 @@ function generatePaths(menu: MenuItem[]): Path[] {
 export async function getStaticProps(context) {
 	const title = unslug(context.params.post)
 	const selected = {title: title}
-	const url = "https://raw.githubusercontent.com/vchoudhari45/leetcode/master/src/main/java/com/vc/docs/md/"+context.params.post+".md"
+	const url = "https://raw.githubusercontent.com/vchoudhari45/codingcargo/master/src/main/java/com/vc/docs/md/"+context.params.post+".md"
 	const res = await fetch(url)
 	const text = await res.text()
 	return {

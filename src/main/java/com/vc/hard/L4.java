@@ -1,38 +1,36 @@
 package com.vc.hard;
 
 class L4 {
-    public double findMedianSortedArrays(int[] xArr, int[] yArr) {
-        int x = xArr.length;
-        int y = yArr.length;
+    public double findMedianSortedArrays(int[] A, int[] B) {
+        int m = A.length;
+        int n = B.length;
 
-        if(x > y) return findMedianSortedArrays(yArr, xArr);
+        if (m > n) return findMedianSortedArrays(B, A);
 
-        int totalPartition = (x + y + 1) / 2;
-        int lo = 0;
-        int hi = x;
-        while(lo <= hi) {
-            int xPartition = lo + (hi - lo) / 2;
-            int yPartition = totalPartition - xPartition;
+        int lo = 0, hi = m;
+        int total = (m + n + 1) / 2;
+        while (lo <= hi) {
+            int midRight = lo + (hi - lo) / 2;
+            int midLeft = total - midRight;
 
-            int maxLeftX = Integer.MIN_VALUE;
-            int maxLeftY = Integer.MIN_VALUE;
-            int minRightX = Integer.MAX_VALUE;
-            int minRightY = Integer.MAX_VALUE;
+            int leftA = midRight == 0 ? Integer.MIN_VALUE : A[midRight - 1];
+            int rightA = midRight == m ? Integer.MAX_VALUE : A[midRight];
+            int leftB = midLeft == 0 ? Integer.MIN_VALUE : B[midLeft - 1];
+            int rightB = midLeft == n ? Integer.MAX_VALUE : B[midLeft];
 
-            if(xPartition > 0) maxLeftX = xArr[xPartition - 1];
-            if(yPartition > 0) maxLeftY = yArr[yPartition - 1];
-            if(xPartition < x) minRightX = xArr[xPartition];
-            if(yPartition < y) minRightY = yArr[yPartition];
-
-            if(maxLeftX <= minRightY && maxLeftY <= minRightX) {
-                if((x + y) % 2 == 0)
-                    return (Math.max(maxLeftX, maxLeftY) + Math.min(minRightX, minRightY)) / 2.0;
-                else
-                    return Math.max(maxLeftX, maxLeftY);
+            if (leftA > rightB) {
+                hi = midRight - 1;
             }
-            else if(maxLeftX > minRightY) hi = xPartition - 1;
-            else lo = xPartition + 1;
+            else if (leftB > rightA) {
+                lo = midRight + 1;
+            }
+            else {
+                int maxLeft = Math.max(leftA, leftB);
+                int minRight = Math.min(rightA, rightB);
+                if ((m + n) % 2 == 1) return maxLeft; // # of left_part = # of right_part + 1;
+                else return (maxLeft + minRight) / 2.0;
+            }
         }
-        return -1.0;
+        return -1;
     }
 }

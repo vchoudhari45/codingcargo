@@ -4,7 +4,7 @@ export const SITENAME = "Coding Cargo"
 export const TWITTER_HANDLE = "@coding_cargo"
 export const MENU = [
 	{
-		title: "Documentation",
+		title: "Data Structures & Algorithms",
 		heading: true,
 		menuItems: [
 			{
@@ -53,18 +53,6 @@ export const MENU = [
 						title: "Dynamic Routes2",
 					}
 				]
-			}
-		]
-	},
-	{
-		title: "API Reference",
-		heading: true,
-		menuItems: [
-			{
-				title: "CLI",
-			},
-			{
-				title: "next/router",
 			}
 		]
 	}
