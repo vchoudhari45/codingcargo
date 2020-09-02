@@ -16,7 +16,7 @@ const MobileSidebar: React.FC<Props> = ({menu, trieData}) => {
 			<div className="jsx-1998690184">
 				<div className="jsx-567598700 sidebar-search"><SearchBox setShowSearching={setShowSearching}  trieData={trieData} /></div>
 
-				<label className={"jsx-567598700 dropdown-toggle"+ (isMobileMenuItemOpen ? " opened" : "")}>
+				<label className={"jsx-567598700 dropdown-toggle"+ (!showSearching && isMobileMenuItemOpen ? " opened" : "")}>
 				  <input type="checkbox" id="dropdown-input" className="jsx-567598700"/>
 					<div className="jsx-567598700 docs-select" onClick={() => { setIsMobileMenuItemOpen(!isMobileMenuItemOpen) }}>
 						<svg width="6" height="10" viewBox="0 0 6 10" fill="none" xmlns="http://www.w3.org/2000/svg">

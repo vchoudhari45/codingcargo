@@ -2091,7 +2091,7 @@ h4.jsx-3875994729{
 
 .sidebar-search.jsx-567598700{
     display:none;
-    padding:0.5rem 0;
+    padding:1rem 0 0.5rem 0;
     z-index:1;
 }
 
@@ -2182,7 +2182,7 @@ h4.jsx-3875994729{
 }
 
 @media screen and (max-width:640px){
-    .sidebar-search.jsx-567598700 .react-autosuggest__suggestions-container--open,.sidebar-search.jsx-567598700 .no-results,.opened.jsx-567598700~.docs-dropdown.jsx-567598700{
+    .sidebar-search.jsx-567598700 .react-autosuggest__suggestions-container--open,.sidebar-search.jsx-567598700 .no-results{
         bottom:calc(203px - 90vh);
     }
 }
@@ -2983,7 +2983,13 @@ footer.jsx-29590182{
 	border:none;
 }
 
-
+.no-results.jsx-4137899046 {
+    top: 3rem;
+    font-size: 0.875rem;
+    text-align: center;
+    background: rgb(255, 255, 255);
+    padding: 2rem;
+}
 
 
 

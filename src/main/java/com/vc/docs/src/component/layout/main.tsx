@@ -68,7 +68,7 @@ const main: React.FC<Props> = ({prev, current, next, content}: Props) => {
 				</div>
 
 				{
-					title && shareUrl ? 
+					title && shareUrl && contentArr.length >= 5 ? 
 						<div className="jsx-29590182 page-nav">
 							<span className="jsx-113938279"></span>
 							<span className="jsx-3578282791">
@@ -97,7 +97,7 @@ const main: React.FC<Props> = ({prev, current, next, content}: Props) => {
 				}
 
 				{
-					current.title ? 
+					current.title && contentArr.length >= 5 ? 
 					<footer className="jsx-29590182">
 						<a href={"https://github.com/vchoudhari45/codingcargo/edit/master/src/main/java/com/vc/docs/md/" + slug(current.title) + ".md"} target="_blank" rel="noopener noreferrer" className="jsx-29590182">Edit this page on GitHub</a>
 					</footer>

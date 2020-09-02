@@ -4,7 +4,7 @@ export const SITENAME = "Coding Cargo"
 export const TWITTER_HANDLE = "@coding_cargo"
 export const MENU = [
 	{
-		title: "Data Structures & Algorithms",
+		title: "Index",
 		heading: true,
 		menuItems: [
 			{
