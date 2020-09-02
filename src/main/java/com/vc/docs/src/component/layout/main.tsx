@@ -1,7 +1,8 @@
 import { MenuItem } from "../../model/MenuItem"
 import ReactHtmlParser from 'react-html-parser'
 import { slug } from "../../util/url"
-
+import Prism from 'prismjs'
+import React, { useEffect } from 'react'
 import {
 	FacebookShareButton,FacebookIcon,
 	LinkedinShareButton, LinkedinIcon,
@@ -9,7 +10,6 @@ import {
 	RedditShareButton, RedditIcon,
 	TumblrShareButton, TumblrIcon
 } from "react-share"
-
 import { BASEURL } from "../../data/menu"
 
 interface Props {
@@ -19,14 +19,19 @@ interface Props {
 	content: string
 }
 
+require('prismjs/components/prism-java')
 const main: React.FC<Props> = ({prev, current, next, content}: Props) => {
 
 	const shareUrl = current.title ? BASEURL + slug(current.title) : null
 	const title = current.title
 	const contentArr = content ? content.split("\n") : ['','','','']
 
+	useEffect(() => {
+		Prism.highlightAll()
+	})
+
 	return (
-		<div className="container">
+		<>
 			<div className="jsx-29590182 docs">
 				
 				<div className="jsx-29590182 docs-content">
@@ -99,7 +104,7 @@ const main: React.FC<Props> = ({prev, current, next, content}: Props) => {
 					: ""
 				}
 			</div>
-		</div>
+		</>
 	)
 }
 

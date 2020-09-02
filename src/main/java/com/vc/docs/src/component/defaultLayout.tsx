@@ -29,7 +29,7 @@ const DefaultLayout: React.FC<Props> = ({ content, selected } : Props) => {
 	}, [])
 
 	return (
-		<>
+		<div>
 			<Header />
 			<div className="jsx-4169323174">
 				<MobileSidebar menu={renderMenuResponse.menuHtml} trieData={renderMenuResponse.menuData} />
@@ -40,7 +40,7 @@ const DefaultLayout: React.FC<Props> = ({ content, selected } : Props) => {
 					</div>
 				</div>
 			</div>
-		</>
+		</div>
   )
 }
 export default DefaultLayout
