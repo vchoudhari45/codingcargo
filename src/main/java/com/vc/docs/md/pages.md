@@ -14,7 +14,7 @@ Given two sorted arrays <code class="inline">A</code> and <code className="inlin
 <strong>Follow up</strong>: The overall run time complexity should be O(log (m+n)).
 </p>
 
-<h2 class="heading">Solution</h2>
+<h2 className="heading">Solution</h2>
 <p>This Page explains Java Solution to Problem Median of Two Sorted Arrays using Binary Search Algorithm</p>
 
 
