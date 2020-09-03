@@ -16,7 +16,7 @@ Given two sorted arrays <code class="inline">A</code> and <code class="inline">B
 
 <pre>
 <code class="language-java">
-class Sample {
+class Page {
     public double findMedianSortedArrays(int[] A, int[] B) {
         int m = A.length; int n = B.length; if (m > n) return findMedianSortedArrays(B, A); int lo = 0, hi = m; int total = (m + n + 1) / 2;
         while (lo  hi) {
