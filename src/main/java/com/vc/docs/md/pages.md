@@ -15,42 +15,42 @@ Given two sorted arrays <code class="inline">A</code> and <code class="inline">B
 </p>
 
 <pre>
-    <code class="language-java">
-        class MedianOfTwoSortedArrays {
-            public double findMedianSortedArrays(int[] A, int[] B) {
-                int m = A.length;
-                int n = B.length;
-
-                if (m > n) return findMedianSortedArrays(B, A);
-
-                int lo = 0, hi = m;
-                int total = (m + n + 1) / 2;
-                while (lo <= hi) {
-                    int midRight = lo + (hi - lo) / 2;
-                    int midLeft = total - midRight;
-
-                    int leftA = midRight == 0 ? Integer.MIN_VALUE : A[midRight - 1];
-                    int rightA = midRight == m ? Integer.MAX_VALUE : A[midRight];
-                    int leftB = midLeft == 0 ? Integer.MIN_VALUE : B[midLeft - 1];
-                    int rightB = midLeft == n ? Integer.MAX_VALUE : B[midLeft];
-
-                    if (leftA > rightB) {
-                        hi = midRight - 1;
-                    }
-                    else if (leftB > rightA) {
-                        lo = midRight + 1;
-                    }
-                    else {
-                        int maxLeft = Math.max(leftA, leftB);
-                        int minRight = Math.min(rightA, rightB);
-                        if ((m + n) % 2 == 1) return maxLeft; // # of left_part = # of right_part + 1;
-                        else return (maxLeft + minRight) / 2.0;
-                    }
-                }
-                return -1;
-            }
-        }
-    </code>
+<code class="language-java">
+    class MedianOfTwoSortedArrays {<br />
+        public double findMedianSortedArrays(int[] A, int[] B) {<br />
+            int m = A.length;<br />
+            int n = B.length;<br />
+            <br />
+            if (m > n) return findMedianSortedArrays(B, A);<br />
+            <br />
+            int lo = 0, hi = m;<br />
+            int total = (m + n + 1) / 2;<br />
+            while (lo <= hi) {<br />
+                int midRight = lo + (hi - lo) / 2;<br />
+                int midLeft = total - midRight;<br />
+                <br />
+                int leftA = midRight == 0 ? Integer.MIN_VALUE : A[midRight - 1];<br />
+                int rightA = midRight == m ? Integer.MAX_VALUE : A[midRight];<br />
+                int leftB = midLeft == 0 ? Integer.MIN_VALUE : B[midLeft - 1];<br />
+                int rightB = midLeft == n ? Integer.MAX_VALUE : B[midLeft];<br />
+                <br />
+                if (leftA > rightB) {<br />
+                    hi = midRight - 1;<br />
+                }<br />
+                else if (leftB > rightA) {<br />
+                    lo = midRight + 1;<br />
+                }<br />
+                else {<br />
+                    int maxLeft = Math.max(leftA, leftB);<br />
+                    int minRight = Math.min(rightA, rightB);<br />
+                    if ((m + n) % 2 == 1) return maxLeft; // # of left_part = # of right_part + 1;<br />
+                    else return (maxLeft + minRight) / 2.0;<br />
+                }<br />
+            }<br />
+            return -1;<br />
+        }<br />
+    }<br />
+</code>
 </pre>
 
 
