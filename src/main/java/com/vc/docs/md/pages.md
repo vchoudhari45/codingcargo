@@ -15,8 +15,8 @@ Given two sorted arrays <code class="inline">A</code> and <code class="inline">B
 </p>
 
 
-<code class="language-java">
 <pre>
+<code class="language-java">
 class MedianOfTwoSortedArrays {
     public double findMedianSortedArrays(int[] A, int[] B) {
         int m = A.length;
@@ -51,8 +51,8 @@ class MedianOfTwoSortedArrays {
         return -1;
     }
 }
-</pre>
 </code>
+</pre>
 
 
 <h2 class="heading">Solution</h2>
