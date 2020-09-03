@@ -44,17 +44,18 @@ function generatePaths(menu: MenuItem[]): Path[] {
 }
 
 export async function getStaticProps(context) {
-	const sourceCode = unslug(context.params.problem, "")
+	const sourceCode = unslug(context.params.problem)
 	const difficulty = context.params.difficulty
 	const codeUrl = "https://raw.githubusercontent.com/vchoudhari45/codingcargo/master/src/main/java/com/vc/"+difficulty+"/"+sourceCode+".java"
 	const resCode = await fetch(codeUrl)
-	const textCode = escape(await resCode.text())
+	const textCode = await resCode.text()
+	const replacedHtml = textCode.replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/'/g, "&#x27;").replace(/"/g, "&quot;").replace(/\//g, "&#x2F;")
 
 	const url = "https://raw.githubusercontent.com/vchoudhari45/codingcargo/master/src/main/java/com/vc/docs/md/"+context.params.problem+".md"
 	const res = await fetch(url)
-	const text = (await res.text()).replace("####CODE_PLACEHOLDER####", textCode)
+	const text = (await res.text()).replace("####CODE_PLACEHOLDER####", replacedHtml)
 
-	const title = unslug(context.params.problem)
+	const title = unslug(context.params.problem, ' ')
 	const selected = {title: title}
 	return {
 		 props: { 

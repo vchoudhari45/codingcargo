@@ -20,7 +20,7 @@ export const unslug = (str: string, seperator?: string) => {
 	.replace(/-/g, " ")       //dashes to spaces
 	.split(' ')
 	.map(word => word.charAt(0).toUpperCase() + word.slice(1))
-	.join(seperator ? seperator : ' ')
+	.join(seperator ? seperator : '')
 
 	return unsluged
 }

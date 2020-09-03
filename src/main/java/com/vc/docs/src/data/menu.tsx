@@ -1,7 +1,7 @@
 import { MenuItem } from "../model/MenuItem"
 
 export const HOMEPAGE = "Getting Started"
-export const BASEURL = "https://www.codingcargo.com/"
+export const BASEURL = "http://localhost:3000/"
 export const SITENAME = "Coding Cargo"
 export const TWITTER_HANDLE = "@coding_cargo"
 export const MENU: MenuItem[] = [
@@ -18,15 +18,15 @@ export const MENU: MenuItem[] = [
 				topic: true,
 				menuItems: [
 					{
-						title: "What is Binary Search?",
+						title: "What Is Binary Search?",
 						post: true
 					},
 					{
-						title: "Binary Search problem Set",
+						title: "Binary Search Problem Set",
 						topic: true,
 						menuItems: [
 							{
-								title: "Median of Two Sorted Arrays",
+								title: "Median Of Two Sorted Arrays",
 								problem: "hard"
 							},
 							{
