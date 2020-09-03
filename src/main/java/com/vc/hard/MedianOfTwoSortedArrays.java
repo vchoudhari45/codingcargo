@@ -1,6 +1,6 @@
 package com.vc.hard;
 
-class L4 {
+class MedianOfTwoSortedArrays {
     public double findMedianSortedArrays(int[] A, int[] B) {
         int m = A.length;
         int n = B.length;

@@ -1,56 +1,43 @@
+import { MenuItem } from "../model/MenuItem"
+
 export const HOMEPAGE = "Getting Started"
 export const BASEURL = "https://www.codingcargo.com/"
 export const SITENAME = "Coding Cargo"
 export const TWITTER_HANDLE = "@coding_cargo"
-export const MENU = [
+export const MENU: MenuItem[] = [
 	{
 		title: "Index",
 		heading: true,
 		menuItems: [
 			{
 				title: HOMEPAGE,
+				post: true
 			},
 			{
-				title: "Basic Features",
+				title: "Binary Search",
+				topic: true,
 				menuItems: [
 					{
-						title: "Pages",
+						title: "What is Binary Search?",
+						post: true
 					},
 					{
-						title: "Data Fetching",
-					},
-					{
-						title: "Built-in CSS Support",
-					}
-				]
-			},
-			{
-				title: "Routing",
-				menuItems: [
-					{
-						title: "Introduction",
-					},
-					{
-						title: "Dynamic Routes",
-					}
-				]
-			},
-			{
-				title: "RoutingLevel3",
-				menuItems: [
-					{
-						title: "Introduction1",
+						title: "Binary Search problem Set",
+						topic: true,
 						menuItems: [
 							{
-								title: "Introduction2",
+								title: "Median of Two Sorted Arrays",
+								problem: "hard"
 							},
 							{
-								title: "Dynamic Routes1",
+								title: "Maximum Gap",
+								problem: "hard"
+							},
+							{
+								title: "Dungeon Game",
+								problem: "hard"
 							}
 						]
-					},
-					{
-						title: "Dynamic Routes2",
 					}
 				]
 			}

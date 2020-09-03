@@ -1,9 +1,7 @@
-import { MenuItem } from '../model/MenuItem'
 import fetch from 'isomorphic-unfetch'
 import { HOMEPAGE } from '../data/menu'
 import { slug } from '../util/url'
 import PageResponse from '../model/PageResponse'
-
 
 export default function Home({content, selected}: PageResponse) {
 	return {

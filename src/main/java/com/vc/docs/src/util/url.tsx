@@ -13,14 +13,14 @@ export const slug = (str: string) => {
 	return slugged
 }
 
-export const unslug = (str: string) => {
+export const unslug = (str: string, seperator?: string) => {
 	const unsluged = str
 	.toString()
 	.trim()
 	.replace(/-/g, " ")       //dashes to spaces
 	.split(' ')
 	.map(word => word.charAt(0).toUpperCase() + word.slice(1))
-	.join(' ')
+	.join(seperator ? seperator : ' ')
 
 	return unsluged
 }

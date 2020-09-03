@@ -35,7 +35,7 @@ const main: React.FC<Props> = ({prev, current, next, content}: Props) => {
 			<div className="jsx-29590182 docs">
 				
 				<div className="jsx-29590182 docs-content">
-					{ contentArr.length < 4 ? ReactHtmlParser(contentArr.join("")) : ReactHtmlParser(contentArr.slice(3).join("")) }
+					{ contentArr.length < 4 ? ReactHtmlParser(contentArr.join("\n")) : ReactHtmlParser(contentArr.slice(3).join("\n")) }
 				</div>
 
 				<div className="jsx-29590182 page-nav">
