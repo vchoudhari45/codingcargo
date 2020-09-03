@@ -42,7 +42,6 @@ class Sample {
 </code>
 </pre>
 
-
 <h2 class="heading">Solution</h2>
 <p>Simple solution to this problem </p>
 
