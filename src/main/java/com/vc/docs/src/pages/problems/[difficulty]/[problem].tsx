@@ -1,8 +1,8 @@
-import { MenuItem } from '../../model/MenuItem'
+import { MenuItem } from '../../../model/MenuItem'
 import fetch from 'isomorphic-unfetch'
-import { slug, unslug } from '../../util/url'
-import { MENU } from '../../data/menu'
-import PageResponse from '../../model/PageResponse'
+import { slug, unslug } from '../../../util/url'
+import { MENU } from '../../../data/menu'
+import PageResponse from '../../../model/PageResponse'
 
 function Post({selected, content}: PageResponse) {
 	return {
@@ -31,7 +31,7 @@ function generatePaths(menu: MenuItem[]): Path[] {
 		if(menuItem.problem) {
 			paths.push({
 				params: {
-					difficulty: menuItem.post ? menuItem.post : "hard",
+					difficulty: menuItem.problem,
 					problem: slug(menuItem.title)
 				}
 			})
