@@ -14,6 +14,7 @@ Given two sorted arrays <code class="inline">A</code> and <code class="inline">B
 <strong>Follow up</strong>: The overall run time complexity should be O(log (m+n)).
 </p>
 
+<pre>
 <code class="language-java">
 class Sample {
     public double findMedianSortedArrays(int[] A, int[] B) {
@@ -39,6 +40,7 @@ class Sample {
     }
 }
 </code>
+</pre>
 
 <h2 class="heading">Solution</h2>
 <p>Simple solution to this problem </p>
