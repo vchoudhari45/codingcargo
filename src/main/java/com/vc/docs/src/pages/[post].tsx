@@ -45,7 +45,7 @@ export async function getStaticProps(context) {
 	const url = "https://raw.githubusercontent.com/vchoudhari45/codingcargo/master/src/main/java/com/vc/docs/md/posts/"+context.params.post+".md"
 	const res = await fetch(url)
 	const text = await res.text()
-	const title = unslug(context.params.post)
+	const title = unslug(context.params.post, ' ')
 	const selected = {title: title}
 	return {
 		 props: { 

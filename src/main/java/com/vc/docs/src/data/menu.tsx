@@ -18,7 +18,7 @@ export const MENU: MenuItem[] = [
 				topic: true,
 				menuItems: [
 					{
-						title: "What is Binary Search?",
+						title: "What is Binary Search",
 						post: true
 					},
 					{
@@ -27,6 +27,10 @@ export const MENU: MenuItem[] = [
 						menuItems: [
 							{
 								title: "Median of Two Sorted Arrays",
+								problem: "hard"
+							},
+							{
+								title: "Maximum Gap",
 								problem: "hard"
 							}
 						]

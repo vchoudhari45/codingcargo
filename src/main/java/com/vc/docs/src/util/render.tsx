@@ -107,7 +107,7 @@ export default function renderMenu(data: MenuItem[], selected: MenuItem, depth: 
 			}
 			else {
 				/** Start: Assign prev & next */
-				if(selected.title.toString().toLowerCase() === menuItem.title.toString().toLowerCase()) {
+				if(selected.title.toString().toLowerCase() == menuItem.title.toString().toLowerCase()) {
 					if(i - 1 >= 0) {
 						prev = data[i - 1]
 						while(prev.menuItems) {
@@ -136,11 +136,11 @@ export default function renderMenu(data: MenuItem[], selected: MenuItem, depth: 
 							selected.title.toString().toLowerCase() == menuItem.title.toString().toLowerCase() 
 							?
 								<div ref={ref} className={"jsx-3253412043 nav-link selected"}>
-									<a className="jsx-3253412043" href={BASEURL + (menuItem.problem ? "problems/" + slug(menuItem.problem) + "/" + slug(menuItem.title) : slug(menuItem.title)) }>{menuItem.title}</a>
+									<a className="jsx-3253412043" href={ BASEURL + (menuItem.problem ? "problems/" + slug(menuItem.problem) + "/" + slug(menuItem.title) : slug(menuItem.title)) }>{menuItem.title}</a>
 								</div>
 							:
 								<div className={"jsx-3253412043 nav-link"}>
-									<a className="jsx-3253412043" href={BASEURL + (menuItem.problem ? "problems/" + slug(menuItem.problem) + "/" + slug(menuItem.title) : slug(menuItem.title)) }>{menuItem.title}</a>
+									<a className="jsx-3253412043" href={ BASEURL + (menuItem.problem ? "problems/" + slug(menuItem.problem) + "/" + slug(menuItem.title) : slug(menuItem.title)) }>{menuItem.title}</a>
 								</div>
 						}
 					</div>

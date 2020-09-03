@@ -12,7 +12,7 @@ export default function Home({content, selected}: PageResponse) {
 
 export async function getStaticProps() {
 	const selected = {title: HOMEPAGE}
-	const url = "https://raw.githubusercontent.com/vchoudhari45/codingcargo/master/src/main/java/com/vc/docs/md/"+slug(HOMEPAGE)+".md"
+	const url = "https://raw.githubusercontent.com/vchoudhari45/codingcargo/master/src/main/java/com/vc/docs/md/posts/"+slug(HOMEPAGE)+".md"
 	const res = await fetch(url)
 	const text = await res.text()
 	return {
