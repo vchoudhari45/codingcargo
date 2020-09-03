@@ -28,14 +28,6 @@ export const MENU: MenuItem[] = [
 							{
 								title: "Median of Two Sorted Arrays",
 								problem: "hard"
-							},
-							{
-								title: "Maximum Gap",
-								problem: "hard"
-							},
-							{
-								title: "Dungeon Game",
-								problem: "hard"
 							}
 						]
 					}

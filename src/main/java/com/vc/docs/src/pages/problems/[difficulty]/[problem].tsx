@@ -51,7 +51,7 @@ export async function getStaticProps(context) {
 	const textCode = await resCode.text()
 	const replacedHtml = textCode.replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/'/g, "&#x27;").replace(/"/g, "&quot;").replace(/\//g, "&#x2F;")
 
-	const url = "https://raw.githubusercontent.com/vchoudhari45/codingcargo/master/src/main/java/com/vc/docs/md/"+context.params.problem+".md"
+	const url = "https://raw.githubusercontent.com/vchoudhari45/codingcargo/master/src/main/java/com/vc/docs/md/"+difficulty+"/"+context.params.problem+".md"
 	const res = await fetch(url)
 	const text = (await res.text()).replace("####CODE_PLACEHOLDER####", replacedHtml)
 
