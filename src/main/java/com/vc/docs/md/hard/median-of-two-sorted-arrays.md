@@ -99,7 +99,6 @@ while(lo &lt;= hi) {
 
 
 <br />
-<br />
 <p>
 Corresponding to <code class="inline">midLeftA</code> and <code class="inline">midRightA</code> we should pick up two middle elements <code class="inline">midLeftB</code> and <code class="inline">midRightB</code> from array <code class="inline">B</code> such that 
 <code class="inline">midLeftA &lt;= midRightB</code> and <code class="inline">midLeftB &lt;= midRightA</code>
@@ -118,7 +117,6 @@ while(lo &lt;= hi) {
 </pre>
 
 
-<br />
 <br />
 <p>
 Continue the Binary Search until we have <code class="inline">midLeftA &lt;= midRightB && midLeftB &lt;= midRightA</code> and once we have four such numbers calculate median based on the total length of both arrays
