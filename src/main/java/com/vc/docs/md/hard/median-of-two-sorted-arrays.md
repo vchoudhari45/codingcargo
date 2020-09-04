@@ -75,7 +75,6 @@ With above approach our solution will have run time complexity of <code class="i
 </p>
 
 
-<br/>
 <p>
 We should start by finding middle two element <code class="inline">midLeftA</code> and <code class="inline">midRightA</code> from array <code class="inline">A</code> using binary search
 </p>
@@ -97,8 +96,6 @@ while(lo &lt;= hi) {
 </pre>
 
 
-
-<br />
 <p>
 Corresponding to <code class="inline">midLeftA</code> and <code class="inline">midRightA</code> we should pick up two middle elements <code class="inline">midLeftB</code> and <code class="inline">midRightB</code> from array <code class="inline">B</code> such that 
 <code class="inline">midLeftA &lt;= midRightB</code> and <code class="inline">midLeftB &lt;= midRightA</code>
@@ -117,7 +114,6 @@ while(lo &lt;= hi) {
 </pre>
 
 
-<br />
 <p>
 Continue the Binary Search until we have <code class="inline">midLeftA &lt;= midRightB && midLeftB &lt;= midRightA</code> and once we have four such numbers calculate median based on the total length of both arrays
 </p>
@@ -141,7 +137,7 @@ else {
 
 
 <h2 class="heading">Complete Java Code</h2>
-If you find any further optimized in below code, please create a pull request by clicking on link <a href="####LINK_PLACEHOLDER####" target="_blank" rel="noopener noreferrer" class="absolute">Edit this source code on GitHub</a>
+If you find any further optimized in below code, please create a pull request by clicking on link <a href="####LINK_PLACEHOLDER####" target="_blank" rel="noopener noreferrer" class="jsx-29590182">Edit this source code on GitHub</a>
 <pre>
 <code class="language-java">
 ####CODE_PLACEHOLDER####
