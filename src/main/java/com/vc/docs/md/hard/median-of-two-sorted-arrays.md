@@ -143,7 +143,7 @@ else {
 
 
 <h2 class="heading">Complete Java Code</h2>
-If you think below solution can be optimized further, please create a pull request by clicking on link ####LINK_PLACEHOLDER####
+If you find any further optimized in below code, please create a pull request by clicking on link <a href="####LINK_PLACEHOLDER####" target="_blank" rel="noopener noreferrer" class="jsx-29590182">Edit this source code on GitHub</a>
 <pre>
 <code class="language-java">
 ####CODE_PLACEHOLDER####
