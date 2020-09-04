@@ -117,7 +117,7 @@ Continue the Binary Search until we have <code class="inline">midLeftA &lt;= mid
 </p>
 <pre>
 <code class="language-java">
-if(midLeftA > midRightB) {
+if(midLeftA &gt; midRightB) {
     hi = midLeft - 1;
 }
 else if(midLeftB > midRightA) {
