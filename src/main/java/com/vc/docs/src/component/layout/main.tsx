@@ -34,7 +34,7 @@ const main: React.FC<Props> = ({prev, current, next, content}: Props) => {
 		<>
 			<div className="jsx-29590182 docs">
 				
-				<div className="jsx-29590182 docs-content">
+				<div id="reach-skip-nav" className="jsx-29590182 docs-content">
 					{ contentArr.length < 4 ? ReactHtmlParser(contentArr.join("\n")) : ReactHtmlParser(contentArr.slice(3).join("\n")) }
 				</div>
 

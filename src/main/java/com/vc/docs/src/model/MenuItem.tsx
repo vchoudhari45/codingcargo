@@ -4,6 +4,7 @@ export interface MenuItem {
 	topic?: boolean,
 	post?: boolean,
 	problem?: string,
+	index?: number,
 	open?: boolean,
 	menuItems?: MenuItem[]
 }

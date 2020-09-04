@@ -26,11 +26,8 @@ export const MENU: MenuItem[] = [
 						topic: true,
 						menuItems: [
 							{
-								title: "Median of Two Sorted Arrays",
-								problem: "hard"
-							},
-							{
-								title: "Maximum Gap",
+								index: 4,
+                                title: "Median of Two Sorted Arrays",
 								problem: "hard"
 							}
 						]

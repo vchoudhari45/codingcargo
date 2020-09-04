@@ -2075,7 +2075,7 @@ h4.jsx-3875994729{
 
 .sidebar-search.jsx-567598700{
     display:none;
-    padding:1.5rem 0 1rem 0;
+    padding:1.5rem 0 0.5rem 0;
     z-index:1;
 }
 
@@ -2723,19 +2723,19 @@ footer.jsx-29590182{
 
 
 .docs h1{
-    font-size:3rem;
+    font-size:2.2rem;
     font-weight:700;
     line-height:1.35;
     margin-top:0.75rem;
 }
 
 .docs h2{
-    font-size:2rem;
+    font-size:1.7rem;
     line-height:1.5;
 }
 
 .docs h3{
-    font-size:1.5rem;
+    font-size:1.4rem;
     line-height:1.6;
 }
 
@@ -2744,7 +2744,7 @@ footer.jsx-29590182{
 }
 
 .docs h5{
-    font-size:1rem;
+    font-size:1.0rem;
 }
 
 .docs .heading{
