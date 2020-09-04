@@ -28,33 +28,33 @@ Given two sorted arrays <code class="inline">A</code> and <code class="inline">B
 <strong>Follow up</strong>: The overall run time complexity should be <code class="inline">O(log (m+n))</code>.
 </p>
 
-<h4 class="heading">Example 1</h3>
+<h4 class="heading">Example 1</h4>
 <pre class="language-java">
 Input: nums1 = [1,3], nums2 = [2]
 Output: 2.00000
 Explanation: merged array = [1,2,3] and median is 2
 </pre>
 
-<h4 class="heading">Example 2:</h3>
+<h4 class="heading">Example 2:</h4>
 <pre class="language-java">
 Input: nums1 = [1,2], nums2 = [3,4]
 Output: 2.50000
 Explanation: merged array = [1,2,3,4] and median is (2 + 3) / 2 = 2.5
 </pre>
 
-<h4 class="heading">Example 3:</h3>
+<h4 class="heading">Example 3:</h4>
 <pre class="language-java">
 Input: nums1 = [0,0], nums2 = [0,0]
 Output: 0.00000
 </pre>
 
-<h4 class="heading">Example 4:</h3>
+<h4 class="heading">Example 4:</h4>
 <pre class="language-java">
 Input: nums1 = [], nums2 = [1]
 Output: 1.00000
 </pre>
 
-<h4 class="heading">Example 5:</h3>
+<h4 class="heading">Example 5:</h4>
 <pre class="language-java">
 Input: nums1 = [2], nums2 = []
 Output: 2.00000
