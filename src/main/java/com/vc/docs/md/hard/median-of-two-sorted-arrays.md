@@ -30,39 +30,44 @@ Given two sorted arrays <code class="inline">A</code> and <code class="inline">B
 
 <h4 class="heading">Example 1</h4>
 <blockquote>
-<br/>
+<p>
 <b>Input</b>: nums1 = [1,3], nums2 = [2]<br/>
 <b>Output</b>: 2.00000<br/>
 <b>Explanation</b>: merged array = [1,2,3] and median is 2<br/>
+</p>
 </blockquote>
 
 <h4 class="heading">Example 2:</h4>
 <blockquote>
-<br/>
+<p>
 <b>Input</b>: nums1 = [1,2], nums2 = [3,4]<br/>
 <b>Output</b>: 2.50000<br/>
 <b>Explanation</b>: merged array = [1,2,3,4] and median is (2 + 3) / 2 = 2.5<br/>
+</p>
 </blockquote>
 
 <h4 class="heading">Example 3:</h4>
 <blockquote>
-<br/>
+<p>
 <b>Input</b>: nums1 = [0,0], nums2 = [0,0]<br/>
 <b>Output</b>: 0.00000<br/>
+</p>
 </blockquote>
 
 <h4 class="heading">Example 4:</h4>
-<br/>
 <blockquote>
+<p>
 <b>Input</b>: nums1 = [], nums2 = [1]<br/>
 <b>Output</b>: 1.00000<br/>
+</p>
 </blockquote>
 
 <h4 class="heading">Example 5:</h4>
 <blockquote>
-<br/>
+<p>
 <b>Input</b>: nums1 = [2], nums2 = []<br/>
 <b>Output</b>: 2.00000<br/>
+</p>
 </blockquote>
 
 
