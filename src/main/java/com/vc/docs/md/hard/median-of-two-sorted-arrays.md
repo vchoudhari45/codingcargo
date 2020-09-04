@@ -136,7 +136,7 @@ else {
 
 
 
-<h2 class="heading">Complete Java Code</h2>
+<h2 class="heading">Complete Java code</h2>
 If you find any further optimized in below code, please create a pull request by clicking on link <a href="####LINK_PLACEHOLDER####" target="_blank" rel="noopener noreferrer" class="jsx-29590182">edit this source code on GitHub</a>
 <pre>
 <code class="language-java">
