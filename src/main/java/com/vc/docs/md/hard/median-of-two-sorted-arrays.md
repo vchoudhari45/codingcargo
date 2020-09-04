@@ -4,18 +4,10 @@
 
 
 
-
-
-
-
 <h1>Median of Two Sorted Arrays</h1>
 <p>
 This page explains Java solution to problem <code class="inline">Median of Two Sorted Arrays</code> using <a href="https://www.codingcargo.com/what-is-binary-search" class="absolute" target="_blank" rel="noopener noreferrer">Binary Search</a> Algorithm.
 </p>
-
-
-
-
 
 
 
@@ -27,6 +19,8 @@ Given two sorted arrays <code class="inline">A</code> and <code class="inline">B
 <p>
 <strong>Follow up</strong>: The overall run time complexity should be <code class="inline">O(log (m+n))</code>.
 </p>
+
+
 
 <h4 class="heading">Example 1</h4>
 <blockquote>
@@ -72,10 +66,6 @@ Given two sorted arrays <code class="inline">A</code> and <code class="inline">B
 
 
 
-
-
-
-
 <h2 class="heading">Solution</h2>
 <p>
 Simple solution to this problem will be to combine both arrays <code class="inline">A</code> and <code class="inline">B</code> and take middle element if total number of elements are odd or take avg of middle two elements if total number of elements are even.
@@ -104,6 +94,8 @@ while(lo &lt;= hi) {
 </code>
 </pre>
 
+
+
 <br />
 <br />
 <p>
@@ -122,6 +114,8 @@ while(lo &lt;= hi) {
 }
 </code>
 </pre>
+
+
 
 <br />
 <br />
@@ -144,10 +138,6 @@ else {
 }
 </code>
 </pre>
-
-
-
-
 
 
 
