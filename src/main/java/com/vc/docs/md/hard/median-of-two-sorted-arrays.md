@@ -82,7 +82,7 @@ We should start by finding middle two element <code class="inline">midLeftA</cod
 int lo = 0;
 int hi = m;
 /**
-    We do + 1 here to total length so that we get extra element on the left hand side 
+    We do + 1 to total length so that we get extra element on the left hand side 
     And we can return mid in case total number of elements are odd
 */
 int halfOfTotalElements = (m + n + 1) / 2;
@@ -94,14 +94,14 @@ while(lo &lt;= hi) {
 </code>
 </pre>
 
-<p>
+<p class="heading">
 Corresponding to <code class="inline">midLeftA</code> and <code class="inline">midRightA</code> we should pick up two middle elements from array <code class="inline">B</code>
 <code class="inline">midLeftB</code> and <code class="inline">midRightB</code> such that 
 <code class="inline">midLeftA</code>&lt;=<code class="inline">midRightB</code> and <code class="inline">midLeftB</code>&lt;=<code class="inline">midRightA</code>
 </p>
 <pre>
 <code class="language-java">
-while(lo <= hi) {
+while(lo &lt;= hi) {
     int midLeft = lo + (hi - lo) / 2;
     int midLeftA = midLeft == 0 ? Integer.MIN_VALUE : A[midLeft - 1];
     int midRightA = midLeft == m ? Integer.MAX_VALUE : A[midLeft];<br />    
@@ -112,7 +112,7 @@ while(lo <= hi) {
 </code>
 </pre>
 
-<p>
+<p class="heading">
 Continue the Binary Search until we have <code class="inline">midLeftA &lt;= midRightB && midLeftB &lt;= midRightA</code> and once we have four such numbers calculate median based on the total length of both arrays
 </p>
 <pre>
