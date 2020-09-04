@@ -74,6 +74,8 @@ Simple solution to this problem will be to combine both arrays <code class="inli
 With above approach our solution will have run time complexity of <code class="inline">O(m + n)</code>, but expected time complexity is <code class="inline">O(log(m + n))</code>, so we use Binary Search Algorithm.
 </p>
 
+
+<br/>
 <p>
 We should start by finding middle two element <code class="inline">midLeftA</code> and <code class="inline">midRightA</code> from array <code class="inline">A</code> using binary search
 </p>
@@ -141,6 +143,7 @@ else {
 
 
 <h2 class="heading">Complete Java Code</h2>
+If you think below solution can be optimized further, please create a pull request by clicking on link ####LINK_PLACEHOLDER####
 <pre>
 <code class="language-java">
 ####CODE_PLACEHOLDER####
