@@ -97,7 +97,7 @@ while(lo &lt;= hi) {
 <p class="heading">
 Corresponding to <code class="inline">midLeftA</code> and <code class="inline">midRightA</code> we should pick up two middle elements from array <code class="inline">B</code>
 <code class="inline">midLeftB</code> and <code class="inline">midRightB</code> such that 
-<code class="inline">midLeftA</code>&lt;=<code class="inline">midRightB</code> and <code class="inline">midLeftB</code>&lt;=<code class="inline">midRightA</code>
+<code class="inline">midLeftA &lt;= midRightB</code> and <code class="inline">midLeftB &lt;= midRightA</code>
 </p>
 <pre>
 <code class="language-java">
