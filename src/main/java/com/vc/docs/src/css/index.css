@@ -2932,11 +2932,11 @@ footer.jsx-29590182{
     margin-bottom:0.625rem;
 }
 
-.docs ul li:before{content:'-';
+/* .docs ul li:before{content:'-';
     color:#999999;
     position:absolute;
     margin-left:-1rem;
-}
+} */
 
 
 
@@ -3102,4 +3102,14 @@ https://prismjs.com/download.html#themes=prism-okaidia&languages=markup+clike+ja
 	 cursor: help;
  }
  
- 
+ td {
+	border: 1px solid #272822;
+	padding: 10px;
+}
+
+th {
+	border: 1px solid #272822;
+	padding: 10px;
+	background-color: #272822;
+	color: white;
+}

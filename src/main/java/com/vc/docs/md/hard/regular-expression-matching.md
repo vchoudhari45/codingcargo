@@ -51,10 +51,10 @@ Given an input string <code class="inline">s</code> and a pattern <code class="i
 
 <h2 class="heading">Solution</h2>
 <p>
-Tricky part in this problem is to see how we should handle <code class="inline">*</code> and <code class="inline">.</code> in pattern <code class="inline">p</code> so let's gets started by writing a skeleton for Dynamic Programming.
+Tricky part in this problem is to see how we should handle <code class="inline">*</code> and <code class="inline">.</code> in pattern <code class="inline">p</code> so let's gets started by writing a skeleton for Dynamic Programming and adding happy path and the special cases for handling <code class="inline">*</code> and <code class="inline">.</code>
 </p>
 
-<h3>Skeleton Code</h3>
+<h2>Skeleton Code</h2>
 <p>
 First we will define a 2d boolean matrix of length <code class="inline">(m + 1) * (n + 1)</code> where <code class="inline">m</code> is length of input string <code class="inline">s</code> and <code class="inline">n</code> is length of pattern <code class="inline">p</code>. We add 1 to length input string and input pattern to make dynamic programming code look simpler.<br />
 Next, we will write all the possible condition to handle happy path as well as special cases as below. 
@@ -131,9 +131,9 @@ With above case our code becomes
 <p>
 And our 2d <code class="inline">dp</code> array becomes
 </p>
-<table style="border: 1px solid black">
+<table>
     <tr>
-        <th>Input</th>
+        <th></th>
         <th>0</th>
         <th>c</th>
         <th>*</th>
@@ -198,9 +198,9 @@ With above cases our code becomes
 <p>
 And our 2d <code class="inline">dp</code> array becomes
 </p>
-<table style="border: 1px solid black">
+<table>
     <tr>
-        <th>Input</th>
+        <th></th>
         <th>0</th>
         <th>c</th>
         <th>*</th>
@@ -251,7 +251,7 @@ And our 2d <code class="inline">dp</code> array becomes
 <p>
 If length of input string is zero and input pattern is &gt; zero, then our answer will have three conditions as below.
 </p>
-<ul style="list-style-type:none;">
+<ul>
     <li>
        <b>Case 1</b>: If character in pattern is <code class="inline">*</code>, then we assign previous to previous value, because <code class="inline">*</code> can match zero or more character in regular expression and there is nothing to match in the input string.
     </li>
@@ -285,9 +285,9 @@ With above cases our code becomes
 <p>
 And our 2d <code class="inline">dp</code> array becomes
 </p>
-<table style="border: 1px solid black">
+<table>
     <tr>
-        <th>Input</th>
+        <th></th>
         <th>0</th>
         <th>c</th>
         <th>*</th>
@@ -339,11 +339,11 @@ And our 2d <code class="inline">dp</code> array becomes
 <p>
 If length of input string is &gt; zero and input pattern is &gt; zero, then our answer will have three cases as below.
 </p>
-<ul style="list-style-type:none;">
+<ul>
     <li>
        <b>Case 1</b>: If character in pattern is <code class="inline">*</code> <br />
-       <b>Case 1.1.</b> then we can ignore two character in the pattern and see if it that value was true, considering <code class="inline">*</code> matches with zero character in the input string. <br />
-       <b>Case 1.2.</b> here we do additional check to see if previous character in pattern matches with current character in input string or previous character in pattern was<code class="inline">.</code>, if so we can ignore current character in the input string and see if we get true.
+       Then we can ignore two character in the pattern and see if it that value was true, considering <code class="inline">*</code> matches with zero character in the input string. <br />
+       Also, we have to do additional check to see if previous character in pattern matches with current character in input string or previous character in pattern was<code class="inline">.</code>, if so we can ignore current character in the input string and see if we get true.
     </li>
     <li>
        <b>Case 2</b>: If character in pattern is <code class="inline">.</code>, then we assign value ignore current character in pattern as well as current character in input string, as <code class="inline">.</code> can match any character.
@@ -381,9 +381,9 @@ With above cases our code becomes
 <p>
 And our 2d <code class="inline">dp</code> array becomes
 </p>
-<table style="border: 1px solid black">
+<table>
     <tr>
-        <th>Input</th>
+        <th></th>
         <th>0</th>
         <th>c</th>
         <th>*</th>
