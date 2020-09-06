@@ -342,21 +342,17 @@ If the length of the input string is &gt; zero and the input pattern is &gt; zer
 <ul>
     <li>
        <b>Case 1</b>: If a character in the pattern is <code class="inline">*</code>
-       <ul>
-            <li>Then, we can ignore the last two characters in input pattern, and see if that gives us a match as <code class="inline">*</code> can match zero or more of the preceding element.</li>
-            <li>Or we can see if the preceding character in the pattern was<code class="inline">.</code>, if so we can ignore the current element in the input string and see if that returns us a match.</li>
-            <li>Or we can see if the preceding character in a pattern matches the current element in the input string.</li>
-       </ul>  
+       <p>Then, we can ignore the last two characters in input pattern, and see if that gives us a match as <code class="inline">*</code> can match zero or more of the preceding element.</p>
+       <p>Or we can see if the preceding character in the pattern was<code class="inline">.</code>, if so we can ignore the current element in the input string and see if that returns us a match.</p>
+       <p>Or we can see if the preceding character in a pattern matches the current element in the input string.</p>
     </li>
     <li>
        <b>Case 2</b>: If a character in the pattern is <code class="inline">.</code>, then we can ignore the current element from both the input string and see if that returns us a match, as <code class="inline">.</code> can match any character.
     </li>
     <li>
        <b>Case 3</b>: If a character in the pattern is anything other than <code class="inline">*</code> and <code class="inline">.</code>,
-        <ul>
-            <li>Then we check if the current character in the pattern matches the current element in a string if, so we can ignore the current character from both the input string and see if that returns us a match.</li>
-            <li>Or the preceding character in the pattern is <code class="inline">.</code> if, so we can ignore the current element from both the input string and see if that returns us a match.</li>
-        </ul> 
+       <p>Then we check if the current character in the pattern matches the current element in a string if, so we can ignore the current character from both the input string and see if that returns us a match.</p>
+       <p>Or the preceding character in the pattern is <code class="inline">.</code> if, so we can ignore the current element from both the input string and see if that returns us a match.</p>
     </li>
     <li>
         <b>Case 4</b>: Else we return False.
