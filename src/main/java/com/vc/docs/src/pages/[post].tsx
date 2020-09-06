@@ -38,6 +38,31 @@ function generatePaths(menu: MenuItem[]): Path[] {
 			paths.push(...generatePaths(menuItem.menuItems))
 		}
 	})
+	paths.push({
+		params: {
+			post: 'facebook-problem-set'
+		}
+	})
+	paths.push({
+		params: {
+			post: 'amazon-problem-set'
+		}
+	})
+	paths.push({
+		params: {
+			post: 'all-problem-set'
+		}
+	})
+	paths.push({
+		params: {
+			post: 'google-problem-set'
+		}
+	})
+	paths.push({
+		params: {
+			post: 'microsoft-problem-set'
+		}
+	})
 	return paths
 }
 
