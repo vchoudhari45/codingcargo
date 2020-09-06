@@ -22,10 +22,10 @@ Follow up: The overall run time complexity should be <code class="inline">O(log 
 
 
 
-<b>Example 1</b>
+<b>Example 1:</b>
 <blockquote>
 <p>
-<b>Input</b>: nums1 = [1,3], nums2 = [2]<br/>
+<b>Input</b>: A = [1,3], B = [2]<br/>
 <b>Output</b>: 2.00000<br/>
 <b>Explanation</b>: merged array = [1,2,3] and median is 2<br/>
 </p>
@@ -34,49 +34,23 @@ Follow up: The overall run time complexity should be <code class="inline">O(log 
 <b>Example 2:</b>
 <blockquote>
 <p>
-<b>Input</b>: nums1 = [1,2], nums2 = [3,4]<br/>
+<b>Input</b>: A = [1,2], B = [3,4]<br/>
 <b>Output</b>: 2.50000<br/>
 <b>Explanation</b>: merged array = [1,2,3,4] and median is (2 + 3) / 2 = 2.5<br/>
 </p>
 </blockquote>
 
-<b>Example 3:</b>
-<blockquote>
-<p>
-<b>Input</b>: nums1 = [0,0], nums2 = [0,0]<br/>
-<b>Output</b>: 0.00000<br/>
-</p>
-</blockquote>
-
-<b>Example 4:</b>
-<blockquote>
-<p>
-<b>Input</b>: nums1 = [], nums2 = [1]<br/>
-<b>Output</b>: 1.00000<br/>
-</p>
-</blockquote>
-
-<b>Example 5:</b>
-<blockquote>
-<p>
-<b>Input</b>: nums1 = [2], nums2 = []<br/>
-<b>Output</b>: 2.00000<br/>
-</p>
-</blockquote>
-
-
-
 <h2 class="heading">Solution</h2>
 <p>
-Simple solution to this problem will be to combine both arrays <code class="inline">A</code> and <code class="inline">B</code> and take middle element if total number of elements are odd or take avg of middle two elements if total number of elements are even.
+A simple solution to this problem will be to combine both arrays <code class="inline">A</code> and <code class="inline">B</code> and take the middle element if the total number of elements is odd or take avg of the middle two elements if the total number of elements is even.
 </p>
 <p>
-With above approach our solution will have run time complexity of <code class="inline">O(m + n)</code>, but expected time complexity is <code class="inline">O(log(m + n))</code>, so we use Binary Search Algorithm.
+With the above approach, our solution will have run time complexity of <code class="inline">O(m + n)</code>, but the expected time complexity is <code class="inline">O(log(m + n))</code>, so we use Binary Search Algorithm.
 </p>
 
 
 <p>
-We should start by finding middle two element <code class="inline">midLeftA</code> and <code class="inline">midRightA</code> from array <code class="inline">A</code> using binary search
+We start by finding middle two-elements <code class="inline">midLeftA</code> and <code class="inline">midRightA</code> from array <code class="inline">A</code> using binary search.
 </p>
 <pre>
 <code class="language-java">
@@ -98,7 +72,7 @@ while(lo &lt;= hi) {
 
 <p>
 Corresponding to <code class="inline">midLeftA</code> and <code class="inline">midRightA</code> we should pick up two middle elements <code class="inline">midLeftB</code> and <code class="inline">midRightB</code> from array <code class="inline">B</code> such that 
-<code class="inline">midLeftA &lt;= midRightB</code> and <code class="inline">midLeftB &lt;= midRightA</code>
+<code class="inline">midLeftA &lt;= midRightB</code> and <code class="inline">midLeftB &lt;= midRightA</code>.
 </p>
 <pre>
 <code class="language-java">
@@ -137,7 +111,7 @@ else {
 
 
 <h2 class="heading">Complete Java code</h2>
-If you find any further optimized in below code, please create a pull request by clicking on link <a href="####LINK_PLACEHOLDER####" target="_blank" rel="noopener noreferrer" class="jsx-29590182">edit this source code on GitHub</a>
+If you have any suggestions in below code, please create a pull request <a href="####LINK_PLACEHOLDER####" target="_blank" rel="noopener noreferrer" class="absolute">here</a>
 <pre>
 <code class="language-java">
 ####CODE_PLACEHOLDER####
