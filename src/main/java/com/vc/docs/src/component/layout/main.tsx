@@ -67,7 +67,7 @@ const main: React.FC<Props> = ({prev, current, next, content}: Props) => {
 					}
 				</div>
 
-				{
+				{/* {
 					title && shareUrl && contentArr.length >= 5 ? 
 						<div className="jsx-29590182 page-nav">
 							<span className="jsx-113938279"></span>
@@ -94,7 +94,7 @@ const main: React.FC<Props> = ({prev, current, next, content}: Props) => {
 							</span>
 						</div>
 						: ""
-				}
+				} */}
 
 				{
 					current.title && contentArr.length >= 5 ? 

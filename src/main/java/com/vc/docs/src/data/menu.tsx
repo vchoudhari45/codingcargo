@@ -27,7 +27,7 @@ export const MENU: MenuItem[] = [
 						menuItems: [
 							{
 								index: 4,
-                                title: "Median of Two Sorted Arrays",
+                title: "Median of Two Sorted Arrays",
 								problem: "hard",
 								company: ["Amazon", "Facebook", "Google", "Microsoft"]
 							}
