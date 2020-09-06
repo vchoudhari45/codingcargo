@@ -22,6 +22,7 @@ class CustomDocument extends Document {
 		return (
 			<Html lang="en">
 				<Head>
+			  	<link rel="icon" href={BASEURL +"favicon-16x16.png"} type="image/png" sizes="16x16" />
 					<link rel="manifest" href="/manifest.json" />
 					<link rel="apple-touch-icon" href="/apple-touch-icon.png" />
 
