@@ -99,7 +99,7 @@ const main: React.FC<Props> = ({prev, current, next, content}: Props) => {
 				{
 					current.title && contentArr.length >= 5 ? 
 					<footer className="jsx-29590182">
-						<a href={"https://github.com/vchoudhari45/codingcargo/edit/master/src/main/java/com/vc/docs/md/" + slug(current.title) + ".md"} target="_blank" rel="noopener noreferrer" className="jsx-29590182">Edit this page on GitHub</a>
+						{/* <a href={"https://github.com/vchoudhari45/codingcargo/edit/master/src/main/java/com/vc/docs/md/" + slug(current.title) + ".md"} target="_blank" rel="noopener noreferrer" className="jsx-29590182">Edit this page on GitHub</a> */}
 					</footer>
 					: ""
 				}
