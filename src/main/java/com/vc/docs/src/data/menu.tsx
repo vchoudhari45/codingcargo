@@ -1,7 +1,7 @@
 import { MenuItem } from "../model/MenuItem"
 
 export const HOMEPAGE = "Getting Started"
-export const BASEURL = "http://localhost:3000/"
+export const BASEURL = "https://www.codingcargo.com/"
 export const SITENAME = "Coding Cargo"
 export const TWITTER_HANDLE = "@coding_cargo"
 export const MENU: MenuItem[] = [
