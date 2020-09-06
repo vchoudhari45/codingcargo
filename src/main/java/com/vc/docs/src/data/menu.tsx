@@ -28,7 +28,8 @@ export const MENU: MenuItem[] = [
 							{
 								index: 4,
                                 title: "Median of Two Sorted Arrays",
-								problem: "hard"
+								problem: "hard",
+								company: ["Amazon", "Facebook", "Google", "Microsoft"]
 							}
 						]
 					}
@@ -49,12 +50,35 @@ export const MENU: MenuItem[] = [
 			                {
 			                    index: 10,
 			                    title: "Regular Expression Matching",
-			                    problem: "hard"
+			                    problem: "hard",
+			                    company: ["Amazon", "Facebook", "Google", "Microsoft"]
 			                }
 			            ]
 			        }
 			    ]
-			}
+			},
+			{
+                title: "Linked List",
+                topic: true,
+                menuItems: [
+                    {
+                        title: "What is Linked List",
+                        post: true
+                    },
+                    {
+                        title: "Problem Set",
+                        topic: true,
+                        menuItems: [
+                            {
+                                index: 23,
+                                title: "Merge k Sorted Lists",
+                                problem: "hard",
+                                company: ["Amazon", "Facebook", "Google", "Microsoft"]
+                            }
+                        ]
+                    }
+                ]
+            }
 		]
 	}
 ]

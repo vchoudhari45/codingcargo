@@ -1,14 +1,15 @@
-[comment]: metadata=Java Solution to problem <strong>Median of Two Sorted Arrays</strong> using <strong>Binary Search</strong> Algorithm.
-[comment]: keywords=Median of Two Sorted Arrays, Binary Search
+[comment]: metadata=Java Solution to problem <strong>Merge K Sorted Lists</strong> using <strong>Linked List</strong> Data Structure.
+[comment]: keywords=Merge K Sorted Lists, Linked List
 [comment]: robots=index, follow
 
 
 
 
 
-<h1>Median of Two Sorted Arrays</h1>
+
+<h1>Merge K Sorted Lists</h1>
 <p>
-This page explains Java solution to problem <code class="inline">Median of Two Sorted Arrays</code> using <a href="https://www.codingcargo.com/what-is-binary-search" class="absolute" target="_blank" rel="noopener noreferrer">Binary Search</a> Algorithm.
+This page explains Java solution to problem <code class="inline">Merge K Sorted Lists</code> using <a href="https://www.codingcargo.com/what-is-linked-list" class="absolute" target="_blank" rel="noopener noreferrer">Linked List</a>.
 </p>
 
 
@@ -17,10 +18,7 @@ This page explains Java solution to problem <code class="inline">Median of Two S
 
 <h2 class="heading">Problem Statement</h2>
 <p>
-Given two sorted arrays <code class="inline">A</code> and <code class="inline">B</code> of size <code class="inline">m</code> and <code class="inline">n</code> respectively, return the <a href="https://en.wikipedia.org/wiki/Median" class="absolute" target="_blank" rel="noopener noreferrer">median</a> of the two sorted arrays.
-</p>
-<p>
-Follow up: The overall run time complexity should be <code class="inline">O(log (m+n))</code>.
+You are given an array of k linked-lists lists, each linked-list is sorted in ascending order. Merge all the linked-lists into one sorted linked-list and return it.
 </p>
 
 
@@ -30,18 +28,16 @@ Follow up: The overall run time complexity should be <code class="inline">O(log 
 <b>Example 1:</b>
 <blockquote>
 <p>
-<b>Input</b>: A = [1,3], B = [2]<br/>
-<b>Output</b>: 2.00000<br/>
-<b>Explanation</b>: merged array = [1,2,3] and median is 2<br/>
+<b>Input</b>: lists = [[1,4,5],[1,3,4],[2,6]]<br/>
+<b>Output</b>: [1,1,2,3,4,4,5,6]<br/>
 </p>
 </blockquote>
 
 <b>Example 2:</b>
 <blockquote>
 <p>
-<b>Input</b>: A = [1,2], B = [3,4]<br/>
-<b>Output</b>: 2.50000<br/>
-<b>Explanation</b>: merged array = [1,2,3,4] and median is (2 + 3) / 2 = 2.5<br/>
+<b>Input</b>: lists = [[]]<br/>
+<b>Output</b>: []<br/>
 </p>
 </blockquote>
 

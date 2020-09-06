@@ -3102,18 +3102,25 @@ https://prismjs.com/download.html#themes=prism-okaidia&languages=markup+clike+ja
 	 cursor: help;
  }
  
+
+
+ /** Array as table */
+ table {
+	border-collapse: collapse;
+ }
+
  td {
 	border: 1px solid #272822;
-	border-radius: 3px;
-	padding: 15px;
+	padding: 10px 20px 10px 20px;
+	color: rgb(212,0,255);
 }
+
 
 th {
 	border: 1px solid #272822;
-	background: #272822;
-	border-radius: 3px;
-	color: #f8f8f2;
-	padding: 15px;
+	padding: 10px 20px 10px 20px;
+	background-color: #272822;
+	color: #fff;
 }
 
 th.heading {
@@ -3121,6 +3128,6 @@ th.heading {
 	background-color: #fff;
 }
 
-.paragraph-heading {
-	margin-top:3.5rem;
+p.paragraph-heading {
+	margin-top:4rem;
 }

@@ -65,7 +65,7 @@ The Tricky Part of this problem is to see how we should handle <code class="inli
 
 
 
-<h2 class="heading">Skeleton Code</h2>
+<h2 class="heading">Skeleton code</h2>
 <p>
 First, we will define a 2d boolean matrix of length <code class="inline">(m + 1) * (n + 1)</code> where <code class="inline">m</code> is the length of input string <code class="inline">s</code>, and <code class="inline">n</code> is the length of pattern <code class="inline">p</code>. <br />
 Next, we will write a skeleton code for dynamic programming as below. 
@@ -132,7 +132,7 @@ Now let's consider sample input <code class="inline">s = "aab"</code> and <code 
 If the length of the input string and input pattern is zero, then our answer will be True, so let's fill that in our 2d <code class="inline">dp</code> array and in place of <code class="inline">???</code> in skeleton code.
 </p>
 <p>
-With the above case, our code becomes
+With the above case, our code becomes as below
 </p>
 <pre>
 <code class="language-java">
@@ -142,7 +142,7 @@ With the above case, our code becomes
 </code>
 </pre>
 <p>
-And our 2d <code class="inline">dp</code> array becomes
+And our 2d <code class="inline">dp</code> array becomes as below. On top, we have input pattern <code class="inline">p</code>, and on the left-hand side we have input string<code class="inline">s</code>.
 </p>
 <table>
     <tr>
@@ -200,7 +200,7 @@ And our 2d <code class="inline">dp</code> array becomes
 If the length of the input pattern is zero and the input string is &gt; zero, then our answer will always be False, so let's fill that in our 2d <code class="inline">dp</code> array and in place of <code class="inline">???</code> in skeleton code.
 </p>
 <p>
-With the above cases, our code becomes 
+With the above cases, our code becomes as below.
 </p>
 <pre>
 <code class="language-java">
@@ -211,7 +211,7 @@ With the above cases, our code becomes
 </code>
 </pre>
 <p>
-And our 2d <code class="inline">dp</code> array becomes
+And our 2d <code class="inline">dp</code> array becomes as below. On top, we have input pattern <code class="inline">p</code>, and on the left-hand side we have input string<code class="inline">s</code>.
 </p>
 <table>
     <tr>
@@ -280,7 +280,7 @@ If the length of the input string is zero, and the input pattern is &gt; zero, t
     </li>
 </ul>
 <p>
-With the above cases, our code becomes
+With the above cases, our code becomes as below.
 </p>
 <pre>
 <code class="language-java">
@@ -300,7 +300,7 @@ With the above cases, our code becomes
 </code>
 </pre>
 <p>
-And our 2d <code class="inline">dp</code> array becomes
+And our 2d <code class="inline">dp</code> array becomes as below. On top, we have input pattern <code class="inline">p</code>, and on the left-hand side we have input string<code class="inline">s</code>.
 </p>
 <table>
     <tr>
@@ -377,7 +377,7 @@ If the length of the input string is &gt; zero and the input pattern is &gt; zer
     </li>
 </ul>
 <p>
-With the above case, our code becomes
+With the above case, our code becomes as below.
 </p>
 <pre>
 <code class="language-java">
@@ -403,7 +403,7 @@ With the above case, our code becomes
 </code>
 </pre>
 <p>
-And our 2d <code class="inline">dp</code> array becomes
+And our 2d <code class="inline">dp</code> array becomes as below. On top, we have input pattern <code class="inline">p</code>, and on the left-hand side we have input string<code class="inline">s</code>.
 </p>
 <table>
     <tr>
@@ -460,6 +460,20 @@ And our 2d <code class="inline">dp</code> array becomes
 <p class="paragraph-heading">
 Once we have filled in all the elements in 2d <code class="inline">dp</code> array, we will have our answer from <code class="inline">dp[m][n].</code>
 </p>
+
+
+
+
+
+<h2 class="heading">Time Complexity</h2>
+<p>O(m * n)</p>
+
+
+
+
+
+<h2 class="heading">Space Complexity</h2>
+<p>O(m * n)</p>
 
 
 
