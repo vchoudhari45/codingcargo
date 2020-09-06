@@ -4,6 +4,8 @@
 
 
 
+
+
 <h1>Median of Two Sorted Arrays</h1>
 <p>
 This page explains Java solution to problem <code class="inline">Median of Two Sorted Arrays</code> using <a href="https://www.codingcargo.com/what-is-binary-search" class="absolute" target="_blank" rel="noopener noreferrer">Binary Search</a> Algorithm.
@@ -11,14 +13,17 @@ This page explains Java solution to problem <code class="inline">Median of Two S
 
 
 
+
+
 <h2 class="heading">Problem Statement</h2>
 <p>
 Given two sorted arrays <code class="inline">A</code> and <code class="inline">B</code> of size <code class="inline">m</code> and <code class="inline">n</code> respectively, return the <a href="https://en.wikipedia.org/wiki/Median" class="absolute" target="_blank" rel="noopener noreferrer">median</a> of the two sorted arrays.
 </p>
-
 <p>
 Follow up: The overall run time complexity should be <code class="inline">O(log (m+n))</code>.
 </p>
+
+
 
 
 
@@ -40,6 +45,11 @@ Follow up: The overall run time complexity should be <code class="inline">O(log 
 </p>
 </blockquote>
 
+
+
+
+
+
 <h2 class="heading">Solution</h2>
 <p>
 A simple solution to this problem will be to combine both arrays <code class="inline">A</code> and <code class="inline">B</code> and take the middle element if the total number of elements is odd or take avg of the middle two elements if the total number of elements is even.
@@ -49,7 +59,10 @@ With the above approach, our solution will have run time complexity of <code cla
 </p>
 
 
-<p>
+
+
+
+<p class="paragraph-heading">
 We start by finding middle two-elements <code class="inline">midLeftA</code> and <code class="inline">midRightA</code> from array <code class="inline">A</code> using binary search.
 </p>
 <pre>
@@ -70,7 +83,10 @@ while(lo &lt;= hi) {
 </pre>
 
 
-<p>
+
+
+
+<p class="paragraph-heading">
 Corresponding to <code class="inline">midLeftA</code> and <code class="inline">midRightA</code> we should pick up two middle elements <code class="inline">midLeftB</code> and <code class="inline">midRightB</code> from array <code class="inline">B</code> such that 
 <code class="inline">midLeftA &lt;= midRightB</code> and <code class="inline">midLeftB &lt;= midRightA</code>.
 </p>
@@ -88,7 +104,10 @@ while(lo &lt;= hi) {
 </pre>
 
 
-<p>
+
+
+
+<p class="paragraph-heading">
 Continue the Binary Search until we have <code class="inline">midLeftA &lt;= midRightB && midLeftB &lt;= midRightA</code> and once we have four such numbers calculate median based on the total length of both arrays
 </p>
 <pre>
@@ -107,6 +126,8 @@ else {
 }
 </code>
 </pre>
+
+
 
 
 

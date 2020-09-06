@@ -4,10 +4,14 @@
 
 
 
+
+
 <h1>Regular Expression Matching</h1>
 <p>
 This page explains Java solution to problem <code class="inline">Regular Expression Matching</code> using <a href="https://www.codingcargo.com/what-is-dynamic-programming" class="absolute" target="_blank" rel="noopener noreferrer">Dynamic Programming</a>.
 </p>
+
+
 
 
 
@@ -19,6 +23,8 @@ Given an input string <code class="inline">s</code> and a pattern <code class="i
 <code class="inline">.</code> Matches any single character.<br/>
 <code class="inline">*</code> Matches zero or more of the preceding element.
 </p>
+
+
 
 
 
@@ -49,10 +55,15 @@ Given an input string <code class="inline">s</code> and a pattern <code class="i
 
 
 
+
 <h2 class="heading">Solution</h2>
 <p>
 The Tricky Part of this problem is to see how we should handle <code class="inline">*</code> and <code class="inline">.</code> in a pattern <code class="inline">p</code>, so let's get started by writing a skeleton for Dynamic Programming.
 </p>
+
+
+
+
 
 <h2 class="heading">Skeleton Code</h2>
 <p>
@@ -66,8 +77,8 @@ if(s == null || p == null) return false;<br/>
 int m = s.length();
 int n = p.length();
 boolean[][] dp = new boolean[m + 1][n + 1];<br />
-for(int si = 0; si <= m; si++) {
-    for(int pi = 0; pi <= n; pi++) {
+for(int si = 0; si &lt;= m; si++) {
+    for(int pi = 0; pi &lt;= n; pi++) {
         if(si == 0 && pi == 0) {
             //if length of input string si & input pattern pi is 0
             ???
@@ -111,8 +122,10 @@ for(int si = 0; si <= m; si++) {
 </pre>
 
 
-<br />
-<p>
+
+
+
+<p class="paragraph-heading">
 Now let's consider sample input <code class="inline">s = "aab"</code> and <code class="inline">p = "c*.*b"</code> and fill in the 2d array.
 </p>
 <p>
@@ -180,8 +193,10 @@ And our 2d <code class="inline">dp</code> array becomes
 </table>
 
 
-<br/>
-<p>
+
+
+
+<p class="paragraph-heading">
 If the length of the input pattern is zero and the input string is &gt; zero, then our answer will always be False, so let's fill that in our 2d <code class="inline">dp</code> array and in place of <code class="inline">???</code> in skeleton code.
 </p>
 <p>
@@ -247,8 +262,10 @@ And our 2d <code class="inline">dp</code> array becomes
 </table>
 
 
-<br/>
-<p>
+
+
+
+<p class="paragraph-heading">
 If the length of the input string is zero, and the input pattern is &gt; zero, then our answer will have three conditions as below.
 </p>
 <ul>
@@ -335,8 +352,9 @@ And our 2d <code class="inline">dp</code> array becomes
 
 
 
-<br/>
-<p>
+
+
+<p class="paragraph-heading">
 If the length of the input string is &gt; zero and the input pattern is &gt; zero, then our answer will have three cases as below.
 </p>
 <ul>
@@ -347,12 +365,12 @@ If the length of the input string is &gt; zero and the input pattern is &gt; zer
        <p>Or we can see if the preceding character in a pattern matches the current element in the input string.</p>
     </li>
     <li>
-       <b>Case 2</b>: If a character in the pattern is <code class="inline">.</code>, then we can ignore the current element from both the input string and see if that returns us a match, as <code class="inline">.</code> can match any character.
+       <b>Case 2</b>: If a character in the pattern is <code class="inline">.</code>, then we can ignore the current element from both the inputs and see if that returns us a match, as <code class="inline">.</code> can match any character.
     </li>
     <li>
        <b>Case 3</b>: If a character in the pattern is anything other than <code class="inline">*</code> and <code class="inline">.</code>,
-       <p>Then we check if the current character in the pattern matches the current element in a string if, so we can ignore the current character from both the input string and see if that returns us a match.</p>
-       <p>Or the preceding character in the pattern is <code class="inline">.</code> if, so we can ignore the current element from both the input string and see if that returns us a match.</p>
+       <p>Then we check if the current character in the pattern matches the current element in a string if, so we can ignore the current character from both the inputs and see if that returns us a match.</p>
+       <p>Or the preceding character in the pattern is <code class="inline">.</code> if, so we can ignore the current element from both the inputs and see if that returns us a match.</p>
     </li>
     <li>
         <b>Case 4</b>: Else we return False.
@@ -436,10 +454,15 @@ And our 2d <code class="inline">dp</code> array becomes
 </table>
 
 
-<br />
-<p>
+
+
+
+<p class="paragraph-heading">
 Once we have filled in all the elements in 2d <code class="inline">dp</code> array, we will have our answer from <code class="inline">dp[m][n].</code>
 </p>
+
+
+
 
 
 <h2 class="heading">Complete Java code</h2>
