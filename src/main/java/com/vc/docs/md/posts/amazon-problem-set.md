@@ -4,7 +4,7 @@
 <h1>Amazon Problem Set</h1>
 <details open>
     <summary>
-        <b></b>
+        <b>Problem set</b>
     </summary>
     <ul>
         <li>Page coming soon...</li>
