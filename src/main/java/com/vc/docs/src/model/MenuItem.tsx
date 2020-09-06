@@ -6,5 +6,6 @@ export interface MenuItem {
 	problem?: string,
 	index?: number,
 	open?: boolean,
-	menuItems?: MenuItem[]
+	menuItems?: MenuItem[],
+	company?: string[]
 }
