@@ -3104,12 +3104,14 @@ https://prismjs.com/download.html#themes=prism-okaidia&languages=markup+clike+ja
  
  td {
 	border: 1px solid #272822;
-	padding: 10px;
+	padding: 15px;
 }
 
 th {
 	border: 1px solid #272822;
-	padding: 10px;
-	background-color: #272822;
-	color: white;
+	padding: 15px;
+}
+
+th .heading {
+	border: none;
 }

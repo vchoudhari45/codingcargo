@@ -16,8 +16,8 @@ This page explains Java solution to problem <code class="inline">Regular Express
 Given an input string <code class="inline">s</code> and a pattern <code class="inline">p</code>, implement regular expression matching with support for <code class="inline">.</code> and <code class="inline">*</code>.
 </p>
 <p>
-'.' Matches any single character.<br/>
-'*' Matches zero or more of the preceding element.
+<code class="inline">.</code> Matches any single character.<br/>
+<code class="inline">*</code> Matches zero or more of the preceding element.
 </p>
 
 
@@ -51,13 +51,13 @@ Given an input string <code class="inline">s</code> and a pattern <code class="i
 
 <h2 class="heading">Solution</h2>
 <p>
-Tricky part in this problem is to see how we should handle <code class="inline">*</code> and <code class="inline">.</code> in pattern <code class="inline">p</code> so let's gets started by writing a skeleton for Dynamic Programming and adding happy path and the special cases for handling <code class="inline">*</code> and <code class="inline">.</code>
+The Tricky Part of this problem is to see how we should handle <code class="inline">*</code> and <code class="inline">.</code> in a pattern <code class="inline">p</code>, so let's get started by writing a skeleton for Dynamic Programming.
 </p>
 
-<h2>Skeleton Code</h2>
+<h2 class="heading">Skeleton Code</h2>
 <p>
-First we will define a 2d boolean matrix of length <code class="inline">(m + 1) * (n + 1)</code> where <code class="inline">m</code> is length of input string <code class="inline">s</code> and <code class="inline">n</code> is length of pattern <code class="inline">p</code>. We add 1 to length input string and input pattern to make dynamic programming code look simpler.<br />
-Next, we will write all the possible condition to handle happy path as well as special cases as below. 
+First, we will define a 2d boolean matrix of length <code class="inline">(m + 1) * (n + 1)</code> where <code class="inline">m</code> is the length of input string <code class="inline">s</code>, and <code class="inline">n</code> is the length of pattern <code class="inline">p</code>. <br />
+Next, we will write a skeleton code for dynamic programming as below. 
 </p>
 <pre>
 <code class="language-java">
@@ -116,10 +116,10 @@ for(int si = 0; si <= m; si++) {
 Now let's consider sample input <code class="inline">s = "aab"</code> and <code class="inline">p = "c*.*b"</code> and fill in the 2d array.
 </p>
 <p>
-If length of input string and input pattern is zero, then our answer will be true, so let's fill that in our 2d <code class="inline">dp</code> array and in place of <code class="inline">???</code> in skeleton code.
+If the length of the input string and input pattern is zero, then our answer will be True, so let's fill that in our 2d <code class="inline">dp</code> array and in place of <code class="inline">???</code> in skeleton code.
 </p>
 <p>
-With above case our code becomes 
+With the above case, our code becomes
 </p>
 <pre>
 <code class="language-java">
@@ -133,7 +133,7 @@ And our 2d <code class="inline">dp</code> array becomes
 </p>
 <table>
     <tr>
-        <th></th>
+        <th class="heading"></th>
         <th>0</th>
         <th>c</th>
         <th>*</th>
@@ -182,10 +182,10 @@ And our 2d <code class="inline">dp</code> array becomes
 
 <br/>
 <p>
-If length of input pattern is zero and input string is &gt; zero, then our answer will always be false, so let's fill that in our 2d <code class="inline">dp</code> array and in place of <code class="inline">???</code> in skeleton code.
+If the length of the input pattern is zero and the input string is &gt; zero, then our answer will always be False, so let's fill that in our 2d <code class="inline">dp</code> array and in place of <code class="inline">???</code> in skeleton code.
 </p>
 <p>
-With above cases our code becomes 
+With the above cases, our code becomes 
 </p>
 <pre>
 <code class="language-java">
@@ -200,7 +200,7 @@ And our 2d <code class="inline">dp</code> array becomes
 </p>
 <table>
     <tr>
-        <th></th>
+        <th class="heading"></th>
         <th>0</th>
         <th>c</th>
         <th>*</th>
@@ -249,21 +249,21 @@ And our 2d <code class="inline">dp</code> array becomes
 
 <br/>
 <p>
-If length of input string is zero and input pattern is &gt; zero, then our answer will have three conditions as below.
+If the length of the input string is zero, and the input pattern is &gt; zero, then our answer will have three conditions as below.
 </p>
 <ul>
     <li>
-       <b>Case 1</b>: If character in pattern is <code class="inline">*</code>, then we assign previous to previous value, because <code class="inline">*</code> can match zero or more character in regular expression and there is nothing to match in the input string.
+       <b>Case 1</b>: If a character in the pattern is <code class="inline">*</code>, then we can ignore the last two elements in the input pattern as <code class="inline">*</code> can match zero or more of the preceding element.
     </li>
     <li>
-       <b>Case 2</b>: If character in pattern is <code class="inline">.</code>, then we assign false because input string is empty.
+       <b>Case 2</b>: If a character in the pattern is <code class="inline">.</code>, then we assign False because the input string is empty.
     </li>
     <li>
-       <b>Case 3</b>: If character in pattern is anything other than <code class="inline">*</code> and <code class="inline">.</code>, then we assign false as there is nothing to match in the input string.
+       <b>Case 3</b>: If a character in pattern is anything other than <code class="inline">*</code> and <code class="inline">.</code>, then we assign False as the input string is empty.
     </li>
 </ul>
 <p>
-With above cases our code becomes 
+With the above cases, our code becomes
 </p>
 <pre>
 <code class="language-java">
@@ -287,7 +287,7 @@ And our 2d <code class="inline">dp</code> array becomes
 </p>
 <table>
     <tr>
-        <th></th>
+        <th class="heading"></th>
         <th>0</th>
         <th>c</th>
         <th>*</th>
@@ -337,23 +337,33 @@ And our 2d <code class="inline">dp</code> array becomes
 
 <br/>
 <p>
-If length of input string is &gt; zero and input pattern is &gt; zero, then our answer will have three cases as below.
+If the length of the input string is &gt; zero and the input pattern is &gt; zero, then our answer will have three cases as below.
 </p>
 <ul>
     <li>
-       <b>Case 1</b>: If character in pattern is <code class="inline">*</code> <br />
-       Then we can ignore two character in the pattern and see if it that value was true, considering <code class="inline">*</code> matches with zero character in the input string. <br />
-       Also, we have to do additional check to see if previous character in pattern matches with current character in input string or previous character in pattern was<code class="inline">.</code>, if so we can ignore current character in the input string and see if we get true.
+       <b>Case 1</b>: If a character in the pattern is <code class="inline">*</code>
+       <ul>
+            <li>Then, we can ignore the last two characters in input pattern, and see if that gives us a match as <code class="inline">*</code> can match zero or more of the preceding element.</li>
+            <li>Or we can see if the preceding character in the pattern was<code class="inline">.</code>, if so we can ignore the current element in the input string and see if that returns us a match.</li>
+            <li>Or we can see if the preceding character in a pattern matches the current element in the input string.</li>
+       </ul>  
     </li>
     <li>
-       <b>Case 2</b>: If character in pattern is <code class="inline">.</code>, then we assign value ignore current character in pattern as well as current character in input string, as <code class="inline">.</code> can match any character.
+       <b>Case 2</b>: If a character in the pattern is <code class="inline">.</code>, then we can ignore the current element from both the input string and see if that returns us a match, as <code class="inline">.</code> can match any character.
     </li>
     <li>
-       <b>Case 3</b>: If character in pattern is anything other than <code class="inline">*</code> and <code class="inline">.</code>, then we check if current character in pattern matches with current character in string or previous character in the pattern was <code class="inline">.</code>, if so assign value ignoring current pattern character as well as current input string character else assign false.
+       <b>Case 3</b>: If a character in the pattern is anything other than <code class="inline">*</code> and <code class="inline">.</code>,
+        <ul>
+            <li>Then we check if the current character in the pattern matches the current element in a string if, so we can ignore the current character from both the input string and see if that returns us a match.</li>
+            <li>Or the preceding character in the pattern is <code class="inline">.</code> if, so we can ignore the current element from both the input string and see if that returns us a match.</li>
+        </ul> 
+    </li>
+    <li>
+        <b>Case 4</b>: Else we return False.
     </li>
 </ul>
 <p>
-With above cases our code becomes 
+With the above case, our code becomes
 </p>
 <pre>
 <code class="language-java">
@@ -383,7 +393,7 @@ And our 2d <code class="inline">dp</code> array becomes
 </p>
 <table>
     <tr>
-        <th></th>
+        <th class="heading"></th>
         <th>0</th>
         <th>c</th>
         <th>*</th>
@@ -432,7 +442,7 @@ And our 2d <code class="inline">dp</code> array becomes
 
 <br />
 <p>
-Once we have filled in all the elements in 2d <code class="inline">dp</code> array, we will have our answer from <code class="inline">dp[m][n]</code>
+Once we have filled in all the elements in 2d <code class="inline">dp</code> array, we will have our answer from <code class="inline">dp[m][n].</code>
 </p>
 
 
