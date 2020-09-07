@@ -18,10 +18,10 @@ This page explains Java solution to problem <code class="inline">Reverse Nodes i
 
 <h2 class="heading">Problem Statement</h2>
 <p>
-Given a linked list, reverse the nodes of a linked list k at a time and return its modified list.
+Given a linked list, reverse the nodes of a linked list <code class="inline">k</code> at a time and return its modified list.
 </p>
 <p>
-k is a positive integer and is less than or equal to the length of the linked list. If the number of nodes is not a multiple of k then left-out nodes in the end should remain as it is.
+<code class="inline">k</code> is a positive integer and is less than or equal to the length of the linked list. If the number of nodes is not a multiple of <code class="inline">k</code> then left-out nodes in the end should remain as it is.
 </p>
 
 
@@ -53,7 +53,7 @@ k is a positive integer and is less than or equal to the length of the linked li
 Tricky part in this problem is to figure out how to reverse singly linked list, as In Singly Linked list every element has reference to it's next element, so let's understand it first.
 </p>
 <p>
-We start by creating four reference variable called `dummyNode`, `prev`, `current` and `next` as below.
+We start by creating four reference variable called <code class="inline">dummyNode</code>, <code class="inline">prev</code>, <code class="inline">current</code> and <code class="inline">next</code> as below.
 </p>
 <img src="####BASEURL####reverse-linked-list/reverse-1.png" alt="Reverse Linked List 1" /> 
 <pre>
@@ -68,7 +68,7 @@ ListNode next = current.next;
 
 
 <p class="paragraph-heading">
-Next we replace `current.next` reference with `next.next` reference.
+Next we replace <code class="inline">current.next</code> reference with <code class="inline">next.next</code> reference.
 </p>
 <img src="####BASEURL####reverse-linked-list/reverse-2.png" alt="Reverse Linked List 2" /> 
 <pre>
@@ -79,7 +79,7 @@ current.next = next.next;
 
 
 <p class="paragraph-heading">
-Then we replace `next.next` reference with `prev.next` reference.
+Then we replace <code class="inline">next.next</code> reference with <code class="inline">prev.next</code> reference.
 </p>
 <img src="####BASEURL####reverse-linked-list/reverse-3.png" alt="Reverse Linked List 3" /> 
 <pre>
@@ -90,7 +90,7 @@ next.next = prev.next;
 
 
 <p class="paragraph-heading">
-Then we replace `prev.next` reference with `next` reference.
+Then we replace <code class="inline">prev.next</code> reference with <code class="inline">next</code> reference.
 </p>
 <img src="####BASEURL####reverse-linked-list/reverse-4.png" alt="Reverse Linked List 4" /> 
 <pre>
@@ -101,7 +101,7 @@ prev.next = next;
 
 
 <p class="paragraph-heading">
-Then we update `next` with `current.next` reference.
+Then we update <code class="inline">next</code> with <code class="inline">current.next</code> reference.
 </p>
 <img src="####BASEURL####reverse-linked-list/reverse-5.png" alt="Reverse Linked List 5" /> 
 <pre>
@@ -112,7 +112,7 @@ next = current.next;
 
 
 <p class="paragraph-heading">
-Now that we understand how to reverse singly linked list, this problem becomes fairly simple. All we have to do is apply the reverse linked list logic until current element index `i` is not equal to `k` where `k` is number of elements which needs to be reversed in a group.
+Now that we understand how to reverse singly linked list, this problem becomes fairly simple. All we have to do is apply the reverse linked list logic until current element index <code class="inline">i</code> is not equal to <code class="inline">k</code> where <code class="inline">k</code> is number of elements which needs to be reversed in a group.
 </p>
 <pre>
 <code class="language-java">

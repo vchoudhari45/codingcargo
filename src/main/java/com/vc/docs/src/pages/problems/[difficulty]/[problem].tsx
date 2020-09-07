@@ -54,7 +54,7 @@ export async function getStaticProps(context) {
 	const codePullRequestUrl = "https://github.com/vchoudhari45/codingcargo/edit/master/src/main/java/com/vc/"+difficulty+"/"+sourceCode+".java"
 	const url = "https://raw.githubusercontent.com/vchoudhari45/codingcargo/master/src/main/java/com/vc/docs/md/"+difficulty+"/"+context.params.problem+".md"
 	const res = await fetch(url)
-	const text = (await res.text()).replace("####CODE_PLACEHOLDER####", replacedHtml).replace("####LINK_PLACEHOLDER####", codePullRequestUrl).replace('####BASEURL####', BASEURL)
+	const text = (await res.text()).replace("####CODE_PLACEHOLDER####", replacedHtml).replace(/####LINK_PLACEHOLDER####/g, codePullRequestUrl).replace(/####BASEURL####/g, BASEURL)
 
 	const title = unslug(context.params.problem, ' ')
 	const selected = {title: title}
