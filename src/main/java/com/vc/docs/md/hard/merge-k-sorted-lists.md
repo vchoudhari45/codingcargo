@@ -1,5 +1,5 @@
 [comment]: metadata=Java Solution to problem <strong>Merge K Sorted Lists</strong> using <strong>Linked List</strong> Data Structure.
-[comment]: keywords=Merge K Sorted Lists, Linked List
+[comment]: keywords=Merge K Sorted Lists, Priority Queue
 [comment]: robots=index, follow
 
 
@@ -9,7 +9,7 @@
 
 <h1>Merge K Sorted Lists</h1>
 <p>
-This page explains Java solution to problem <code class="inline">Merge K Sorted Lists</code> using <a href="https://www.codingcargo.com/what-is-linked-list" class="absolute" target="_blank" rel="noopener noreferrer">Linked List</a>.
+This page explains Java solution to problem <code class="inline">Merge K Sorted Lists</code> using <a href="https://www.codingcargo.com/what-is-linked-list" class="absolute" target="_blank" rel="noopener noreferrer">Priority Queue</a>.
 </p>
 
 
@@ -45,36 +45,22 @@ You are given an array of k linked-lists lists, each linked-list is sorted in as
 
 
 
-
 <h2 class="heading">Solution</h2>
 <p>
-A simple solution to this problem will be to combine both arrays <code class="inline">A</code> and <code class="inline">B</code> and take the middle element if the total number of elements is odd or take avg of the middle two elements if the total number of elements is even.
+We will be using Priority Queue for solving this problem, so let's start by defining a Priority Queue of ListNode and assigning custom comparator to it. Custom comparator will return ListNode with least value at head position on poll request.
 </p>
 <p>
-With the above approach, our solution will have run time complexity of <code class="inline">O(m + n)</code>, but the expected time complexity is <code class="inline">O(log(m + n))</code>, so we use Binary Search Algorithm.
-</p>
-
-
-
-
-
-<p class="paragraph-heading">
-We start by finding middle two-elements <code class="inline">midLeftA</code> and <code class="inline">midRightA</code> from array <code class="inline">A</code> using binary search.
+Next we will add all the input lists into the Priority Queue.
 </p>
 <pre>
 <code class="language-java">
-int lo = 0;
-int hi = m;
-/**
-    We do + 1 to total length so that we get extra element on the left hand side 
-    And we can return mid in case total number of elements are odd
-*/
-int halfOfTotalElements = (m + n + 1) / 2;
-while(lo &lt;= hi) {
-    int midLeft = lo + (hi - lo) / 2;
-    int midLeftA = midLeft == 0 ? Integer.MIN_VALUE : A[midLeft - 1];
-    int midRightA = midLeft == m ? Integer.MAX_VALUE : A[midLeft];
-}
+PriorityQueue&lt;ListNode&gt; pq = new PriorityQueue&lt;&gt;(new Comparator&lt;&gt;(){
+   public int compare(ListNode l1, ListNode l2) {
+       return Integer.compare(l1.val, l2.val);
+   } 
+});<br />
+//Adding all elements from input lists into the Priority Queue.
+for(ListNode list: lists) if(list != null) pq.offer(list);
 </code>
 </pre>
 
@@ -83,53 +69,31 @@ while(lo &lt;= hi) {
 
 
 <p class="paragraph-heading">
-Corresponding to <code class="inline">midLeftA</code> and <code class="inline">midRightA</code> we should pick up two middle elements <code class="inline">midLeftB</code> and <code class="inline">midRightB</code> from array <code class="inline">B</code> such that 
-<code class="inline">midLeftA &lt;= midRightB</code> and <code class="inline">midLeftB &lt;= midRightA</code>.
+Now we will poll the elements from Priority queue and append to a ListNode reference, which will be returned as an answer. And since all the elements in a single ListNode are already sorted it will return the elements in ascending order and we will get final ListNode in a sorted order. 
 </p>
 <pre>
 <code class="language-java">
-while(lo &lt;= hi) {
-    int midLeft = lo + (hi - lo) / 2;
-    int midLeftA = midLeft == 0 ? Integer.MIN_VALUE : A[midLeft - 1];
-    int midRightA = midLeft == m ? Integer.MAX_VALUE : A[midLeft];<br />    
-    int midRight = halfOfTotalElements - midLeft;
-    int midLeftB = midRight == 0 ? Integer.MIN_VALUE : B[midRight - 1];
-    int midRightB = midRight == n ? Integer.MAX_VALUE : B[midRight];
+final ListNode res = new ListNode(-1);
+ListNode head = res;
+while(!pq.isEmpty()) {
+    ListNode node = pq.poll();
+    head.next = node;
+    head = head.next;
+    if(node.next != null) pq.offer(node.next);
 }
+return res.next;
 </code>
 </pre>
-
-
-
-
-
-<p class="paragraph-heading">
-Continue the Binary Search until we have <code class="inline">midLeftA &lt;= midRightB && midLeftB &lt;= midRightA</code> and once we have four such numbers calculate median based on the total length of both arrays
-</p>
-<pre>
-<code class="language-java">
-if(midLeftA &gt; midRightB) {
-    hi = midLeft - 1;
-}
-else if(midLeftB > midRightA) {
-    lo = midLeft + 1;
-}
-else {
-    midLeft = Math.max(midLeftA, midLeftB);
-    midRight = Math.min(midRightA, midRightB);
-    if((m + n) % 2 == 0) return (midLeft + midRight) / 2.0;
-    else return midLeft;
-}
-</code>
-</pre>
-
 
 
 
 
 <h2 class="heading">Time Complexity</h2>
 <blockquote>
-<p>O(log(m + n))</p>
+<p>
+O(N * log(K)) <br />
+Where N is total number of elements in the final list and K is number of input lists. 
+</p>
 </blockquote>
 
 
@@ -137,7 +101,10 @@ else {
 
 <h2 class="heading">Space Complexity</h2>
 <blockquote>
-<p>O(1)</p>
+<p>
+O(K)
+Where K is number of input lists.
+</p>
 </blockquote>
 
 

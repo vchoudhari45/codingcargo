@@ -2,7 +2,7 @@ package com.vc.hard;
 
 import java.util.*;
 
-class L23 {
+class MergeKSortedLists {
     public ListNode mergeKLists(ListNode[] lists) {
         if(lists == null || lists.length == 0) return null;
 

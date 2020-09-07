@@ -58,11 +58,11 @@ export const MENU: MenuItem[] = [
 			    ]
 			},
 			{
-                title: "Linked List",
+                title: "Priority Queue",
                 topic: true,
                 menuItems: [
                     {
-                        title: "What is Linked List",
+                        title: "What is Priority Queue",
                         post: true
                     },
                     {
