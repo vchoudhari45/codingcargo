@@ -114,8 +114,29 @@ export const MENU: MenuItem[] = [
                         topic: true,
                         menuItems: [
                             {
-                                index: 25,
+                                index: 30,
                                 title: "Substring with Concatenation of All Words",
+                                problem: "hard"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                title: "Stack",
+                topic: true,
+                menuItems: [
+                    {
+                        title: "What is Stack",
+                        post: true
+                    },
+                    {
+                        title: "Problem Set",
+                        topic: true,
+                        menuItems: [
+                            {
+                                index: 32,
+                                title: "Longest Valid Parentheses",
                                 problem: "hard"
                             }
                         ]
