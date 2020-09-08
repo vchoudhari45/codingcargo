@@ -68,13 +68,13 @@ Whenever we see <code class="inline">)</code> character in an input string we po
 <p>
 Let's run one of the sample input <code class="inline">)()())</code> visually, for better understanding.
 </p>
-<img src="####BASEURL####longest-valid-parentheses/longest-1.png" alt="Longest Valid Parentheses 1" />
-<img src="####BASEURL####longest-valid-parentheses/longest-2.png" alt="Longest Valid Parentheses 2" />
-<img src="####BASEURL####longest-valid-parentheses/longest-3.png" alt="Longest Valid Parentheses 3" />
-<img src="####BASEURL####longest-valid-parentheses/longest-4.png" alt="Longest Valid Parentheses 4" />
-<img src="####BASEURL####longest-valid-parentheses/longest-5.png" alt="Longest Valid Parentheses 5" />
-<img src="####BASEURL####longest-valid-parentheses/longest-6.png" alt="Longest Valid Parentheses 6" />
-<img src="####BASEURL####longest-valid-parentheses/longest-7.png" alt="Longest Valid Parentheses 7" />
+<img class="paragraph-heading" src="####BASEURL####longest-valid-parentheses/longest-1.png" alt="Longest Valid Parentheses 1" />
+<img class="paragraph-heading" src="####BASEURL####longest-valid-parentheses/longest-2.png" alt="Longest Valid Parentheses 2" />
+<img class="paragraph-heading" src="####BASEURL####longest-valid-parentheses/longest-3.png" alt="Longest Valid Parentheses 3" />
+<img class="paragraph-heading" src="####BASEURL####longest-valid-parentheses/longest-4.png" alt="Longest Valid Parentheses 4" />
+<img class="paragraph-heading" src="####BASEURL####longest-valid-parentheses/longest-5.png" alt="Longest Valid Parentheses 5" />
+<img class="paragraph-heading" src="####BASEURL####longest-valid-parentheses/longest-6.png" alt="Longest Valid Parentheses 6" />
+<img class="paragraph-heading" src="####BASEURL####longest-valid-parentheses/longest-7.png" alt="Longest Valid Parentheses 7" />
  
 
 
