@@ -6,7 +6,7 @@ export const SITENAME = "Coding Cargo"
 export const TWITTER_HANDLE = "@coding_cargo"
 export const MENU: MenuItem[] = [
 	{
-		title: "Index",
+            title: "Index",
 		heading: true,
 		menuItems: [
 			{
@@ -96,6 +96,27 @@ export const MENU: MenuItem[] = [
                                 title: "Reverse Nodes in k-Group",
                                 problem: "hard",
                                 company: ["Amazon", "Facebook", "Microsoft"]
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                title: "HashMap",
+                topic: true,
+                menuItems: [
+                    {
+                        title: "What is HashMap",
+                        post: true
+                    },
+                    {
+                        title: "Problem Set",
+                        topic: true,
+                        menuItems: [
+                            {
+                                index: 25,
+                                title: "Substring with Concatenation of All Words",
+                                problem: "hard"
                             }
                         ]
                     }
