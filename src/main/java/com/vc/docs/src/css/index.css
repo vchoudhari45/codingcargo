@@ -3131,3 +3131,7 @@ th.heading {
 p.paragraph-heading {
 	margin-top:4rem;
 }
+
+.docs img {
+	width: 500px;
+}
