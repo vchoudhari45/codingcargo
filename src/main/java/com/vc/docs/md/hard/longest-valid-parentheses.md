@@ -64,8 +64,7 @@ Whenever we see <code class="inline">)</code> character in an input string we po
 
 
 
-<h2 class="heading">Solution</h2>
-<p>
+<p class="paragraph-heading">
 Let's run one of the sample input <code class="inline">)()())</code> visually, for better understanding.
 </p>
 <img class="paragraph-heading" src="####BASEURL####longest-valid-parentheses/longest-1.png" alt="Longest Valid Parentheses 1" />
