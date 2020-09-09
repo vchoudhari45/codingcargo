@@ -8,7 +8,7 @@
 
 <h1>Longest Valid Parentheses</h1>
 <p>
-This page explains Java solution to problem <code class="inline">Longest Valid Parentheses</code> using <a href="https://www.codingcargo.com/what-is-stack" class="absolute" target="_blank" rel="noopener noreferrer">Stack</a> Data Structure.
+This page explains Java solution to problem <code class="inline">Longest Valid Parentheses</code> using <a href="####BASEURL####what-is-stack" class="absolute" target="_blank" rel="noopener noreferrer">Stack</a> Data Structure.
 </p>
 
 

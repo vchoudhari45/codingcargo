@@ -9,7 +9,7 @@
 
 <h1>Reverse Nodes in k-Group</h1>
 <p>
-This page explains Java solution to problem <code class="inline">Reverse Nodes in k-Group</code> using <a href="https://www.codingcargo.com/what-is-linked-list" class="absolute" target="_blank" rel="noopener noreferrer">Linked List</a>.
+This page explains Java solution to problem <code class="inline">Reverse Nodes in k-Group</code> using <a href="####BASEURL####what-is-linked-list" class="absolute" target="_blank" rel="noopener noreferrer">Linked List</a>.
 </p>
 
 

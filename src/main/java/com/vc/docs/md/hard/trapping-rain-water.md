@@ -9,7 +9,7 @@
 
 <h1>Trapping Rain Water</h1>
 <p>
-This page explains Java solution to problem <code class="inline">Trapping Rain Water</code> using <a href="https://www.codingcargo.com/what-is-priority-queue" class="absolute" target="_blank" rel="noopener noreferrer">Array</a>.
+This page explains Java solution to problem <code class="inline">Trapping Rain Water</code> using <a href="####BASEURL####what-is-priority-queue" class="absolute" target="_blank" rel="noopener noreferrer">Array</a>.
 </p>
 
 

@@ -9,7 +9,7 @@
 
 <h1>Merge K Sorted Lists</h1>
 <p>
-This page explains Java solution to problem <code class="inline">Merge K Sorted Lists</code> using <a href="https://www.codingcargo.com/what-is-priority-queue" class="absolute" target="_blank" rel="noopener noreferrer">Priority Queue</a>.
+This page explains Java solution to problem <code class="inline">Merge K Sorted Lists</code> using <a href="####BASEURL####what-is-priority-queue" class="absolute" target="_blank" rel="noopener noreferrer">Priority Queue</a>.
 </p>
 
 

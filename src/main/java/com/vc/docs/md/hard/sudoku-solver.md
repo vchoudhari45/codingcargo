@@ -9,7 +9,7 @@
 
 <h1>Sudoku Solver</h1>
 <p>
-This page explains Java solution to problem <code class="inline">Sudoku Solver</code> using <a href="https://www.codingcargo.com/what-is-backtracking" class="absolute" target="_blank" rel="noopener noreferrer">Backtracking</a>.
+This page explains Java solution to problem <code class="inline">Sudoku Solver</code> using <a href="####BASEURL####what-is-backtracking" class="absolute" target="_blank" rel="noopener noreferrer">Backtracking</a>.
 </p>
 
 

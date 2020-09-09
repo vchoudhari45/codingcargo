@@ -9,7 +9,7 @@
 
 <h1>Wildcard Matching</h1>
 <p>
-This page explains Java solution to problem <code class="inline">Wildcard Matching</code> using <a href="https://www.codingcargo.com/what-is-dynamic-programming" class="absolute" target="_blank" rel="noopener noreferrer">Dynamic Programming</a>.
+This page explains Java solution to problem <code class="inline">Wildcard Matching</code> using <a href="####BASEURL####what-is-dynamic-programming" class="absolute" target="_blank" rel="noopener noreferrer">Dynamic Programming</a>.
 </p>
 
 
@@ -50,6 +50,7 @@ Given an input string <code class="inline">s</code> and a pattern <code class="i
 
 <h2 class="heading">Solution</h2>
 <p>
+Solution to this Problem is very similar to <a href="####BASEURL####problems/hard/regular-expression-matching"> class="absolute" target="_blank" rel="noopener noreferrer">Regular Expression Matching</a>
 </p>
 <pre>
 <code class="language-java">

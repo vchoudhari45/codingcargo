@@ -9,7 +9,7 @@
 
 <h1>Substring with Concatenation of All Words</h1>
 <p>
-This page explains Java solution to problem <code class="inline">Substring with Concatenation of All Words</code> using <a href="https://www.codingcargo.com/what-is-hashmap" class="absolute" target="_blank" rel="noopener noreferrer">HashMap</a>.
+This page explains Java solution to problem <code class="inline">Substring with Concatenation of All Words</code> using <a href="####BASEURL####what-is-hashmap" class="absolute" target="_blank" rel="noopener noreferrer">HashMap</a>.
 </p>
 
 

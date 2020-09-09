@@ -8,7 +8,7 @@
 
 <h1>Regular Expression Matching</h1>
 <p>
-This page explains Java solution to problem <code class="inline">Regular Expression Matching</code> using <a href="https://www.codingcargo.com/what-is-dynamic-programming" class="absolute" target="_blank" rel="noopener noreferrer">Dynamic Programming</a>.
+This page explains Java solution to problem <code class="inline">Regular Expression Matching</code> using <a href="####BASEURL####what-is-dynamic-programming" class="absolute" target="_blank" rel="noopener noreferrer">Dynamic Programming</a>.
 </p>
 
 

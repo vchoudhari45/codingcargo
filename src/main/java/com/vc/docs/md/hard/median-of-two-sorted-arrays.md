@@ -8,7 +8,7 @@
 
 <h1>Median of Two Sorted Arrays</h1>
 <p>
-This page explains Java solution to problem <code class="inline">Median of Two Sorted Arrays</code> using <a href="https://www.codingcargo.com/what-is-binary-search" class="absolute" target="_blank" rel="noopener noreferrer">Binary Search</a> Algorithm.
+This page explains Java solution to problem <code class="inline">Median of Two Sorted Arrays</code> using <a href="####BASEURL####what-is-binary-search" class="absolute" target="_blank" rel="noopener noreferrer">Binary Search</a> Algorithm.
 </p>
 
 
