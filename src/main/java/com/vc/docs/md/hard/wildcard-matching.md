@@ -52,10 +52,6 @@ Given an input string <code class="inline">s</code> and a pattern <code class="i
 <p>
 Solution to this Problem is very similar to <a href="####BASEURL####problems/hard/regular-expression-matching"> class="absolute" target="_blank" rel="noopener noreferrer">Regular Expression Matching</a>
 </p>
-<pre>
-<code class="language-java">
-</code>
-</pre>
 
 
 
