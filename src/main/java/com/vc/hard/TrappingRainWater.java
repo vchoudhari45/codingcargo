@@ -1,6 +1,6 @@
 package com.vc.hard;
 
-class L42 {
+class TrappingRainWater {
     public int trap(int[] arr) {
         int n = arr.length;
         int left = 0;

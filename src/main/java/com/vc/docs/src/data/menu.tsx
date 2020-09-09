@@ -6,13 +6,63 @@ export const SITENAME = "Coding Cargo"
 export const TWITTER_HANDLE = "@coding_cargo"
 export const MENU: MenuItem[] = [
 	{
-            title: "Index",
+        title: "Index",
 		heading: true,
 		menuItems: [
 			{
 				title: HOMEPAGE,
 				post: true
 			},
+			{
+                title: "Array",
+                topic: true,
+                menuItems: [
+                    {
+                        title: "What is Array",
+                        post: true
+                    },
+                    {
+                        title: "Problem Set",
+                        topic: true,
+                        menuItems: [
+                            {
+                                index: 41,
+                                title: "First Missing Positive",
+                                problem: "hard",
+                                company: ["Amazon", "Google", "Microsoft"]
+                            },
+                            {
+                                index: 42,
+                                title: "Trapping Rain Water",
+                                problem: "hard",
+                                company: ["Amazon", "Facebook", "Google", "Microsoft"]
+                            }
+                        ]
+                    }
+                ]
+            },
+			{
+                title: "Backtracking",
+                topic: true,
+                menuItems: [
+                    {
+                        title: "What is Backtracking",
+                        post: true
+                    },
+                    {
+                        title: "Problem Set",
+                        topic: true,
+                        menuItems: [
+                            {
+                                index: 37,
+                                title: "Sudoku Solver",
+                                problem: "hard",
+                                company: ["Amazon", "Google", "Microsoft"]
+                            }
+                        ]
+                    }
+                ]
+            },
 			{
 				title: "Binary Search",
 				topic: true,
@@ -27,7 +77,7 @@ export const MENU: MenuItem[] = [
 						menuItems: [
 							{
 								index: 4,
-                title: "Median of Two Sorted Arrays",
+                                title: "Median of Two Sorted Arrays",
 								problem: "hard",
 								company: ["Amazon", "Facebook", "Google", "Microsoft"]
 							}
@@ -51,18 +101,26 @@ export const MENU: MenuItem[] = [
 			                    index: 10,
 			                    title: "Regular Expression Matching",
 			                    problem: "hard",
-			                    company: ["Amazon", "Facebook", "Google", "Microsoft"]
-			                }
+			                    company: ["Amazon", "Facebook", "Google", "Microsoft"],
+			                    similar: ["Wildcard Matching"]
+			                },
+			                {
+                                index: 44,
+                                title: "Wildcard Matching",
+                                problem: "hard",
+                                company: ["Amazon", "Facebook", "Microsoft"],
+                                similar: ["Regular Expression Matching"]
+                            }
 			            ]
 			        }
 			    ]
 			},
 			{
-                title: "Priority Queue",
+                title: "HashMap",
                 topic: true,
                 menuItems: [
                     {
-                        title: "What is Priority Queue",
+                        title: "What is HashMap",
                         post: true
                     },
                     {
@@ -70,10 +128,9 @@ export const MENU: MenuItem[] = [
                         topic: true,
                         menuItems: [
                             {
-                                index: 23,
-                                title: "Merge k Sorted Lists",
-                                problem: "hard",
-                                company: ["Amazon", "Facebook", "Google", "Microsoft"]
+                                index: 30,
+                                title: "Substring with Concatenation of All Words",
+                                problem: "hard"
                             }
                         ]
                     }
@@ -101,12 +158,12 @@ export const MENU: MenuItem[] = [
                     }
                 ]
             },
-            {
-                title: "HashMap",
+			{
+                title: "Priority Queue",
                 topic: true,
                 menuItems: [
                     {
-                        title: "What is HashMap",
+                        title: "What is Priority Queue",
                         post: true
                     },
                     {
@@ -114,9 +171,10 @@ export const MENU: MenuItem[] = [
                         topic: true,
                         menuItems: [
                             {
-                                index: 30,
-                                title: "Substring with Concatenation of All Words",
-                                problem: "hard"
+                                index: 23,
+                                title: "Merge k Sorted Lists",
+                                problem: "hard",
+                                company: ["Amazon", "Facebook", "Google", "Microsoft"]
                             }
                         ]
                     }
@@ -137,7 +195,8 @@ export const MENU: MenuItem[] = [
                             {
                                 index: 32,
                                 title: "Longest Valid Parentheses",
-                                problem: "hard"
+                                problem: "hard",
+                                company: ["Amazon"]
                             }
                         ]
                     }
