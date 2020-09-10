@@ -3,20 +3,10 @@ const stack = {
 	topic: true,
 	menuItems: [
 		{
-			title: "What is Stack",
-			post: true
-		},
-		{
-			title: "Problem Set",
-			topic: true,
-			menuItems: [
-				{
-					index: 32,
-					title: "Longest Valid Parentheses",
-					problem: "hard",
-					company: ["Amazon"]
-				}
-			]
+			index: 32,
+			title: "Longest Valid Parentheses",
+			problem: "hard",
+			company: ["Amazon"]
 		}
 	]
 }

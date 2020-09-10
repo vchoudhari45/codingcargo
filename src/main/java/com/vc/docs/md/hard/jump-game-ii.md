@@ -3,17 +3,10 @@
 [comment]: robots=index, follow
 
 
-
-
-
-
 <h1>Jump Game II</h1>
 <p>
-This page explains Java solution to problem <code class="inline">Jump Game II</code> using <a href="####BASEURL####what-is-greedy-algorithm" class="absolute" target="_blank" rel="noopener noreferrer">Greedy Algorithm</a>.
+This page explains Java solution to problem <code class="inline">Jump Game II</code> using Greedy Algorithm.
 </p>
-
-
-
 
 
 <h2 class="heading">Problem Statement</h2>
@@ -24,9 +17,6 @@ Given an array of non-negative integers, you are initially positioned at the fir
 Your goal is to reach the last index in the minimum number of jumps.
 </p>
 
-
-
-
 <b>Example 1:</b>
 <blockquote>
 <p>
@@ -36,7 +26,13 @@ Your goal is to reach the last index in the minimum number of jumps.
 </blockquote>
 
 
-
+<h2 class="heading">Solution</h2>
+If you have any suggestions in below code, please create a pull request <a href="####LINK_PLACEHOLDER####" target="_blank" rel="noopener noreferrer" class="absolute">here</a>
+<pre>
+<code class="language-java">
+####CODE_PLACEHOLDER####
+</code>
+</pre>
 
 
 <h2 class="heading">Time Complexity</h2>
@@ -48,22 +44,9 @@ Where N is total number of elements in an input array
 </blockquote>
 
 
-
-
 <h2 class="heading">Space Complexity</h2>
 <blockquote>
 <p>
 O(1)
 </p>
 </blockquote>
-
-
-
-
-<h2 class="heading">Complete Java code</h2>
-If you have any suggestions in below code, please create a pull request <a href="####LINK_PLACEHOLDER####" target="_blank" rel="noopener noreferrer" class="absolute">here</a>
-<pre>
-<code class="language-java">
-####CODE_PLACEHOLDER####
-</code>
-</pre>

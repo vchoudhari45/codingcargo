@@ -3,26 +3,22 @@ const array = {
 	topic: true,
 	menuItems: [
 		{
-			title: "What is Array",
-			post: true
+			index: 41,
+			title: "First Missing Positive",
+			problem: "hard",
+			company: ["Amazon", "Google", "Microsoft"]
 		},
 		{
-			title: "Problem Set",
-			topic: true,
-			menuItems: [
-				{
-					index: 41,
-					title: "First Missing Positive",
-					problem: "hard",
-					company: ["Amazon", "Google", "Microsoft"]
-				},
-				{
-					index: 42,
-					title: "Trapping Rain Water",
-					problem: "hard",
-					company: ["Amazon", "Facebook", "Google", "Microsoft"]
-				}
-			]
+			index: 42,
+			title: "Trapping Rain Water",
+			problem: "hard",
+			company: ["Amazon", "Facebook", "Google", "Microsoft"]
+		},
+		{
+			index: 57,
+			title: "Insert Interval",
+			problem: "hard",
+			company: ["Amazon", "Facebook", "Google"]
 		}
 	]
 }

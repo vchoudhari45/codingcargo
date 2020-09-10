@@ -3,34 +3,24 @@ const backtracking = {
 	topic: true,
 	menuItems: [
 		{
-			title: "What is Backtracking",
-			post: true
+			index: 37,
+			title: "Sudoku Solver",
+			problem: "hard",
+			company: ["Amazon", "Google", "Microsoft"]
 		},
 		{
-			title: "Problem Set",
-			topic: true,
-			menuItems: [
-				{
-					index: 37,
-					title: "Sudoku Solver",
-					problem: "hard",
-					company: ["Amazon", "Google", "Microsoft"]
-				},
-				{
-                    index: 51,
-                    title: "N-Queens",
-                    problem: "hard",
-                    company: ["Amazon",  "Microsoft"],
-                    similar: ["N-Queens II"]
-                },
-                {
-                    index: 51,
-                    title: "N-Queens II",
-                    problem: "hard",
-                    company: ["Amazon"],
-                    similar: ["N-Queens"]
-                }
-			]
+				index: 51,
+				title: "N-Queens",
+				problem: "hard",
+				company: ["Amazon",  "Microsoft"],
+				similar: ["N-Queens II"]
+		},
+		{
+				index: 51,
+				title: "N-Queens II",
+				problem: "hard",
+				company: ["Amazon"],
+				similar: ["N-Queens"]
 		}
 	]
 }

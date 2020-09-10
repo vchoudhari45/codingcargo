@@ -3,17 +3,10 @@
 [comment]: robots=index, follow
 
 
-
-
-
-
 <h1>Wildcard Matching</h1>
 <p>
-This page explains Java solution to problem <code class="inline">Wildcard Matching</code> using <a href="####BASEURL####what-is-dynamic-programming" class="absolute" target="_blank" rel="noopener noreferrer">Dynamic Programming</a>.
+This page explains Java solution to problem <code class="inline">Wildcard Matching</code> using Dynamic Programming.
 </p>
-
-
-
 
 
 <h2 class="heading">Problem Statement</h2>
@@ -24,9 +17,6 @@ Given an input string <code class="inline">s</code> and a pattern <code class="i
 <li><code class="inline">?</code> Matches any single character.</li>
 <li><code class="inline">*</code> Matches any sequence of characters (including the empty sequence)</li>
 </ul>
-
-
-
 
 <b>Example 1:</b>
 <blockquote>
@@ -45,16 +35,13 @@ Given an input string <code class="inline">s</code> and a pattern <code class="i
 </blockquote>
 
 
-
-
-
 <h2 class="heading">Solution</h2>
-<p>
-Solution to this Problem is very similar to <a href="####BASEURL####problems/hard/regular-expression-matching" class="absolute" target="_blank" rel="noopener noreferrer">Regular Expression Matching</a>
-</p>
-
-
-
+If you have any suggestions in below code, please create a pull request <a href="####LINK_PLACEHOLDER####" target="_blank" rel="noopener noreferrer" class="absolute">here</a>
+<pre>
+<code class="language-java">
+####CODE_PLACEHOLDER####
+</code>
+</pre>
 
 
 <h2 class="heading">Time Complexity</h2>
@@ -67,8 +54,6 @@ And N is length of input string p
 </blockquote>
 
 
-
-
 <h2 class="heading">Space Complexity</h2>
 <blockquote>
 <p>
@@ -77,14 +62,3 @@ Where M is length of input string s
 And N is length of input string p
 </p>
 </blockquote>
-
-
-
-
-<h2 class="heading">Complete Java code</h2>
-If you have any suggestions in below code, please create a pull request <a href="####LINK_PLACEHOLDER####" target="_blank" rel="noopener noreferrer" class="absolute">here</a>
-<pre>
-<code class="language-java">
-####CODE_PLACEHOLDER####
-</code>
-</pre>

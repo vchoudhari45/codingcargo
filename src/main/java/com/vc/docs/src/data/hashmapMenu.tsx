@@ -3,19 +3,9 @@ export const hashmapMenu = {
 	topic: true,
 	menuItems: [
 		{
-			title: "What is HashMap",
-			post: true
-		},
-		{
-			title: "Problem Set",
-			topic: true,
-			menuItems: [
-				{
-					index: 30,
-					title: "Substring with Concatenation of All Words",
-					problem: "hard"
-				}
-			]
+			index: 30,
+			title: "Substring with Concatenation of All Words",
+			problem: "hard"
 		}
 	]
 }

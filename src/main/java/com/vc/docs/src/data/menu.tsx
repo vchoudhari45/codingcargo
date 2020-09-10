@@ -20,7 +20,7 @@ const homePage = {
 	post: true
 }
 
-menuItems.push(homePage)
+//menuItems.push(homePage)
 menuItems.push(array)
 menuItems.push(backtracking)
 menuItems.push(binarySearch)
@@ -32,7 +32,7 @@ menuItems.push(priorityQueue)
 menuItems.push(stack)
 export const MENU: MenuItem[] = [
 	{
-    title: "Index",
+    title: "Problem Set",
 		heading: true,
 		menuItems: menuItems
 	}
