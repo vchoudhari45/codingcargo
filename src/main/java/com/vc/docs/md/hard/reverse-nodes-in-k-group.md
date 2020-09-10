@@ -5,7 +5,7 @@
 
 <h1>Reverse Nodes in k-Group</h1>
 <p>
-This page explains Java solution to problem <code class="inline">Reverse Nodes in k-Group</code> using Linked List data structure.
+This page explains Java solution to problem <code class="inline">Reverse Nodes in k-Group</code> using <code class="inline">Linked List</code> data structure.
 </p>
 
 
@@ -35,7 +35,7 @@ Given a linked list, reverse the nodes of a linked list <code class="inline">k</
 
 
 <h2 class="heading">Solution</h2>
-If you have any suggestions in below code, please create a pull request <a href="####LINK_PLACEHOLDER####" target="_blank" rel="noopener noreferrer" class="absolute">here</a>
+If you have any suggestions in below code, please <a href="####LINK_PLACEHOLDER####" target="_blank" rel="noopener noreferrer" class="absolute">create a pull request by clicking here</a>.
 <pre>
 <code class="language-java">
 ####CODE_PLACEHOLDER####

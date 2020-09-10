@@ -2795,8 +2795,8 @@ footer.jsx-29590182{
     color:rgb(212,0,255);
     font-size:0.9em;
     white-space:pre-wrap;
-    -webkit-transition:color 0.2s ease;
-    transition:color 0.2s ease;
+    /*-webkit-transition:color 0.2s ease;
+    transition:color 0.2s ease;*/
 }
 
 .docs pre{

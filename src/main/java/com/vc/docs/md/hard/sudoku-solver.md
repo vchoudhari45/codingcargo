@@ -5,7 +5,7 @@
 
 <h1>Sudoku Solver</h1>
 <p>
-This page explains Java solution to problem <code class="inline">Sudoku Solver</code> using Backtracking.
+This page explains Java solution to problem <code class="inline">Sudoku Solver</code> using <code class="inline">Backtracking</code>.
 </p>
 
 
@@ -23,7 +23,7 @@ Write a program to solve a <a href="https://simple.wikipedia.org/wiki/Sudoku" cl
 
 
 <h2 class="heading">Solution</h2>
-If you have any suggestions in below code, please create a pull request <a href="####LINK_PLACEHOLDER####" target="_blank" rel="noopener noreferrer" class="absolute">here</a>
+If you have any suggestions in below code, please <a href="####LINK_PLACEHOLDER####" target="_blank" rel="noopener noreferrer" class="absolute">create a pull request by clicking here</a>.
 <pre>
 <code class="language-java">
 ####CODE_PLACEHOLDER####

@@ -5,7 +5,7 @@
 
 <h1>Median of Two Sorted Arrays</h1>
 <p>
-This page explains Java solution to problem <code class="inline">Median of Two Sorted Arrays</code> using Binary Search algorithm.
+This page explains Java solution to problem <code class="inline">Median of Two Sorted Arrays</code> using <code class="inline">Binary Search</code> algorithm.
 </p>
 
 
@@ -37,7 +37,7 @@ Follow up: The overall run time complexity should be <code class="inline">O(log 
 
 
 <h2 class="heading">Solution</h2>
-If you have any suggestions in below code, please create a pull request <a href="####LINK_PLACEHOLDER####" target="_blank" rel="noopener noreferrer" class="absolute">here</a>
+If you have any suggestions in below code, please <a href="####LINK_PLACEHOLDER####" target="_blank" rel="noopener noreferrer" class="absolute">create a pull request by clicking here</a>.
 <pre>
 <code class="language-java">
 ####CODE_PLACEHOLDER####

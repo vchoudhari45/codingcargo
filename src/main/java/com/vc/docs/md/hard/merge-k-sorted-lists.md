@@ -5,7 +5,7 @@
 
 <h1>Merge K Sorted Lists</h1>
 <p>
-This page explains Java solution to problem <code class="inline">Merge K Sorted Lists</code> using Priority Queue.
+This page explains Java solution to problem <code class="inline">Merge K Sorted Lists</code> using <code class="inline">Priority Queue</code> data structure.
 </p>
 
 
@@ -32,7 +32,7 @@ You are given an array of k linked-lists lists, each linked-list is sorted in as
 
 
 <h2 class="heading">Solution</h2>
-If you have any suggestions in below code, please create a pull request <a href="####LINK_PLACEHOLDER####" target="_blank" rel="noopener noreferrer" class="absolute">here</a>
+If you have any suggestions in below code, please <a href="####LINK_PLACEHOLDER####" target="_blank" rel="noopener noreferrer" class="absolute">create a pull request by clicking here</a>.
 <pre>
 <code class="language-java">
 ####CODE_PLACEHOLDER####

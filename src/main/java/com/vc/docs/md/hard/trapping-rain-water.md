@@ -5,7 +5,7 @@
 
 <h1>Trapping Rain Water</h1>
 <p>
-This page explains Java solution to problem <code class="inline">Trapping Rain Water</code> using Array data structure.
+This page explains Java solution to problem <code class="inline">Trapping Rain Water</code> using <code class="inline">Array</code> data structure.
 </p>
 
 
@@ -24,7 +24,7 @@ Given n non-negative integers representing an elevation map where the width of e
 
 
 <h2 class="heading">Solution</h2>
-If you have any suggestions in below code, please create a pull request <a href="####LINK_PLACEHOLDER####" target="_blank" rel="noopener noreferrer" class="absolute">here</a>
+If you have any suggestions in below code, please <a href="####LINK_PLACEHOLDER####" target="_blank" rel="noopener noreferrer" class="absolute">create a pull request by clicking here</a>.
 <pre>
 <code class="language-java">
 ####CODE_PLACEHOLDER####

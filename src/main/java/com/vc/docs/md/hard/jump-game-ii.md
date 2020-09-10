@@ -5,7 +5,7 @@
 
 <h1>Jump Game II</h1>
 <p>
-This page explains Java solution to problem <code class="inline">Jump Game II</code> using Greedy Algorithm.
+This page explains Java solution to problem <code class="inline">Jump Game II</code> using <code class="inline">Greedy algorithm</code>.
 </p>
 
 
@@ -27,7 +27,7 @@ Your goal is to reach the last index in the minimum number of jumps.
 
 
 <h2 class="heading">Solution</h2>
-If you have any suggestions in below code, please create a pull request <a href="####LINK_PLACEHOLDER####" target="_blank" rel="noopener noreferrer" class="absolute">here</a>
+If you have any suggestions in below code, please <a href="####LINK_PLACEHOLDER####" target="_blank" rel="noopener noreferrer" class="absolute">create a pull request by clicking here</a>.
 <pre>
 <code class="language-java">
 ####CODE_PLACEHOLDER####

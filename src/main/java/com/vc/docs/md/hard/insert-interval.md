@@ -5,7 +5,7 @@
 
 <h1>Insert Interval</h1>
 <p>
-This page explains Java solution to problem <code class="inline">Insert Interval</code> using Array data structure.
+This page explains Java solution to problem <code class="inline">Insert Interval</code> using <code class="inline">Array</code> data structure.
 </p>
 
 
@@ -35,7 +35,7 @@ You may assume that the intervals were initially sorted according to their start
 
 
 <h2 class="heading">Solution</h2>
-If you have any suggestions in below code, please create a pull request <a href="####LINK_PLACEHOLDER####" target="_blank" rel="noopener noreferrer" class="absolute">here</a>
+If you have any suggestions in below code, please <a href="####LINK_PLACEHOLDER####" target="_blank" rel="noopener noreferrer" class="absolute">create a pull request by clicking here</a>.
 <pre>
 <code class="language-java">
 ####CODE_PLACEHOLDER####

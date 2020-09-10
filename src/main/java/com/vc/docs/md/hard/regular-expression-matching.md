@@ -5,7 +5,7 @@
 
 <h1>Regular Expression Matching</h1>
 <p>
-This page explains Java solution to problem <code class="inline">Regular Expression Matching</code> using Dynamic Programming.
+This page explains Java solution to problem <code class="inline">Regular Expression Matching</code> using <code class="inline">Dynamic Programming</code>.
 </p>
 
 
@@ -44,7 +44,7 @@ Given an input string <code class="inline">s</code> and a pattern <code class="i
 
 
 <h2 class="heading">Solution</h2>
-If you have any suggestions in below code, please create a pull request <a href="####LINK_PLACEHOLDER####" target="_blank" rel="noopener noreferrer" class="absolute">here</a>
+If you have any suggestions in below code, please <a href="####LINK_PLACEHOLDER####" target="_blank" rel="noopener noreferrer" class="absolute">create a pull request by clicking here</a>.
 <pre>
 <code class="language-java">
 ####CODE_PLACEHOLDER####

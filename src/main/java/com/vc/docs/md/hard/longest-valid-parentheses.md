@@ -5,7 +5,7 @@
 
 <h1>Longest Valid Parentheses</h1>
 <p>
-This page explains Java solution to problem <code class="inline">Longest Valid Parentheses</code> using Stack data structure.
+This page explains Java solution to problem <code class="inline">Longest Valid Parentheses</code> using <code class="inline">Stack</code> data structure.
 </p>
 
 
@@ -32,7 +32,7 @@ Given a string containing just the characters <code class="inline">(</code> and 
 
 
 <h2 class="heading">Solution</h2>
-If you have any suggestions in below code, please create a pull request <a href="####LINK_PLACEHOLDER####" target="_blank" rel="noopener noreferrer" class="absolute">here</a>
+If you have any suggestions in below code, please <a href="####LINK_PLACEHOLDER####" target="_blank" rel="noopener noreferrer" class="absolute">create a pull request by clicking here</a>.
 <pre>
 <code class="language-java">
 ####CODE_PLACEHOLDER####
@@ -43,7 +43,7 @@ If you have any suggestions in below code, please create a pull request <a href=
 <p class="paragraph-heading">
 Let's run one of the sample input <code class="inline">)()())</code> visually, for better understanding.
 </p>
-<h3 class="heading">Step 1: </h3>
+<h3>Step 1: </h3>
 <img class="paragraph-heading" src="####BASEURL####longest-valid-parentheses/longest-1.png" alt="Longest Valid Parentheses 1" />
 <h3 class="heading">Step 2: </h3>
 <img class="paragraph-heading" src="####BASEURL####longest-valid-parentheses/longest-2.png" alt="Longest Valid Parentheses 2" />

@@ -5,7 +5,7 @@
 
 <h1>N Queen</h1>
 <p>
-This page explains Java solution to problem <code class="inline">N Queen</code> using Backtracking.
+This page explains Java solution to problem <code class="inline">N Queen</code> using <code class="inline">Backtracking</code>.
 </p>
 
 
@@ -24,7 +24,7 @@ The n-queens puzzle is the problem of placing <code class="inline">n</code> quee
 
 
 <h2 class="heading">Solution</h2>
-If you have any suggestions in below code, please create a pull request <a href="####LINK_PLACEHOLDER####" target="_blank" rel="noopener noreferrer" class="absolute">here</a>
+If you have any suggestions in below code, please <a href="####LINK_PLACEHOLDER####" target="_blank" rel="noopener noreferrer" class="absolute">create a pull request by clicking here</a>.
 <pre>
 <code class="language-java">
 ####CODE_PLACEHOLDER####
