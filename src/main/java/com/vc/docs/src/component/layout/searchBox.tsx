@@ -72,14 +72,6 @@ const searchBox: React.FC<Props> = ({setShowSearching, trieData}: Props) => {
 						</path>
 					</svg>
 				</span>
-				{/* <div role="combobox" aria-haspopup="listbox" aria-owns="react-autowhatever-desktop-search" aria-expanded="true" className={"react-autosuggest__container" + (searchState.showSearchPopup ? " react-autosuggest__container--open": "")}> 
-					<input type="search" autoComplete="off" aria-autocomplete="list" aria-controls="react-autowhatever-desktop-search" className={"react-autosuggest__input" + (searchState.showSearchPopup ? " react-autosuggest__input--open": "")} placeholder="Search..." onChange={(e) => handleOnChange(e)}/>
-					<div id="react-autowhatever-desktop-search" role="listbox" className={"react-autosuggest__suggestions-container" + (searchState.showSearchPopup ? " react-autosuggest__suggestions-container--open": "")}>
-						{
-							searchState.results && searchState.results.length > 0 ? renderSearchResult(searchState.results, searchState.searchTerm) : <div className="jsx-4137899046 no-results">No results for <span className="jsx-4137899046">"{searchState && searchState.searchTerm ? searchState.searchTerm : ""}"</span><br className="jsx-4137899046" /> Please try again with a different keyword.</div>
-						}
-					</div>
-				</div> */}
 				<div className={"react-autosuggest__container" + (searchState.showSearchPopup ? " react-autosuggest__container--open": "")}> 
 					<input aria-label="Search Problem Set" name="search" type="search" autoComplete="off" className={"react-autosuggest__input" + (searchState.showSearchPopup ? " react-autosuggest__input--open": "")} placeholder="Search..." onChange={(e) => handleOnChange(e)}/>
 					<div role="listbox" className={"react-autosuggest__suggestions-container" + (searchState.showSearchPopup ? " react-autosuggest__suggestions-container--open": "")}>
