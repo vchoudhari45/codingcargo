@@ -15,7 +15,7 @@ Write a program to solve a <a href="https://simple.wikipedia.org/wiki/Sudoku" cl
 </p>
 
 <b>Example 1:</b>
-<p class="paragraph-heading">Input: A Sudoku Puzzle</p>
+<p>Input: A Sudoku Puzzle</p>
 <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/ff/Sudoku-by-L2G-20050714.svg/250px-Sudoku-by-L2G-20050714.svg.png" />
 
 <p class="paragraph-heading">Output: It's Solution number marked in Red</p>

@@ -10,14 +10,14 @@ const backtracking = {
 		},
 		{
 				index: 51,
-				title: "N-Queens",
+				title: "N Queens",
 				problem: "hard",
 				company: ["Amazon",  "Microsoft"],
 				similar: ["N-Queens II"]
 		},
 		{
 				index: 51,
-				title: "N-Queens II",
+				title: "N Queens II",
 				problem: "hard",
 				company: ["Amazon"],
 				similar: ["N-Queens"]
