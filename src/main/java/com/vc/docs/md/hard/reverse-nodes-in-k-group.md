@@ -46,19 +46,19 @@ If you have any suggestions in below code, please <a href="####LINK_PLACEHOLDER#
 <p class="heading">Let's understand how to reverse singly linked list visually.</p>
 
 <h3 class="heading">Step 1:</h3>
-<img src="####BASEURL####reverse-linked-list/reverse-1.png" alt="Reverse Linked List 1" /> 
+<img src="####BASEURL####reverse-linked-list/reverse-1.jpg" alt="Reverse Linked List 1" /> 
 
 <h3 class="heading">Step 2:</h3>
-<img src="####BASEURL####reverse-linked-list/reverse-2.png" alt="Reverse Linked List 2" /> 
+<img src="####BASEURL####reverse-linked-list/reverse-2.jpg" alt="Reverse Linked List 2" /> 
 
 <h3 class="heading">Step 3:</h3>
-<img src="####BASEURL####reverse-linked-list/reverse-3.png" alt="Reverse Linked List 3" /> 
+<img src="####BASEURL####reverse-linked-list/reverse-3.jpg" alt="Reverse Linked List 3" /> 
 
 <h3 class="heading">Step 4:</h3>
-<img src="####BASEURL####reverse-linked-list/reverse-4.png" alt="Reverse Linked List 4" /> 
+<img src="####BASEURL####reverse-linked-list/reverse-4.jpg" alt="Reverse Linked List 4" /> 
 
 <h3 class="heading">Step 5:</h3>
-<img src="####BASEURL####reverse-linked-list/reverse-5.png" alt="Reverse Linked List 5" /> 
+<img src="####BASEURL####reverse-linked-list/reverse-5.jpg" alt="Reverse Linked List 5" /> 
 
 
 <h2 class="heading">Time Complexity</h2>

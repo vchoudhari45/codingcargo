@@ -44,19 +44,19 @@ If you have any suggestions in below code, please <a href="####LINK_PLACEHOLDER#
 Let's run one of the sample input <code class="inline">)()())</code> visually, for better understanding.
 </p>
 <h3>Step 1: </h3>
-<img class="paragraph-heading" src="####BASEURL####longest-valid-parentheses/longest-1.png" alt="Longest Valid Parentheses 1" />
+<img class="paragraph-heading" src="####BASEURL####longest-valid-parentheses/longest-1.jpg" alt="Longest Valid Parentheses 1" />
 <h3 class="heading">Step 2: </h3>
-<img class="paragraph-heading" src="####BASEURL####longest-valid-parentheses/longest-2.png" alt="Longest Valid Parentheses 2" />
+<img class="paragraph-heading" src="####BASEURL####longest-valid-parentheses/longest-2.jpg" alt="Longest Valid Parentheses 2" />
 <h3 class="heading">Step 3: </h3>
-<img class="paragraph-heading" src="####BASEURL####longest-valid-parentheses/longest-3.png" alt="Longest Valid Parentheses 3" />
+<img class="paragraph-heading" src="####BASEURL####longest-valid-parentheses/longest-3.jpg" alt="Longest Valid Parentheses 3" />
 <h3 class="heading">Step 4: </h3>
-<img class="paragraph-heading" src="####BASEURL####longest-valid-parentheses/longest-4.png" alt="Longest Valid Parentheses 4" />
+<img class="paragraph-heading" src="####BASEURL####longest-valid-parentheses/longest-4.jpg" alt="Longest Valid Parentheses 4" />
 <h3 class="heading">Step 5: </h3>
-<img class="paragraph-heading" src="####BASEURL####longest-valid-parentheses/longest-5.png" alt="Longest Valid Parentheses 5" />
+<img class="paragraph-heading" src="####BASEURL####longest-valid-parentheses/longest-5.jpg" alt="Longest Valid Parentheses 5" />
 <h3 class="heading">Step 6: </h3>
-<img class="paragraph-heading" src="####BASEURL####longest-valid-parentheses/longest-6.png" alt="Longest Valid Parentheses 6" />
+<img class="paragraph-heading" src="####BASEURL####longest-valid-parentheses/longest-6.jpg" alt="Longest Valid Parentheses 6" />
 <h3 class="heading">Step 7: </h3>
-<img class="paragraph-heading" src="####BASEURL####longest-valid-parentheses/longest-7.png" alt="Longest Valid Parentheses 7" />
+<img class="paragraph-heading" src="####BASEURL####longest-valid-parentheses/longest-7.jpg" alt="Longest Valid Parentheses 7" />
  
  
 <h2 class="heading">Time Complexity</h2>
