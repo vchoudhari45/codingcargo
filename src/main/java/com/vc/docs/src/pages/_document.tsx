@@ -51,6 +51,7 @@ rv8z8W5d9nr/s+AjqkBHsYthbBsAAAAldEVYdGRhdGU6Y3JlYXRlADIwMjAtMDgtMzFUMTE6NDg6
 MTYtMDQ6MDDtGfsJAAAAJXRFWHRkYXRlOm1vZGlmeQAyMDIwLTA4LTMxVDExOjQ4OjE2LTA0OjAw
 nERDtQAAAABJRU5ErkJggg==" rel="icon" type="image/x-icon" />
 					<link rel="manifest" href={BASEURL + "manifest.json"} />
+					<link rel="preconnect" href="https://www.google-analytics.com"></link>
 					<link rel="apple-touch-icon" href={BASEURL + "apple-touch-icon.png"} />
 
 					<meta name="theme-color" content="#FFFFFF"/>
