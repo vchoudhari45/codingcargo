@@ -47,7 +47,6 @@ Where N is total number of elements in the final list and K is number of input l
 
 
 
-
 <h2 class="heading">Space Complexity</h2>
 <blockquote>
 <p>
