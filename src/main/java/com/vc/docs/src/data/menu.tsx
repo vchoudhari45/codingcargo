@@ -7,7 +7,7 @@ import greedyAlgorithm from "./greedyAlgorithm"
 import linkedList from "./linkedList"
 import priorityQueue from "./priorityQueue"
 import stack from "./stack"
-import hashMap from "./hashmap"
+import hashmapMenu from "./hashmapMenu"
 
 export const HOMEPAGE = "Getting Started"
 export const BASEURL = "https://www.codingcargo.com/"
@@ -26,7 +26,7 @@ menuItems.push(backtracking)
 menuItems.push(binarySearch)
 menuItems.push(dynamicProgramming)
 menuItems.push(greedyAlgorithm)
-menuItems.push(hashMap)
+menuItems.push(hashmapMenu)
 menuItems.push(linkedList)
 menuItems.push(priorityQueue)
 menuItems.push(stack)

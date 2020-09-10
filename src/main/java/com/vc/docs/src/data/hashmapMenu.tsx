@@ -1,4 +1,4 @@
-export const hashMap = {
+export const hashmapMenu = {
 	title: "HashMap",
 	topic: true,
 	menuItems: [
@@ -20,4 +20,4 @@ export const hashMap = {
 	]
 }
 
-export default hashMap
+export default hashmapMenu
