@@ -2,7 +2,7 @@ package com.vc.hard;
 
 import java.util.HashSet;
 
-class NQueenII {
+class NQueensII {
 
     private HashSet<Integer> cols = new HashSet<>();
     private HashSet<Integer> diagonals = new HashSet<>();
