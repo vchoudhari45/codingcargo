@@ -80,7 +80,7 @@ const searchBox: React.FC<Props> = ({setShowSearching, trieData}: Props) => {
 						}
 					</div>
 				</div> */}
-				<div role="combobox" aria-haspopup="listbox" aria-expanded="true" className={"react-autosuggest__container" + (searchState.showSearchPopup ? " react-autosuggest__container--open": "")}> 
+				<div role="combobox" className={"react-autosuggest__container" + (searchState.showSearchPopup ? " react-autosuggest__container--open": "")}> 
 					<input aria-label="Search Problem Set" name="search" type="search" autoComplete="off" aria-autocomplete="list" aria-controls="react-autowhatever-desktop-search" className={"react-autosuggest__input" + (searchState.showSearchPopup ? " react-autosuggest__input--open": "")} placeholder="Search..." onChange={(e) => handleOnChange(e)}/>
 					<div role="listbox" className={"react-autosuggest__suggestions-container" + (searchState.showSearchPopup ? " react-autosuggest__suggestions-container--open": "")}>
 						{
