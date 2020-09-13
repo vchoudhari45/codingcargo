@@ -2,55 +2,38 @@ package com.vc.hard;
 
 import java.util.*;
 
-class L85 {
+class MaximalRectangle {
     public int maximalRectangle(char[][] matrix) {
+        if(matrix == null || matrix.length == 0) return 0;
+
         int m = matrix.length;
-        if(m == 0) return 0;
         int n = matrix[0].length;
 
-        int[] arr = new int[n];
-        int maxArea = 0;
+        int[] row = new int[n];
+        int maxLength = 0;
         for(int i = 0; i < m; i++) {
             for(int j = 0; j < n; j++) {
-                if(matrix[i][j] == '1') arr[j] += 1;
-                else arr[j] = 0;
+                if(matrix[i][j] == '1') row[j] += 1;
+                else row[j] = 0;
             }
-            int area = maxRectangle(arr, n);
-            maxArea = Math.max(area, maxArea);
-            // System.out.println("Area: "+area);
-            // for(int j = 0; j < n; j++) {
-            //     System.out.print(arr[j]+" ");
-            // }
-            // System.out.println(" ");
+            maxLength = Math.max(maxLength, maxRectangle(row));
         }
-        return maxArea;
+        return maxLength;
     }
 
-    private int maxRectangle(int[] arr, int n) {
+    private int maxRectangle(int[] heights) {
         Stack<Integer> st = new Stack<>();
-        int current = 0;
-        int maxArea = 0;
-        while(current < n) {
-            if(st.isEmpty() || arr[st.peek()] <= arr[current]) {
-                st.push(current);
+        st.push(-1);
+        int maxLength = 0;
+        for(int i = 0; i < heights.length; i++) {
+            while(st.peek() != -1 && heights[st.peek()] > heights[i]) {
+                maxLength = Math.max(maxLength, heights[st.pop()] * (i - st.peek() - 1));
             }
-            else {
-                while(!st.isEmpty() && arr[st.peek()] > arr[current]) {
-                    int height = arr[st.pop()];
-                    int width = current - (!st.isEmpty() ? st.peek() : -1) - 1;
-                    int area = height * width;
-                    maxArea = Math.max(maxArea, area);
-                }
-                st.push(current);
-            }
-            current++;
+            st.push(i);
         }
-        while(!st.isEmpty()) {
-            int height = arr[st.pop()];
-            int width = current - (!st.isEmpty() ? st.peek() : - 1) - 1;
-            int area = height * width;
-            maxArea = Math.max(maxArea, area);
+        while(st.peek() != -1) {
+            maxLength = Math.max(maxLength, heights[st.pop()] * (heights.length - st.peek() - 1));
         }
-        return maxArea;
+        return maxLength;
     }
 }

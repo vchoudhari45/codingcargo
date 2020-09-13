@@ -31,9 +31,9 @@ menuItems.push(greedyAlgorithm)
 menuItems.push(hashmapMenu)
 menuItems.push(linkedList)
 menuItems.push(priorityQueue)
+menuItems.push(slidingWindow)
 menuItems.push(stack)
 menuItems.push(string)
-menuItems.push(slidingWindow)
 export const MENU: MenuItem[] = [
 	{
     title: "Problem Set",
