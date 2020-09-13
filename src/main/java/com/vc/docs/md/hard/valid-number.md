@@ -1,40 +1,40 @@
-[comment]: metadata=Java Solution to problem First Missing Positive using Array Data Structure.
-[comment]: keywords=First Missing Positive, Array
+[comment]: metadata=Java Solution to problem Valid Number using String.
+[comment]: keywords=Valid Number, String
 [comment]: robots=index, follow
 
 
-<h1>First Missing Positive</h1>
+<h1>Valid Number</h1>
 <p>
-This page explains Java solution to problem <code class="inline">First Missing Positive</code> using <code class="inline">Array</code> data structure.
+This page explains Java solution to problem <code class="inline">Valid Number</code> using <code class="inline">String</code>.
 </p>
 
 
 <h2 class="heading">Problem Statement</h2>
 <p>
-Given an unsorted integer array, find the smallest missing positive integer.
+Validate if a given string can be interpreted as a decimal number.
 </p>
 
 <b>Example 1:</b>
 <blockquote>
 <p>
-<b>Input</b>: [1,2,0]<br/>
-<b>Output</b>: 3<br/>
+<b>Input</b>: "0"<br />
+<b>Output</b>: true<br/>
 </p>
 </blockquote>
 
 <b>Example 2:</b>
 <blockquote>
 <p>
-<b>Input</b>: [3,4,-1,1]<br/>
-<b>Output</b>: 2<br/>
+<b>Input</b>: " 0.1 "<br />
+<b>Output</b>: true<br/>
 </p>
 </blockquote>
 
 <b>Example 3:</b>
 <blockquote>
 <p>
-<b>Input</b>: [7,8,9,11,12]<br/>
-<b>Output</b>: 1<br/>
+<b>Input</b>: " 1 a"<br />
+<b>Output</b>: false<br/>
 </p>
 </blockquote>
 
@@ -52,7 +52,7 @@ If you have any suggestions in below code, please <a href="####LINK_PLACEHOLDER#
 <blockquote>
 <p>
 O(N) <br />
-Where N is total number of elements in an input array.
+Where N is total number of elements in an input string
 </p>
 </blockquote>
 

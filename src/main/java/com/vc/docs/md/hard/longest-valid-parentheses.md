@@ -1,4 +1,4 @@
-[comment]: metadata=Java Solution to problem <strong>Longest Valid Parentheses</strong> using <strong>Stack</strong> Data Structure.
+[comment]: metadata=Java Solution to problem Longest Valid Parentheses using Stack Data Structure.
 [comment]: keywords=Longest Valid Parentheses, Stack
 [comment]: robots=index, follow
 

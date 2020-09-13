@@ -1,4 +1,4 @@
-[comment]: metadata=Java Solution to problem <strong>N Queen</strong> using <strong>Backtracking</strong>.
+[comment]: metadata=Java Solution to problem N Queen using Backtracking.
 [comment]: keywords=N Queen, Backtracking
 [comment]: robots=index, follow
 

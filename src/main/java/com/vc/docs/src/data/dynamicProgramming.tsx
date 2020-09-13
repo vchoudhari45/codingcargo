@@ -15,6 +15,12 @@ const dynamicProgramming = {
 			problem: "hard",
 			company: ["Amazon", "Facebook", "Microsoft"],
 			similar: ["Regular Expression Matching"]
+		},
+		{
+			index: 72,
+			title: "Edit Distance",
+			problem: "hard",
+			company: ["Amazon", "Google"]
 		}
 	]
 }

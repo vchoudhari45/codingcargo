@@ -1,4 +1,4 @@
-[comment]: metadata=Java Solution to problem <strong>Trapping Rain Water</strong> using <strong>Array</strong> Data Structure.
+[comment]: metadata=Java Solution to problem Trapping Rain Water using Array Data Structure.
 [comment]: keywords=Trapping Rain Water, Array
 [comment]: robots=index, follow
 

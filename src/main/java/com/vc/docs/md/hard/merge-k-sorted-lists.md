@@ -1,4 +1,4 @@
-[comment]: metadata=Java Solution to problem <strong>Merge K Sorted Lists</strong> using <strong>Linked List</strong> Data Structure.
+[comment]: metadata=Java Solution to problem Merge K Sorted Lists using Linked List Data Structure.
 [comment]: keywords=Merge K Sorted Lists, Priority Queue
 [comment]: robots=index, follow
 

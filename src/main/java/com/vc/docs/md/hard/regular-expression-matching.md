@@ -1,4 +1,4 @@
-[comment]: metadata=Java Solution to problem <strong>Regular Expression Matching</strong> using <strong>Dynamic Programming</strong>.
+[comment]: metadata=Java Solution to problem Regular Expression Matching using Dynamic Programming.
 [comment]: keywords=Regular Expression Matching, Dynamic Programming
 [comment]: robots=index, follow
 

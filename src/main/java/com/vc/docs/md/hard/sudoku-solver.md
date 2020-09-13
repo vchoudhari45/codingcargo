@@ -1,4 +1,4 @@
-[comment]: metadata=Java Solution to problem <strong>Sudoku Solver</strong> using <strong>Backtracking</strong>.
+[comment]: metadata=Java Solution to problem Sudoku Solver using Backtracking.
 [comment]: keywords=Sudoku Solver, Backtracking
 [comment]: robots=index, follow
 

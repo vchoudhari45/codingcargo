@@ -1,4 +1,4 @@
-[comment]: metadata=Java Solution to problem <strong>Median of Two Sorted Arrays</strong> using <strong>Binary Search</strong> Algorithm.
+[comment]: metadata=Java Solution to problem Median of Two Sorted Arrays using Binary Search Algorithm.
 [comment]: keywords=Median of Two Sorted Arrays, Binary Search
 [comment]: robots=index, follow
 

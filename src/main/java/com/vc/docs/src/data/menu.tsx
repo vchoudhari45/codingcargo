@@ -8,6 +8,8 @@ import linkedList from "./linkedList"
 import priorityQueue from "./priorityQueue"
 import stack from "./stack"
 import hashmapMenu from "./hashmapMenu"
+import string from "./string"
+import slidingWindow from "./slidingWindow"
 
 export const HOMEPAGE = "Getting Started"
 export const BASEURL = "https://www.codingcargo.com/"
@@ -30,6 +32,8 @@ menuItems.push(hashmapMenu)
 menuItems.push(linkedList)
 menuItems.push(priorityQueue)
 menuItems.push(stack)
+menuItems.push(string)
+menuItems.push(slidingWindow)
 export const MENU: MenuItem[] = [
 	{
     title: "Problem Set",

@@ -1,4 +1,4 @@
-[comment]: metadata=Java Solution to problem <strong>Wildcard Matching</strong> using <strong>Dynamic Programming</strong>.
+[comment]: metadata=Java Solution to problem Wildcard Matching using Dynamic Programming.
 [comment]: keywords=Wildcard Matching, Dynamic Programming
 [comment]: robots=index, follow
 

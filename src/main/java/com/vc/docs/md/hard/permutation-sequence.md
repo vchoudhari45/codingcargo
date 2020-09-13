@@ -1,4 +1,4 @@
-[comment]: metadata=Java Solution to problem <strong>Permutation Sequence</strong> using <strong>Permutation</strong>.
+[comment]: metadata=Java Solution to problem Permutation Sequence using Permutation.
 [comment]: keywords=Insert Interval, Array
 [comment]: robots=index, follow
 

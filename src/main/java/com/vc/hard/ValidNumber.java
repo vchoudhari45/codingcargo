@@ -1,6 +1,6 @@
 package com.vc.hard;
 
-class L65 {
+class ValidNumber {
     private final int INITIAL = 0;
     private final int DIGIT = 1;
     private final int DOT = 2;

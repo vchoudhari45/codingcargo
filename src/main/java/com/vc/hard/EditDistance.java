@@ -1,6 +1,6 @@
 package com.vc.hard;
 
-class L72 {
+class EditDistance {
     public int minDistance(String word1, String word2) {
         int w1 = word1.length();
         int w2 = word2.length();

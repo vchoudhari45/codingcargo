@@ -1,4 +1,4 @@
-[comment]: metadata=Java Solution to problem <strong>Jump Game II</strong> using <strong>Greedy Algorithm</strong>.
+[comment]: metadata=Java Solution to problem Jump Game II using Greedy Algorithm.
 [comment]: keywords=Jump Game II, Greedy Algorithm
 [comment]: robots=index, follow
 

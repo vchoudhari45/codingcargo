@@ -1,4 +1,4 @@
-[comment]: metadata=Java Solution to problem <strong>Reverse Nodes in k-Group</strong> using <strong>Linked List</strong> Data Structure.
+[comment]: metadata=Java Solution to problem Reverse Nodes in k-Group using Linked List Data Structure.
 [comment]: keywords=Reverse Nodes in k-Group, Linked List
 [comment]: robots=index, follow
 

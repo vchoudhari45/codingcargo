@@ -1,4 +1,4 @@
-[comment]: metadata=Java Solution to problem <strong>Insert Interval</strong> using <strong>Array</strong> data structure.
+[comment]: metadata=Java Solution to problem Insert Interval using Array data structure.
 [comment]: keywords=Insert Interval, Array
 [comment]: robots=index, follow
 
