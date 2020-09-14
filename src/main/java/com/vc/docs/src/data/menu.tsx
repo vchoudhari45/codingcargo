@@ -9,6 +9,7 @@ import priorityQueue from "./priorityQueue"
 import stack from "./stack"
 import hashmapMenu from "./hashmapMenu"
 import string from "./string"
+import math from "./math"
 import slidingWindow from "./slidingWindow"
 
 export const HOMEPAGE = "Getting Started"
@@ -30,6 +31,7 @@ menuItems.push(dynamicProgramming)
 menuItems.push(greedyAlgorithm)
 menuItems.push(hashmapMenu)
 menuItems.push(linkedList)
+menuItems.push(math)
 menuItems.push(priorityQueue)
 menuItems.push(slidingWindow)
 menuItems.push(stack)

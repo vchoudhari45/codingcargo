@@ -3,7 +3,7 @@
 [comment]: robots=index, follow
 
 
-<h1>Median of Two Sorted Arrays</h1>
+<h1>Largest Rectangle in Histogram</h1>
 <p>
 This page explains Java solution to problem <code class="inline">Largest Rectangle in Histogram</code> using <code class="inline">Stack </code> data structure.
 </p>

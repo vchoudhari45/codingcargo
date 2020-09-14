@@ -3,7 +3,7 @@
 [comment]: robots=index, follow
 
 
-<h1>Merge K Sorted Lists</h1>
+<h1>Minimum Window Substring</h1>
 <p>
 This page explains Java solution to problem <code class="inline">Minimum Window Substring</code> using <code class="inline">Sliding window</code>.
 </p>
@@ -36,7 +36,7 @@ If you have any suggestions in below code, please <a href="####LINK_PLACEHOLDER#
 <blockquote>
 <p>
 O(N + M) Where <br />
-N is total number of elements in an input search string.
+N is total number of elements in an input search string. <br />
 M is total number of elements in an input string which needs to be searched.
 </p>
 </blockquote>
@@ -45,7 +45,7 @@ M is total number of elements in an input string which needs to be searched.
 <h2 class="heading">Space Complexity</h2>
 <blockquote>
 <p>
-O(M)
+O(M) Where <br />
 M is total number of elements in an input string which needs to be searched.
 </p>
 </blockquote>

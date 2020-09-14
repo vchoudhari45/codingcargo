@@ -3,7 +3,7 @@
 [comment]: robots=index, follow
 
 
-<h1>Insert Interval</h1>
+<h1>Permutation Sequence</h1>
 <p>
 This page explains Java solution to problem <code class="inline">Insert Interval</code> using <code class="inline">Permutations</code>.
 </p>

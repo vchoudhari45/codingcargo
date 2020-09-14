@@ -23,11 +23,11 @@ class MinimumWindowSubstring {
                 if(map.get(ch) > 0) required--;
                 map.put(ch, map.get(ch) - 1);
                 while(required == 0) {
-                    char c = s.charAt(start);
                     if(minLength > end - start) {
                         minLength = end - start + 1;
                         minStart = start;
                     }
+                    char c = s.charAt(start);
                     if(map.containsKey(c)) {
                         map.put(c, map.getOrDefault(c, 0) + 1);
                         if(map.get(c) > 0) required++;

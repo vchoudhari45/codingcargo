@@ -11,7 +11,10 @@ This page explains Java solution to problem <code class="inline">Substring with 
 
 <h2 class="heading">Problem Statement</h2>
 <p>
-You are given a string s and an array of strings words <b>of the same length</b>. Return all starting indices of substring(s) in s that is a concatenation of each word in words exactly once, in any order, and without any intervening characters.
+You are given a string s and an array of strings words <b>of the same length</b>. 
+</p>
+<p>
+Return all starting indices of substring(s) in s that is a concatenation of each word in words exactly once, in any order, and without any intervening characters.
 </p>
 <p>
 You can return the answer in any order.

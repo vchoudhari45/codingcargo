@@ -3,7 +3,7 @@
 [comment]: robots=index, follow
 
 
-<h1>N Queen II</h1>
+<h1>Edit Distance</h1>
 <p>
 This page explains Java solution to problem <code class="inline">Edit Distance</code> using <code class="inline">Dynamic programming</code>.
 </p>
