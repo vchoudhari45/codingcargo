@@ -18,24 +18,16 @@ Recover the tree without changing its structure.
 </p>
 
 <b>Example 1:</b>
-<blockquote>
-<p>
-<b>Input</b>: [1,3,null,null,2]
-</p>
-</blockquote> 
 <pre>
+Input: [1,3,null,null,2]
    1
   /
  3
   \
    2
 </pre>
-<blockquote>
-<p>
-<b>Output</b>: [3,1,null,null,2]
-</p>
-</blockquote>
 <pre>
+Output: [3,1,null,null,2]
    3
   /
  1
@@ -44,24 +36,16 @@ Recover the tree without changing its structure.
 </pre>
 
 <b>Example 2:</b>
-<blockquote>
-<p>
-<b>Input</b>: [3,1,4,null,null,2]
-</p>
-</blockquote>
 <pre>
+Input: [3,1,4,null,null,2]
   3
  / \
 1   4
    /
   2
 </pre>
-<blockquote>
-<p>
-<b>Output</b>: [2,1,4,null,null,3]
-</p>
-</blockquote>
 <pre>
+Output: [2,1,4,null,null,3]
   2
  / \
 1   4

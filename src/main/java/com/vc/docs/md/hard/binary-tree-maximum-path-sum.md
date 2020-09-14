@@ -18,40 +18,26 @@ For this problem, a path is defined as any sequence of nodes from some starting 
 </p>
 
 <b>Example 1:</b>
-<blockquote>
-<p>
-<b>Input</b>: [1,2,3]
-</p>
-</blockquote>
 <pre>
-       1
-      / \
-     2   3
+Input: [1,2,3]
+   1
+  / \
+ 2   3
+
+Output: 6
 </pre>
-<blockquote>
-<p>
-<b>Output</b>: 6 <br/>
-</p>
-</blockquote>
 
 <b>Example 2:</b>
-<blockquote>
-<p>
-<b>Input</b>: [-10,9,20,null,null,15,7]
-</p>
-</blockquote>
 <pre>
+Input: [-10,9,20,null,null,15,7]
    -10
    / \
   9  20
     /  \
    15   7
+
+Output: 42
 </pre>
-<blockquote>
-<p>
-<b>Output</b>: 42 <br/>
-</p>
-</blockquote>
 
 
 <h2 class="heading">Solution</h2>

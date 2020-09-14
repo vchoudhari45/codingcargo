@@ -11,6 +11,7 @@ import hashmapMenu from "./hashmapMenu"
 import string from "./string"
 import math from "./math"
 import tree from "./tree"
+import graph from "./graph"
 import slidingWindow from "./slidingWindow"
 
 export const HOMEPAGE = "Getting Started"
@@ -29,6 +30,7 @@ menuItems.push(array)
 menuItems.push(backtracking)
 menuItems.push(binarySearch)
 menuItems.push(dynamicProgramming)
+//menuItems.push(graph)
 menuItems.push(greedyAlgorithm)
 menuItems.push(hashmapMenu)
 menuItems.push(linkedList)
