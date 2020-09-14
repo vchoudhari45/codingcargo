@@ -10,6 +10,7 @@ import stack from "./stack"
 import hashmapMenu from "./hashmapMenu"
 import string from "./string"
 import math from "./math"
+import tree from "./tree"
 import slidingWindow from "./slidingWindow"
 
 export const HOMEPAGE = "Getting Started"
@@ -36,6 +37,7 @@ menuItems.push(priorityQueue)
 menuItems.push(slidingWindow)
 menuItems.push(stack)
 menuItems.push(string)
+menuItems.push(tree)
 export const MENU: MenuItem[] = [
 	{
     title: "Problem Set",

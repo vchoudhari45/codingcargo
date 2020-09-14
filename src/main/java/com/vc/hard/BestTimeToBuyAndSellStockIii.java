@@ -2,7 +2,7 @@ package com.vc.hard;
 
 import java.util.*;
 
-class L123 {
+class BestTimeToBuyAndSellStockIii {
     public int maxProfit(int[] prices) {
         /**
              Input:
