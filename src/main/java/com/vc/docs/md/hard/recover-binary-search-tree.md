@@ -5,7 +5,7 @@
 
 <h1>Recover Binary Search Tree</h1>
 <p>
-This page explains Java solution to problem <code class="inline">Recover Binary Search Tree</code> using <code class="inline">In Order Traversal of</code> tree data structure.
+This page explains Java solution to problem <code class="inline">Recover Binary Search Tree</code> using <code class="inline">In Order Traversal of Tree </code>data structure.
 </p>
 
 
@@ -20,42 +20,54 @@ Recover the tree without changing its structure.
 <b>Example 1:</b>
 <blockquote>
 <p>
-<b>Input</b>: [1,3,null,null,2] 
+<b>Input</b>: [1,3,null,null,2]
+</p>
+</blockquote> 
+<pre>
    1
   /
  3
   \
    2
-<br />
-<b>Output</b>:[3,1,null,null,2]
+</pre>
+<blockquote>
+<p>
+<b>Output</b>: [3,1,null,null,2]
+</p>
+</blockquote>
+<pre>
    3
   /
  1
   \
    2
-<br />
-</p>
-</blockquote>
+</pre>
 
 <b>Example 2:</b>
 <blockquote>
 <p>
 <b>Input</b>: [3,1,4,null,null,2]
-  3
- / \
-1   4
-   /
-  2
-<br/>
-<b>Output</b>: [2,1,4,null,null,3]
-  2
- / \
-1   4
-   /
-  3
-<br/>
 </p>
 </blockquote>
+<pre>
+  3
+ / \
+1   4
+   /
+  2
+</pre>
+<blockquote>
+<p>
+<b>Output</b>: [2,1,4,null,null,3]
+</p>
+</blockquote>
+<pre>
+  2
+ / \
+1   4
+   /
+  3
+</pre>
 
 
 <h2 class="heading">Solution</h2>

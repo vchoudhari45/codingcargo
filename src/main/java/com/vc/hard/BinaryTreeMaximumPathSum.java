@@ -1,6 +1,6 @@
 package com.vc.hard;
 
-class L124 {
+class BinaryTreeMaximumPathSum {
     int max = Integer.MIN_VALUE;
     public int maxPathSum(TreeNode root) {
         solve(root);
