@@ -44,6 +44,12 @@ const dynamicProgramming = {
             problem: "hard",
             company: ["Amazon", "Microsoft"],
             similar: ["Best Time to Buy and Sell Stock", "Best Time to Buy and Sell Stock II", "Best Time to Buy and Sell Stock IV"]
+        },
+        {
+            index: 132,
+            title: "Palindrome Partitioning II",
+            problem: "hard",
+            company: ["Amazon"]
         }
 	]
 }

@@ -19,7 +19,13 @@ const array = {
 			title: "Insert Interval",
 			problem: "hard",
 			company: ["Amazon", "Facebook", "Google"]
-		}
+		},
+        {
+            index: 135,
+            title: "Candy",
+            problem: "hard",
+            company: ["Amazon"]
+        }
 	]
 }
 

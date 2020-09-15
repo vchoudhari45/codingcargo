@@ -1,37 +1,47 @@
-[comment]: metadata=Java Solution to problem Median of Two Sorted Arrays using Binary Search Algorithm.
-[comment]: keywords=Median of Two Sorted Arrays, Binary Search
+[comment]: metadata=Java Solution to problem Word Ladder II using Dijkstra's algorithm.
+[comment]: keywords=Word Ladder II, Dijkstra's algorithm
 [comment]: robots=index, follow
 
 
-<h1>Median of Two Sorted Arrays</h1>
+<h1>Word Ladder II</h1>
 <p>
-This page explains Java solution to problem <code class="inline">Median of Two Sorted Arrays</code> using <code class="inline">Binary Search</code> algorithm.
+This page explains Java solution to problem <code class="inline">Word Ladder II</code> using <code class="inline">Dijkstra's</code> algorithm.
 </p>
 
 
 <h2 class="heading">Problem Statement</h2>
 <p>
-Given two sorted arrays <code class="inline">A</code> and <code class="inline">B</code> of size <code class="inline">m</code> and <code class="inline">n</code> respectively, return the <a href="https://en.wikipedia.org/wiki/Median" class="absolute" target="_blank" rel="noopener noreferrer">median</a> of the two sorted arrays.
+Given two words (beginWord and endWord), and a dictionary's word list, find all shortest transformation sequence(s) from beginWord to endWord, such that:
 </p>
-<p>
-Follow up: The overall run time complexity should be <code class="inline">O(log (m+n))</code>.
-</p>
+<ul>
+<li>Only one letter can be changed at a time.</li>
+<li>Each transformed word must exist in the word list. Note that beginWord is not a transformed word.</li>
+</ul>
+
 
 <b>Example 1:</b>
 <blockquote>
 <p>
-<b>Input</b>: A = [1,3], B = [2]<br/>
-<b>Output</b>: 2.00000<br/>
-<b>Explanation</b>: merged array = [1,2,3] and median is 2<br/>
+<b>Input</b>: <br />
+beginWord = "hit",  <br />
+endWord = "cog",  <br />
+wordList = ["hot","dot","dog","lot","log","cog"]  <br />
+<b>Output</b>: <br/>
+[<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;["hit","hot","dot","dog","cog"],<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;["hit","hot","lot","log","cog"]<br />
+]<br />
 </p>
 </blockquote>
 
 <b>Example 2:</b>
 <blockquote>
 <p>
-<b>Input</b>: A = [1,2], B = [3,4]<br/>
-<b>Output</b>: 2.50000<br/>
-<b>Explanation</b>: merged array = [1,2,3,4] and median is (2 + 3) / 2 = 2.5<br/>
+<b>Input</b>: <br />
+beginWord = "hit" <br />
+endWord = "cog" <br />
+wordList = ["hot","dot","dog","lot","log"] <br />
+<b>Output</b>: []<br />
 </p>
 </blockquote>
 
@@ -47,11 +57,28 @@ If you have any suggestions in below code, please <a href="####LINK_PLACEHOLDER#
 
 <h2 class="heading">Time Complexity</h2>
 <blockquote>
-<p>O(log(m + n))</p>
+<p>
+Total Time complexity = O(V * W * 26) + O(V + E)  
+<br />
+<br />
+O(V * W * 26) Where <br /> 
+V is total number of Vertices, in our case elements in an input array words. <br /> 
+W is length of word in an input array words. <br /> 
+26 because we iterate over all the elements from 'a' to 'z' <br /> 
+<br /> 
+<br /> 
+O(V + E) Where <br />
+V is total number of Vertices, in our case elements in an input array words. <br /> 
+E is total number of Edges, in our case connections that we generate in a graph variable.
+</p>
 </blockquote>
 
 
 <h2 class="heading">Space Complexity</h2>
 <blockquote>
-<p>O(1)</p>
+<p>
+O(V + E) Where <br />
+V is total number of Vertices, in our case elements in an input array words. <br /> 
+E is total number of Edges, in our case connections that we generate in a graph variable.
+</p>
 </blockquote>
