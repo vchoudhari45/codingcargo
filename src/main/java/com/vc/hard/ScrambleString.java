@@ -1,36 +1,32 @@
 package com.vc.hard;
 
 class ScrambleString {
+    private int m;
+    private Boolean[][][] dp;
     public boolean isScramble(String s1, String s2) {
-        if (s1.length() != s2.length()) return false;
-        int n = s1.length();
-        /**
-         *   We use 3D Array here where,
-         *   First n is for start index of s1
-         *   Second n is for start index of s2
-         *   Third n is for length
-         **/
-        boolean [][][] dp = new boolean[n][n][n + 1];
-        //s1 => great   s2 => rgeat
-        for (int total = 1; total <= n; total++) {
-            for (int start1 = 0; start1 + total <= n; start1++) {
-                for (int start2 = 0; start2 + total <= n; start2++) {
-                    if (total == 1) {
-                        dp[start1][start2][total] = s1.charAt(start1) == s2.charAt(start2);
-                    } else {
-                        for (int len = 1; len < total && !dp[start1][start2][total]; len++) {
-                            boolean s1LeftVsS2Left = dp[start1][start2][len];                           //g    Vs //r
-                            boolean s1RightVsS2Right = dp[start1 + len][start2 + len][total - len];     //reat Vs //geat
-                            dp[start1][start2][total]  = s1LeftVsS2Left && s1RightVsS2Right;
+        m = s1.length();
+        dp = new Boolean[m][m][m];
+        return dfs(s1, s2, 0, m - 1, 0, m - 1);
+    }
 
-                            boolean s1LeftVsS2ReverseRight = dp[start1][start2 + total - len][len];     //g    Vs //t
-                            boolean s1RightVsS2ReverseLeft = dp[start1 + len][start2][total - len];     //reat Vs //rgea
-                            dp[start1][start2][total] |= s1LeftVsS2ReverseRight && s1RightVsS2ReverseLeft;
-                        }
-                    }
-                }
-            }
+    private boolean dfs(String s1, String s2, int l1, int r1, int l2, int r2) {
+        if (l1 == r1) return s1.charAt(l1) == s2.charAt(l2);
+
+        if (dp[l1][l2][r1 - l1] != null) return dp[l1][l2][r1 - l1];
+
+        dp[l1][l2][r1 - l1] = false;
+        for(int i = 0; i + l1 <= r1; i++) {
+            int left1 = l1 + i;
+            int left2 = l2 + i;
+            int right1 = r2 - i;
+            int right2 = l2 + r1 - l1 - i - 1;
+
+            dp[l1][l2][r1 - l1] = dp[l1][l2][r1 - l1] ||
+                    (dfs(s1, s2, l1, left1, l2, left2) && dfs(s1, s2,left1 + 1, r1, left2 + 1, r2)) ||
+                    (dfs(s1, s2, l1, left1, right1, r2) && dfs(s1, s2,left1 + 1, r1, l2, right2));
+
+            if(dp[l1][l2][r1 - l1]) return true;
         }
-        return dp[0][0][n];
+        return dp[l1][l2][r1 - l1];
     }
 }
