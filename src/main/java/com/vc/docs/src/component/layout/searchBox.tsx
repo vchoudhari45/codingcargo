@@ -1,4 +1,5 @@
 import React, { Dispatch, MouseEvent, SetStateAction, useState } from "react"
+import { BASEURL } from "../../data/menu"
 import TrieItem from "../../model/TrieItem"
 import { slug } from "../../util/url"
 
@@ -39,7 +40,7 @@ const searchBox: React.FC<Props> = ({setShowSearching, trieData}: Props) => {
 				<>
 				  {
 						<li role="option" id={"react-autowhatever-desktop-search--item-"+{index}} aria-selected="false" className={"react-autosuggest__suggestion "+(index == 0 ? "react-autosuggest__suggestion--first ": " ")+ (searchState.hovered == index ? "react-autosuggest__suggestion--highlighted ": "")} data-suggestion-index={index} onMouseEnter={() => setSearchState({...searchState, hovered: index})} onMouseLeave={() => setSearchState({...searchState, hovered: -1})}>
-							<a className="jsx-2670105940" href={slug(trieItem.title)}>
+							<a className="jsx-2670105940" href={BASEURL + trieItem.problem ? "problems/"+ trieItem.problem : "" + slug(trieItem.title)}>
 									<span className="jsx-2670105940 suggestion__title">
 										<span className="ais-Highlight">
 											{
