@@ -7,16 +7,16 @@ import greedyAlgorithm from "./greedyAlgorithm"
 import linkedList from "./linkedList"
 import priorityQueue from "./priorityQueue"
 import stack from "./stack"
-import hashmapMenu from "./hashmapMenu"
 import string from "./string"
 import math from "./math"
 import tree from "./tree"
 import graph from "./graph"
 import slidingWindow from "./slidingWindow"
+import hashMapMenu from "./hashmapMenu"
 
 export const HOMEPAGE = "Getting Started"
-export const BASEURL = "https://www.codingcargo.com/"
-export const SITENAME = "Coding Cargo"
+export const BASE_URL = "https://www.codingcargo.com/"
+export const SITE_NAME = "Coding Cargo"
 export const TWITTER_HANDLE = "@coding_cargo"
 
 const menuItems = []
@@ -25,14 +25,14 @@ const homePage = {
 	post: true
 }
 
-//menuItems.push(homePage)
+menuItems.push(homePage)
 menuItems.push(array)
 menuItems.push(backtracking)
 menuItems.push(binarySearch)
 menuItems.push(dynamicProgramming)
 menuItems.push(graph)
 menuItems.push(greedyAlgorithm)
-menuItems.push(hashmapMenu)
+menuItems.push(hashMapMenu)
 menuItems.push(linkedList)
 menuItems.push(math)
 menuItems.push(priorityQueue)

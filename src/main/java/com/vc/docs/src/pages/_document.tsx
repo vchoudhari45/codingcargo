@@ -1,5 +1,5 @@
 import Document, { Html, Head, Main, NextScript, DocumentContext } from 'next/document'
-import { BASEURL, HOMEPAGE, SITENAME, TWITTER_HANDLE } from '../data/menu'
+import { BASE_URL, HOMEPAGE, SITE_NAME, TWITTER_HANDLE } from '../data/menu'
 import { slug } from '../util/url'
 
 class CustomDocument extends Document {
@@ -12,10 +12,10 @@ class CustomDocument extends Document {
 		const metadata = contentArr[0] ? contentArr[0].replace("[comment]: metadata=", "") : ""
 		const keywords = contentArr[1] ? contentArr[1].replace("[comment]: keywords=", "") : ""
 		const robots = contentArr[2] ? contentArr[2].replace("[comment]: robots=", "") : ""
-		const url = BASEURL + slug(title)
+		const url = BASE_URL + slug(title)
 
 		//imgUrl 
-		const imgUrl = BASEURL + "social-share-image.png"
+		const imgUrl = BASE_URL + "social-share-image.png"
 		const imgWidth = "180"
 		const imgHeight = "180"
 
@@ -50,9 +50,9 @@ Z1d3FiPE58Xcc76QCXvK92e5JP64GHTdnRge6N8wRnDhokPV1SVpHo4Rt/FF8c8fc9pEerMQin1C
 rv8z8W5d9nr/s+AjqkBHsYthbBsAAAAldEVYdGRhdGU6Y3JlYXRlADIwMjAtMDgtMzFUMTE6NDg6
 MTYtMDQ6MDDtGfsJAAAAJXRFWHRkYXRlOm1vZGlmeQAyMDIwLTA4LTMxVDExOjQ4OjE2LTA0OjAw
 nERDtQAAAABJRU5ErkJggg==" rel="icon" type="image/x-icon" />
-					<link rel="manifest" href={BASEURL + "manifest.json"} />
+					<link rel="manifest" href={BASE_URL + "manifest.json"} />
 					<link rel="preconnect" href="https://www.google-analytics.com"></link>
-					<link rel="apple-touch-icon" href={BASEURL + "apple-touch-icon.png"} />
+					<link rel="apple-touch-icon" href={BASE_URL + "apple-touch-icon.png"} />
 
 					<meta name="theme-color" content="#FFFFFF"/>
 					<meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -62,9 +62,9 @@ nERDtQAAAABJRU5ErkJggg==" rel="icon" type="image/x-icon" />
 
 					<meta key="og:locale" property="og:locale" content="en_US" />
 					<meta key="og:type" property="og:type" content="website" />
-					<meta key="og:title" property="og:title" content={SITENAME} />
+					<meta key="og:title" property="og:title" content={SITE_NAME} />
 					<meta key="og:description" property="og:description" content={metadata} />
-					<meta key="og:site_name" property="og:site_name" content={SITENAME} />
+					<meta key="og:site_name" property="og:site_name" content={SITE_NAME} />
 					<meta key="og:url" property="og:url" content={url} />
 					<meta key="og:image" property="og:image" content={imgUrl} />
 					<meta key="og:image:secure_url" property="og:image:secure_url" content={imgUrl} />

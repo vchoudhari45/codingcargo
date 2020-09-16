@@ -7,7 +7,13 @@ const math = {
 			title: "Permutation Sequence",
 			problem: "hard",
 			company: ["Google"]
-		}
+		},
+		{
+            index: 149,
+            title: "Max Points on a Line",
+            problem: "hard",
+            company: ["Google", "Microsoft"]
+        }
 	]
 }
 

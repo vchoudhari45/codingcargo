@@ -1,4 +1,4 @@
-export const hashmapMenu = {
+export const hashMapMenu = {
 	title: "HashMap",
 	topic: true,
 	menuItems: [
@@ -8,12 +8,12 @@ export const hashmapMenu = {
 			problem: "hard"
 		},
 		{
-            index: 128,
-            title: "Longest Consecutive Sequence",
-            problem: "hard",
-            company: ["Amazon", "Facebook", "Google", "Microsoft"]
-        }
+			index: 128,
+			title: "Longest Consecutive Sequence",
+			problem: "hard",
+			company: ["Amazon", "Facebook", "Google", "Microsoft"]
+		}
 	]
 }
 
-export default hashmapMenu
+export default hashMapMenu

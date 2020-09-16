@@ -1,6 +1,9 @@
-package com.vc.hard;
+package com.vc.medium;
 
-import java.util.*;
+import com.vc.hard.TreeNode;
+
+import java.util.ArrayList;
+import java.util.List;
 
 class L145 {
     public List<Integer> postorderTraversal(TreeNode root) {

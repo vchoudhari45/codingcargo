@@ -1,5 +1,5 @@
 import { MutableRefObject, useState } from 'react'
-import { BASEURL } from '../data/menu'
+import { BASE_URL } from '../data/menu'
 import { MenuItem } from '../model/MenuItem'
 import TrieItem from '../model/TrieItem'
 import { slug } from '../util/url'
@@ -136,11 +136,11 @@ export default function renderMenu(data: MenuItem[], selected: MenuItem, depth: 
 							selected.title.toString().toLowerCase() == menuItem.title.toString().toLowerCase() 
 							?
 								<div ref={ref} className={"jsx-3253412043 nav-link selected"}>
-									<a className="jsx-3253412043" href={ BASEURL + (menuItem.problem ? "problems/" + slug(menuItem.problem) + "/" + slug(menuItem.title) : slug(menuItem.title)) }>{menuItem.title}</a>
+									<a className="jsx-3253412043" href={ BASE_URL + (menuItem.problem ? "problems/" + slug(menuItem.problem) + "/" + slug(menuItem.title) : slug(menuItem.title)) }>{menuItem.title}</a>
 								</div>
 							:
 								<div className={"jsx-3253412043 nav-link"}>
-									<a className="jsx-3253412043" href={ BASEURL + (menuItem.problem ? "problems/" + slug(menuItem.problem) + "/" + slug(menuItem.title) : slug(menuItem.title)) }>{menuItem.title}</a>
+									<a className="jsx-3253412043" href={ BASE_URL + (menuItem.problem ? "problems/" + slug(menuItem.problem) + "/" + slug(menuItem.title) : slug(menuItem.title)) }>{menuItem.title}</a>
 								</div>
 						}
 					</div>

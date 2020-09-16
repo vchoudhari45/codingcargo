@@ -1,7 +1,7 @@
 import { MenuItem } from '../../../model/MenuItem'
 import fetch from 'isomorphic-unfetch'
 import { slug, unslug } from '../../../util/url'
-import { BASEURL, MENU, SITENAME } from '../../../data/menu'
+import { BASE_URL, MENU, SITE_NAME } from '../../../data/menu'
 import PageResponse from '../../../model/PageResponse'
 
 function Post({selected, content}: PageResponse) {
@@ -54,7 +54,7 @@ export async function getStaticProps(context) {
 	const codePullRequestUrl = "https://github.com/vchoudhari45/codingcargo/edit/master/src/main/java/com/vc/"+difficulty+"/"+sourceCode+".java"
 	const url = "https://raw.githubusercontent.com/vchoudhari45/codingcargo/master/src/main/java/com/vc/docs/md/"+difficulty+"/"+context.params.problem+".md"
 	const res = await fetch(url)
-	const text = (await res.text()).replace("####CODE_PLACEHOLDER####", replacedHtml).replace(/####LINK_PLACEHOLDER####/g, codePullRequestUrl).replace(/####BASEURL####/g, BASEURL)
+	const text = (await res.text()).replace("####CODE_PLACEHOLDER####", replacedHtml).replace(/####LINK_PLACEHOLDER####/g, codePullRequestUrl).replace(/####BASEURL####/g, BASE_URL)
 
 	const title = unslug(context.params.problem, ' ')
 	const selected = {title: title}
