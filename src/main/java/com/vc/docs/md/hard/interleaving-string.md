@@ -11,7 +11,7 @@ This page explains Java solution to problem <code class="inline">Interleaving St
 
 <h2 class="heading">Problem Statement</h2>
 <p>
-Given s1, s2, and s3, find whether s3 is formed by the interleaving of s1 and s2.
+Given <code class="inline">s1</code>, <code class="inline">s2</code>, and <code class="inline">s3</code>, find whether <code class="inline">s3</code> is formed by the interleaving of <code class="inline">s1</code> and <code class="inline">s2</code>.
 </p>
 
 
@@ -45,8 +45,8 @@ If you have any suggestions in below code, please <a href="####LINK_PLACEHOLDER#
 <blockquote>
 <p>
 O(M * N) Where <br />
-M is total number of elements in input string S1
-N is total number of elements in input string S2
+M is total number of elements in input string S1 <br />
+N is total number of elements in input string S2 <br />
 </p>
 </blockquote>
 

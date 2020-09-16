@@ -15,15 +15,32 @@ class ScrambleString {
         if (dp[l1][l2][r1 - l1] != null) return dp[l1][l2][r1 - l1];
 
         dp[l1][l2][r1 - l1] = false;
+        //s1 = great s2 = rgeat
         for(int i = 0; i + l1 <= r1; i++) {
-            int left1 = l1 + i;
-            int left2 = l2 + i;
-            int right1 = r2 - i;
-            int right2 = l2 + r1 - l1 - i - 1;
-
             dp[l1][l2][r1 - l1] = dp[l1][l2][r1 - l1] ||
-                    (dfs(s1, s2, l1, left1, l2, left2) && dfs(s1, s2,left1 + 1, r1, left2 + 1, r2)) ||
-                    (dfs(s1, s2, l1, left1, right1, r2) && dfs(s1, s2,left1 + 1, r1, l2, right2));
+                    //Check for length i
+                    dfs(
+                            s1, s2,
+                            l1, l1 + i,                                 //g
+                            l2, l2 + i                                  //r
+                    ) &&
+                            dfs(
+                                    s1, s2,
+                                    l1 + i + 1, r1,                     //reat
+                                    l2 + i + 1, r2                      //geat
+                            ) ||
+
+                    //Check for length i, this time s2 in reverse
+                    dfs(
+                            s1, s2,
+                            l1, l1 + i,                                 //g
+                            r2 - i, r2                                  //t
+                    ) &&
+                            dfs(
+                                    s1, s2,
+                                    l1 + i + 1, r1,                     //reat
+                                    l2, l2 + (r1 - l1 - i - 1)          //rgea
+                            );
 
             if(dp[l1][l2][r1 - l1]) return true;
         }

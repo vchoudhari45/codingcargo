@@ -11,23 +11,23 @@ This page explains Java solution to problem <code class="inline">Scramble String
 
 <h2 class="heading">Problem Statement</h2>
 <p>
-We can scramble a string s to get a string t using the following algorithm:
+We can scramble a string <code class="inline">s</code> to get a string <code class="inline">t</code> using the following algorithm:
 </p>
 <ul>
 <li>
-If the length of the string is 1, stop.
+1. If the length of the string is <code class="inline">1</code>, stop.
 </li>
 <li>
-If the length of the string is > 1, do the following:
+2. If the length of the string is <code class="inline">&gt; 1</code>, do the following:
 <ul>
-    <li>Split the string into 2 non-empty substrings at a random index, i.e. if the string is s, divide it to x and y where s = x + y.</li>
-    <li>Randomly, decide to swap the two substrings or to keep them in the same order. i.e. after this step, s may become s = x + y or s = y + x.</li>
-    <li>Apply step 1 recursively on each of the two substrings x and y.</li>
+    <li>2.1. Split the string into <code class="inline">2</code> non-empty substrings at a random index, i.e. if the string is <code class="inline">s</code>, divide it to <code class="inline">x</code> and <code class="inline">y</code> where <code class="inline">s = x + y</code>.</li>
+    <li>2.2. Randomly, decide to swap the two substrings or to keep them in the same order. i.e. after this step, <code class="inline">s</code> may become <code class="inline">s = x + y</code> or <code class="inline">s = y + x</code>.</li>
+    <li>2.3. Apply step <code class="inline">1</code> recursively on each of the two substrings <code class="inline">x</code> and <code class="inline">y</code>.</li>
 </ul>
 </li>
 </ul>
 <p>
-Given two strings s1 and s2 of the same length, return true if s2 is a scrambled string of s1, otherwise, return false.
+Given two strings <code class="inline">s1</code> and <code class="inline">s2</code> of the same length, return <code class="inline">true</code> if <code class="inline">s2</code> is a scrambled string of <code class="inline">s1</code>, otherwise, return <code class="inline">false</code>.
 </p>
 
 
@@ -36,15 +36,6 @@ Given two strings s1 and s2 of the same length, return true if s2 is a scrambled
 <p>
 <b>Input</b>: s1 = "great", s2 = "rgeat"<br/>
 <b>Output</b>: true<br/>
-<b>Explanation</b>: <br />
-One possible scenario applied on s1 is: <br />
-"great" --> "gr/eat" // divide at random index. <br />
-"gr/eat" --> "gr/eat" // random decision is not to swap the two substrings and keep them in order.<br />
-"gr/eat" --> "g/r / e/at" // apply the same algorith recursively on both substrings. divide at ranom index each of them.<br/>
-"g/r / e/at" --> "r/g / e/at" // random decision was to swap the first substing and to keep the second substring in the same order. <br />
-"r/g / e/at" --> "r/g / e/ a/t" // again apply the algorithm recursively, divide "at" to "a/t". < br />
-"r/g / e/ a/t" --> "r/g / e/ a/t" // random decision is to keep both substings in the same order. <br />
-The algorithm stops now and the result string is "rgeat" which is s2.
 </p>
 </blockquote>
 
@@ -69,7 +60,7 @@ If you have any suggestions in below code, please <a href="####LINK_PLACEHOLDER#
 <h2 class="heading">Time Complexity</h2>
 <blockquote>
 <p>
-O(N ^ 4) Where <br />
+O(N!) Where <br />
 N is length of input string s1 or s2(Both will have same length)
 </p>
 </blockquote>

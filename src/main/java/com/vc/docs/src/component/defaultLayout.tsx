@@ -19,12 +19,12 @@ const DefaultLayout: React.FC<Props> = ({ content, selected } : Props) => {
 	const renderMenuResponse = renderMenu(MENU, selected, 1, itemRef, "1")
 
 	useEffect(() => {
-		if(itemRef && itemRef.current && window) {
-			if(selected != null && selected.title != HOMEPAGE) {
-				itemRef.current.scrollIntoView()
-				window.scrollTo(0, 0)
-			}
-		}
+		// if(itemRef && itemRef.current && window) {
+		// 	if(selected != null && selected.title != HOMEPAGE) {
+		// 		itemRef.current.scrollIntoView()
+		// 		window.scrollTo(0, 0)
+		// 	}
+		// }
 		ReactGA.pageview(selected && selected.title ? slug(selected.title) : slug(HOMEPAGE))
 	}, [])
 

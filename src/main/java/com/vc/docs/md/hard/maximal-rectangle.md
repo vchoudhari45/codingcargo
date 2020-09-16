@@ -26,6 +26,7 @@ Input:
   &nbsp;&nbsp;&nbsp;&nbsp;["1","1","1","1","1"], <br />
   &nbsp;&nbsp;&nbsp;&nbsp;["1","0","0","1","0"]  <br />
 ]
+<br />
 <b>Output</b>: 6<br/>
 </p>
 </blockquote>

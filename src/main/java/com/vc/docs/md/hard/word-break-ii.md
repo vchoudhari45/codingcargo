@@ -11,7 +11,7 @@ This page explains Java solution to problem <code class="inline">Word Break II</
 
 <h2 class="heading">Problem Statement</h2>
 <p>
-Given a non-empty string s and a dictionary wordDict containing a list of non-empty words, add spaces in s to construct a sentence where each word is a valid dictionary word. Return all such possible sentences.
+Given a non-empty string <code class="inline">s</code> and a dictionary <code class="inline">wordDict</code> containing a list of non-empty words, add spaces in <code class="inline">s</code> to construct a sentence where each word is a valid dictionary word. Return all such possible sentences.
 </p>
 <p>
 <b>Note:</b>

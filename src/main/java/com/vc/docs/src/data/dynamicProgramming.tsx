@@ -50,6 +50,12 @@ const dynamicProgramming = {
             title: "Palindrome Partitioning II",
             problem: "hard",
             company: ["Amazon"]
+        },
+        {
+            index: 140,
+            title: "Word Break II",
+            problem: "hard",
+            company: ["Amazon", "Facebook", "Microsoft"]
         }
 	]
 }
