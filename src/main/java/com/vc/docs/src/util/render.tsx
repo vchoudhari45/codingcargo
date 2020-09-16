@@ -147,7 +147,8 @@ export default function renderMenu(data: MenuItem[], selected: MenuItem, depth: 
 				)
 				const newObj = {
 					id: idPrefix + i,
-					title: menuItem.title
+					title: menuItem.title,
+					problem: menuItem.problem
 				}
 				menuData = menuData.concat(newObj)
 			}
