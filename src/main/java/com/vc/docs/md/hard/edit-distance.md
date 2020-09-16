@@ -11,7 +11,7 @@ This page explains Java solution to problem <code class="inline">Edit Distance</
 
 <h2 class="heading">Problem Statement</h2>
 <p>
-Given two words word1 and word2, find the minimum number of operations required to convert word1 to word2.
+Given two words <code class="inline">word1</code> and <code class="inline">word2</code>, find the minimum number of operations required to convert <code class="inline">word1</code> to <code class="inline">word2</code>.
 </p>
 <p>You have the following 3 operations permitted on a word:</p>
 <ul>
@@ -25,7 +25,8 @@ Given two words word1 and word2, find the minimum number of operations required 
 <p>
 <b>Input</b>: word1 = "horse", word2 = "ros"<br/>
 <b>Output</b>: 3<br/>
-<b>Explanation</b>: horse -> rorse (replace 'h' with 'r') <br />
+<b>Explanation</b>: <br />
+                    horse -> rorse (replace 'h' with 'r') <br />
                     rorse -> rose (remove 'r')<br />
                     rose -> ros (remove 'e')<br />
 </p>
@@ -36,7 +37,8 @@ Given two words word1 and word2, find the minimum number of operations required 
 <p>
 <b>Input</b>: word1 = "intention", word2 = "execution"<br/>
 <b>Output</b>: 5<br/>
-<b>Explanation</b>: intention -> inention (remove 't')<br />
+<b>Explanation</b>: <br />
+                    intention -> inention (remove 't')<br />
                     inention -> enention (replace 'i' with 'e')<br />
                     enention -> exention (replace 'n' with 'x')<br />
                     exention -> exection (replace 'n' with 'c')<br />

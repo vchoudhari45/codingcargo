@@ -11,7 +11,7 @@ This page explains Java solution to problem <code class="inline">Text Justificat
 
 <h2 class="heading">Problem Statement</h2>
 <p>
-Given an array of words and a width maxWidth, format the text such that each line has exactly maxWidth characters and is fully (left and right) justified.
+Given an array of <code class="inline">words</code> and a width <code class="inline">maxWidth</code>, format the text such that each line has exactly <code class="inline">maxWidth</code> characters and is fully (left and right) justified.
 </p>
 <p>
 You should pack your words in a greedy approach; that is, pack as many words as you can in each line. Pad extra spaces ' ' when necessary so that each line has exactly maxWidth characters.
@@ -28,9 +28,9 @@ For the last line of text, it should be left justified and no extra space is ins
 <blockquote>
 <p>
 <b>Input</b>: words = ["This", "is", "an", "example", "of", "text", "justification."] maxWidth = 16<br />
-<b>Output</b>: ["This    is    an", <br />
-                "example  of text", <br />
-                "justification.  "]
+<b>Output</b>: [<br /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"This    is    an", <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"example  of text", <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"justification.  "]
 </p>
 </blockquote>
 
@@ -38,9 +38,9 @@ For the last line of text, it should be left justified and no extra space is ins
 <blockquote>
 <p>
 <b>Input</b>: words = ["What","must","be","acknowledgment","shall","be"] maxWidth = 16<br />
-<b>Output</b>: ["What   must   be",<br/>
-                "acknowledgment  ",<br/>
-                "shall be        "]
+<b>Output</b>: [<br /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"What   must   be",<br/>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"acknowledgment  ",<br/>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"shall be        "]
 </p>
 </blockquote>
 

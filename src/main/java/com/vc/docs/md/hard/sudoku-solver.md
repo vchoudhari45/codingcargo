@@ -11,7 +11,7 @@ This page explains Java solution to problem <code class="inline">Sudoku Solver</
 
 <h2 class="heading">Problem Statement</h2>
 <p>
-Write a program to solve a <a href="https://simple.wikipedia.org/wiki/Sudoku" class="absolute" target="_blank" rel="noopener noreferrer">Sudoku puzzle</a> by filling the empty cells. Empty cells are indicated by the character '.'. 
+Write a program to solve a <a href="https://simple.wikipedia.org/wiki/Sudoku" class="absolute" target="_blank" rel="noopener noreferrer">Sudoku puzzle</a> by filling the empty cells. Empty cells are indicated by the character <code class="inline">.</code>. 
 </p>
 
 <b>Example 1:</b>
