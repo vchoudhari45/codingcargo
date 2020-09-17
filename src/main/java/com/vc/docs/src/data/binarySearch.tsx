@@ -7,7 +7,13 @@ const binarySearch = {
 			title: "Median of Two Sorted Arrays",
 			problem: "hard",
 			company: ["Amazon", "Facebook", "Google", "Microsoft"]
-		}
+		},
+		{
+            index: 154,
+            title: "Find Minimum in Rotated Sorted Array II",
+            problem: "hard",
+            company: ["Facebook"]
+        }
 	]
 }
 

@@ -15,7 +15,7 @@ Given two words <code class="inline">beginWord</code> and <code class="inline">e
 </p>
 <ul>
 <li>Only one letter can be changed at a time.</li>
-<li>Each transformed word must exist in the word list. Note that beginWord is not a transformed word.</li>
+<li>Each transformed word must exist in the word list. Note that <code class="inline">beginWord</code> is not a transformed word.</li>
 </ul>
 
 

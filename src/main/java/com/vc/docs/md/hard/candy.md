@@ -27,19 +27,20 @@ What is the minimum candies you must give?
 <b>Example 1:</b>
 <blockquote>
 <p>
-<b>Input</b>: [1,2,2] <br />
-<b>Output</b>: 4 <br/>
-<b>Explanation</b>: You can allocate to the first, second and third child with 1, 2, 1 candies respectively.<br/>
+<b>Input</b>: [1,0,2] <br />
+<b>Output</b>: 5 <br/>
+<b>Explanation</b>: <br/>
+You can allocate to the first, second and third child with 2, 1, 2 candies respectively.<br/>
 </p>
 </blockquote>
 
 <b>Example 2:</b>
 <blockquote>
 <p>
-<b>Input</b>: A = [1,2], B = [3,4]<br/>
-<b>Output</b>: 2.50000<br/>
+<b>Input</b>: A = [1,2,2]<br/>
+<b>Output</b>: 4<br/>
 <b>Explanation</b>: <br />
-You can allocate to the first, second and third child with 1, 2, 1 candies respectively.<br/>
+You can allocate to the first, second and third child with 1, 2, 1 candies respectively.<br />
 The third child gets 1 candy because it satisfies the above two conditions.<br />
 </p>
 </blockquote>

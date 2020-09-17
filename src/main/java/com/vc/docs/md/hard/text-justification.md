@@ -27,20 +27,22 @@ For the last line of text, it should be left justified and no extra space is ins
 <b>Example 1:</b>
 <blockquote>
 <p>
-<b>Input</b>: words = ["This", "is", "an", "example", "of", "text", "justification."] maxWidth = 16<br />
+<b>Input</b>: words = ["This", "is", "an", "example", "of", "text", "justification."]<br/> maxWidth = 16<br />
 <b>Output</b>: [<br /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"This    is    an", <br />
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"example  of text", <br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"justification.  "]
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"justification.  "
+                ]
 </p>
 </blockquote>
 
 <b>Example 2:</b>
 <blockquote>
 <p>
-<b>Input</b>: words = ["What","must","be","acknowledgment","shall","be"] maxWidth = 16<br />
+<b>Input</b>: words = ["What","must","be","acknowledgment","shall","be"]<br/> maxWidth = 16<br />
 <b>Output</b>: [<br /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"What   must   be",<br/>
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"acknowledgment  ",<br/>
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"shall be        "]
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"shall be        "
+                ]
 </p>
 </blockquote>
 

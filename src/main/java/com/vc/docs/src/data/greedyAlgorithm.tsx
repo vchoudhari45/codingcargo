@@ -8,7 +8,13 @@ const greedyAlgorithm = {
 			problem: "hard",
 			company: ["Amazon", "Google", "Microsoft"],
 			similar: ["Jump Game", "Jump Game III"]
-		}
+		},
+		{
+            index: 68,
+            title: "Text Justification",
+            problem: "hard",
+            company: ["Amazon", "Google"]
+        }
 	]
 }
 

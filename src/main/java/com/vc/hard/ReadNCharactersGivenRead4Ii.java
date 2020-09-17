@@ -1,12 +1,18 @@
 package com.vc.hard;
 
+import java.util.Random;
+
 class Reader4 {
+    private Random random = new Random();
     public int read4(char[] buf) {
-        //dummy implementation for compilation, not required when using below solution in leetcode
-        return 4;
+        int count = random.nextInt(5);
+        for(int i = 0; i < count; i++) {
+            buf[i] = (char) random.nextInt();
+        }
+        return count;
     }
 }
-public class L158 extends Reader4 {
+public class ReadNCharactersGivenRead4Ii extends Reader4 {
     /**
      * @param buf Destination buffer
      * @param n   Number of characters to read

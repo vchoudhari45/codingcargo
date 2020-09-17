@@ -20,12 +20,12 @@ Given <code class="inline">n</code> points on a 2D plane, find the maximum numbe
 <b>Input</b>: [[1,1],[2,2],[3,3]]<br/>
 <b>Output</b>: 3<br/>
 <b>Explanation</b>: <br />
-^
-|
-|        o
-|     o
-|  o  
-+------------->
+^<br />
+|<br />
+|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;o<br />
+|&nbsp;&nbsp;&nbsp;&nbsp;o<br />     
+|&nbsp;&nbsp;o<br />   
++-------------><br />
 0  1  2  3  4
 </p>
 </blockquote>
@@ -35,15 +35,6 @@ Given <code class="inline">n</code> points on a 2D plane, find the maximum numbe
 <p>
 <b>Input</b>: [[1,1],[3,2],[5,3],[4,1],[2,3],[1,4]]<br/>
 <b>Output</b>: 4<br/>
-<b>Explanation</b>: <br />
-^
-|
-|  o
-|     o        o
-|        o
-|  o        o
-+------------------->
-0  1  2  3  4  5  6
 </p>
 </blockquote>
 

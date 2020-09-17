@@ -3,7 +3,7 @@
 [comment]: robots=
 <h1>Welcome to Coding Cargo</h1>
 <p>
-Hi there! and welcome to Coding Cargo.
+Hi there! and Welcome to Coding Cargo.
 </p>
 <p>
 My name is Vishal, and codingcargo.com is my attempt to solve coding problems from competitive websites. Please read and share if you enjoy reading my solutions. 
