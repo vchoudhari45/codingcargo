@@ -46,6 +46,12 @@ const dynamicProgramming = {
             similar: ["Best Time to Buy and Sell Stock", "Best Time to Buy and Sell Stock II", "Best Time to Buy and Sell Stock IV"]
         },
         {
+            index: 188,
+            title: "Best Time to Buy and Sell Stock IV",
+            problem: "hard",
+            company: ["Amazon", "Google"]
+        },
+        {
             index: 132,
             title: "Palindrome Partitioning II",
             problem: "hard",
@@ -56,6 +62,12 @@ const dynamicProgramming = {
             title: "Word Break II",
             problem: "hard",
             company: ["Amazon", "Facebook", "Microsoft"]
+        },
+        {
+            index: 174,
+            title: "Dungeon Game",
+            problem: "hard",
+            company: ["Google"]
         }
 	]
 }

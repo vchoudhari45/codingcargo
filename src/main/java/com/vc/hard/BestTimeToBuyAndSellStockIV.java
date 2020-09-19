@@ -2,7 +2,7 @@ package com.vc.hard;
 
 import java.util.*;
 
-class L188 {
+class BestTimeToBuyAndSellStockIV {
     public int maxProfit(int k, int[] prices) {
         int n = prices.length;
         if(n == 0) return 0;

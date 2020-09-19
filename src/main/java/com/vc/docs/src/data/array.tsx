@@ -25,6 +25,12 @@ const array = {
             title: "Candy",
             problem: "hard",
             company: ["Amazon"]
+        },
+        {
+            index: 164,
+            title: "Maximum Gap",
+            problem: "hard",
+            company: ["Amazon"]
         }
 	]
 }
