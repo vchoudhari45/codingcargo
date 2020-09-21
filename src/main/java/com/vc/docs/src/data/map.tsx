@@ -1,5 +1,5 @@
 export const hashMapMenu = {
-	title: "HashMap",
+	title: "Map",
 	topic: true,
 	menuItems: [
 		{
@@ -12,7 +12,13 @@ export const hashMapMenu = {
 			title: "Longest Consecutive Sequence",
 			problem: "hard",
 			company: ["Amazon", "Facebook", "Google", "Microsoft"]
-		}
+		},
+		{
+            index: 218,
+            title: "The Skyline Problem",
+            problem: "hard",
+            company: ["Amazon", "Facebook", "Google", "Microsoft"]
+        }
 	]
 }
 

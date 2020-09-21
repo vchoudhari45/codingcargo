@@ -99,7 +99,7 @@ const main: React.FC<Props> = ({prev, current, next, content}: Props) => {
 				{
 					current.title && contentArr.length >= 5 && title.toLowerCase() != HOMEPAGE.toLowerCase() ?
 					<footer className="jsx-29590182">
-					    <a href="https://github.com/vchoudhari45/codingcargo/issues" target="_blank" rel="noopener noreferrer" className="jsx-29590182">Have a question? Please create a Issue here.</a>
+					    <a href="https://github.com/vchoudhari45/codingcargo/issues" target="_blank" rel="noopener noreferrer" className="jsx-29590182">Have a question? Please create an issue here.</a>
 					</footer>
 					: ""
 				}

@@ -10,9 +10,10 @@ import stack from "./stack"
 import string from "./string"
 import math from "./math"
 import tree from "./tree"
+import trie from "./trie"
 import graph from "./graph"
 import slidingWindow from "./slidingWindow"
-import hashMapMenu from "./hashmapMenu"
+import map from "./map"
 
 export const HOMEPAGE = "Getting Started"
 export const BASE_URL = "https://www.codingcargo.com/"
@@ -32,14 +33,15 @@ menuItems.push(binarySearch)
 menuItems.push(dynamicProgramming)
 menuItems.push(graph)
 menuItems.push(greedyAlgorithm)
-menuItems.push(hashMapMenu)
 menuItems.push(linkedList)
+menuItems.push(map)
 menuItems.push(math)
 menuItems.push(priorityQueue)
 menuItems.push(slidingWindow)
 menuItems.push(stack)
 menuItems.push(string)
 menuItems.push(tree)
+menuItems.push(trie)
 export const MENU: MenuItem[] = [
 	{
     title: "Problem Set",

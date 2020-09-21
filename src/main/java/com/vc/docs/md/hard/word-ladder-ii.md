@@ -14,8 +14,8 @@ This page explains Java solution to problem <code class="inline">Word Ladder II<
 Given two words <code class="inline">beginWord</code> and <code class="inline">endWord</code>, and a dictionary's word list, find all shortest transformation sequence(s) from <code class="inline">beginWord</code> to <code class="inline">endWord</code>, such that:
 </p>
 <ul>
-<li>Only one letter can be changed at a time.</li>
-<li>Each transformed word must exist in the word list. Note that <code class="inline">beginWord</code> is not a transformed word.</li>
+<li>1. Only one letter can be changed at a time.</li>
+<li>2. Each transformed word must exist in the word list. Note that <code class="inline">beginWord</code> is not a transformed word.</li>
 </ul>
 
 
