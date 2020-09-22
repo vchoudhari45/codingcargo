@@ -21,6 +21,12 @@ const stack = {
             problem: "hard",
             company: ["Amazon", "Google", "Microsoft"],
             similar: ["Largest Rectangle in Histograms"]
+        },
+        {
+            index: 224,
+            title: "Basic Calculator",
+            problem: "hard",
+            company: ["Amazon", "Facebook", "Google", "Microsoft"]
         }
 	]
 }

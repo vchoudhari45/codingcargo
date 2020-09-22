@@ -42,27 +42,28 @@ const main: React.FC<Props> = ({prev, current, next, content}: Props) => {
 					{
 						prev == null || title.toLowerCase() == HOMEPAGE.toLowerCase() ? <span className="jsx-113938279"></span> : 
 						<a href={ BASE_URL + (prev.problem ? "problems/" + slug(prev.problem) + "/" + slug(prev.title) : slug(prev.title)) } className="jsx-4279592588 btn fw4 no-drag">
-								<span className="jsx-113938279">
-										<svg viewBox="0 0 24 24" width="24" height="24">
-												<g fill="#0070f3">
-														<path fill="#0070f3" d="M14,17.414l-4.707-4.707c-0.391-0.391-0.391-1.023,0-1.414L14,6.586L15.414,8l-4,4l4,4L14,17.414z" />
-												</g>
-										</svg>
-								</span>{prev.title}
+							<span className="jsx-113938279">
+									<svg viewBox="0 0 24 24" width="24" height="24">
+											<g fill="#0070f3">
+												<path fill="#0070f3" d="M14,17.414l-4.707-4.707c-0.391-0.391-0.391-1.023,0-1.414L14,6.586L15.414,8l-4,4l4,4L14,17.414z" />
+											</g>
+									</svg>
+							</span>
+							<span className="pagination">{prev.title}</span>
 						</a>
 					}
 
 					{
 						next == null || title.toLowerCase() == HOMEPAGE.toLowerCase() ? <span className="jsx-29590182"></span> :
 						<a href={ BASE_URL + (next.problem ? "problems/" + slug(next.problem) + "/" + slug(next.title) : slug(next.title)) } className="jsx-4279592588 btn fw4 no-drag">
-								{next.title}
-								<span className="jsx-3578282791">
-										<svg width="24" height="24" viewBox="0 0 24 24">
-												<g fill="#0070f3">
-														<path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z" />
-												</g>
-										</svg>
-								</span>
+							<span className="pagination">{next.title}</span>
+							<span className="jsx-3578282791">
+									<svg width="24" height="24" viewBox="0 0 24 24">
+											<g fill="#0070f3">
+												<path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z" />
+											</g>
+									</svg>
+							</span>
 						</a>
 					}
 				</div>
