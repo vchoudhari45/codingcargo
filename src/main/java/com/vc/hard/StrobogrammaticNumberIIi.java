@@ -2,7 +2,7 @@ package com.vc.hard;
 
 import java.util.*;
 
-class L248 {
+class StrobogrammaticNumberIIi {
     int res = 0;
     public int strobogrammaticInRange(String low, String high) {
         HashMap<Character, Character> map = new HashMap<>();
@@ -20,32 +20,26 @@ class L248 {
         return res;
     }
 
-    private void solve(char[] current, HashMap<Character, Character> map,
+    private void solve(char[] number, HashMap<Character, Character> map,
                        int left, int right,
                        long lo, long hi) {
         if(left > right) {
-            //System.out.println(new String(current));
-            long cInt = Long.parseLong(new String(current));
-            if(cInt >= lo && cInt <= hi) {
-                //System.out.println(cInt);
-                res++;
-            }
+            long numberLong = Long.parseLong(new String(number));
+            if(numberLong >= lo && numberLong <= hi) res++;
         }
         else {
             for(Map.Entry<Character, Character> entry: map.entrySet()) {
                 char leftValue = entry.getKey();
                 char rightValue = entry.getValue();
 
-                current[left] = leftValue;
-                current[right] = rightValue;
+                number[left] = leftValue;
+                number[right] = rightValue;
 
-                //don't start with 0
-                if (current.length != 1 && leftValue == '0' && left == 0) continue;
+                if(number.length != 1 && leftValue == '0' && left == 0) continue;
 
-                //don't put 6/9 at the middle of string.
-                if (left == right && (leftValue == '6' || leftValue == '9')) continue;
+                if(left == right && (leftValue == '6' || leftValue == '9')) continue;
 
-                solve(current, map, left + 1, right - 1, lo, hi);
+                solve(number, map, left + 1, right - 1, lo, hi);
             }
         }
     }

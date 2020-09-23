@@ -13,6 +13,12 @@ const math = {
             title: "Max Points on a Line",
             problem: "hard",
             company: ["Google", "Microsoft"]
+        },
+        {
+            index: 233,
+            title: "Number of Digit One",
+            problem: "hard",
+            company: ["Amazon"]
         }
 	]
 }
