@@ -1,9 +1,9 @@
 [comment]: metadata=Java Solution to problem Word Search II using Trie Data Structure.
-[comment]: keywords=Median of Two Sorted Arrays, Binary Search
+[comment]: keywords=Word Search II, Trie Data Structure
 [comment]: robots=index, follow
 
 
-<h1>Median of Two Sorted Arrays</h1>
+<h1>Word Search II</h1>
 <p>
 This page explains Java solution to problem <code class="inline">Word Search II</code> using <code class="inline">Trie</code> data structure.
 </p>
@@ -27,7 +27,7 @@ board = [<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;['i','h','k','r'],<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;['i','f','l','v']<br/>
 ]<br/>
-words = ["oath","pea","eat","rain"]
+words = ["oath","pea","eat","rain"]<br />
 <b>Output</b>: ["eat","oath"]<br/>
 </p>
 </blockquote>
