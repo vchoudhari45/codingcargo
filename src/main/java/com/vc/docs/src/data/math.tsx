@@ -19,6 +19,12 @@ const math = {
             title: "Number of Digit One",
             problem: "hard",
             company: ["Amazon"]
+        },
+        {
+            index: 248,
+            title: "Strobogrammatic Number III",
+            problem: "hard",
+            company: ["Google"]
         }
 	]
 }

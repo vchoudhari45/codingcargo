@@ -68,6 +68,11 @@ const dynamicProgramming = {
             title: "Dungeon Game",
             problem: "hard",
             company: ["Google"]
+        },
+        {
+            index: 265,
+            title: "Paint House II",
+            problem: "hard"
         }
 	]
 }
