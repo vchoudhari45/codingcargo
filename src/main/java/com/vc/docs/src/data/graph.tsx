@@ -7,7 +7,13 @@ const graph = {
 			title: "Word Ladder II",
 			problem: "hard",
 			company: ["Amazon", "Facebook"]
-		}
+		},
+		{
+            index: 269,
+            title: "Alien Dictionary",
+            problem: "hard",
+            company: ["Amazon", "Facebook", "Google", "Microsoft"]
+        }
 	]
 }
 
