@@ -2,11 +2,27 @@ package com.vc.hard;
 
 import java.util.*;
 
-class L272 {
+/**
+ * Definition for a binary tree node.
+ * public class TreeNode {
+ *     int val;
+ *     TreeNode left;
+ *     TreeNode right;
+ *     TreeNode() {}
+ *     TreeNode(int val) { this.val = val; }
+ *     TreeNode(int val, TreeNode left, TreeNode right) {
+ *         this.val = val;
+ *         this.left = left;
+ *         this.right = right;
+ *     }
+ * }
+ */
+class ClosestBinarySearchTreeValueIi {
     public List<Integer> closestKValues(TreeNode root, double target, int k) {
-        Stack<TreeNode> st = new Stack<>();
         Deque<Integer> res = new LinkedList<>();
+
         TreeNode current = root;
+        Stack<TreeNode> st = new Stack<>();
         while(current != null || !st.isEmpty()) {
             if(current != null) {
                 st.push(current);
@@ -15,9 +31,9 @@ class L272 {
             else {
                 current = st.pop();
                 if(res.size() == k) {
-                    double diff = Math.abs(res.peekFirst() - target);
-                    double currentDiff = Math.abs(current.val - target);
-                    if(diff > currentDiff) res.pollFirst();
+                    double diff = Math.abs(target - res.peekFirst());
+                    double currentDiff = Math.abs(target - current.val);
+                    if(currentDiff < diff) res.pollFirst();
                     else return new ArrayList<>(res);
                 }
                 res.add(current.val);

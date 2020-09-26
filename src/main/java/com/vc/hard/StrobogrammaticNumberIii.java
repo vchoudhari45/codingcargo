@@ -2,7 +2,7 @@ package com.vc.hard;
 
 import java.util.*;
 
-class StrobogrammaticNumberIIi {
+class StrobogrammaticNumberIii {
     int res = 0;
     public int strobogrammaticInRange(String low, String high) {
         HashMap<Character, Character> map = new HashMap<>();
