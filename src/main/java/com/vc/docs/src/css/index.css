@@ -582,6 +582,19 @@ html,body{
     color:#111;
 }
 
+::selection{	
+	background-color:#0070f3;	
+	color:#fff;	
+}	
+[role='grid']:focus{	
+	outline:none;	
+}
+
+iframe{	
+	width:100%;	
+	height:100%;	
+	border:none;	
+}
 
 svg{
     text-rendering:optimizeLegibility;
