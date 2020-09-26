@@ -2211,11 +2211,18 @@ p.paragraph-heading {
 }
 
 .pagination{
-    visibility: hidden;
+  display: none;
+}
+
+.pagination-mobile{
+  display: block;
 }
 
 @media (min-width:992px){
-    .pagination{
-        visibility: visible;
+  .pagination{
+    display: block;
+	}
+	.pagination-mobile {
+		display: none;
 	}
 }
