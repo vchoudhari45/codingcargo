@@ -50,6 +50,7 @@ Z1d3FiPE58Xcc76QCXvK92e5JP64GHTdnRge6N8wRnDhokPV1SVpHo4Rt/FF8c8fc9pEerMQin1C
 rv8z8W5d9nr/s+AjqkBHsYthbBsAAAAldEVYdGRhdGU6Y3JlYXRlADIwMjAtMDgtMzFUMTE6NDg6
 MTYtMDQ6MDDtGfsJAAAAJXRFWHRkYXRlOm1vZGlmeQAyMDIwLTA4LTMxVDExOjQ4OjE2LTA0OjAw
 nERDtQAAAABJRU5ErkJggg==" rel="icon" type="image/x-icon" />
+                    <link rel="preload" href={BASE_URL + "/fonts/inter-var-latin.woff2"} />
 					<link rel="manifest" href={BASE_URL + "manifest.json"} />
 					<link rel="preconnect" href="https://www.google-analytics.com"></link>
 					<link rel="apple-touch-icon" href={BASE_URL + "apple-touch-icon.png"} />
