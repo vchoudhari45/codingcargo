@@ -28,13 +28,13 @@ Given <code class="inline">n</code> non-negative integers representing the histo
 <p>
 Histogram where width of each bar is 1, given height = [2,1,5,6,2,3].
 </p>
-<img src="####BASEURL####largest-rectangle-in-histogram/histogram-1.jpg" alt="Largest Rectangle Histogram Input" />
+<img title="Largest Rectangle Histogram Input" src="####BASEURL####largest-rectangle-in-histogram/histogram-1.jpg" alt="Largest Rectangle Histogram Input" />
 
 <h3>Output:</h3>
 <p>
 The largest rectangle is shown in the shaded area, which has area = 10 unit.
 </p>
-<img src="####BASEURL####largest-rectangle-in-histogram/histogram-2.jpg" alt="Largest Rectangle Histogram Output" />
+<img title="Largest Rectangle Histogram Output" src="####BASEURL####largest-rectangle-in-histogram/histogram-2.jpg" alt="Largest Rectangle Histogram Output" />
 
 
 <h2 class="heading">Solution</h2>

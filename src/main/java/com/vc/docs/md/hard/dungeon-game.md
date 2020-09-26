@@ -29,7 +29,7 @@ Write a function to determine the knight's minimum initial health so that he is 
 
 <b>Example 1:</b>
 <b>Input</b><br/>
-<img class="paragraph-heading" src="####BASEURL####dungeon-game/dungeon.jpg" alt="Dungeon Game Input" /> <br />
+<img title="Dungeon Game Input" class="paragraph-heading" src="####BASEURL####dungeon-game/dungeon.jpg" alt="Dungeon Game Input" /> <br />
 <b>Output</b>: 7<br/>
 <b>Explanation</b>: <br />
 For example, given the dungeon below, the initial health of the knight must be at least 7 if he follows the optimal path <code class="inline">RIGHT-> RIGHT -> DOWN -> DOWN</code>.<br/>

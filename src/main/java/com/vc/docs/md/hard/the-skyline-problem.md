@@ -13,7 +13,7 @@ This page explains Java solution to problem <code class="inline">The Skyline Pro
 <p>
 A city's skyline is the outer contour of the silhouette formed by all the buildings in that city when viewed from a distance. Now suppose you are given the locations and height of all the buildings as shown on a cityscape photo <code class="inline">(Figure A)</code>, write a program to output the skyline formed by these buildings collectively <code class="inline">(Figure B)</code>.
 </p>
-<img class="paragraph-heading" src="####BASEURL####skyline/skyline-1.jpg" alt="Skyline Problem" /> 
+<img title="Skyline Problem" class="paragraph-heading" src="####BASEURL####skyline/skyline-1.jpg" alt="Skyline Problem" /> 
 <p class="paragraph-heading">
 The geometric information of each building is represented by a triplet of integers <code class="inline">[Li, Ri, Hi]</code>, where <code class="inline">Li</code> and <code class="inline">Ri</code> are the <code class="inline">x</code> coordinates of the left and right edge of the ith building, respectively, and <code class="inline">Hi</code> is its height. It is guaranteed that <code class="inline">0 ≤ Li, Ri ≤ INT_MAX, 0 < Hi ≤ INT_MAX, and Ri - Li > 0</code>. You may assume all buildings are perfect rectangles grounded on an absolutely flat surface at height <code class="inline">0</code>.
 </p>

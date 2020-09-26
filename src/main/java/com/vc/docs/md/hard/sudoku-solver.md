@@ -16,10 +16,10 @@ Write a program to solve a <a href="https://simple.wikipedia.org/wiki/Sudoku" cl
 
 <b>Example 1:</b>
 <p>Input: A Sudoku Puzzle</p>
-<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/ff/Sudoku-by-L2G-20050714.svg/250px-Sudoku-by-L2G-20050714.svg.png" />
+<img title="Sudoku Puzzle Input" alt="Sudoku Puzzle Input" src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/ff/Sudoku-by-L2G-20050714.svg/250px-Sudoku-by-L2G-20050714.svg.png" />
 
 <p class="paragraph-heading">Output: It's Solution number marked in Red</p>
-<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/31/Sudoku-by-L2G-20050714_solution.svg/250px-Sudoku-by-L2G-20050714_solution.svg.png" />
+<img title="Sudoku Puzzle Output" alt="Sudoku Puzzle Output" src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/31/Sudoku-by-L2G-20050714_solution.svg/250px-Sudoku-by-L2G-20050714_solution.svg.png" />
 
 
 <h2 class="heading">Solution</h2>
