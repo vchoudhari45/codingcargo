@@ -705,6 +705,16 @@ pre code:before,pre code:after{
 
 
 
+a[role='button']{
+	-webkit-user-select:none;
+	-moz-user-select:none;
+	-ms-user-select:none;
+	-khtml-user-select:none;
+	-webkit-user-select:none;
+	-moz-user-select:none;
+	-ms-user-select:none;
+	user-select:none;
+}
 
 .no-tap-highlight,a{
     -webkit-touch-callout:none;
