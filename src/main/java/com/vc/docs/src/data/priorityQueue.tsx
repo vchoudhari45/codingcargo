@@ -7,7 +7,13 @@ const priorityQueue = {
 			title: "Merge k Sorted Lists",
 			problem: "hard",
 			company: ["Amazon", "Facebook", "Google", "Microsoft"]
-		}
+		},
+		{
+            index: 295,
+            title: "Find Median from Data Stream",
+            problem: "hard",
+            company: ["Amazon", "Facebook", "Google", "Microsoft"]
+        }
 	]
 }
 

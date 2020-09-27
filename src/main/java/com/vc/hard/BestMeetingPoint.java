@@ -1,6 +1,6 @@
 package com.vc.hard;
 
-class L296 {
+class BestMeetingPoint {
     public int minTotalDistance(int[][] grid) {
         int n = grid.length;
         int m = grid[0].length;
@@ -16,17 +16,9 @@ class L296 {
             }
         }
 
-        System.out.print("Rows: ");
-        for(Integer r: row) System.out.print(r+" ");
-
-        //System.out.print("\nColumn: ");
-        for(Integer c: col) System.out.print(c+" ");
-
         int minDistanceRow = minDistance(row);
         int minDistanceCol = minDistance(col);
 
-        //System.out.print("\nValues: ");
-        //System.out.print(minDistanceRow+" "+minDistanceCol);
         return minDistanceRow + minDistanceCol;
     }
 

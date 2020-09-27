@@ -15,6 +15,12 @@ const array = {
 			company: ["Amazon", "Facebook", "Google", "Microsoft"]
 		},
 		{
+            index: 296,
+            title: "Best Meeting Point",
+            problem: "hard",
+            company: ["Amazon", "Google"]
+        },
+		{
 			index: 57,
 			title: "Insert Interval",
 			problem: "hard",
