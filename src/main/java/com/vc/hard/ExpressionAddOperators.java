@@ -2,15 +2,14 @@ package com.vc.hard;
 
 import java.util.*;
 
-class L282 {
+class ExpressionAddOperators {
     public List<String> addOperators(String num, int target) {
         List<String> res = new ArrayList<>();
         solve("", num, 0, 0, target, 0, res);
         return res;
     }
 
-    private void solve(String expr, String num,
-                       int index, long current, long target, long prev, List<String> res) {
+    private void solve(String expr, String num, int index, long current, long target, long prev, List<String> res) {
         if(current == target && index == num.length()) res.add(expr);
         else {
             for(int i = index; i < num.length(); i++) {

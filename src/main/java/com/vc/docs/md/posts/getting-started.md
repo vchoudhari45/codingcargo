@@ -1,6 +1,7 @@
-[comment]: metadata=
-[comment]: keywords=
-[comment]: robots=
+[comment]: metadata=Coding Cargo Welcome page
+[comment]: keywords=Coding Cargo, Welcome Page
+[comment]: robots=index, follow
+
 <h1>Welcome to Coding Cargo</h1>
 <p>
 Hi there! and Welcome to Coding Cargo.
