@@ -2,7 +2,7 @@ package com.vc.hard;
 
 import java.util.*;
 
-class Solution {
+class WordPatternIi {
     public boolean wordPatternMatch(String pattern, String str) {
         if(pattern == null && str == null) return true;
         if(pattern == null || str == null) return false;

@@ -21,7 +21,19 @@ const backtracking = {
 				problem: "hard",
 				company: ["Amazon"],
 				similar: ["N-Queens"]
-		}
+		},
+		{
+                index: 282,
+                title: "Expression Add Operators",
+                problem: "hard",
+                company: ["Facebook", "Google"],
+        },
+        {
+                index: 291,
+                title: "Word Pattern II",
+                problem: "hard",
+                company: ["Amazon"],
+        }
 	]
 }
 

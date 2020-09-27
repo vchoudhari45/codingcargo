@@ -25,6 +25,12 @@ const math = {
             title: "Strobogrammatic Number III",
             problem: "hard",
             company: ["Google"]
+        },
+        {
+            index: 273,
+            title: "Integer to English Words",
+            problem: "hard",
+            company: ["Amazon", "Facebook", "Microsoft"]
         }
 	]
 }
