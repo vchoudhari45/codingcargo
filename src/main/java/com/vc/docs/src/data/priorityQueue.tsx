@@ -10,7 +10,7 @@ const priorityQueue = {
 		},
 		{
             index: 295,
-            title: "Find Median from Data Stream",
+            title: "Median Finder",
             problem: "hard",
             company: ["Amazon", "Facebook", "Google", "Microsoft"]
         }

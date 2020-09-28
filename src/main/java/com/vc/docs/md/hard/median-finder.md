@@ -1,11 +1,11 @@
-[comment]: metadata=Java Solution to problem Find Median from Data Stream using Priority Queue Data Structure.
-[comment]: keywords=Find Median from Data Stream, Priority Queue Data Structure
+[comment]: metadata=Java Solution to problem Median Finder using Priority Queue Data Structure.
+[comment]: keywords=Median Finder, Priority Queue Data Structure
 [comment]: robots=index, follow
 
 
-<h1>Find Median from Data Stream</h1>
+<h1>Median Finder</h1>
 <p>
-This page explains Java solution to problem <code class="inline">Find Median from Data Stream</code> using <code class="inline">Priority Queue</code> data structure.
+This page explains Java solution to problem <code class="inline">Median Finder</code> using <code class="inline">Priority Queue</code> data structure.
 </p>
 
 

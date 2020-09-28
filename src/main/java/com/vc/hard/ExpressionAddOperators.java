@@ -16,7 +16,7 @@ class ExpressionAddOperators {
                 String digitStr = num.substring(index, i + 1);
                 if(digitStr.startsWith("0") && digitStr.length() > 1) break;
                 long digit = Long.parseLong(digitStr);
-                if(expr.equals("")) solve(digit +"", num, i + 1, digit, target, digit, res);
+                if(expr.equals("")) solve(digitStr, num, i + 1, digit, target, digit, res);
                 else {
                     solve(expr + "+" + digit, num, i + 1, current + digit, target, digit, res);
                     solve(expr + "-" + digit, num, i + 1, current - digit, target, -digit, res);
