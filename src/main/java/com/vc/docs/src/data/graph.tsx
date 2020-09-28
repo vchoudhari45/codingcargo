@@ -9,6 +9,12 @@ const graph = {
 			company: ["Amazon", "Facebook"]
 		},
 		{
+            index: 301,
+            title: "Remove Invalid Parentheses",
+            problem: "hard",
+            company: ["Amazon", "Facebook", "Google"]
+        },
+		{
             index: 269,
             title: "Alien Dictionary",
             problem: "hard",

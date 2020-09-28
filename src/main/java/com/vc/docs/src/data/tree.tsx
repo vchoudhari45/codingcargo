@@ -19,6 +19,12 @@ const tree = {
             title: "Closest Binary Search Tree Value II",
             problem: "hard",
             company: ["Amazon", "Facebook"]
+        },
+        {
+            index: 297,
+            title: "Serialize and Deserialize Binary Tree",
+            problem: "hard",
+            company: ["Amazon", "Facebook", "Google", "Microsoft"]
         }
 	]
 }
