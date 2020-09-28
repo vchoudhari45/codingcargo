@@ -1,12 +1,12 @@
 package com.vc.hard;
 
-class NumMatrix {
-    //https://leetcode.com/problems/range-sum-query-2d-mutable/discuss/75870/Java-2D-Binary-Indexed-Tree-Solution-clean-and-short-17ms
+class RangeSumQuery2dMutable {
     int m;
     int n;
     int[][] tree;
     int[][] matrix;
-    public NumMatrix(int[][] matrix) {
+
+    public RangeSumQuery2dMutable(int[][] matrix) {
         this.m = matrix.length;
         if(m == 0) return;
         this.n = matrix[0].length;
@@ -19,6 +19,17 @@ class NumMatrix {
         }
     }
 
+    public void update(int row, int col, int val) {
+        if(m == 0 || n == 0) return;
+        int delta = val - matrix[row][col];
+        matrix[row][col] = val;
+        set(row, col, delta);
+    }
+
+    public int sumRegion(int row1, int col1, int row2, int col2) {
+        return sum(row2 + 1, col2 + 1) + sum(row1, col1) - sum(row1, col2 + 1) - sum(row2 + 1, col1);
+    }
+
     private void set(int row, int col, int val) {
         if(m == 0 || n == 0) return;
         for(int i = row + 1; i <= m; i = getNext(i)) {
@@ -26,13 +37,6 @@ class NumMatrix {
                 tree[i][j] += val;
             }
         }
-    }
-
-    public void update(int row, int col, int val) {
-        if(m == 0 || n == 0) return;
-        int delta = val - matrix[row][col];
-        matrix[row][col] = val;
-        set(row, col, delta);
     }
 
     private int sum(int row, int col) {
@@ -52,10 +56,6 @@ class NumMatrix {
 
     private int getNext(int x) {
         return x + (x & -x);
-    }
-
-    public int sumRegion(int row1, int col1, int row2, int col2) {
-        return sum(row2 + 1, col2 + 1) + sum(row1, col1) - sum(row1, col2 + 1) - sum(row2 + 1, col1);
     }
 }
 

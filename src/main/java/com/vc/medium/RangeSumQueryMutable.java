@@ -1,13 +1,13 @@
 package com.vc.medium;
 
-class NumArray {
+class RangeSumQueryMutable {
+    private int[] arr;
+    private int[] tree;
+    private int n;
 
-    int[] arr;
-    int[] tree;
-    int n;
-    public NumArray(int[] nums) {
-        this.arr = nums;
-        this.n = nums.length;
+    public RangeSumQueryMutable(int[] arr) {
+        this.arr = arr;
+        this.n = arr.length;
         tree = new int[n + 1];
         for(int i = 0; i < n; i++) {
             set(i, arr[i]);
@@ -16,27 +16,18 @@ class NumArray {
 
     //Add element to each of it's child
     private void set(int index, int val) {
-        //System.out.println("Setting Value: "+index);
-        for(int i = index + 1; i <= n; i = getNext(i)) {
-            //System.out.println("--> index: "+i);
-            tree[i] += val;
-        }
+        for(int i = index + 1; i <= n; i = getNext(i)) tree[i] += val;
     }
 
     public void update(int i, int val) {
         int delta = val - arr[i];
         arr[i] = val;
         set(i, delta);
-        // for(int k = 0; k <= n; k++) {
-        //     System.out.print(tree[k]+" ");
-        // }
     }
 
     private int sum(int index) {
         int sum = 0;
-        //System.out.println("Getting Value: "+index);
         for(int i = index; i > 0; i = getParent(i)) {
-            //System.out.println("--> index: "+i);
             sum += tree[i];
         }
         return sum;

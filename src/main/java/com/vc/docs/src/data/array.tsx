@@ -37,6 +37,30 @@ const array = {
             title: "Maximum Gap",
             problem: "hard",
             company: ["Amazon"]
+        },
+        {
+            index: 303,
+            title: "Range Sum Query Immutable",
+            problem: "easy",
+            company: ["Amazon", "Google"]
+        },
+        {
+            index: 307,
+            title: "Range Sum Query Mutable",
+            problem: "medium",
+            company: ["Amazon", "Google"]
+        },
+        {
+            index: 304,
+            title: "Range Sum Query 2D Immutable",
+            problem: "medium",
+            company: ["Facebook", "Google"]
+        },
+        {
+            index: 308,
+            title: "Range Sum Query 2D Mutable",
+            problem: "hard",
+            company: ["Facebook"]
         }
 	]
 }
