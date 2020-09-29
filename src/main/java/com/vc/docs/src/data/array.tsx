@@ -61,6 +61,12 @@ const array = {
             title: "Range Sum Query 2D Mutable",
             problem: "hard",
             company: ["Facebook"]
+        },
+        {
+            index: 315,
+            title: "Count of Smaller Numbers After Self",
+            problem: "hard",
+            company: ["Amazon", "Google", "Microsoft"]
         }
 	]
 }

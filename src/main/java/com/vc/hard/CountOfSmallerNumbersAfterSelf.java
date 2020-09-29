@@ -2,7 +2,7 @@ package com.vc.hard;
 
 import java.util.*;
 
-class L315 {
+class CountOfSmallerNumbersAfterSelf {
     public List<Integer> countSmaller(int[] arr) {
         if(arr.length == 0) return new ArrayList<Integer>();
         Integer[] res = new Integer[arr.length];
