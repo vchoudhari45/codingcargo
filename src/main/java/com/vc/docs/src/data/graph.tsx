@@ -37,6 +37,12 @@ const graph = {
             title: "Number of Islands II",
             problem: "hard",
             company: ["Facebook", "Google"]
+        },
+        {
+            index: 317,
+            title: "Shortest Distance from All Buildings",
+            problem: "hard",
+            company: ["Amazon", "Facebook", "Google"]
         }
 	]
 }
