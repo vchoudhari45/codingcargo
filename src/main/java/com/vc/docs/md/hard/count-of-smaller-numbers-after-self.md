@@ -41,7 +41,7 @@ If you have any suggestions in below code, please <a href="####LINK_PLACEHOLDER#
 <h2 class="heading">Time Complexity</h2>
 <blockquote>
 <p>
-O(log N) Where <br />
+O(N * log N) Where <br />
 N is total number of elements in an input array
 </p>
 </blockquote>
