@@ -18,6 +18,12 @@ export const hashMapMenu = {
             title: "The Skyline Problem",
             problem: "hard",
             company: ["Amazon", "Facebook", "Google", "Microsoft"]
+        },
+        {
+            index: 327,
+            title: "Count of Range Sum",
+            problem: "hard",
+            company: ["Amazon"]
         }
 	]
 }

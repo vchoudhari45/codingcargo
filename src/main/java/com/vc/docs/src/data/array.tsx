@@ -67,6 +67,12 @@ const array = {
             title: "Count of Smaller Numbers After Self",
             problem: "hard",
             company: ["Amazon", "Google", "Microsoft"]
+        },
+        {
+            index: 321,
+            title: "Create Maximum Number",
+            problem: "hard",
+            company: ["Amazon", "Google"]
         }
 	]
 }

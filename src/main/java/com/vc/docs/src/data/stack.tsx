@@ -27,6 +27,12 @@ const stack = {
             title: "Basic Calculator",
             problem: "hard",
             company: ["Amazon", "Facebook", "Google", "Microsoft"]
+        },
+        {
+            index: 316,
+            title: "Remove Duplicate Letters",
+            problem: "hard",
+            company: ["Amazon"]
         }
 	]
 }
