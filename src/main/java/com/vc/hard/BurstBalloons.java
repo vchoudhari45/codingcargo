@@ -1,6 +1,6 @@
 package com.vc.hard;
 
-class L312 {
+class BurstBalloons {
     public int maxCoins(int[] nums) {
         if(nums == null || nums.length == 0) return 0;
 
@@ -26,11 +26,6 @@ class L312 {
                 }
             }
         }
-
-        // for(int i = 0; i < n; i++) {
-        //     for(int j = 0; j < n; j++) System.out.format("%5s", dp[i][j]+" ");
-        //     System.out.println();
-        // }
         return dp[0][n - 1];
     }
 }

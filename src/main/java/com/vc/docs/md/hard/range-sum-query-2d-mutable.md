@@ -26,7 +26,7 @@ matrix = [<br />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[4, 1, 0, 1, 7], <br />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[1, 0, 3, 0, 5]  <br />
 ] <br />
-<b>Output</b>:
+<b>Output</b>: <br/>
 sumRegion(2, 1, 4, 3) -> 8 <br />
 update(3, 2, 2) <br />
 sumRegion(2, 1, 4, 3) -> 10 <br />
