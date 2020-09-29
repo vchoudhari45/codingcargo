@@ -2,14 +2,17 @@ package com.vc.hard;
 
 import java.util.*;
 
-class L316 {
+class RemoveDuplicateLetters {
     public String removeDuplicateLetters(String s) {
         HashMap<Character, Integer> map = new HashMap<>();
+        HashSet<Character> set = new HashSet<>();
+
+        //Last occurrence of character
         for(int i = 0; i < s.length(); i++) {
-            map.put(s.charAt(i), i);
+            char ch = s.charAt(i);
+            map.put(ch, i);
         }
 
-        HashSet<Character> set = new HashSet<Character>();
         Stack<Character> st = new Stack<>();
         for(int i = 0; i < s.length(); i++) {
             char ch = s.charAt(i);
@@ -17,9 +20,9 @@ class L316 {
                 while(!st.isEmpty() && st.peek() > ch && map.get(st.peek()) > i) {
                     set.remove(st.pop());
                 }
-                set.add(ch);
                 st.push(ch);
             }
+            set.add(ch);
         }
 
         StringBuilder str = new StringBuilder();
