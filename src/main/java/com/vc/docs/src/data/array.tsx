@@ -73,6 +73,12 @@ const array = {
             title: "Create Maximum Number",
             problem: "hard",
             company: ["Amazon", "Google"]
+        },
+        {
+            index: 330,
+            title: "Patching Array",
+            problem: "hard",
+            company: ["Google"]
         }
 	]
 }

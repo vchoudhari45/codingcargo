@@ -43,6 +43,12 @@ const graph = {
             title: "Shortest Distance from All Buildings",
             problem: "hard",
             company: ["Amazon", "Facebook", "Google"]
+        },
+        {
+            index: 329,
+            title: "Longest Increasing Path in a Matrix",
+            problem: "hard",
+            company: ["Amazon", "Facebook", "Google", "Microsoft"]
         }
 	]
 }

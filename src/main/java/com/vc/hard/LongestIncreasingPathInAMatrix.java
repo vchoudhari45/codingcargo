@@ -1,6 +1,6 @@
 package com.vc.hard;
 
-class L329 {
+class LongestIncreasingPathInAMatrix {
     public int longestIncreasingPath(int[][] matrix) {
         int n = matrix.length;
         if(n == 0) return 0;
