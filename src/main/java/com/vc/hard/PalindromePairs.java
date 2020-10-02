@@ -2,20 +2,17 @@ package com.vc.hard;
 
 import java.util.*;
 
-class L336 {
+class PalindromePairs {
     public List<List<Integer>> palindromePairs(String[] words) {
         HashMap<String, Integer> wordIndex = new HashMap<>();
-        for(int i = 0; i< words.length; i++) {
-            wordIndex.put(words[i], i);
-        }
-        //System.out.println(wordIndex);
-        List<List<Integer>> res = new ArrayList<List<Integer>>();
+        for(int i = 0; i < words.length; i++) wordIndex.put(words[i], i);
+        List<List<Integer>> res = new ArrayList<>();
 
         for(int i = 0; i < words.length; i++) {
             String word = words[i];
             for(int j = 0; j <= word.length(); j++) {
                 String w1 = word.substring(0, j);
-                String w2 = word.substring(j, word.length());
+                String w2 = word.substring(j);
 
                 if(isPalindrome(w1)) {
                     String w2Reverse = reverse(w2);
@@ -37,19 +34,27 @@ class L336 {
         return res;
     }
 
-
-    private String reverse(String str){
-        StringBuilder s = new StringBuilder(str);
-        return s.reverse().toString();
+    private String reverse(String str) {
+        int i = 0;
+        int j = str.length() - 1;
+        char[] cArr = str.toCharArray();
+        while(i < j) {
+            char temp = cArr[i];
+            cArr[i] = cArr[j];
+            cArr[j] = temp;
+            i++;
+            j--;
+        }
+        return new String(cArr);
     }
 
-    private boolean isPalindrome(String str) {
-        int left = 0;
-        int right = str.length() - 1;
-        while(left < right) {
-            if(str.charAt(left) != str.charAt(right)) return false;
-            left++;
-            right--;
+    private boolean isPalindrome(String word) {
+        int i = 0;
+        int j = word.length() - 1;
+        while(i < j) {
+            if(word.charAt(i) != word.charAt(j)) return false;
+            i++;
+            j--;
         }
         return true;
     }

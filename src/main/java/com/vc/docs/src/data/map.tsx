@@ -24,6 +24,12 @@ export const hashMapMenu = {
             title: "Count of Range Sum",
             problem: "hard",
             company: ["Amazon"]
+        },
+        {
+            index: 340,
+            title: "Longest Substring with At Most K Distinct Characters",
+            problem: "hard",
+            company: ["Amazon", "Facebook", "Google", "Microsoft"]
         }
 	]
 }

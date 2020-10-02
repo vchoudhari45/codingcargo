@@ -19,6 +19,12 @@ const string = {
             title: "Shortest Palindrome",
             problem: "hard",
             company: ["Google", "Microsoft"]
+        },
+        {
+            index: 336,
+            title: "Palindrome Pairs",
+            problem: "hard",
+            company: ["Amazon"]
         }
 	]
 }
