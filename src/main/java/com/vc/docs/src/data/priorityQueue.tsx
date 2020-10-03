@@ -15,7 +15,7 @@ const priorityQueue = {
             company: ["Amazon", "Facebook", "Google", "Microsoft"]
         },
         {
-            index: 363,
+            index: 358,
             title: "Rearrange String k Distance Apart",
             problem: "hard",
             company: ["Facebook", "Microsoft"]
