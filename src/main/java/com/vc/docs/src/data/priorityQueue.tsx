@@ -16,9 +16,9 @@ const priorityQueue = {
         },
         {
             index: 363,
-            title: "Max Sum of Rectangle No Larger Than K",
+            title: "Rearrange String k Distance Apart",
             problem: "hard",
-            company: ["Google"]
+            company: ["Facebook", "Microsoft"]
         }
 	]
 }
