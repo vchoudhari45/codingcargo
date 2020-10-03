@@ -2,12 +2,12 @@ package com.vc.hard;
 
 import java.util.*;
 
-class SummaryRanges {
+class DataStreamAsDisjointIntervals {
 
     TreeMap<Integer, int[]> treeMap;
 
     /** Initialize your data structure here. */
-    public SummaryRanges() {
+    public DataStreamAsDisjointIntervals() {
         this.treeMap = new TreeMap<>();
     }
 

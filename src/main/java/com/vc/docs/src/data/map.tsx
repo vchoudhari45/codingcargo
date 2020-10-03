@@ -30,6 +30,12 @@ export const hashMapMenu = {
             title: "Longest Substring with At Most K Distinct Characters",
             problem: "hard",
             company: ["Amazon", "Facebook", "Google", "Microsoft"]
+        },
+        {
+            index: 352,
+            title: "Data Stream as Disjoint Intervals",
+            problem: "hard",
+            company: ["Amazon"]
         }
 	]
 }
