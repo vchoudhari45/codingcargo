@@ -36,6 +36,12 @@ export const hashMapMenu = {
             title: "Data Stream as Disjoint Intervals",
             problem: "hard",
             company: ["Amazon"]
+        },
+        {
+            index: 352,
+            title: "Insert Delete GetRandom Duplicates allowed",
+            problem: "hard",
+            company: ["Facebook"]
         }
 	]
 }
