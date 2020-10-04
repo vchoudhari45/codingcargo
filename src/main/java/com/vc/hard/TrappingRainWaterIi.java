@@ -2,28 +2,27 @@ package com.vc.hard;
 
 import java.util.*;
 
-class L407 {
+class TrappingRainWaterIi {
     public int trapRainWater(int[][] height) {
-        PriorityQueue<int[]> pq = new PriorityQueue<>(new Comparator<int[]>(){
+        PriorityQueue<int[]> pq = new PriorityQueue<int[]>(new Comparator<int[]>(){
             @Override
             public int compare(int[] x, int[] y) {
-                return x[0] - y[0];
+                return Integer.compare(x[0], y[0]);
             }
         });
+
         int row = 0;
         int col = 0;
         int n = height.length;
-        if(n == 0) return 0;
         int m = height[0].length;
 
-        int[][] dirs = {{0, 1},{0, -1},{-1, 0},{1, 0}};
         while(col < m) {
             pq.offer(new int[]{height[row][col], row, col});
             height[row][col] = -1;
             col++;
         }
-        col--;
         row++;
+        col--;
 
         while(row < n) {
             pq.offer(new int[]{height[row][col], row, col});
@@ -38,8 +37,8 @@ class L407 {
             height[row][col] = -1;
             col--;
         }
-        col++;
         row--;
+        col++;
 
         while(row > 0) {
             pq.offer(new int[]{height[row][col], row, col});
@@ -47,15 +46,16 @@ class L407 {
             row--;
         }
 
+        int[][] dirs = {{0, 1}, {1, 0}, {0, -1}, {-1, 0}};
+        int max = 0;
         int res = 0;
-        int max = Integer.MIN_VALUE;
         while(!pq.isEmpty()) {
-            int[] e = pq.poll();
-            max = Math.max(max, e[0]);
+            int[] entry = pq.poll();
+            max = Math.max(entry[0], max);
             for(int[] dir: dirs) {
-                int xNew = dir[0] + e[1];
-                int yNew = dir[1] + e[2];
-                if(xNew >= 0 && xNew < n && yNew >= 0 && yNew < m && height[xNew][yNew] != -1) {
+                int xNew = entry[1] + dir[0];
+                int yNew = entry[2] + dir[1];
+                if(xNew >= 0 && xNew < height.length && yNew >= 0 && yNew < height[0].length && height[xNew][yNew] != -1) {
                     if(max > height[xNew][yNew]) {
                         res += (max - height[xNew][yNew]);
                     }
