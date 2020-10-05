@@ -13,12 +13,6 @@ const binarySearch = {
             title: "Find Minimum in Rotated Sorted Array II",
             problem: "hard",
             company: ["Facebook"]
-        },
-        {
-            index: 358,
-            title: "Rearrange String k Distance Apart",
-            problem: "hard",
-            company: ["Facebook", "Microsoft"]
         }
 	]
 }
