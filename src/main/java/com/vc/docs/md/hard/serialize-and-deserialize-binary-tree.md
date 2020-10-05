@@ -20,11 +20,12 @@ Design an algorithm to serialize and deserialize a binary tree. There is no rest
 <b>Example 1:</b> <br />
 <b class="paragraph-heading">Input:</b><br />
 <img title="" src="####BASEURL####serde-binary-tree/serde-binary-tree-input.jpg" alt="Serialize and Deserialize Binary Tree Input" />
+<br />
 
 <b class="paragraph-heading">Output:</b>
 <p>
-<code class="inline">public String serialize(TreeNode root)</code> should be able to convert TreeNode to String.
-<code class="inline">public TreeNode deserialize(String data)</code> should be able to convert String to back to TreeNode format.
+<code class="inline">public String serialize(TreeNode root)</code> should be able to convert TreeNode to String.<br />
+<code class="inline">public TreeNode deserialize(String data)</code> should be able to convert String to back to TreeNode format. <br />
 </p>
 
 

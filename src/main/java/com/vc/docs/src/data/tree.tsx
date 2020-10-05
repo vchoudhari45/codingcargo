@@ -25,6 +25,12 @@ const tree = {
             title: "Serialize and Deserialize Binary Tree",
             problem: "hard",
             company: ["Amazon", "Facebook", "Google", "Microsoft"]
+        },
+        {
+            index: 428,
+            title: "Serialize and Deserialize N ary Tree",
+            problem: "hard",
+            company: ["Amazon", "Google", "Microsoft"]
         }
 	]
 }
