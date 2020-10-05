@@ -31,6 +31,12 @@ const math = {
             title: "Integer to English Words",
             problem: "hard",
             company: ["Amazon", "Facebook", "Microsoft"]
+        },
+        {
+            index: 420,
+            title: "Strong Password Checker",
+            problem: "hard",
+            company: ["Amazon", "Google"]
         }
 	]
 }
