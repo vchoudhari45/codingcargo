@@ -23,25 +23,25 @@ class PerfectRectangle {
             x2 = Math.max(x2, rectangle[2]);
             y2 = Math.max(y2, rectangle[3]);
 
-            String s1 = rectangle[0] +" "+ rectangle[1];
-            String s2 = rectangle[2] +" "+ rectangle[3];
-            String s3 = rectangle[0] +" "+ rectangle[3];
-            String s4 = rectangle[2] +" "+ rectangle[1];
+            String point1 = rectangle[0] +" "+ rectangle[1];
+            String point2 = rectangle[2] +" "+ rectangle[3];
+            String point3 = rectangle[0] +" "+ rectangle[3];
+            String point4 = rectangle[2] +" "+ rectangle[1];
 
-            if(!set.add(s1)) set.remove(s1);
-            if(!set.add(s2)) set.remove(s2);
-            if(!set.add(s3)) set.remove(s3);
-            if(!set.add(s4)) set.remove(s4);
+            if(!set.add(point1)) set.remove(point1);
+            if(!set.add(point2)) set.remove(point2);
+            if(!set.add(point3)) set.remove(point3);
+            if(!set.add(point4)) set.remove(point4);
 
             area += (rectangle[3] - rectangle[1]) * (rectangle[2] - rectangle[0]);
         }
 
-        String s1 = x1 +" "+ y1;
-        String s2 = x2 +" "+ y2;
-        String s3 = x1 +" "+ y2;
-        String s4 = x2 +" "+ y1;
+        String point1 = x1 +" "+ y1;
+        String point2 = x2 +" "+ y2;
+        String point3 = x1 +" "+ y2;
+        String point4 = x2 +" "+ y1;
 
-        if(!set.contains(s1) || !set.contains(s2) || !set.contains(s3) || !set.contains(s4) || set.size() != 4) return false;
+        if(!set.contains(point1) || !set.contains(point2) || !set.contains(point3) || !set.contains(point4) || set.size() != 4) return false;
 
         return area == (x2 - x1) * (y2 - y1);
     }
