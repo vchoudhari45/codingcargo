@@ -12,6 +12,7 @@ import math from "./math"
 import tree from "./tree"
 import trie from "./trie"
 import graph from "./graph"
+import set from "./set"
 import slidingWindow from "./slidingWindow"
 import map from "./map"
 
