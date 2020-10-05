@@ -13,6 +13,7 @@ import tree from "./tree"
 import trie from "./trie"
 import graph from "./graph"
 import set from "./set"
+import bitManipulation from "./bitManipulation"
 import slidingWindow from "./slidingWindow"
 import map from "./map"
 
@@ -31,6 +32,7 @@ menuItems.push(homePage)
 menuItems.push(array)
 menuItems.push(backtracking)
 menuItems.push(binarySearch)
+menuItems.push(bitManipulation)
 menuItems.push(dynamicProgramming)
 menuItems.push(graph)
 menuItems.push(greedyAlgorithm)
