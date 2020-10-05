@@ -56,8 +56,8 @@ If you have any suggestions in below code, please <a href="####LINK_PLACEHOLDER#
 <blockquote>
 <p>
 O(N<sup>M</sup>) Where <br />
-N is total number of characters in an input pattern
-M is total number of characters in an input string 
+N is total number of characters in an input pattern <br />
+M is total number of characters in an input string  <br />
 </p>
 </blockquote>
 
@@ -66,7 +66,7 @@ M is total number of characters in an input string
 <blockquote>
 <p>
 O(N + M) Where <br />
-N is total number of characters in an input pattern
-M is total number of characters in an input string 
+N is total number of characters in an input pattern <br />
+M is total number of characters in an input string  <br />
 </p>
 </blockquote>

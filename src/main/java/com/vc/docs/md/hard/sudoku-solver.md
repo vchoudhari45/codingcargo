@@ -36,12 +36,12 @@ If you have any suggestions in below code, please <a href="####LINK_PLACEHOLDER#
 <p>
 O(9!)^9 <br />
 For single Row there are 
-    9 possibilities for first cell
-    8 possibilities for second cell
-    7 possibilities for third cell and so ....
-So total there are 9! operations to fill in one row
-
-There are 9 Rows in Sudoku, so total number of operations will be 9! ^ 9
+    9 possibilities for first cell <br />
+    8 possibilities for second cell <br />
+    7 possibilities for third cell and so .... <br />
+So total there are 9! operations to fill in one row <br />
+ <br /> <br />
+There are 9 Rows in Sudoku, so total number of operations will be 9! ^ 9 <br />
 </p>
 </blockquote>
 

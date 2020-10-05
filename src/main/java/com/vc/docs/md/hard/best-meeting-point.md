@@ -45,8 +45,8 @@ If you have any suggestions in below code, please <a href="####LINK_PLACEHOLDER#
 <blockquote>
 <p>
 O(M * N) Where <br />
-M is total number of rows in an input array
-N is total number of cols in an input array
+M is total number of rows in an input array <br />
+N is total number of cols in an input array <br />
 </p>
 </blockquote>
 
@@ -55,7 +55,7 @@ N is total number of cols in an input array
 <blockquote>
 <p>
 O(M + N) Where <br />
-M is total number of rows in an input array
-N is total number of cols in an input array
+M is total number of rows in an input array <br />
+N is total number of cols in an input array <br />
 </p>
 </blockquote>

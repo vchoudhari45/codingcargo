@@ -48,8 +48,8 @@ If you have any suggestions in below code, please <a href="####LINK_PLACEHOLDER#
 <blockquote>
 <p>
 O(M * N) <br />
-Where M is length of input string s
-And N is length of input string p
+Where M is length of input string s <br />
+And N is length of input string p <br />
 </p>
 </blockquote>
 
@@ -58,7 +58,7 @@ And N is length of input string p
 <blockquote>
 <p>
 O(M * N)
-Where M is length of input string s
-And N is length of input string p
+Where M is length of input string s <br />
+And N is length of input string p <br />
 </p>
 </blockquote>

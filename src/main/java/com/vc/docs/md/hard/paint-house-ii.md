@@ -43,8 +43,8 @@ If you have any suggestions in below code, please <a href="####LINK_PLACEHOLDER#
 <blockquote>
 <p>
 O(N * K) Where <br />
-N is total number of houses in an input array
-K is total number of colors in an input array
+N is total number of houses in an input array <br />
+K is total number of colors in an input array <br />
 </p>
 </blockquote>
 

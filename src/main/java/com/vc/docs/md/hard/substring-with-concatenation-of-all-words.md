@@ -50,9 +50,9 @@ If you have any suggestions in below code, please <a href="####LINK_PLACEHOLDER#
 <blockquote>
 <p>
 O(N * M * K) Where <br />
-N number of elements in an input string
-M length of word in words input array
-K number of elements in words input array
+N number of elements in an input string <br />
+M length of word in words input array <br />
+K number of elements in words input array <br />
 </p>
 </blockquote>
 

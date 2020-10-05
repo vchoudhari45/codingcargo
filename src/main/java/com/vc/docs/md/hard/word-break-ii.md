@@ -60,8 +60,8 @@ If you have any suggestions in below code, please <a href="####LINK_PLACEHOLDER#
 <blockquote>
 <p>
 O(N! + W) Where <br />
-N is total number of elements in an input String s.
-W is total number of elements in an input array wordDict.
+N is total number of elements in an input String s.<br />
+W is total number of elements in an input array wordDict.<br />
 </p>
 </blockquote>
 
@@ -70,7 +70,7 @@ W is total number of elements in an input array wordDict.
 <blockquote>
 <p>
 O(W + 2 ^ N) Where <br />
-N is total number of elements in an input String s.
-W is total number of elements in an input array wordDict.
+N is total number of elements in an input String s.<br />
+W is total number of elements in an input array wordDict.<br />
 </p>
 </blockquote>

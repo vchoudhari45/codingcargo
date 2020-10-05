@@ -51,7 +51,10 @@ If you have any suggestions in below code, please <a href="####LINK_PLACEHOLDER#
 
 <h2 class="heading">Time Complexity</h2>
 <blockquote>
-<p>O(log(m + n))</p>
+<p>
+O(N) Where <br />
+N is total number of elements in an input tree 
+</p>
 </blockquote>
 
 

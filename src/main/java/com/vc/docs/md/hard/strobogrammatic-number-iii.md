@@ -41,8 +41,8 @@ If you have any suggestions in below code, please <a href="####LINK_PLACEHOLDER#
 <blockquote>
 <p>
 O((M - N) * 5<sup>M</sup>) Where <br />
-M is length of input string high
-N is length of input string low
+M is length of input string high <br />
+N is length of input string low <br />
 </p>
 </blockquote>
 

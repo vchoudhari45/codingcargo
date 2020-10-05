@@ -47,7 +47,7 @@ If you have any suggestions in below code, please <a href="####LINK_PLACEHOLDER#
 <blockquote>
 <p>
 O(N) Where <br />
-N is total number of elements in an input string
+N is total number of elements in an input string <br />
 </p>
 </blockquote>
 
