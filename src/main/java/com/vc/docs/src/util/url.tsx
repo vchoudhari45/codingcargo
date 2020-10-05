@@ -26,5 +26,5 @@ export const unslug = (str: string, seperator?: string) => {
 }
 
 export const truncate = (str: string, n?: number) => {
-	return (str.length > n) ? str.substr(0, n + 1) + '&hellip;' : str;
+	return (str.length > n) ? str.substr(0, n) + '&hellip;' : str;
 }
