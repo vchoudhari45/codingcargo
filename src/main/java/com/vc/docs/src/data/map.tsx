@@ -39,7 +39,7 @@ export const hashMapMenu = {
         },
         {
             index: 352,
-            title: "Insert Delete GetRandom Duplicates allowed",
+            title: "Insert Delete Get Random Duplicates allowed",
             problem: "hard",
             company: ["Facebook"]
         },
