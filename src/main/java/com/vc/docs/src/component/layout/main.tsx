@@ -43,7 +43,7 @@ const main: React.FC<Props> = ({prev, current, next, content}: Props) => {
 											</g>
 									</svg>
 							</span>
-							<span className="pagination">{truncate(prev.title)}</span>
+							<span className="pagination">{truncate(prev.title, 30)}</span>
 							<span className="pagination-mobile">Prev</span>
 						</a>
 					}
@@ -51,7 +51,7 @@ const main: React.FC<Props> = ({prev, current, next, content}: Props) => {
 					{
 						next == null || title.toLowerCase() == HOMEPAGE.toLowerCase() ? <span className="jsx-29590182"></span> :
 						<a href={ BASE_URL + (next.problem ? "problems/" + slug(next.problem) + "/" + slug(next.title) : slug(next.title)) } className="jsx-4279592588 btn fw4 no-drag">
-							<span className="pagination">{truncate(next.title)}</span>
+							<span className="pagination">{truncate(next.title, 30)}</span>
 							<span className="pagination-mobile">Next</span>
 							<span className="jsx-3578282791">
 									<svg width="24" height="24" viewBox="0 0 24 24">
