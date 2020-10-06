@@ -48,6 +48,12 @@ export const hashMapMenu = {
             title: "Frog Jump",
             problem: "hard",
             company: ["Amazon", "Facebook", "Microsoft"]
+        },
+        {
+            index: 432,
+            title: "All O one Data Structure",
+            problem: "hard",
+            company: ["Facebook"]
         }
 	]
 }
