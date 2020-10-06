@@ -54,6 +54,12 @@ export const hashMapMenu = {
             title: "All O one Data Structure",
             problem: "hard",
             company: ["Facebook"]
+        },
+        {
+            index: 460,
+            title: "LFU Cache",
+            problem: "hard",
+            company: ["Amazon", "Google"]
         }
 	]
 }

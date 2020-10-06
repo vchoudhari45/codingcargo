@@ -43,6 +43,11 @@ const math = {
             title: "K th Smallest in Lexicographical Order",
             problem: "hard",
             company: ["Google"]
+        },
+        {
+            index: 458,
+            title: "Poor Pigs",
+            problem: "hard"
         }
 	]
 }
