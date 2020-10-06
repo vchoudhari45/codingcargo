@@ -1,8 +1,37 @@
 package com.vc.hard;
 
-import java.util.*;
+import java.util.ArrayList;
 
-class L431 {
+/**
+// Definition for a Node.
+class Node {
+    public int val;
+    public List<Node> children;
+
+    public Node() {}
+
+    public Node(int _val) {
+        val = _val;
+    }
+
+    public Node(int _val, List<Node> _children) {
+        val = _val;
+        children = _children;
+    }
+};
+*/
+
+/**
+ * Definition for a binary tree node.
+ * public class TreeNode {
+ *     int val;
+ *     TreeNode left;
+ *     TreeNode right;
+ *     TreeNode(int x) { val = x; }
+ * }
+ */
+
+class EncodeNAryTreeToBinaryTree {
 
     // Encodes an n-ary tree to a binary tree.
     public TreeNode encode(Node root) {
@@ -23,8 +52,9 @@ class L431 {
 
     // Decodes your binary tree to an n-ary tree.
     public Node decode(TreeNode root) {
-        if(root != null) {
-            Node node = new Node(root.val, new ArrayList<Node>());
+        if(root == null) return null;
+        else {
+            Node node = new Node(root.val, new ArrayList<>());
             TreeNode current = root.left;
             while(current != null) {
                 node.children.add(decode(current));
@@ -32,10 +62,5 @@ class L431 {
             }
             return node;
         }
-        return null;
     }
 }
-
-// Your Codec object will be instantiated and called as such:
-// Codec codec = new Codec();
-// codec.decode(codec.encode(root));
