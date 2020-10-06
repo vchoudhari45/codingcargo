@@ -79,6 +79,11 @@ const dynamicProgramming = {
             title: "Burst Balloons",
             problem: "hard",
             company: ["Amazon"]
+        },
+        {
+            index: 446,
+            title: "Arithmetic Slices II - Subsequence",
+            problem: "hard"
         }
 	]
 }
