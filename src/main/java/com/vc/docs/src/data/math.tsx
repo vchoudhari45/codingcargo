@@ -37,6 +37,12 @@ const math = {
             title: "Strong Password Checker",
             problem: "hard",
             company: ["Amazon", "Google"]
+        },
+        {
+            index: 440,
+            title: "K th Smallest in Lexicographical Order",
+            problem: "hard",
+            company: ["Google"]
         }
 	]
 }
