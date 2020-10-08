@@ -82,7 +82,7 @@ const dynamicProgramming = {
         },
         {
             index: 446,
-            title: "Arithmetic Slices II - Subsequence",
+            title: "Arithmetic Slices II Subsequence",
             problem: "hard"
         }
 	]
