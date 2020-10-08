@@ -43,7 +43,7 @@ If you have any suggestions in below code, please <a href="####LINK_PLACEHOLDER#
 <h2 class="heading">Time Complexity</h2>
 <blockquote>
 <p>
-O(N ^ 2) Where <br />
+O(N<sup>2</sup>) Where <br />
 N is total number of points on a 2D Plane
 </p>
 </blockquote>

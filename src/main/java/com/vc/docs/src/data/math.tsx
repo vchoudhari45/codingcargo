@@ -33,6 +33,12 @@ const math = {
             company: ["Amazon", "Facebook", "Microsoft"]
         },
         {
+            index: 335,
+            title: "Self Crossing",
+            problem: "hard",
+            company: ["Amazon", "Google"]
+        },
+        {
             index: 420,
             title: "Strong Password Checker",
             problem: "hard",
