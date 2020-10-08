@@ -58,9 +58,10 @@ If you have any suggestions in below code, please <a href="####LINK_PLACEHOLDER#
 <h2 class="heading">Time Complexity</h2>
 <blockquote>
 <p>
-O(M * N) Where <br />
-M is total number of rows in an input array<br />
-N is total number of cols in an input array<br />
+O(M * N * K) Where <br />
+M is total number of rows in an input matrix<br />
+N is total number of cols in an input matrix<br />
+K is length of longest increasing path in an input matrix
 </p>
 </blockquote>
 
@@ -69,7 +70,7 @@ N is total number of cols in an input array<br />
 <blockquote>
 <p>
 O(M * N) <br />
-M is total number of rows in an input array<br />
-N is total number of cols in an input array<br />
+M is total number of rows in an input matrix<br />
+N is total number of cols in an input matrix<br />
 </p>
 </blockquote>

@@ -11,21 +11,21 @@ This page explains Java solution to problem <code class="inline">Insert Interval
 
 <h2 class="heading">Problem Statement</h2>
 <p>
-The set [1,2,3,...,n] contains a total of n! unique permutations.
+The set <code class="inline">[1,2,3,...,n</code>] contains a total of <code class="inline">n!</code> unique permutations.
 </p>
 <p>
-By listing and labeling all of the permutations in order, we get the following sequence for n = 3:
+By listing and labeling all of the permutations in order, we get the following sequence for <code class="inline">n = 3</code>:
 </p>
 <ul>
-    <li>123</li>
-    <li>132</li>
-    <li>213</li>
-    <li>231</li>
-    <li>312</li>
-    <li>321</li>
+    <li><code class="inline">123</code></li>
+    <li><code class="inline">132</code></li>
+    <li><code class="inline">213</code></li>
+    <li><code class="inline">231</code></li>
+    <li><code class="inline">312</code></li>
+    <li><code class="inline">321</code></li>
 </ul>
 <p>
-Given n and k, return the kth permutation sequence.
+Given <code class="inline">n</code> and <code class="inline">k</code>, return the <code class="inline">k<sup>th</sup></code> permutation sequence.
 </p>
 
 <b>Example 1:</b>

@@ -21,9 +21,9 @@ If the frog's last jump was k units, then its next jump must be either <code cla
 </p>
 
 <ul>
-<li>The number of stones is ≥ 2 and is < 1,100.</li>
-<li>Each stone's position will be a non-negative integer < 231.</li>
-<li>The first stone's position is always 0.</li>
+<li>The number of stones is <code class="inline">≥ 2</code> and is <code class="inline">< 1,100</code>.</li>
+<li>Each stone's position will be a non-negative integer <code class="inline">< 231</code>.</li>
+<li>The first stone's position is always <code class="inline">0</code>.</li>
 </ul>
 
 <b>Example 1:</b>

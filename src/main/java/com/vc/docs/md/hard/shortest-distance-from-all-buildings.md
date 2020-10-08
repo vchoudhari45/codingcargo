@@ -43,7 +43,7 @@ If you have any suggestions in below code, please <a href="####LINK_PLACEHOLDER#
 <h2 class="heading">Time Complexity</h2>
 <blockquote>
 <p>
-O(M<sup>2</sup> * N<sup>2</sup>)  <br />
+O((M * N)<sup>2</sup>)  <br />
 M is total number of rows in an input array <br />
 N is total number of cols in an input array <br />
 </p>

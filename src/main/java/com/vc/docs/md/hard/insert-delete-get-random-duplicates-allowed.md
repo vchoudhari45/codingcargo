@@ -15,9 +15,9 @@ Design a data structure that supports all following operations in average <code 
 </p>
 <ul>
 <li>Note: Duplicate elements are allowed.</li>
-<li>insert(val): Inserts an item val to the collection.</li>
-<li>remove(val): Removes an item val from the collection if present.</li>
-<li>getRandom: Returns a random element from current collection of elements. The probability of each element being returned is linearly related to the number of same value the collection contains.</li>
+<li><code class="inline">insert(val)</code>: Inserts an item val to the collection.</li>
+<li><code class="inline">remove(val)</code>: Removes an item val from the collection if present.</li>
+<li><code class="inline">getRandom</code>: Returns a random element from current collection of elements. The probability of each element being returned is linearly related to the number of same value the collection contains.</li>
 </ul>
 
 <b>Example 1:</b>

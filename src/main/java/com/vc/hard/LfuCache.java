@@ -2,7 +2,7 @@ package com.vc.hard;
 
 import java.util.*;
 
-class LFUCache {
+class LfuCache {
 
     private int capacity = 0;
     private int min = 1;
@@ -10,7 +10,7 @@ class LFUCache {
     private HashMap<Integer, Integer> countMap;
     private HashMap<Integer, LinkedHashSet<Integer>> countGroupMap;
 
-    public LFUCache(int capacity) {
+    public LfuCache(int capacity) {
         this.capacity = capacity;
         this.valueMap = new HashMap<>();
         this.countMap = new HashMap<>();
@@ -91,7 +91,7 @@ class LFUCache {
 
 /**
  * Your LFUCache object will be instantiated and called as such:
- * LFUCache obj = new LFUCache(capacity);
+ * LfuCache obj = new LfuCache(capacity);
  * int param_1 = obj.get(key);
  * obj.put(key,value);
  */
