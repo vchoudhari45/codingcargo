@@ -2,7 +2,7 @@ package com.vc.hard;
 
 import java.util.*;
 
-class L465 {
+class OptimalAccountBalancing {
     public int minTransfers(int[][] transaction) {
         HashMap<Integer, Integer> map = new HashMap<Integer, Integer>();
         for(int i = 0; i < transaction.length; i++) {
@@ -12,8 +12,7 @@ class L465 {
             map.put(lender, map.getOrDefault(lender, 0) + money);
             map.put(loaner, map.getOrDefault(loaner, 0) - money);
         }
-        List<Integer> list = new ArrayList<Integer>(map.values());
-        //System.out.println(list);
+        List<Integer> list = new ArrayList<>(map.values());
         return solve(0, list);
     }
 
