@@ -34,14 +34,14 @@ If you have any suggestions in below code, please <a href="####LINK_PLACEHOLDER#
 <h2 class="heading">Time Complexity</h2>
 <blockquote>
 <p>
-O(9!)^9 <br />
+O(9!)<sup>9</sup> <br />
 For single Row there are 
     9 possibilities for first cell <br />
     8 possibilities for second cell <br />
     7 possibilities for third cell and so .... <br />
 So total there are 9! operations to fill in one row <br />
  <br /> <br />
-There are 9 Rows in Sudoku, so total number of operations will be 9! ^ 9 <br />
+There are 9 Rows in Sudoku, so total number of operations will be 9!<sup>9</sup> <br />
 </p>
 </blockquote>
 
