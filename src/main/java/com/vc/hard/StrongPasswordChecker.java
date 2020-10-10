@@ -2,7 +2,7 @@ package com.vc.hard;
 
 class StrongPasswordChecker {
     public int strongPasswordChecker(String s) {
-        int requiredChar = GetRequiredChar(s);
+        int requiredChar = getRequiredChar(s);
         if (s.length() < 6) return Math.max(requiredChar, 6 - s.length());
 
         // only need replacement and deletion now when s.length() >= 6
@@ -38,7 +38,7 @@ class StrongPasswordChecker {
         return deleteCount + Math.max(requiredChar, replace);
     }
 
-    private int GetRequiredChar(String s) {
+    private int getRequiredChar(String s) {
         int lowercase = 1, uppercase = 1, digit = 1;
         for(char c : s.toCharArray()){
             if (c >= 'a' && c <= 'z') lowercase = 0;

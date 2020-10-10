@@ -11,7 +11,7 @@ This page explains Java solution to problem <code class="inline">Integer to Engl
 
 <h2 class="heading">Problem Statement</h2>
 <p>
-Convert a non-negative integer to its english words representation. Given input is guaranteed to be less than 2<sup>31 - 1</sup>.
+Convert a non-negative integer to its english words representation. Given input is guaranteed to be less than <code class="inline">2<sup>31 - 1</sup></code>.
 </p>
 
 
