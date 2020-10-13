@@ -25,6 +25,12 @@ const string = {
             title: "Palindrome Pairs",
             problem: "hard",
             company: ["Amazon"]
+        },
+        {
+            index: 466,
+            title: "Count The Repetitions",
+            problem: "hard",
+            company: ["Amazon"]
         }
 	]
 }
