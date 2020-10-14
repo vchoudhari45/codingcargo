@@ -35,12 +35,16 @@ class CountTheRepetitions {
 
         if(s1Num >= n1) return count / n2;
 
-        int s1NumStartOfLoop = loopMap.get(s2Index);
-        int s1NumInLoop = s1Num - s1NumStartOfLoop;
-        int s2NumInLoop = repMap.get(s1Num) - repMap.get(s1NumStartOfLoop);
-        int repeatCount = (n1 - s1NumStartOfLoop) / s1NumInLoop;
-        int res = repeatCount * s2NumInLoop;
-        res += repMap.get(s1NumStartOfLoop + (n1 - s1NumStartOfLoop) % s1NumInLoop);
+        int s1CountStartOfLoop = loopMap.get(s2Index);
+        int s1CountInLoop = s1Num - s1CountStartOfLoop;
+        int s2CountInLoop = repMap.get(s1Num) - repMap.get(s1CountStartOfLoop);
+
+        //How many do we get with in a loop
+        int repeatCount = (n1 - s1CountStartOfLoop) / s1CountInLoop;
+        int res = repeatCount * s2CountInLoop;
+
+        //How many do we get outside of the loop
+        res += repMap.get(s1CountStartOfLoop + (n1 - s1CountStartOfLoop) % s1CountInLoop);
         return res / n2;
     }
 }
