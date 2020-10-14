@@ -4,48 +4,43 @@ import java.util.*;
 
 class CountTheRepetitions {
     public int getMaxRepetitions(String s1, int n1, String s2, int n2) {
-        if (s1 == null || s2 == null || n1 <= 0 || n2 <= 0) {
+        if(s1 == null || s2 == null || n1 <= 0 && n2 <= 0) {
             return 0;
         }
 
-        // key: the rest position of s2  value:the number of s1
-        HashMap<Integer, Integer> posMap = new HashMap<>();
+        // key: position of s2  value:the number of s1
+        HashMap<Integer, Integer> loopMap = new HashMap<>();
 
-        // repTimes[i]: number of used s1 is i, repetitions times is repTimes[i]
-        int[] repTimes = new int[102];
+        //key: number of used s1 is i value:repetitions times
+        HashMap<Integer, Integer> repMap = new HashMap<>();
 
-        char[] chars1 = s1.toCharArray();
-        char[] chars2 = s2.toCharArray();
-        int len1 = s1.length();
-        int len2 = s2.length();
-        int s1Num = 1;
-        int posInS2 = 0;
-        int times = 0;
+        int count = 0, s1Num = 1, s2Index = 0;
         while (s1Num <= n1) {
-            for (int j = 0; j < len1; j++) {
-                if (chars1[j] == chars2[posInS2]) {
-                    posInS2++;
-                    if (posInS2 == len2) {
-                        times++;
-                        posInS2 = 0;
+            for(int s1Index = 0; s1Index < s1.length(); s1Index++) {
+                if(s1.charAt(s1Index) == s2.charAt(s2Index)) {
+                    s2Index++;
+                    if(s2Index == s2.length()) {
+                        count++;
+                        s2Index = 0;
                     }
                 }
             }
-            repTimes[s1Num] = times;
-            if (posMap.containsKey(posInS2)) {
+            repMap.put(s1Num, count);
+            if(loopMap.containsKey(s2Index)) {
                 break;
             }
-            posMap.put(posInS2, s1Num);
+            loopMap.put(s2Index, s1Num);
             s1Num++;
         }
-        if (s1Num == n1) return times / n2;
 
-        int s1UsedFor = posMap.get(posInS2);
-        int s1NumInLoop = s1Num - s1UsedFor;                       // s1 num in each loop
-        int s2NumInLoop = repTimes[s1Num] - repTimes[s1UsedFor];  // s2 num in each loop
-        int repeatCount = (n1 - s1UsedFor) / s1NumInLoop;
-        int n = repeatCount * s2NumInLoop;
-        n += repTimes[s1UsedFor + (n1 - s1UsedFor) % s1NumInLoop];
-        return n / n2;
+        if(s1Num >= n1) return count / n2;
+
+        int s1NumStartOfLoop = loopMap.get(s2Index);
+        int s1NumInLoop = s1Num - s1NumStartOfLoop;
+        int s2NumInLoop = repMap.get(s1Num) - repMap.get(s1NumStartOfLoop);
+        int repeatCount = (n1 - s1NumStartOfLoop) / s1NumInLoop;
+        int res = repeatCount * s2NumInLoop;
+        res += repMap.get(s1NumStartOfLoop + (n1 - s1NumStartOfLoop) % s1NumInLoop);
+        return res / n2;
     }
 }
