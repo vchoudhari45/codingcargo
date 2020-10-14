@@ -2,16 +2,14 @@ package com.vc.hard;
 
 import java.util.*;
 
-class L472 {
-
-    static class WordComparator implements Comparator<String> {
-        public int compare(String s1, String s2) {
-            return s1.length() - s2.length();
-        }
-    }
-
+class ConcatenatedWords {
     public List<String> findAllConcatenatedWordsInADict(String[] words) {
-        Arrays.sort(words, new WordComparator());
+        Arrays.sort(words, new Comparator<String>(){
+            public int compare(String s1, String s2) {
+                return Integer.compare(s1.length(), s2.length());
+            }
+        });
+
         HashSet<String> set = new HashSet<>();
         List<String> res = new ArrayList<>();
         for(String word: words) {
@@ -26,7 +24,7 @@ class L472 {
         int n = word.length();
         boolean[] dp = new boolean[n + 1];
         dp[0] = true;
-        for(int i = 0; i <= n; i++) {
+        for(int i = 1; i <= word.length(); i++) {
             for(int j = 0; j < i; j++) {
                 if(dp[j] && set.contains(word.substring(j, i))) {
                     dp[i] = true;

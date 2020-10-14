@@ -84,6 +84,18 @@ const dynamicProgramming = {
             index: 446,
             title: "Arithmetic Slices II Subsequence",
             problem: "hard"
+        },
+        {
+            index: 471,
+            title: "Encode String with Shortest Length",
+            problem: "hard",
+            company: ["Amazon", "Google"]
+        },
+        {
+            index: 472,
+            title: "Concatenated Words",
+            problem: "hard",
+            company: ["Amazon", "Facebook"]
         }
 	]
 }
