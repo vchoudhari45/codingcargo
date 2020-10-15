@@ -49,6 +49,12 @@ const graph = {
             title: "Longest Increasing Path in a Matrix",
             problem: "hard",
             company: ["Amazon", "Facebook", "Google", "Microsoft"]
+        },
+        {
+            index: 489,
+            title: "Robot Room Cleaner",
+            problem: "hard",
+            company: ["Amazon", "Facebook", "Google"]
         }
 	]
 }

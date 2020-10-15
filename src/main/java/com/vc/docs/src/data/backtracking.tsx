@@ -33,6 +33,11 @@ const backtracking = {
                 title: "Word Pattern II",
                 problem: "hard",
                 company: ["Amazon"],
+        },
+        {
+                index: 488,
+                title: "Zuma Game",
+                problem: "hard"
         }
 	]
 }
