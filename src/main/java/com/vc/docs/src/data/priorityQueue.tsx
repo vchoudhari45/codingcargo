@@ -25,6 +25,11 @@ const priorityQueue = {
             title: "Trapping Rain Water II",
             problem: "hard",
             company: ["Amazon"]
+        },
+        {
+            index: 502,
+            title: "IPO",
+            problem: "hard"
         }
 	]
 }
