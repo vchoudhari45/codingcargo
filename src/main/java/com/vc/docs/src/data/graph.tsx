@@ -55,6 +55,12 @@ const graph = {
             title: "Robot Room Cleaner",
             problem: "hard",
             company: ["Amazon", "Facebook", "Google"]
+        },
+        {
+            index: 499,
+            title: "The Maze III",
+            problem: "hard",
+            company: ["Google"]
         }
 	]
 }

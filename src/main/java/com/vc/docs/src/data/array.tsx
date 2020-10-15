@@ -79,6 +79,11 @@ const array = {
             title: "Patching Array",
             problem: "hard",
             company: ["Google"]
+        },
+        {
+            index: 493,
+            title: "Reverse Pairs",
+            problem: "hard",
         }
 	]
 }
