@@ -60,6 +60,12 @@ export const hashMapMenu = {
             title: "LFU Cache",
             problem: "hard",
             company: ["Amazon", "Google"]
+        },
+        {
+            index: 514,
+            title: "Freedom Trail",
+            problem: "hard",
+            company: ["Google"]
         }
 	]
 }
