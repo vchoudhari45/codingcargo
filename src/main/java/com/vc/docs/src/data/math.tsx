@@ -58,7 +58,13 @@ const math = {
         {
             index: 479,
             title: "Largest Palindrome Product",
-            problem: "hard"
+            problem: "hard",
+            company: ["Amazon"]
+        },
+        {
+            index: 517,
+            title: "Super Washing Machines",
+            problem: "hard",
             company: ["Amazon"]
         }
 	]
