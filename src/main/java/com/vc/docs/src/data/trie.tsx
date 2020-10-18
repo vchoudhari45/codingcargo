@@ -7,7 +7,13 @@ const trie = {
 			title: "Word Search II",
 			problem: "hard",
 			company: ["Amazon", "Google", "Microsoft"]
-		}
+		},
+		{
+            index: 527,
+            title: "Word Abbreviation",
+            problem: "hard",
+            company: ["Google"]
+        }
 	]
 }
 
