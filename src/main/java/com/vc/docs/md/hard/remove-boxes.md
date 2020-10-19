@@ -1,11 +1,11 @@
-[comment]: metadata=Java Solution to problem Remove Boxes using Dynamic Programming algorithm.
-[comment]: keywords=Remove Boxes, Dynamic Programming Algorithm
+[comment]: metadata=Java Solution to problem Remove Boxes using Dynamic Programming.
+[comment]: keywords=Remove Boxes, Dynamic Programming
 [comment]: robots=index, follow
 
 
 <h1>Remove Boxes</h1>
 <p>
-This page explains Java solution to problem <code class="inline">Remove Boxes</code> using <code class="inline">Dynamic Programming</code> algorithm.
+This page explains Java solution to problem <code class="inline">Remove Boxes</code> using <code class="inline">Dynamic Programming</code>.
 </p>
 
 

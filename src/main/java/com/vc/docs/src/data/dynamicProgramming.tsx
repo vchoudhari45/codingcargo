@@ -101,6 +101,12 @@ const dynamicProgramming = {
             index: 546,
             title: "Remove Boxes",
             problem: "hard"
+        },
+        {
+            index: 552,
+            title: "Student Attendance Record II",
+            problem: "hard",
+            company: ["Google"]
         }
 	]
 }
