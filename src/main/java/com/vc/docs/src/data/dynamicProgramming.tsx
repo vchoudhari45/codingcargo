@@ -96,6 +96,11 @@ const dynamicProgramming = {
             title: "Concatenated Words",
             problem: "hard",
             company: ["Amazon", "Facebook"]
+        },
+        {
+            index: 546,
+            title: "Remove Boxes",
+            problem: "hard"
         }
 	]
 }
