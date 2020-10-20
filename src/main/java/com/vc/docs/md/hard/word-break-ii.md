@@ -69,7 +69,7 @@ W is total number of elements in an input array wordDict.<br />
 <h2 class="heading">Space Complexity</h2>
 <blockquote>
 <p>
-O(W + 2 ^ N) Where <br />
+O(W + 2<sup>N</sup>) Where <br />
 N is total number of elements in an input String s.<br />
 W is total number of elements in an input array wordDict.<br />
 </p>

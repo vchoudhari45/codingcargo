@@ -69,7 +69,7 @@ N is length of input string s1 or s2(Both will have same length)
 <h2 class="heading">Space Complexity</h2>
 <blockquote>
 <p>
-O(N ^ 3) Where <br />
+O(N<sup>3</sup>) Where <br />
 N is length of input string s1 or s2(Both will have same length)
 </p>
 </blockquote>

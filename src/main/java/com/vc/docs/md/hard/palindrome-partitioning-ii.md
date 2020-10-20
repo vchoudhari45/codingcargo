@@ -11,10 +11,10 @@ This page explains Java solution to problem <code class="inline">Palindrome Part
 
 <h2 class="heading">Problem Statement</h2>
 <p>
-Given a string s, partition s such that every substring of the partition is a palindrome.
+Given a string <code class="inline">s</code>, partition <code class="inline">s</code> such that every substring of the partition is a palindrome.
 </p>
 <p>
-Return the minimum cuts needed for a palindrome partitioning of s.
+Return the minimum cuts needed for a palindrome partitioning of <code class="inline">s</code>.
 </p>
 
 <b>Example 1:</b>
@@ -47,7 +47,7 @@ If you have any suggestions in below code, please <a href="####LINK_PLACEHOLDER#
 <h2 class="heading">Time Complexity</h2>
 <blockquote>
 <p>
-O(N ^ 2) Where <br />
+O(N<sup>2</sup>) Where <br />
 N is total number of elements in an input array.
 </p>
 </blockquote>

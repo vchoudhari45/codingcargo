@@ -14,7 +14,7 @@ This page explains Java solution to problem <code class="inline">Longest Consecu
 Given an unsorted array of integers, find the length of the longest consecutive elements sequence.
 </p>
 <p>
-Your algorithm should run in O(n) complexity.
+Your algorithm should run in <code class="inline">O(n)</code> complexity.
 </p>
 
 <b>Example 1:</b>

@@ -20,6 +20,12 @@ export const hashMapMenu = {
             company: ["Amazon", "Facebook", "Google", "Microsoft"]
         },
         {
+            index: 239,
+            title: "Sliding Window Maximum",
+            problem: "hard",
+            company: ["Amazon", "Facebook", "Google", "Microsoft"]
+        },
+        {
             index: 327,
             title: "Count of Range Sum",
             problem: "hard",

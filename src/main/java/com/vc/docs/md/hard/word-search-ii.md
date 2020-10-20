@@ -45,7 +45,7 @@ If you have any suggestions in below code, please <a href="####LINK_PLACEHOLDER#
 <h2 class="heading">Time Complexity</h2>
 <blockquote>
 <p>
-O(M * 4 ^ L) Where <br />
+O(M * 4 <sup>L</sup>) Where <br />
 M is total number of cells in an input board.<br />
 L is length of word which has a max Length in an input array words.
 </p>
