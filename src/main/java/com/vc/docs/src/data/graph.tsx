@@ -21,12 +21,6 @@ const graph = {
             company: ["Amazon", "Facebook", "Google", "Microsoft"]
         },
         {
-            index: 301,
-            title: "Remove Invalid Parentheses",
-            problem: "hard",
-            company: ["Amazon", "Facebook", "Google"]
-        },
-        {
             index: 302,
             title: "Smallest Rectangle Enclosing Black Pixels",
             problem: "hard",

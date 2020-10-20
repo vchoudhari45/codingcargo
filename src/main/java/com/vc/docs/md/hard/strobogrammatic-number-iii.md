@@ -11,7 +11,7 @@ This page explains Java solution to problem <code class="inline">Strobogrammatic
 
 <h2 class="heading">Problem Statement</h2>
 <p>
-A strobogrammatic number is a number that looks the same when rotated 180 degrees (looked at upside down).
+A strobogrammatic number is a number that looks the same when rotated <code class="inline">180</code> degrees (looked at upside down).
 </p>
 <p>
 Write a function to count the total strobogrammatic numbers that exist in the range of <code class="inline">low <= num <= high</code>.

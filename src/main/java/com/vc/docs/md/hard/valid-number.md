@@ -1,11 +1,11 @@
-[comment]: metadata=Java Solution to problem Valid Number using String.
-[comment]: keywords=Valid Number, String
+[comment]: metadata=Java Solution to problem Valid Number using Finite State Automaton.
+[comment]: keywords=Valid Number, Finite State Automaton
 [comment]: robots=index, follow
 
 
 <h1>Valid Number</h1>
 <p>
-This page explains Java solution to problem <code class="inline">Valid Number</code> using <code class="inline">String</code>.
+This page explains Java solution to problem <code class="inline">Valid Number</code> using <code class="inline">Finite State Automaton</code>.
 </p>
 
 
