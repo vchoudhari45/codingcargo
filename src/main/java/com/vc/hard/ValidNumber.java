@@ -16,8 +16,6 @@ class ValidNumber {
 
         s = s.trim();
 
-        //if(s.equals(".") || s.equals("-") || s.equals("+") || s.equals("e")) return false;
-
         boolean seenDigit = false;
 
         for(int i = 0; i < s.length(); i++) {

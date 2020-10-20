@@ -13,6 +13,7 @@ class PermutationSequence {
         }
         numbers.add(n);
 
+        //We want kth element, so we skip (k - 1) elements as below
         k--;
         StringBuilder sb = new StringBuilder();
         for(int i = n - 1; i >= 0; i--) {

@@ -33,9 +33,11 @@ class TextJustification {
     private void format(String[] words, int width, int widthWithoutSpace, int maxWidth,
                         int start, int fitting,
                         List<String> res) {
-        //We will want last line to be left justified
-        //So if it is only one word or if it is last line, just append one spaces
-        //And append remainingSpaces later
+        /**
+         *   We will want last line to be left justified
+         *   So if it is only one word or if it is last line, just append one spaces
+         *   And append remainingSpaces later
+         **/
         if(fitting == 1 || start + fitting == words.length) {
             StringBuilder sb = new StringBuilder();
             int index = 0;

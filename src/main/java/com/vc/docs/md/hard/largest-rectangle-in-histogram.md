@@ -11,7 +11,7 @@ This page explains Java solution to problem <code class="inline">Largest Rectang
 
 <h2 class="heading">Problem Statement</h2>
 <p>
-Given <code class="inline">n</code> non-negative integers representing the histogram's bar height where the width of each bar is 1, find the area of largest rectangle in the histogram.
+Given <code class="inline">n</code> non-negative integers representing the histogram's bar height where the width of each bar is <code class="inline">1</code>, find the area of largest rectangle in the histogram.
 </p>
 
 
