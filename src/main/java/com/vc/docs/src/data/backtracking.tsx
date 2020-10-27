@@ -40,6 +40,12 @@ const backtracking = {
                 problem: "hard"
         },
         {
+                index: 465,
+                title: "Optimal Account Balancing",
+                problem: "hard",
+                company: ["Amazon", "Google"]
+        },
+        {
                 index: 488,
                 title: "Zuma Game",
                 problem: "hard"

@@ -21,7 +21,7 @@ class StrongPasswordChecker {
             i += len;
         }
 
-        // no need deletion when s.length() <= 20
+        // no need of deletion when s.length() <= 20
         if (s.length() <= 20) return Math.max(requiredChar, replace);
 
         int deleteCount = s.length() - 20;
