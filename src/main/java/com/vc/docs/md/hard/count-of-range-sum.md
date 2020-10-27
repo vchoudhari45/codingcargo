@@ -17,7 +17,7 @@ Given an integer array <code class="inline">nums</code>, return the number of ra
 Range sum <code class="inline">S(i, j)</code> is defined as the sum of the elements in <code class="inline">nums</code> between indices <code class="inline">i</code> and <code class="inline">j</code> <code class="inline">(i ≤ j)</code>, inclusive.
 </p>
 <p>
-Note: A naive algorithm of O(n2) is trivial. You MUST do better than that.
+Note: A naive algorithm of O(n<sup>2</sup>) is trivial. You MUST do better than that.
 </p>
 
 <b>Example 1:</b>
