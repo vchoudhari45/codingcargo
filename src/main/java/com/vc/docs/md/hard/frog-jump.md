@@ -17,7 +17,7 @@ A frog is crossing a river. The river is divided into <code class="inline">x</co
 Given a list of stones' positions (in units) in sorted ascending order, determine if the frog is able to cross the river by landing on the last stone. Initially, the frog is on the first stone and assume the first jump must be <code class="inline">1</code> unit.
 </p>
 <p>
-If the frog's last jump was k units, then its next jump must be either <code class="inline">k - 1</code>, <code class="inline">k</code>, or <code class="inline">k + 1</code> units. Note that the frog can only jump in the forward direction.
+If the frog's last jump was <code class="inline">k</code> units, then its next jump must be either <code class="inline">k - 1</code>, <code class="inline">k</code>, or <code class="inline">k + 1</code> units. Note that the frog can only jump in the forward direction.
 </p>
 
 <ul>

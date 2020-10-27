@@ -4,24 +4,24 @@ import java.util.*;
 
 class InsertDeleteGetRandomDuplicatesAllowed {
 
-    private HashMap<Integer, Set<Integer>> map;
+    private HashMap<Integer, Set<Integer>> indexMap;
     private List<Integer> list;
     private Random random;
 
     /** Initialize your data structure here. */
     public InsertDeleteGetRandomDuplicatesAllowed() {
-        map = new HashMap<>();
+        indexMap = new HashMap<>();
         list = new ArrayList<>();
         random = new Random();
     }
 
     /** Inserts a value to the collection. Returns true if the collection did not already contain the specified element. */
     public boolean insert(int val) {
-        boolean res = !map.containsKey(val);
+        boolean res = !indexMap.containsKey(val);
 
-        Set<Integer> set = map.getOrDefault(val, new HashSet<>());
+        Set<Integer> set = indexMap.getOrDefault(val, new HashSet<>());
         set.add(list.size());
-        map.put(val, set);
+        indexMap.put(val, set);
         list.add(val);
 
         return res;
@@ -29,15 +29,15 @@ class InsertDeleteGetRandomDuplicatesAllowed {
 
     /** Removes a value from the collection. Returns true if the collection contained the specified element. */
     public boolean remove(int val) {
-        if(map.containsKey(val)) {
-            int removeIndex = map.get(val).iterator().next();
+        if(indexMap.containsKey(val)) {
+            int removeIndex = indexMap.get(val).iterator().next();
             int swapElement = list.get(list.size() - 1);
 
-            map.get(val).remove(removeIndex);
-            map.get(swapElement).add(removeIndex);
-            map.get(swapElement).remove(list.size() - 1);
+            indexMap.get(val).remove(removeIndex);
+            indexMap.get(swapElement).add(removeIndex);
+            indexMap.get(swapElement).remove(list.size() - 1);
 
-            if(map.get(val).size() == 0) map.remove(val);
+            if(indexMap.get(val).size() == 0) indexMap.remove(val);
 
             list.set(removeIndex, swapElement);
             list.remove(list.size() - 1);

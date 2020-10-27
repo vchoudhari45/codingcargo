@@ -7,7 +7,6 @@ class MaxSumOfRectangleNoLargerThanK {
         if(matrix == null || matrix.length == 0) return 0;
 
         int m = matrix.length;
-        if(m == 0) return 0;
         int n = matrix[0].length;
 
         int res = Integer.MIN_VALUE;
@@ -24,10 +23,10 @@ class MaxSumOfRectangleNoLargerThanK {
                 //If it is exactly K we have our answer
                 if(maxSum == k) return k;
 
-                    //Assign MaxValue if it is less than k
+                //Assign MaxValue if it is less than k
                 else if(maxSum < k) res = Math.max(res, maxSum);
 
-                    //Else if it is greater than k,
+                //Else if it is greater than k,
                 else {
                     maxSum = maxSumLessThanK(colSum, k);
                     if(maxSum == k) return k;

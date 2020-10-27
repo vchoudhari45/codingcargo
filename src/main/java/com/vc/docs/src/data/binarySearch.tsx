@@ -19,6 +19,12 @@ const binarySearch = {
             title: "Russian Doll Envelopes",
             problem: "hard",
             company: ["Amazon"]
+        },
+        {
+            index: 410,
+            title: "Split Array Largest Sum",
+            problem: "hard",
+            company: ["Amazon", "Google"]
         }
 	]
 }

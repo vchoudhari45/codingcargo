@@ -10,7 +10,7 @@ class PerfectRectangle {
              2. count of all the points should be even
              3. count of of all the four corner points should be one
          */
-        HashSet<String> set = new HashSet<>();
+        HashSet<String> points = new HashSet<>();
         int x1 = Integer.MAX_VALUE;
         int y1 = Integer.MAX_VALUE;
         int x2 = Integer.MIN_VALUE;
@@ -28,10 +28,10 @@ class PerfectRectangle {
             String point3 = rectangle[0] +" "+ rectangle[3];
             String point4 = rectangle[2] +" "+ rectangle[1];
 
-            if(!set.add(point1)) set.remove(point1);
-            if(!set.add(point2)) set.remove(point2);
-            if(!set.add(point3)) set.remove(point3);
-            if(!set.add(point4)) set.remove(point4);
+            if(!points.add(point1)) points.remove(point1);
+            if(!points.add(point2)) points.remove(point2);
+            if(!points.add(point3)) points.remove(point3);
+            if(!points.add(point4)) points.remove(point4);
 
             area += (rectangle[3] - rectangle[1]) * (rectangle[2] - rectangle[0]);
         }
@@ -41,7 +41,7 @@ class PerfectRectangle {
         String point3 = x1 +" "+ y2;
         String point4 = x2 +" "+ y1;
 
-        if(!set.contains(point1) || !set.contains(point2) || !set.contains(point3) || !set.contains(point4) || set.size() != 4) return false;
+        if(!points.contains(point1) || !points.contains(point2) || !points.contains(point3) || !points.contains(point4) || points.size() != 4) return false;
 
         return area == (x2 - x1) * (y2 - y1);
     }
