@@ -7,7 +7,7 @@
 Hi there! and Welcome to Coding Cargo.
 </p>
 <p>
-My name is Vishal, and codingcargo.com is my attempt to solve coding problems from competitive websites. Please read and share if you enjoy reading my solutions. 
+My name is Vishal, and codingcargo.com is my attempt to solve coding problems from competitive websites. Please share if you enjoy reading my solutions. 
 </p>
 <p>
 If you have any questions for any solution on this website, please <a href="https://github.com/vchoudhari45/codingcargo/issues" target="_blank" rel="noopener noreferrer" class="absolute">create an Issue on Github</a>, and I will try to respond as early as possible.
