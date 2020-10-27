@@ -44,7 +44,13 @@ export const hashMapMenu = {
             company: ["Amazon"]
         },
         {
-            index: 352,
+            index: 363,
+            title: "Max Sum of Rectangle No Larger Than K",
+            problem: "hard",
+            company: ["Google"]
+        },
+        {
+            index: 381,
             title: "Insert Delete Get Random Duplicates allowed",
             problem: "hard",
             company: ["Facebook"]
