@@ -15,23 +15,23 @@ class ZumaGame {
 
     private int helper(String board, HashMap<Character, Integer> handMap) {
         if(board.length() == 0) return 0;
+        else if(handMap.size() == 0) return Integer.MAX_VALUE;
         else {
             int resMin = Integer.MAX_VALUE;
-            for(int i = 0; i < board.length(); i++) {
-                char ch = board.charAt(i);
-                int j = i;
-                while(j < board.length() && ch == board.charAt(j)) j++;
-                int matchingCount = j - i;
-                int requiredCount = Math.max(0, 3 - matchingCount);
-                if(requiredCount == 0 || (handMap.containsKey(ch) && handMap.getOrDefault(ch, 0) >= requiredCount)) {
-
-                    if(requiredCount > 0) handMap.put(ch, handMap.get(ch) - requiredCount);
-
-                    String newBoard = board.substring(0, i) + board.substring(j);
-                    int res = helper(newBoard, handMap);
-                    if(res != Integer.MAX_VALUE) resMin = Math.min(resMin, requiredCount + res);
-
-                    if(requiredCount >0) handMap.put(ch, handMap.getOrDefault(ch, 0) + requiredCount);
+            for(int index = 0; index < board.length(); index++) {
+                int to = index;
+                char requiredChar = board.charAt(to);
+                while(to < board.length() && board.charAt(to) == requiredChar) to++;
+                int length = to - index;
+                int requiredLength = Math.max(3 - length, 0);
+                if(requiredLength == 0 || handMap.getOrDefault(requiredChar, 0) >= requiredLength) {
+                    String newBoard = board.substring(0, index) + board.substring(to);
+                    handMap.put(requiredChar, handMap.getOrDefault(requiredChar, 0) - requiredLength);
+                    int resInternal = helper(newBoard, handMap);
+                    if(resInternal != Integer.MAX_VALUE) {
+                        resMin = Math.min(resMin, resInternal + requiredLength);
+                    }
+                    handMap.put(requiredChar, handMap.getOrDefault(requiredChar, 0) + requiredLength);
                 }
             }
             return resMin;
