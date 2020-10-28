@@ -2239,3 +2239,11 @@ p.paragraph-heading {
 		display: none;
 	}
 }
+
+a.cookie-learn-more {
+	color: #838391;
+}
+
+a.cookie-learn-more:hover{
+	color: #fff;
+}

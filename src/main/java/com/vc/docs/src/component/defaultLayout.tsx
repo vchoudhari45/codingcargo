@@ -4,9 +4,8 @@ import Sidebar from '../component/layout/sidebar'
 import MobileSidebar from '../component/layout/mobileSidebar'
 import renderMenu from '../util/render'
 import Main from '../component/layout/main'
-import { HOMEPAGE, MENU } from '../data/menu'
-import { useEffect, useRef } from 'react'
-import { slug } from '../util/url'
+import { MENU } from '../data/menu'
+import { useRef } from 'react'
 
 interface Props {
 	content: string,
