@@ -22,7 +22,7 @@ const App = (appProps: AppProps) => {
 				buttonStyle={{ fontWeight: "bold", background: "#237AFC", padding: "10px 40px", borderRadius: "7px", color: "white" }}
 				buttonText="Got it!"
 				cookieName="__consent_cookie">
-					This website uses cookies to ensure you get the best experience on our website. 
+					We serve cookies on this site to analyze traffic, remember your preferences, and optimize your experience.
 					<a className="cookie-learn-more" aria-label="Learn more about cookies" href="https://www.cookiesandyou.com" target="_blank"> Learn more</a>
       </CookieConsent>
 		</>	
