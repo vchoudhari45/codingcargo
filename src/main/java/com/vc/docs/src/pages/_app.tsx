@@ -5,7 +5,7 @@ import ReactGA from 'react-ga'
 import Head from 'next/head'
 import { HOMEPAGE } from '../data/menu'
 
-ReactGA.initialize('UA-157613961-1', {titleCase: false, debug: false})
+ReactGA.initialize('250800453', {titleCase: false, debug: false})
 const App = (appProps: AppProps) => {
 	const title = appProps.pageProps.selected ? appProps.pageProps.selected.title : HOMEPAGE
 	return (
