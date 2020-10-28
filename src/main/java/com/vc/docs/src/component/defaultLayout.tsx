@@ -6,7 +6,6 @@ import renderMenu from '../util/render'
 import Main from '../component/layout/main'
 import { HOMEPAGE, MENU } from '../data/menu'
 import { useEffect, useRef } from 'react'
-import ReactGA from 'react-ga'
 import { slug } from '../util/url'
 
 interface Props {
@@ -17,16 +16,6 @@ interface Props {
 const DefaultLayout: React.FC<Props> = ({ content, selected } : Props) => {
 	const itemRef = useRef<HTMLInputElement>()
 	const renderMenuResponse = renderMenu(MENU, selected, 1, itemRef, "1")
-
-	useEffect(() => {
-		// if(itemRef && itemRef.current && window) {
-		// 	if(selected != null && selected.title != HOMEPAGE) {
-		// 		itemRef.current.scrollIntoView()
-		// 		window.scrollTo(0, 0)
-		// 	}
-		// }
-		ReactGA.pageview(selected && selected.title ? slug(selected.title) : slug(HOMEPAGE))
-	}, [])
 
 	return (
 		<div>

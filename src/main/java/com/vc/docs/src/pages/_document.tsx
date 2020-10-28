@@ -51,7 +51,6 @@ rv8z8W5d9nr/s+AjqkBHsYthbBsAAAAldEVYdGRhdGU6Y3JlYXRlADIwMjAtMDgtMzFUMTE6NDg6
 MTYtMDQ6MDDtGfsJAAAAJXRFWHRkYXRlOm1vZGlmeQAyMDIwLTA4LTMxVDExOjQ4OjE2LTA0OjAw
 nERDtQAAAABJRU5ErkJggg==" rel="icon" type="image/x-icon" />
                     <link rel="manifest" href={BASE_URL + "manifest.json"} />
-					<link rel="preconnect" href="https://www.google-analytics.com"></link>
 					<link rel="apple-touch-icon" href={BASE_URL + "apple-touch-icon.png"} />
 
 					<meta name="theme-color" content="#FFFFFF"/>
@@ -77,6 +76,8 @@ nERDtQAAAABJRU5ErkJggg==" rel="icon" type="image/x-icon" />
 					<meta key="twitter:site" name="twitter:site" content={TWITTER_HANDLE} /> 
 					<meta key="twitter:image" name="twitter:image" content={imgUrl} />
 					<script data-ad-client="ca-pub-5837843548871883" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+                    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DTNBVNQE38"></script>
+                    <script type="text/javascript" src={BASE_URL + "scripts/gtag.js"}></script>
 				</Head>
 				<body className="text-sm md:text-base">
 						<Main />
