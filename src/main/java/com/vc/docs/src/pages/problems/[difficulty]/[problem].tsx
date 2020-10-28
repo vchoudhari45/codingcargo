@@ -1,7 +1,7 @@
 import { MenuItem } from '../../../model/MenuItem'
 import fetch from 'isomorphic-unfetch'
 import { slug, unslug } from '../../../util/url'
-import { BASE_URL, MENU, SITE_NAME } from '../../../data/menu'
+import { BASE_URL, MENU } from '../../../data/menu'
 import PageResponse from '../../../model/PageResponse'
 
 function Post({selected, content}: PageResponse) {
