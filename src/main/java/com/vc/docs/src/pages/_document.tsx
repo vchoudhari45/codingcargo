@@ -54,7 +54,7 @@ nERDtQAAAABJRU5ErkJggg==" rel="icon" type="image/x-icon" />
 					<link rel="preconnect" href="https://www.google-analytics.com"></link>
 					<link rel="apple-touch-icon" href={BASE_URL + "apple-touch-icon.png"} />
 
-					<meta httpEquiv="Content-Security-Policy" content="default-src 'self' *.google-analytics.com; img-src 'self' *.google-analytics.com upload.wikimedia.org data:" />
+					<meta httpEquiv="Content-Security-Policy" content="default-src 'self' *.google-analytics.com *.googlesyndication.com; img-src 'self' *.google-analytics.com upload.wikimedia.org data:" />
 					<meta name="theme-color" content="#FFFFFF"/>
 					<meta name="viewport" content="width=device-width, initial-scale=1" />
 					<meta name="description" content={metadata} />
