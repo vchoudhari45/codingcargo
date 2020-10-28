@@ -18,7 +18,7 @@ class OptimalAccountBalancing {
 
     private int solve(int start, List<Integer> debits) {
         int res = Integer.MAX_VALUE;
-        while(start < debits.size() &&  debits.get(start) == 0) start++;
+        while(start < debits.size() && debits.get(start) == 0) start++;
         if(start == debits.size()) return 0;
         for(int i = start + 1; i < debits.size(); i++) {
             if(debits.get(i) * debits.get(start) < 0) {

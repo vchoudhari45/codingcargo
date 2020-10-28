@@ -8,42 +8,44 @@ class CountTheRepetitions {
             return 0;
         }
 
-        // key: position of s2  value:the number of s1
+        //Key: Position of S2
+        //Value: Number of times S1 is used
         HashMap<Integer, Integer> loopMap = new HashMap<>();
 
-        //key: number of used s1 is i value:repetitions times
+        //Key: Number of times S1 is used
+        //Value: Number of times S2 appears
         HashMap<Integer, Integer> repMap = new HashMap<>();
 
-        int count = 0, s1Num = 1, s2Index = 0;
-        while (s1Num <= n1) {
+        int s2Count = 0, s1Count = 1, s2Index = 0;
+        while (s1Count <= n1) {
             for(int s1Index = 0; s1Index < s1.length(); s1Index++) {
                 if(s1.charAt(s1Index) == s2.charAt(s2Index)) {
                     s2Index++;
                     if(s2Index == s2.length()) {
-                        count++;
+                        s2Count++;
                         s2Index = 0;
                     }
                 }
             }
-            repMap.put(s1Num, count);
+            repMap.put(s1Count, s2Count);
             if(loopMap.containsKey(s2Index)) {
                 break;
             }
-            loopMap.put(s2Index, s1Num);
-            s1Num++;
+            loopMap.put(s2Index, s1Count);
+            s1Count++;
         }
 
-        if(s1Num >= n1) return count / n2;
+        if(s1Count >= n1) return s2Count / n2;
 
         int s1CountStartOfLoop = loopMap.get(s2Index);
-        int s1CountInLoop = s1Num - s1CountStartOfLoop;
-        int s2CountInLoop = repMap.get(s1Num) - repMap.get(s1CountStartOfLoop);
+        int s1CountInLoop = s1Count - s1CountStartOfLoop;
+        int s2CountInLoop = repMap.get(s1Count) - repMap.get(s1CountStartOfLoop);
 
-        //How many do we get with in a loop
-        int repeatCount = (n1 - s1CountStartOfLoop) / s1CountInLoop;
+        //S2 Count Within a loop
+        int repeatCount = (n1 - s1CountStartOfLoop) / s1CountInLoop; //How many loops of s1 are possible with n1 as higher limit
         int res = repeatCount * s2CountInLoop;
 
-        //How many do we get outside of the loop
+        //S2 Count Outside of a loop
         res += repMap.get(s1CountStartOfLoop + (n1 - s1CountStartOfLoop) % s1CountInLoop);
         return res / n2;
     }
