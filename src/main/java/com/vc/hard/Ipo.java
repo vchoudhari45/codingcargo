@@ -2,7 +2,7 @@ package com.vc.hard;
 
 import java.util.*;
 
-class IPO {
+class Ipo {
     public int findMaximizedCapital(int k, int W, int[] profits, int[] capitials) {
         PriorityQueue<int[]> capital = new PriorityQueue<int[]>(new Comparator<int[]>(){
             public int compare(int[] x, int[] y) {
