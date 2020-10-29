@@ -3,33 +3,32 @@ package com.vc.hard;
 import java.util.*;
 
 class Ipo {
-    public int findMaximizedCapital(int k, int W, int[] profits, int[] capitials) {
-        PriorityQueue<int[]> capital = new PriorityQueue<int[]>(new Comparator<int[]>(){
-            public int compare(int[] x, int[] y) {
-                return Integer.compare(x[0], y[0]);
+    public int findMaximizedCapital(int k, int w, int[] profit, int[] capital) {
+        PriorityQueue<Integer> profitPQ = new PriorityQueue<>(new Comparator<Integer>(){
+            public int compare(Integer x, Integer y) {
+                return Integer.compare(profit[y], profit[x]);
             }
         });
 
-        PriorityQueue<int[]> profit = new PriorityQueue<int[]>(new Comparator<int[]>(){
-            public int compare(int[] x, int [] y) {
-                return Integer.compare(y[1], x[1]);
+        PriorityQueue<Integer> capitalPQ = new PriorityQueue<>(new Comparator<Integer>(){
+            public int compare(Integer x, Integer y) {
+                return Integer.compare(capital[x], capital[y]);
             }
         });
 
-        for(int i = 0; i < profits.length; i++) {
-            int[] combined = new int[]{capitials[i], profits[i]};
-            capital.add(combined);
-        }
+        for(int i = 0; i < capital.length; i++) capitalPQ.offer(i);
 
-        int totalCapital = W;
+        int initialCapital = w;
         while(k > 0) {
-            while(capital.size() > 0 && capital.peek()[0] <= totalCapital) {
-                profit.add(capital.poll());
+            while(capitalPQ.size() > 0 && capital[capitalPQ.peek()] <= initialCapital) {
+                int lowestCapitalProjectIndex = capitalPQ.poll();
+                profitPQ.offer(lowestCapitalProjectIndex);
             }
-            if(profit.size() == 0) return totalCapital;
-            totalCapital += profit.poll()[1];
+            if(profitPQ.isEmpty()) return initialCapital;
+
+            initialCapital += profit[profitPQ.poll()];
             k--;
         }
-        return totalCapital;
+        return initialCapital;
     }
 }
