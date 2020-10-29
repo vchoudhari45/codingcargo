@@ -27,25 +27,26 @@ class RobotRoomCleaner {
         void clean();
     }
 
-    int dirs[][] = {{0, 1}, {1, 0}, {0, -1}, {-1, 0}};
-
     public void cleanRoom(Robot robot) {
-        Set<String> visited = new HashSet<String>();
-        backtracking(robot, visited, 0, 0, 0);
+        HashSet<String> visited = new HashSet<>();
+        helper(robot, 0, 0, 0, visited);
     }
 
-    public void backtracking(Robot robot, Set<String> visited, int x, int y, int dir) {
-        String p = x +"->"+ y;
-        if(visited.contains(p)) return;
-        visited.add(p);
+    private int[][] dirs = {{0, 1}, {1, 0}, {0, -1}, {-1, 0}};
+
+    private void helper(Robot robot, int x, int y, int direction, HashSet<String> visited) {
+        String key = x + " "+ y;
+        if(visited.contains(key)) return;
+
+        visited.add(key);
         robot.clean();
 
-        for(int i = 0; i < 4; i++) {
+        for(int i = 0; i < dirs.length; i++) {
             if(robot.move()) {
-                int nx = x + dirs[dir][0];
-                int ny = y + dirs[dir][1];
+                int xNew = x + dirs[direction][0];
+                int yNew = y + dirs[direction][1];
 
-                backtracking(robot, visited, nx, ny, dir);
+                helper(robot, xNew, yNew, direction, visited);
 
                 robot.turnRight();
                 robot.turnRight();
@@ -54,7 +55,7 @@ class RobotRoomCleaner {
                 robot.turnRight();
             }
             robot.turnRight();
-            dir = (dir + 1) % 4;
+            direction = (direction + 1) % 4;
         }
     }
 }
