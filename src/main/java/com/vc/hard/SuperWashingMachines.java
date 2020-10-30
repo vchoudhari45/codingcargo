@@ -37,7 +37,7 @@ class SuperWashingMachines {
             giveOuts = machines[i] - avg;
             moves = Math.max(giveOuts, moves);
 
-            //See if accumulatedGiveOuts is our answe like in Case 2 described above
+            //See if accumulatedGiveOuts is our answer like in Case 2 described above
             accumulatedGiveOuts += giveOuts;
             moves = Math.max(moves, Math.abs(accumulatedGiveOuts));
         }
