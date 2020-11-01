@@ -14,8 +14,7 @@ class StudentAttendanceRecordIi {
 
              P_NO_A = Number of sequences ending in 'P' and doesn't have 'A'
              L_NO_A = Number of sequences ending in 'L' and doesn't have 'A'
-         */
-
+        */
         long[] P = new long[n + 1];
         long[] A = new long[n + 1];
         long[] L = new long[n + 1];
@@ -39,7 +38,7 @@ class StudentAttendanceRecordIi {
 
              Number of sequences ending in 'L' and doesn't have 'A'
              L
-         */
+        */
         P[1] = 1;
         A[1] = 1;
         L[1] = 1;
@@ -71,7 +70,7 @@ class StudentAttendanceRecordIi {
              Number of sequences ending in 'L' and doesn't have 'A'
              PL
              LL
-         */
+        */
         P[2] = 3;
         A[2] = 2;
         L[2] = 3;
@@ -148,17 +147,17 @@ class StudentAttendanceRecordIi {
 
              Rule for L: There can't be more than two continuous L
              L(n) =  P(n - 1)                                                          You can append L to Sequences ending in P
-                    + A(n - 1)                                                         You can append L to Sequences ending in A
-                    + if(n - 2 == 'A' || n - 2 == 'P') P(n - 2) + A(n - 2)  Y          You can append L to Sequence, if Prev To Prev Character is NOT L
+                   + A(n - 1)                                                          You can append L to Sequences ending in A
+                   + if(n - 2 == 'A' || n - 2 == 'P') P(n - 2) + A(n - 2)              You can append L to Sequence, if Prev To Prev Character is NOT L
 
              Rule for A: There can't be more than one A
              A(n) =   P_NO_A(n - 1)                                                    You can append A to Sequences ending in P and has no 'A'
                     + L_NO_A(n - 1)                                                    You can append A to Sequences ending in L and has no 'A'
 
 
-             P_NO_A(n) = A(n)
-             L_NO_A(n) = P_NO_A(n - 1) + P_NO_A(n - 2)
-         */
+             P_NO_A(n) = A(n)                                                          You can append P to any Seq
+             L_NO_A(n) = A(n - 1) + A(n - 2)
+        */
         for(int i = 4; i <= n; i++) {
             P[i] = (P[i - 1] + L[i - 1] + A[i - 1]) % MOD;
             L[i] = (P[i - 1] + A[i - 1] + P[i - 2] + A[i - 2]) % MOD;
