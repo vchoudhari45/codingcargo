@@ -11,7 +11,7 @@ This page explains Java solution to problem <code class="inline">Word Abbreviati
 
 <h2 class="heading">Problem Statement</h2>
 <p>
-Given an array of n distinct non-empty strings, you need to generate minimal possible abbreviations for every word following rules below.
+Given an array of <code class="inline">n</code> distinct non-empty strings, you need to generate minimal possible abbreviations for every word following rules below.
 </p>
 <ul>
 <li>1. Begin with the first character and then the number of characters abbreviated, which followed by the last character.</li>
