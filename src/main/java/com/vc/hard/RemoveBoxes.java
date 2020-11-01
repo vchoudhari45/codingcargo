@@ -17,10 +17,7 @@ class RemoveBoxes {
 
         for(int middle = left + 1; middle <= right; middle++) {
             if(boxes[left] == boxes[middle]) {
-                res = Math.max(
-                        res,
-                        helper(boxes, left + 1, middle - 1, 0, dp) + helper(boxes, middle, right, same + 1, dp)
-                      );
+                res = Math.max(res, helper(boxes, left + 1, middle - 1, 0, dp) + helper(boxes, middle, right, same + 1, dp));
             }
         }
 
