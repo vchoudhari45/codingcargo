@@ -30,6 +30,12 @@ const priorityQueue = {
             index: 502,
             title: "IPO",
             problem: "hard"
+        },
+        {
+            index: 568,
+            title: "Maximum Vacation Days",
+            problem: "hard",
+            company: ["Google", "Facebook"]
         }
 	]
 }
