@@ -5,6 +5,7 @@ import { truncate } from "../../util/url"
 import Prism from 'prismjs'
 import React, { useEffect } from 'react'
 import { BASE_URL, HOMEPAGE } from "../../data/menu"
+import GoogleAd  from "../googleAd"
 
 interface Props {
 	prev: MenuItem
@@ -102,7 +103,7 @@ const main: React.FC<Props> = ({prev, current, next, content}: Props) => {
 				}
 
 				<footer className="jsx-29590182">
-				    <GoogleAd slot="1064283352" timeout={1000} className="page-bottom" />
+				    <GoogleAd />
 				</footer>
 
 			</div>
