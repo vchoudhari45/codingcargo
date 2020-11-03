@@ -102,7 +102,9 @@ const main: React.FC<Props> = ({prev, current, next, content}: Props) => {
 					: ""
 				}
 
-				<GoogleAd />
+				<div>
+				    <GoogleAd />
+				</div>
 
 			</div>
 		</>
