@@ -2231,13 +2231,20 @@ p.paragraph-heading {
   display: block;
 }
 
+.ad {
+    display: none;
+}
+
 @media (min-width:992px){
   .pagination{
     display: block;
-	}
-	.pagination-mobile {
-		display: none;
-	}
+  }
+  .pagination-mobile {
+    display: none;
+  }
+  .ad {
+    display: block;
+  }
 }
 
 a.cookie-learn-more {

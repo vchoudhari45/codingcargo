@@ -102,7 +102,7 @@ const main: React.FC<Props> = ({prev, current, next, content}: Props) => {
 					: ""
 				}
 
-				<div className="jsx-29590182" style={{height: "100px"}}>
+				<div className="jsx-29590182 ad" style={{height: "100px"}}>
 				  <GoogleAd />
 				</div>
 
