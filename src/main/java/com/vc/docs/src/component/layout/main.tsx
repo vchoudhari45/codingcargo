@@ -19,7 +19,7 @@ const main: React.FC<Props> = ({prev, current, next, content}: Props) => {
 	const shareUrl = current.title ? BASE_URL + slug(current.title) : null
 	const title = current.title
 	let contentArr = content ? content.split("\n") : ['','','','']
-    contentArr = contentArr.length < 4 ? ['[comment]: metadata=Coding Cargo Error page', '[comment]: keywords=Coding Cargo, Error Page', '[comment]: robots=noindex, nofollow', '<h1>Page Not Found</h1>', '<p>Oops! we can’t find the page you were looking for</p>', '<p><a href="https://www.codingcargo.com" class="absolute">Go to Homepage</a></p>']
+    contentArr = contentArr.length <= 4 ? ['[comment]: metadata=Coding Cargo Error page', '[comment]: keywords=Coding Cargo, Error Page', '[comment]: robots=noindex, nofollow', '<h1>Page Not Found</h1>', '<p>Oops! we can’t find the page you were looking for</p>', '<p><a href="https://www.codingcargo.com" class="absolute">Go to Homepage</a></p>'] : contentArr
 
 	useEffect(() => {
 		Prism.highlightAll()
