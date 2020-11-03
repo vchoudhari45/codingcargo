@@ -10,7 +10,7 @@ const GoogleAd = () => {
 			style={{display : "block"}}
 			data-ad-client="ca-pub-5837843548871883"
 			data-ad-slot="1064283352"
-			data-ad-format="auto"
+			data-ad-format="horizontal"
 			data-full-width-responsive="true"></ins>
   );
 };
