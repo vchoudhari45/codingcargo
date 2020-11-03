@@ -29,7 +29,7 @@ const main: React.FC<Props> = ({prev, current, next, content}: Props) => {
 			<div className="jsx-29590182 docs">
 				
 				<div id="reach-skip-nav" className="jsx-29590182 docs-content">
-					{ contentArr.length < 4 ? ReactHtmlParser("<h1>Page not found</h1><p>Sorry, we can’t find the page you were looking for.</p><p><a href='https://www.codingcargo.com/' class='absolute'>Go to homepage</a></p>") : ReactHtmlParser(contentArr.slice(3).join("\n")) }
+					{ contentArr.length < 4 ? ReactHtmlParser("<h1>Page not found</h1><p>We apologize for the inconvenience, but we can’t find the page you were looking for.</p><p><a href='https://www.codingcargo.com/' class='absolute'>Go to homepage</a></p>") : ReactHtmlParser(contentArr.slice(3).join("\n")) }
 				</div>
 
 				<div className="jsx-29590182 page-nav">
