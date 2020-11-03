@@ -2247,3 +2247,13 @@ a.cookie-learn-more {
 a.cookie-learn-more:hover{
 	color: #fff;
 }
+
+.ad_responsive { 
+	width: 320px; height: 100px; 
+}
+@media(min-width: 500px) { 
+	.ad_responsive { width: 468px; height: 60px; } 
+}
+@media(min-width: 800px) { 
+	.ad_responsive { width: 728px; height: 90px; } 
+}
