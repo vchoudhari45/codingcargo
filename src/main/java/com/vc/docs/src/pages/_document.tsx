@@ -11,7 +11,7 @@ class CustomDocument extends Document {
 		const contentArr = pageProps.content ? pageProps.content.split("\n") : ['','','']
 		const metadata = contentArr[0] ? contentArr[0].replace("[comment]: metadata=", "") : ""
 		const keywords = contentArr[1] ? contentArr[1].replace("[comment]: keywords=", "") : ""
-		const robots = contentArr[2] ? contentArr[2].replace("[comment]: robots=", "") : ""
+		const robots = contentArr[2] ? contentArr[2].replace("[comment]: robots=", "") : "noindex, nofollow"
 		const url = BASE_URL + slug(title)
 
 		//imgUrl 
@@ -55,8 +55,8 @@ nERDtQAAAABJRU5ErkJggg==" rel="icon" type="image/x-icon" />
 
 					<meta name="theme-color" content="#FFFFFF"/>
 					<meta name="viewport" content="width=device-width, initial-scale=1" />
-					<meta name="description" content={metadata} />
-					<meta name="keywords" content={keywords} />
+					{ metadata && metadata !== "" ? <meta name="description" content={metadata} /> : <></> }
+					{ keywords && keywords !== "" ? <meta name="keywords" content={keywords} /> : <></> }
 					<meta name="robots" content={robots} />
 
 					<meta key="og:locale" property="og:locale" content="en_US" />
