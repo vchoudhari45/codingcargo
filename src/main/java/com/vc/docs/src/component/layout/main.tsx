@@ -100,6 +100,20 @@ const main: React.FC<Props> = ({prev, current, next, content}: Props) => {
 					</footer>
 					: ""
 				}
+
+				<footer className="jsx-29590182">
+					<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+					<ins className="adsbygoogle"
+							style={{display: "block"}}
+							data-ad-client="ca-pub-5837843548871883"
+							data-ad-slot="1064283352"
+							data-ad-format="auto"
+							data-full-width-responsive="true"></ins>
+					<script>
+							(adsbygoogle = window.adsbygoogle || []).push({});
+					</script>
+				</footer>
+
 			</div>
 		</>
 	)
