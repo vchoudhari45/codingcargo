@@ -102,9 +102,9 @@ const main: React.FC<Props> = ({prev, current, next, content}: Props) => {
 					: ""
 				}
 
-				<div className="jsx-29590182" style={{height: "100px"}}>
+				<footer className="jsx-29590182">
 				  <GoogleAd />
-				</div>
+				</footer>
 
 			</div>
 		</>
