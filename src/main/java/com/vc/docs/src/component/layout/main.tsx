@@ -101,6 +101,11 @@ const main: React.FC<Props> = ({prev, current, next, content}: Props) => {
 					</footer>
 					: ""
 				}
+
+				{/* <div className="ad_responsive ad_responsive_align">
+				  <GoogleAd />
+				</div> */}
+
 			</div>
 		</>
 	)
