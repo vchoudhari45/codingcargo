@@ -6,7 +6,7 @@ const GoogleAd = () => {
   }, []);
 
   return (
-		<ins class="adsbygoogle ad_responsive"
+		<ins class="adsbygoogle"
              data-ad-client="ca-pub-5837843548871883"
              data-ad-slot="1405717915"
              data-ad-format="auto"
