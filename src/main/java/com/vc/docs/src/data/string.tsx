@@ -37,6 +37,12 @@ const string = {
             title: "Find Closest Palindrome",
             problem: "hard",
             company: ["Amazon"]
+        },
+        {
+            index: 591,
+            title: "Tag Validator",
+            problem: "hard",
+            company: ["Google"]
         }
 	]
 }
