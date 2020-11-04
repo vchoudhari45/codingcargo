@@ -101,11 +101,6 @@ const main: React.FC<Props> = ({prev, current, next, content}: Props) => {
 					</footer>
 					: ""
 				}
-
-				<div>
-				    <GoogleAd />
-				</div>
-
 			</div>
 		</>
 	)
