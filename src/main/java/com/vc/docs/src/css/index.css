@@ -2249,7 +2249,8 @@ a.cookie-learn-more:hover{
 }
 
 .ad_responsive {
-    width: 50px;
+    display:inline-block;
+    width: 200px;
     height: 50px;
     margin-bottom: 5rem;
 }
