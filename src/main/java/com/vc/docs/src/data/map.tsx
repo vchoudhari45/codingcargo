@@ -78,6 +78,12 @@ export const hashMapMenu = {
             title: "Freedom Trail",
             problem: "hard",
             company: ["Google"]
+        },
+        {
+            index: 588,
+            title: "Design In Memory File System",
+            problem: "hard",
+            company: ["Amazon"]
         }
 	]
 }

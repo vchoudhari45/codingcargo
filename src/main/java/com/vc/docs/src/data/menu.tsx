@@ -16,6 +16,7 @@ import set from "./set"
 import bitManipulation from "./bitManipulation"
 import slidingWindow from "./slidingWindow"
 import map from "./map"
+import geometry from './geometry'
 
 export const HOMEPAGE = "Getting Started"
 export const BASE_URL = "https://www.codingcargo.com/"
