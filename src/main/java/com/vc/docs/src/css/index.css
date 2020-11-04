@@ -2256,43 +2256,47 @@ a.cookie-learn-more:hover{
 	height:90px
 }
 
-.ad_responsive {
-		display: flex;
-  	align-items: center;
+.ad_responsive_align {
+	display: flex;
+  align-items: center;
+}
+@media screen and (min-width: 751px) {
+	.ad_responsive {
 		width: 700px;
 		margin-bottom: 20rem;
+	}
 }
-@media (max-width:750px) {
+@media screen and (max-width:750px) {
 	.ad_responsive {
 			width: 600px;
 			margin-bottom: 20rem;
 	 }
 }
-@media (max-width:650px) {
+@media screen and (max-width:650px) {
 	.ad_responsive {
 			width: 500px;
 			margin-bottom: 20rem;
 	 }
 }
-@media (max-width:550px) {
+@media screen and (max-width:550px) {
     .ad_responsive {
         width: 400px;
         margin-bottom: 10rem;
      }
 }
-@media (max-width:450px) {
+@media screen and (max-width:450px) {
 	.ad_responsive {
 			width: 300px;
 			margin-bottom: 10rem;
 	 }
 }
-@media (max-width:350px) {
+@media screen and (max-width:350px) {
 	.ad_responsive {
 			width: 200px;
 			margin-bottom: 5rem;
 	 }
 }
-@media (max-width:250px) {
+@media screen and (max-width:250px) {
 	.ad_responsive {
 			width: 100px;
 			margin-bottom: 5rem;
