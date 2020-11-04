@@ -103,6 +103,7 @@ const main: React.FC<Props> = ({prev, current, next, content}: Props) => {
 				}
 
 				<div>
+				This is Google AdUnit
 {/* 				  <GoogleAd /> */}
 				</div>
 
