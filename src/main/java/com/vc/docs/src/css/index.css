@@ -2249,8 +2249,7 @@ a.cookie-learn-more:hover{
 }
 
 .ad_responsive {
-    display:inline-block;
-    width: 320px;
+    width: 50px;
     height: 50px;
     margin-bottom: 5rem;
 }
@@ -2263,7 +2262,6 @@ a.cookie-learn-more:hover{
 }
 @media (min-width:500px) {
     .ad_responsive {
-        display:inline-block;
         width: 468px;
         height: 60px;
         margin-bottom: 10rem;
@@ -2271,7 +2269,6 @@ a.cookie-learn-more:hover{
 }
 @media (min-width:800px) {
     .ad_responsive {
-        display:inline-block;
         width: 728px;
         height: 90px;
         margin-bottom: 10rem;
