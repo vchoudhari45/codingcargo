@@ -2258,8 +2258,18 @@ a.cookie-learn-more:hover{
 }
 
 .ad_responsive_align {
-	display: flex;
-	align-items: center;
+	display:-webkit-inline-box;
+    display:-webkit-inline-flex;
+    display:-ms-inline-flexbox;
+    display:inline-flex;
+    -webkit-align-items:center;
+    -webkit-box-align:center;
+    -ms-flex-align:center;
+    align-items:center;
+    -webkit-box-pack:center;
+    -webkit-justify-content:center;
+    -ms-flex-pack:center;
+    justify-content:center;
 }
 
 .ad_responsive {
