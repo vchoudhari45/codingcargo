@@ -2248,6 +2248,14 @@ a.cookie-learn-more:hover{
 	color: #fff;
 }
 
+.ad_slot {
+	display:block;
+	min-width:200px;
+	max-width:728px;
+	width:100%;
+	height:90px
+}
+
 .ad_responsive_align {
 	display: flex;
   align-items: center;
