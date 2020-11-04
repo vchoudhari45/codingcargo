@@ -2253,10 +2253,12 @@ a.cookie-learn-more:hover{
     width: 320px;
     height: 50px;
     border: 1px solid #ccc;
+    margin-bottom: 5rem;
 }
 @media (max-width: 400px) {
     .ad_responsive {
         display: none;
+        margin-bottom: 20rem;
      }
 }
 @media (min-width:500px) {
@@ -2264,6 +2266,7 @@ a.cookie-learn-more:hover{
         width: 468px;
         height: 60px;
         border: 1px solid #ccc;
+        margin-bottom: 10rem;
     }
 }
 @media (min-width:800px) {
@@ -2271,5 +2274,6 @@ a.cookie-learn-more:hover{
         width: 728px;
         height: 90px;
         border: 1px solid #ccc;
+        margin-bottom: 10rem;
     }
 }
