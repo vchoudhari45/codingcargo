@@ -2258,11 +2258,13 @@ a.cookie-learn-more:hover{
 }
 @media (max-width: 400px) {
     .ad_responsive {
+        display:none;
         margin-bottom: 20rem;
      }
 }
 @media (min-width:500px) {
     .ad_responsive {
+        display:inline-block;
         width: 468px;
         height: 60px;
         border: 1px solid #D8D8D8;
@@ -2272,6 +2274,7 @@ a.cookie-learn-more:hover{
 }
 @media (min-width:800px) {
     .ad_responsive {
+        display:inline-block;
         width: 728px;
         height: 90px;
         border: 1px solid #D8D8D8;
