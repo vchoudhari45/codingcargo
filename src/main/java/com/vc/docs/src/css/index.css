@@ -2248,32 +2248,53 @@ a.cookie-learn-more:hover{
 	color: #fff;
 }
 
-.ad_responsive {
-	display:'inline-block';
-	min-width:'150px';
-	max-width:'728px';
-	width:'100%';
-	height:'90px';
-	margin-bottom: 5rem;	
+.ad_slot {
+	display:block;
+	min-width:200px;
+	max-width:728px;
+	width:100%;
+	height:90px
 }
-@media (max-width: 400px) {
+
+.ad_responsive {
+		display: flex;
+  	align-items: center;
+		width: 700px;
+		margin-bottom: 20rem;
+}
+@media (max-width:750px) {
+	.ad_responsive {
+			width: 600px;
+			margin-bottom: 20rem;
+	 }
+}
+@media (max-width:650px) {
+	.ad_responsive {
+			width: 500px;
+			margin-bottom: 20rem;
+	 }
+}
+@media (max-width:550px) {
     .ad_responsive {
-        width: 320px;
-        height: 50px;
-        margin-bottom: 20rem;
+        width: 400px;
+        margin-bottom: 10rem;
      }
 }
-@media (min-width:500px) {
-    .ad_responsive {
-        width: 468px;
-        height: 60px;
-        margin-bottom: 10rem;
-    }
+@media (max-width:450px) {
+	.ad_responsive {
+			width: 300px;
+			margin-bottom: 10rem;
+	 }
 }
-@media (min-width:800px) {
-    .ad_responsive {
-        width: 728px;
-        height: 90px;
-        margin-bottom: 10rem;
-    }
+@media (max-width:350px) {
+	.ad_responsive {
+			width: 200px;
+			margin-bottom: 5rem;
+	 }
+}
+@media (max-width:250px) {
+	.ad_responsive {
+			width: 100px;
+			margin-bottom: 5rem;
+	 }
 }
