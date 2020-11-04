@@ -7,11 +7,10 @@ const GoogleAd = () => {
 
   return (
 		<ins class="adsbygoogle ad_responsive"
-			style={{display : "inline-block"}}
-			data-ad-client="ca-pub-5837843548871883"
-			data-ad-slot="1064283352"
-			data-ad-format="horizontal"
-			data-full-width-responsive="true"></ins>
+             data-ad-client="ca-pub-5837843548871883"
+             data-ad-slot="1405717915"
+             data-ad-format="auto"
+             data-full-width-responsive="true"></ins>
   );
 };
 

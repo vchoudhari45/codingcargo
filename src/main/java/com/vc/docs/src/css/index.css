@@ -2249,11 +2249,24 @@ a.cookie-learn-more:hover{
 }
 
 .ad_responsive {
-	width: 320px; height: 100px; margin-bottom:5rem;
+    display:inline-block;
+    width: 320px;
+    height: 50px;
 }
-@media(min-width: 500px) {
-	.ad_responsive { width: 468px; height: 60px; margin-bottom:5rem; }
+@media (max-width: 400px) {
+    .ad_responsive {
+        display: none;
+     }
 }
-@media(min-width: 800px) {
-	.ad_responsive { width: 728px; height: 90px; margin-bottom:5rem; }
+@media (min-width:500px) {
+    .ad_responsive {
+        width: 468px;
+        height: 60px;
+    }
+}
+@media (min-width:800px) {
+    .ad_responsive {
+        width: 728px;
+        height: 90px;
+    }
 }
