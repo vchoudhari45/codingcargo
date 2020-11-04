@@ -2252,7 +2252,6 @@ a.cookie-learn-more:hover{
     display:inline-block;
     width: 320px;
     height: 50px;
-    border: 1px solid #D8D8D8;
     margin-bottom: 5rem;
 }
 @media (max-width: 400px) {
@@ -2267,7 +2266,6 @@ a.cookie-learn-more:hover{
         display:inline-block;
         width: 468px;
         height: 60px;
-        border: 1px solid #D8D8D8;
         margin-bottom: 10rem;
     }
 }
@@ -2276,7 +2274,6 @@ a.cookie-learn-more:hover{
         display:inline-block;
         width: 728px;
         height: 90px;
-        border: 1px solid #D8D8D8;
         margin-bottom: 10rem;
     }
 }
