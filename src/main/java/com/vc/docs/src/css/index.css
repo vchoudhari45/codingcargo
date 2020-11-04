@@ -2264,10 +2264,12 @@ a.cookie-learn-more:hover{
 	align-items: center;
 	border:1px solid #ccc;
 }
+
 .ad_responsive {
 	width: 728px;
 	margin-bottom: 20rem;
 }
+
 @media screen and (min-width: 751px) {
 	.ad_responsive {
 		width: 700px;
@@ -2275,6 +2277,7 @@ a.cookie-learn-more:hover{
 		border:1px solid #ccc;
 	}
 }
+
 @media screen and (max-width:750px) {
 	.ad_responsive {
 			width: 600px;
@@ -2282,6 +2285,7 @@ a.cookie-learn-more:hover{
 			border:1px solid #ccc;
 	 }
 }
+
 @media screen and (max-width:650px) {
 	.ad_responsive {
 			width: 500px;
@@ -2289,6 +2293,7 @@ a.cookie-learn-more:hover{
 			border:1px solid #ccc;
 	 }
 }
+
 @media screen and (max-width:550px) {
     .ad_responsive {
         width: 400px;
@@ -2296,6 +2301,7 @@ a.cookie-learn-more:hover{
 				border:1px solid #ccc;
      }
 }
+
 @media screen and (max-width:450px) {
 	.ad_responsive {
 			width: 300px;
@@ -2303,6 +2309,7 @@ a.cookie-learn-more:hover{
 			border:1px solid #ccc;
 	 }
 }
+
 @media screen and (max-width:350px) {
 	.ad_responsive {
 			width: 200px;
@@ -2310,6 +2317,7 @@ a.cookie-learn-more:hover{
 			border:1px solid #ccc;
 	 }
 }
+
 @media screen and (max-width:250px) {
 	.ad_responsive {
 			width: 100px;

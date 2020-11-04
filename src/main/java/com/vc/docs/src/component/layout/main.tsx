@@ -102,9 +102,9 @@ const main: React.FC<Props> = ({prev, current, next, content}: Props) => {
 					: ""
 				}
 
-				{/* <div className="ad_responsive ad_responsive_align">
+				<div className="ad_responsive ad_responsive_align">
 				  <GoogleAd />
-				</div> */}
+				</div>
 
 			</div>
 		</>
