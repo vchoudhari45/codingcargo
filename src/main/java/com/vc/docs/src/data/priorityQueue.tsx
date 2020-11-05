@@ -36,6 +36,12 @@ const priorityQueue = {
             title: "Maximum Vacation Days",
             problem: "hard",
             company: ["Google", "Facebook"]
+        },
+        {
+            index: 630,
+            title: "Course Schedule III",
+            problem: "hard",
+            company: ["Google", "Microsoft"]
         }
 	]
 }
