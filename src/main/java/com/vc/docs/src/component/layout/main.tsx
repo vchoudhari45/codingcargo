@@ -102,8 +102,8 @@ const main: React.FC<Props> = ({prev, current, next, content}: Props) => {
 					: ""
 				}
 
-                {
-                    title.toLowerCase() != HOMEPAGE.toLowerCase() && title.toLowerCase().trim() != "" && contentArr.length >= 5 ?
+                { 
+                    title.toLowerCase() != HOMEPAGE.toLowerCase() && title.toLowerCase().trim() != "" && contentArr.length >= 7 ?
                     <div className="ad_responsive ad_responsive_align">
                         <GoogleAd />
                     </div>
