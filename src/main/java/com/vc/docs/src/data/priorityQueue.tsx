@@ -42,6 +42,12 @@ const priorityQueue = {
             title: "Course Schedule III",
             problem: "hard",
             company: ["Google", "Microsoft"]
+        },
+        {
+            index: 632,
+            title: "Smallest Range Covering Elements from K Lists",
+            problem: "hard",
+            company: ["Amazon"]
         }
 	]
 }
