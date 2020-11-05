@@ -107,6 +107,18 @@ const dynamicProgramming = {
             title: "Student Attendance Record II",
             problem: "hard",
             company: ["Google"]
+        },
+        {
+            index: 91,
+            title: "Decode Ways",
+            problem: "hard",
+            company: ["Amazon", "Facebook", "Google", "Microsoft"]
+        },
+        {
+            index: 639,
+            title: "Decode Ways II",
+            problem: "hard",
+            company: ["Google"]
         }
 	]
 }

@@ -1,6 +1,6 @@
 package com.vc.medium;
 
-class L91 {
+class DecodeWays {
     public int numDecodings(String s) {
         int n = s.length();
         int[] dp = new int[n + 1];
@@ -17,7 +17,6 @@ class L91 {
             if(twoDigit >= 10 && twoDigit <= 26) dp[i] += dp[i - 2];
         }
 
-        //for(int i = 0; i <= n; i++) System.out.print(dp[i]+" ");
         return dp[n];
     }
 }
