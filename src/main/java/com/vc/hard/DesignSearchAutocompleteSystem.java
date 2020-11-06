@@ -2,7 +2,7 @@ package com.vc.hard;
 
 import java.util.*;
 
-class AutocompleteSystem {
+class DesignSearchAutocompleteSystem {
 
     static class Node {
         HashMap<Character, Node> map;
@@ -68,7 +68,7 @@ class AutocompleteSystem {
     }
 
     Trie trie = new Trie();
-    public AutocompleteSystem(String[] sentences, int[] times) {
+    public DesignSearchAutocompleteSystem(String[] sentences, int[] times) {
         for(int i = 0; i < times.length; i++) {
             trie.addWord(sentences[i], times[i]);
         }
@@ -105,6 +105,6 @@ class AutocompleteSystem {
 
 /**
  * Your AutocompleteSystem object will be instantiated and called as such:
- * AutocompleteSystem obj = new AutocompleteSystem(sentences, times);
+ * DesignSearchAutocompleteSystem obj = new DesignSearchAutocompleteSystem(sentences, times);
  * List<String> param_1 = obj.input(c);
  */

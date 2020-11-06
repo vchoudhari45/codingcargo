@@ -13,6 +13,12 @@ const trie = {
             title: "Word Abbreviation",
             problem: "hard",
             company: ["Google"]
+        },
+        {
+            index: 642,
+            title: "Design Search Autocomplete System",
+            problem: "hard",
+            company: ["Amazon", "Google"]
         }
 	]
 }
