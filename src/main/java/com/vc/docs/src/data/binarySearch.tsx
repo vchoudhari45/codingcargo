@@ -25,6 +25,12 @@ const binarySearch = {
             title: "Split Array Largest Sum",
             problem: "hard",
             company: ["Amazon", "Google"]
+        },
+        {
+            index: 644,
+            title: "Maximum Average Subarray II",
+            problem: "hard",
+            company: ["Google"]
         }
 	]
 }
