@@ -84,6 +84,12 @@ export const hashMapMenu = {
             title: "Design In Memory File System",
             problem: "hard",
             company: ["Amazon"]
+        },
+        {
+            index: 631,
+            title: "Design Excel Sum Formula",
+            problem: "hard",
+            company: ["Amazon", "Microsoft"]
         }
 	]
 }
