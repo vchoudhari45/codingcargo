@@ -20,7 +20,7 @@ Now, you start from the place indexed <code class="inline">1</code> in the array
 If there are multiple paths with the same cost, return the lexicographically smallest such path.
 </p>
 <p>
-If it's not possible to reach the place indexed N then you need to return an empty array.
+If it's not possible to reach the place indexed <code class="inline">N</code> then you need to return an empty array.
 </p>
 
 <b>Example 1:</b>
