@@ -31,6 +31,12 @@ const binarySearch = {
             title: "Maximum Average Subarray II",
             problem: "hard",
             company: ["Google"]
+        },
+        {
+            index: 668,
+            title: "Kth Smallest Number in Multiplication Table",
+            problem: "hard",
+            company: ["Google"]
         }
 	]
 }
