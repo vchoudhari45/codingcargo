@@ -119,6 +119,12 @@ const dynamicProgramming = {
             title: "Decode Ways II",
             problem: "hard",
             company: ["Google"]
+        },
+        {
+            index: 656,
+            title: "Coin Path",
+            problem: "hard",
+            company: ["Google"]
         }
 	]
 }
