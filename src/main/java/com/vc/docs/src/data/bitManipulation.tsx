@@ -12,6 +12,12 @@ const bitManipulation = {
             index: 600,
             title: "Non Negative Integers without Consecutive Ones",
             problem: "hard"
+        },
+        {
+            index: 660,
+            title: "Remove 9",
+            problem: "hard",
+            company: ["Google"]
         }
 	]
 }
