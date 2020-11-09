@@ -55,6 +55,12 @@ const graph = {
             title: "The Maze III",
             problem: "hard",
             company: ["Google"]
+        },
+        {
+            index: 675,
+            title: "Cut Off Trees for Golf Event",
+            problem: "hard",
+            company: ["Google"]
         }
 	]
 }
