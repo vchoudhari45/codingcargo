@@ -84,6 +84,12 @@ const array = {
             index: 493,
             title: "Reverse Pairs",
             problem: "hard",
+        },
+        {
+            index: 689,
+            title: "Maximum Sum of Non Overlapping Subarrays",
+            problem: "hard",
+            company: ["Facebook"]
         }
 	]
 }
