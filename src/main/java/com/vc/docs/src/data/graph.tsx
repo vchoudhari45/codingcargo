@@ -61,6 +61,11 @@ const graph = {
             title: "Cut Off Trees for Golf Event",
             problem: "hard",
             company: ["Google"]
+        },
+        {
+            index: 685,
+            title: "Redundant Connection II",
+            problem: "hard"
         }
 	]
 }

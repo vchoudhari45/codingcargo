@@ -1,6 +1,6 @@
 package com.vc.hard;
 
-class L685 {
+class RedundantConnectionIi {
     public int[] findRedundantDirectedConnection(int[][] edges) {
         int n = edges.length;
 
@@ -15,20 +15,22 @@ class L685 {
             int fromParent = find(from, parentArr);
             int toParent = find(to, parentArr);
 
+            //If we find multipleParentEdge we don't add it to parentArr
             if(toParent != to) multipleParentEdge = edge;
+            //If we find cycleEdge we don't add it to parentArr
             else if(fromParent == toParent) cycleEdge = edge;
-            else parentArr[toParent] = fromParent; //This is a trick to find multi parent assign toParent to fromParent;
+            else parentArr[toParent] = fromParent;
         }
 
         if(multipleParentEdge == null) return cycleEdge;
         if(cycleEdge == null) return multipleParentEdge;
 
-        //If we find both the issue, choose a edge which is in the cycle
-        //And to do that we go over edges once more and find the first edge which cause multipleParent issue
+        //Now if we find both that means multipleParentEdge is not part of cycle,
+        //So there has to be another edge which will cause cycle and causing multipleParent
         for(int[] edge: edges) {
             if(edge[1] == multipleParentEdge[1]) return edge;
         }
-        return cycleEdge;
+        return multipleParentEdge;  //won't reach here
     }
 
     private int find(int x, int[] parent) {
