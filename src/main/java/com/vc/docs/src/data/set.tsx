@@ -12,6 +12,12 @@ const set = {
             title: "Sliding Window Median",
             problem: "hard",
             company: ["Amazon", "Facebook", "Google"]
+        },
+        {
+            index: 683,
+            title: "K Empty Slots",
+            problem: "hard",
+            company: ["Amazon", "Google"]
         }
 	]
 }
