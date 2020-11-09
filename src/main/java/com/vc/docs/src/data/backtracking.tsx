@@ -49,6 +49,12 @@ const backtracking = {
                 index: 488,
                 title: "Zuma Game",
                 problem: "hard"
+        },
+        {
+                index: 679,
+                title: "Twenty Four Game",
+                problem: "hard",
+                company: ["Amazon", "Google"]
         }
 	]
 }
