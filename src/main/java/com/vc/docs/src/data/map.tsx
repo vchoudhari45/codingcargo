@@ -90,8 +90,13 @@ export const hashMapMenu = {
             title: "Design Excel Sum Formula",
             problem: "hard",
             company: ["Amazon", "Microsoft"]
+        },
+        {
+            index: 710,
+            title: "Random Pick with Blacklist",
+            problem: "hard"
         }
-	].sort()
+	]
 }
 
 export default hashMapMenu
