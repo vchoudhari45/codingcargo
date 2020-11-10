@@ -66,6 +66,12 @@ const graph = {
             index: 685,
             title: "Redundant Connection II",
             problem: "hard"
+        },
+        {
+            index: 711,
+            title: "Number of Distinct Islands II",
+            problem: "hard",
+            company: ["Amazon"]
         }
 	].sort()
 }
