@@ -130,6 +130,12 @@ const dynamicProgramming = {
             index: 664,
             title: "Strange Printer",
             problem: "hard"
+        },
+        {
+            index: 691,
+            title: "Stickers to Spell Word",
+            problem: "hard",
+            company: ["Facebook"]
         }
 	]
 }

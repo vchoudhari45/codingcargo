@@ -1,6 +1,6 @@
 package com.vc.hard;
 
-class L691 {
+class StickersToSpellWord {
     public int minStickers(String[] stickers, String target) {
         /**
              target: hat
@@ -31,7 +31,7 @@ class L691 {
              111 ->  2(haha + tata)
 
              And so on ...
-         */
+        */
         int n = target.length();
         int[] dp = new int[1 << n];
         for(int i = 1; i < (1 << n); i++) dp[i] = -1;
@@ -40,20 +40,16 @@ class L691 {
             if(dp[state] == -1) continue;
             for(String sticker: stickers) {
                 int initialState = state;
-                // System.out.format("%"+n+"s",Integer.toBinaryString(initialState));
-                // System.out.println();
                 for(char ch: sticker.toCharArray()) {
                     for(int i = 0; i < n; i++) {
-                        // We can't use current sticker's character as we already have that character set in target
+                        /** This bit is already set */
                         if (((initialState >> i) & 1) == 1) continue;
                         if(target.charAt(i) == ch) {
                             initialState |= (1 << i);
-                            break; // Cause we want to start with next character in the sticker
+                            break; /** Break, as we have used current character from the sticker */
                         }
                     }
                 }
-                // System.out.format("%"+n+"s",Integer.toBinaryString(initialState));
-                // System.out.println();
                 if(dp[initialState] == -1 || dp[initialState] > dp[state] + 1) {
                     dp[initialState] = dp[state] + 1;
                 }
