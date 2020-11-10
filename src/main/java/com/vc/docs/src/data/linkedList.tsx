@@ -8,7 +8,7 @@ const linkedList = {
 			problem: "hard",
 			company: ["Amazon", "Facebook", "Microsoft"]
 		}
-	]
+	].sort()
 }
 
 export default linkedList

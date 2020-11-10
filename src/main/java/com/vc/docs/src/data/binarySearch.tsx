@@ -38,7 +38,7 @@ const binarySearch = {
             problem: "hard",
             company: ["Google"]
         }
-	]
+	].sort()
 }
 
 export default binarySearch

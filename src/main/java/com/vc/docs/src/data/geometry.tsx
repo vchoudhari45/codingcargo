@@ -8,7 +8,7 @@ const geometry = {
 			problem: "hard",
 			company: ["Google"]
 		}
-	]
+	].sort()
 }
 
 export default geometry

@@ -67,7 +67,7 @@ const math = {
             problem: "hard",
             company: ["Amazon"]
         }
-	]
+	].sort()
 }
 
 export default math

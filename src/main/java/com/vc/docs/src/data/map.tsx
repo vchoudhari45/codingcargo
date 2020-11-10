@@ -91,7 +91,7 @@ export const hashMapMenu = {
             problem: "hard",
             company: ["Amazon", "Microsoft"]
         }
-	]
+	].sort()
 }
 
 export default hashMapMenu

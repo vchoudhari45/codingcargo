@@ -34,7 +34,7 @@ const stack = {
             problem: "hard",
             company: ["Amazon"]
         }
-	]
+	].sort()
 }
 
 export default stack

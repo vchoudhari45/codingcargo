@@ -67,7 +67,7 @@ const graph = {
             title: "Redundant Connection II",
             problem: "hard"
         }
-	]
+	].sort()
 }
 
 export default graph

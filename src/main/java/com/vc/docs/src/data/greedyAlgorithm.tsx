@@ -15,7 +15,7 @@ const greedyAlgorithm = {
             problem: "hard",
             company: ["Amazon", "Google"]
         }
-	]
+	].sort()
 }
 
 export default greedyAlgorithm

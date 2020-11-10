@@ -19,7 +19,7 @@ const set = {
             problem: "hard",
             company: ["Amazon", "Google"]
         }
-	]
+	].sort()
 }
 
 export default set

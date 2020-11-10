@@ -137,7 +137,7 @@ const dynamicProgramming = {
             problem: "hard",
             company: ["Facebook"]
         }
-	]
+	].sort()
 }
 
 export default dynamicProgramming

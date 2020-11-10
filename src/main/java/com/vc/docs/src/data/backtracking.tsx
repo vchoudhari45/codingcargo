@@ -56,7 +56,7 @@ const backtracking = {
                 problem: "hard",
                 company: ["Amazon", "Google"]
         }
-	]
+	].sort()
 }
 
 export default backtracking

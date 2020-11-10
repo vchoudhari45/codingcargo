@@ -8,7 +8,7 @@ const slidingWindow = {
 			problem: "hard",
 			company: ["Amazon", "Facebook", "Google"],
 		}
-	]
+	].sort()
 }
 
 export default slidingWindow

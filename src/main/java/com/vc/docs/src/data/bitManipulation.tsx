@@ -19,7 +19,7 @@ const bitManipulation = {
             problem: "hard",
             company: ["Google"]
         }
-	]
+	].sort()
 }
 
 export default bitManipulation

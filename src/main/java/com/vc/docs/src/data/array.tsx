@@ -91,7 +91,7 @@ const array = {
             problem: "hard",
             company: ["Facebook"]
         }
-	]
+	].sort()
 }
 
 export default array

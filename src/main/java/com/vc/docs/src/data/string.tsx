@@ -44,7 +44,7 @@ const string = {
             problem: "hard",
             company: ["Google"]
         }
-	]
+	].sort()
 }
 
 export default string

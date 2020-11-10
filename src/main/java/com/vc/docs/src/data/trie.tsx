@@ -20,7 +20,7 @@ const trie = {
             problem: "hard",
             company: ["Amazon", "Google"]
         }
-	]
+	].sort()
 }
 
 export default trie

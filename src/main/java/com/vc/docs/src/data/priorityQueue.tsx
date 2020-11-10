@@ -49,7 +49,7 @@ const priorityQueue = {
             problem: "hard",
             company: ["Amazon"]
         }
-	]
+	].sort()
 }
 
 export default priorityQueue
