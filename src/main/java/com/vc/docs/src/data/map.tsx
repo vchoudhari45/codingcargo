@@ -95,6 +95,12 @@ export const hashMapMenu = {
             index: 710,
             title: "Random Pick with Blacklist",
             problem: "hard"
+        },
+        {
+            index: 715,
+            title: "Range Module",
+            problem: "hard",
+            company: ["Google"]
         }
 	]
 }

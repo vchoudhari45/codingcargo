@@ -4,15 +4,15 @@ import java.util.*;
 
 class RangeModule {
 
-    private TreeMap<Integer, Integer> rangeMap = new TreeMap<>();
+    private TreeMap<Integer, Integer> rangeMap;
+
+    public RangeModule() {
+        rangeMap = new TreeMap<Integer, Integer>();
+    }
 
     public void addRange(int left, int right) {
         Integer pre = rangeMap.floorKey(left);
         Integer next = rangeMap.floorKey(right);
-
-        // System.out.println("==================================================================");
-        // System.out.println("Before adding left: "+left+" right: "+right+" pre: "+pre+" next: "+next);
-        // System.out.println(rangeMap);
 
         if(pre != null && rangeMap.get(pre) >= left) {
             left = pre;
@@ -24,9 +24,6 @@ class RangeModule {
 
         rangeMap.subMap(left, true, right, true).clear();
         rangeMap.put(left, right);
-
-        // System.out.println("After adding left: "+left+" right: "+right+" pre: "+pre+" next: "+next);
-        // System.out.println(rangeMap);
     }
 
     public boolean queryRange(int left, int right) {
@@ -39,10 +36,6 @@ class RangeModule {
         Integer pre = rangeMap.floorKey(left);
         Integer next = rangeMap.floorKey(right);
 
-        // System.out.println("==================================================================");
-        // System.out.println("Before adding left: "+left+" right: "+right+" pre: "+pre+" next: "+next);
-        // System.out.println(rangeMap);
-
         if(next != null && rangeMap.get(next) > right) {
             rangeMap.put(right, rangeMap.get(next));
         }
@@ -52,10 +45,6 @@ class RangeModule {
         }
 
         rangeMap.subMap(left, true, right, false).clear();
-
-        // System.out.println("==================================================================");
-        // System.out.println("After adding left: "+left+" right: "+right+" pre: "+pre+" next: "+next);
-        // System.out.println(rangeMap);
     }
 }
 
