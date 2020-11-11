@@ -43,6 +43,12 @@ const string = {
             title: "Tag Validator",
             problem: "hard",
             company: ["Google"]
+        },
+        {
+            index: 727,
+            title: "Minimum Window Subsequence",
+            problem: "hard",
+            company: ["Amazon", "Google"]
         }
 	].sort((a, b) => a.title.localeCompare(b.title))
 }
