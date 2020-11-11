@@ -40,7 +40,7 @@ const binarySearch = {
         },
         {
             index: 719,
-            title: "Find K-th Smallest Pair Distance",
+            title: "Find K th Smallest Pair Distance",
             problem: "hard",
             company: ["Google"]
         }
