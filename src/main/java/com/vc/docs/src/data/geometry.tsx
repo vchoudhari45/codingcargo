@@ -8,7 +8,7 @@ const geometry = {
 			problem: "hard",
 			company: ["Google"]
 		}
-	].sort()
+	].sort((a, b) => a.title.localeCompare(b.title))
 }
 
 export default geometry

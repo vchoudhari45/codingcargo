@@ -49,7 +49,7 @@ const priorityQueue = {
             problem: "hard",
             company: ["Amazon"]
         }
-	].sort()
+	].sort((a, b) => a.title.localeCompare(b.title))
 }
 
 export default priorityQueue

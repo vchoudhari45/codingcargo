@@ -19,7 +19,7 @@ const set = {
             problem: "hard",
             company: ["Amazon", "Google"]
         }
-	].sort()
+	].sort((a, b) => a.title.localeCompare(b.title))
 }
 
 export default set

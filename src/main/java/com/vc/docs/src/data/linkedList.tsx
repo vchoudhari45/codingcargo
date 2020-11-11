@@ -8,7 +8,7 @@ const linkedList = {
 			problem: "hard",
 			company: ["Amazon", "Facebook", "Microsoft"]
 		}
-	].sort()
+	].sort((a, b) => a.title.localeCompare(b.title))
 }
 
 export default linkedList

@@ -102,7 +102,7 @@ export const hashMapMenu = {
             problem: "hard",
             company: ["Google"]
         }
-	]
+	].sort((a, b) => a.title.localeCompare(b.title))
 }
 
 export default hashMapMenu

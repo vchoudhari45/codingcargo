@@ -91,7 +91,7 @@ const array = {
             problem: "hard",
             company: ["Facebook"]
         }
-	].sort()
+	].sort((a, b) => a.title.localeCompare(b.title))
 }
 
 export default array

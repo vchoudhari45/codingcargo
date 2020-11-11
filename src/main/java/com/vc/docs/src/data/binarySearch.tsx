@@ -37,8 +37,14 @@ const binarySearch = {
             title: "Kth Smallest Number in Multiplication Table",
             problem: "hard",
             company: ["Google"]
+        },
+        {
+            index: 719,
+            title: "Find K-th Smallest Pair Distance",
+            problem: "hard",
+            company: ["Google"]
         }
-	].sort()
+	].sort((a, b) => a.title.localeCompare(b.title))
 }
 
 export default binarySearch

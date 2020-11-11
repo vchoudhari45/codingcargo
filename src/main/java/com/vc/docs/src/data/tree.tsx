@@ -37,7 +37,7 @@ const tree = {
             title: "Encode N ary Tree to Binary Tree",
             problem: "hard"
         }
-	].sort()
+	].sort((a, b) => a.title.localeCompare(b.title))
 }
 
 export default tree

@@ -8,7 +8,7 @@ const slidingWindow = {
 			problem: "hard",
 			company: ["Amazon", "Facebook", "Google"],
 		}
-	].sort()
+	].sort((a, b) => a.title.localeCompare(b.title))
 }
 
 export default slidingWindow
