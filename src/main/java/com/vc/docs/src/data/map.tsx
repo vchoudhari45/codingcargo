@@ -107,6 +107,12 @@ export const hashMapMenu = {
             title: "Number of Atoms",
             problem: "hard",
             company: ["Amazon", "Google"]
+        },
+        {
+            index: 732,
+            title: "My Calendar III",
+            problem: "hard",
+            company: ["Google"]
         }
 	].sort((a, b) => a.title.localeCompare(b.title))
 }
