@@ -49,6 +49,12 @@ const string = {
             title: "Minimum Window Subsequence",
             problem: "hard",
             company: ["Amazon", "Google"]
+        },
+        {
+            index: 736,
+            title: "Parse Lisp Expression",
+            problem: "hard",
+            company: ["Google"]
         }
 	].sort((a, b) => a.title.localeCompare(b.title))
 }

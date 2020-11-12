@@ -2,7 +2,7 @@ package com.vc.hard;
 
 import java.util.*;
 
-class L736 {
+class ParseLispExpression {
     public int evaluate(String expression) {
         HashMap<String, Integer> variables = new HashMap<>();
         return solve(expression, variables);
@@ -13,7 +13,6 @@ class L736 {
         else if(isVariable(expression)) return variables.get(expression);
 
         List<String> list = parse(expression);
-        //System.out.println("Expression: "+expression+" list: "+list);
         if(list.get(0).equals("add")) {
             return solve(list.get(1), variables) + solve(list.get(2), variables);
         }
