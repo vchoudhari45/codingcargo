@@ -1,9 +1,9 @@
 [comment]: metadata=Java Solution to problem Minimum Initial Energy to Finish Tasks using greedy Algorithm.
-[comment]: keywords=Minimum Initial Energy to Finish Tasks, greedy
+[comment]: keywords=Minimum Initial Energy to Finish Tasks, Greedy Algorithm
 [comment]: robots=index, follow
 
 
-<h1>Median of Two Sorted Arrays</h1>
+<h1>Minimum Initial Energy to Finish Tasks</h1>
 <p>
 This page explains Java solution to problem <code class="inline">Minimum Initial Energy to Finish Tasks</code> using <code class="inline">Greedy</code> algorithm.
 </p>
