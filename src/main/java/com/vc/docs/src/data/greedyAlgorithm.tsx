@@ -14,6 +14,11 @@ const greedyAlgorithm = {
             title: "Text Justification",
             problem: "hard",
             company: ["Amazon", "Google"]
+        },
+        {
+            index: 1665,
+            title: "Minimum Initial Energy to Finish Tasks",
+            problem: "hard"
         }
 	].sort((a, b) => a.title.localeCompare(b.title))
 }
