@@ -55,6 +55,12 @@ const backtracking = {
                 title: "Twenty Four Game",
                 problem: "hard",
                 company: ["Amazon", "Google"]
+        },
+        {
+                index: 1655,
+                title: "Distribute Repeating Integers",
+                problem: "hard",
+                company: ["Google"]
         }
 	].sort((a, b) => a.title.localeCompare(b.title))
 }
