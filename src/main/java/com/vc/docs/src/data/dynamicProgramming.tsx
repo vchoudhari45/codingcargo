@@ -139,7 +139,7 @@ const dynamicProgramming = {
         },
         {
             index: 1643,
-            title: "Kth Smallest Instructions",
+            title: "Kth Smallest Instruction",
             problem: "hard"
         }
 	].sort((a, b) => a.title.localeCompare(b.title))
