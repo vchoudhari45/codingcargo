@@ -136,6 +136,11 @@ const dynamicProgramming = {
             title: "Stickers to Spell Word",
             problem: "hard",
             company: ["Facebook"]
+        },
+        {
+            index: 1643,
+            title: "Kth Smallest Instructions",
+            problem: "hard"
         }
 	].sort((a, b) => a.title.localeCompare(b.title))
 }
