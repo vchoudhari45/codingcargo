@@ -36,6 +36,11 @@ const tree = {
             index: 431,
             title: "Encode N ary Tree to Binary Tree",
             problem: "hard"
+        },
+        {
+            index: 1649,
+            title: "Create Sorted Array through Instructions",
+            problem: "hard"
         }
 	].sort((a, b) => a.title.localeCompare(b.title))
 }
