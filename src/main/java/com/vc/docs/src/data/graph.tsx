@@ -74,6 +74,11 @@ const graph = {
             company: ["Amazon"]
         },
         {
+            index: 1627,
+            title: "Graph Connectivity With Threshold",
+            problem: "hard",
+        },
+        {
             index: 1632,
             title: "Rank Transform of a Matrix",
             problem: "hard",
