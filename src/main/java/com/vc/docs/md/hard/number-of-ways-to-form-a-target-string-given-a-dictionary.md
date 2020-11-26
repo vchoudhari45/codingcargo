@@ -71,8 +71,8 @@ If you have any suggestions in below code, please <a href="####LINK_PLACEHOLDER#
 <p>
 O(L * (W + T)) Where <br />
 L is length of input words array <br />
-W is length of word <br />
-T is length of target
+W is length of any input word in an input words array<br />
+T is length of input target string
 </p>
 </blockquote>
 
@@ -81,6 +81,6 @@ T is length of target
 <blockquote>
 <p>
 O(T) Where <br />
-T is length of target
+T is length of input target string
 </p>
 </blockquote>
