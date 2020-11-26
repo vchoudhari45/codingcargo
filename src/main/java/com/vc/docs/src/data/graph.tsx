@@ -72,6 +72,12 @@ const graph = {
             title: "Number of Distinct Islands II",
             problem: "hard",
             company: ["Amazon"]
+        },
+        {
+            index: 1632,
+            title: "Rank Transform of a Matrix",
+            problem: "hard",
+            company: ["Google"]
         }
 	].sort((a, b) => a.title.localeCompare(b.title))
 }
