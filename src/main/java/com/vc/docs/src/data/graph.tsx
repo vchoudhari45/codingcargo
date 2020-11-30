@@ -74,6 +74,11 @@ const graph = {
             company: ["Amazon"]
         },
         {
+            index: 1617,
+            title: "Count Subtrees With Max Distance Between Cities",
+            problem: "hard"
+        },
+        {
             index: 1627,
             title: "Graph Connectivity With Threshold",
             problem: "hard",
