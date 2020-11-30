@@ -66,6 +66,12 @@ const math = {
             title: "Super Washing Machines",
             problem: "hard",
             company: ["Amazon"]
+        },
+        {
+            index: 1622,
+            title: "Fancy Sequence",
+            problem: "hard",
+            company: ["Google"]
         }
 	].sort((a, b) => a.title.localeCompare(b.title))
 }
