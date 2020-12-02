@@ -68,6 +68,11 @@ const math = {
             company: ["Amazon"]
         },
         {
+            index: 1611,
+            title: "Minimum One Bit Operations to Make Integers Zero",
+            problem: "hard"
+        },
+        {
             index: 1622,
             title: "Fancy Sequence",
             problem: "hard",
