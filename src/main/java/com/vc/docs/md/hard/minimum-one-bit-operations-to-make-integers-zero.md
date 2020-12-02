@@ -23,7 +23,7 @@ Return the minimum number of operations to transform <code class="inline">n</cod
 
 
 <p>Constraints</p>
-<p><code class="inline">0 <= n <= 10<sup>9</sup></code></p>
+<p><code class="inline">0 &lt;= n &lt;= 10<sup>9</sup></code></p>
 
 <b>Example 1:</b>
 <blockquote>
