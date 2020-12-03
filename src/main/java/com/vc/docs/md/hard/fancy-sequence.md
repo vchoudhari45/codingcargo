@@ -22,15 +22,6 @@ Write an API that generates fancy sequences using the <code class="inline">appen
 <li><code class="inline">int getIndex(idx)</code> Gets the current value at index idx (0-indexed) of the sequence modulo <code class="inline">10<sup>9</sup> + 7</code>. If the index is greater or equal than the length of the sequence, return -1</li>
 </ul>
 
-<p>
-Constraints:
-</p>
-<ul>
-<li><code class="inline">1 <= val, inc, m <= 100</code></li>
-<li><code class="inline">0 <= idx <= 105</code></li>
-<li>At most <code class="inline">105</code> calls total will be made to <code class="inline">append</code>, <code class="inline">addAll</code>, <code class="inline">multAll</code>, and <code class="inline">getIndex</code>.</li>
-</ul>
-
 
 <b>Example 1:</b>
 <blockquote>

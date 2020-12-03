@@ -26,15 +26,6 @@ There can be multiple points at one coordinate. There may be points at your loca
 Return the maximum number of points you can see.
 </p>
 
-<p>Constraints:</p>
-<p>
-<code class="inline">1 &lt;= points.length &lt;= 10<sup>5</sup></code><br />
-<code class="inline">points[i].length == 2</code><br />
-<code class="inline">location.length == 2</code><br />
-<code class="inline">0 &lt;= angle < 360</code><br />
-<code class="inline">0 &lt;= pos<sub>x</sub>, pos<sub>y</sub>, xi, yi &lt;= 10<sup>9</sup></code>
-</p>
-
 <b>Example 1:</b>
 <blockquote>
 <p>

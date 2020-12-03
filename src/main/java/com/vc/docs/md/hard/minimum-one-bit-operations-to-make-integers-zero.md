@@ -21,10 +21,6 @@ Given an integer <code class="inline">n</code>, you must transform it into <code
 Return the minimum number of operations to transform <code class="inline">n</code> into <code class="inline">0</code>.
 </p>
 
-
-<p>Constraints</p>
-<p><code class="inline">0 &lt;= n &lt;= 10<sup>9</sup></code></p>
-
 <b>Example 1:</b>
 <blockquote>
 <p>

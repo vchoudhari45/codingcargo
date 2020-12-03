@@ -26,18 +26,6 @@ Return an array of size <code class="inline">n - 1</code> where the <code class=
 Notice that the distance between the two cities is the number of edges in the path between them.
 </p>
 
-<p>
-Constraints:
-</p>
-<ul>
-<li><code class="inline">2 <= n <= 15</code></li>
-<li><code class="inline">edges.length == n - 1</code></li>
-<li><code class="inline">edges[i].length == 2</code></li>
-<li><code class="inline">1 <= ui, vi <= n</code></li>
-<li>All pairs <code class="inline">(ui, vi)</code> are distinct.</li>
-</ul>
-
-
 <b>Example 1:</b>
 <blockquote>
 <p>
