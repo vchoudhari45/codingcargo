@@ -18,6 +18,12 @@ const bitManipulation = {
             title: "Remove 9",
             problem: "hard",
             company: ["Google"]
+        },
+        {
+            index: 1601,
+            title: "Maximum Number of Achievable Transfer Requests",
+            problem: "hard",
+            company: ["Amazon"]
         }
 	].sort((a, b) => a.title.localeCompare(b.title))
 }
