@@ -28,10 +28,10 @@ Return the maximum number of points you can see.
 
 <p>Constraints:</p>
 <p>
-<code class="inline">1 &lt;= points.length &lt;= 10<sup>5</sup></code>
-<code class="inline">points[i].length == 2</code>
-<code class="inline">location.length == 2</code>
-<code class="inline">0 &lt;= angle < 360</code>
+<code class="inline">1 &lt;= points.length &lt;= 10<sup>5</sup></code><br />
+<code class="inline">points[i].length == 2</code><br />
+<code class="inline">location.length == 2</code><br />
+<code class="inline">0 &lt;= angle < 360</code><br />
 <code class="inline">0 &lt;= pos<sub>x</sub>, pos<sub>y</sub>, xi, yi &lt;= 10<sup>9</sup></code>
 </p>
 
