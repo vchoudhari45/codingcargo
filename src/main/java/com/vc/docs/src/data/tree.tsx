@@ -38,6 +38,12 @@ const tree = {
             problem: "hard"
         },
         {
+            index: 1597,
+            title: "Build Binary Expression Tree From Infix Expression",
+            problem: "hard",
+            company: ["Amazon"]
+        },
+        {
             index: 1649,
             title: "Create Sorted Array through Instructions",
             problem: "hard"
