@@ -20,6 +20,12 @@ const bitManipulation = {
             company: ["Google"]
         },
         {
+            index: 1595,
+            title: "Minimum Cost to Connect Two Groups of Points",
+            problem: "hard",
+            company: ["Google"]
+        },
+        {
             index: 1601,
             title: "Maximum Number of Achievable Transfer Requests",
             problem: "hard",
