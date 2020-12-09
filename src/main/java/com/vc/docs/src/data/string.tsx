@@ -55,6 +55,12 @@ const string = {
             title: "Parse Lisp Expression",
             problem: "hard",
             company: ["Google"]
+        },
+        {
+            index: 1585,
+            title: "Check If String Is Transformable With Substring Sort Operations",
+            problem: "hard",
+            company: ["Google"]
         }
 	].sort((a, b) => a.title.localeCompare(b.title))
 }
