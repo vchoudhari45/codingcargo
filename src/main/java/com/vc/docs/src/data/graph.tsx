@@ -74,6 +74,11 @@ const graph = {
             company: ["Amazon"]
         },
         {
+            index: 1579,
+            title: "Remove Max Number of Edges to Keep Graph Fully Traversable",
+            problem: "hard"
+        },
+        {
             index: 1617,
             title: "Count Subtrees With Max Distance Between Cities",
             problem: "hard"
