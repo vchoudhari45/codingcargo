@@ -67,9 +67,9 @@ If you have any suggestions in below code, please <a href="####LINK_PLACEHOLDER#
 <h2 class="heading">Time Complexity</h2>
 <blockquote>
 <p>
-O(NM log(NM)) Where <br />
-M is number of Rows in an input matrix <br />
-N is number of Columns in an input matrix
+O(M * log(N)) Where <br />
+N is number of nodes<br />
+M is number of edges in an input array edges
 </p>
 </blockquote>
 
@@ -77,8 +77,7 @@ N is number of Columns in an input matrix
 <h2 class="heading">Space Complexity</h2>
 <blockquote>
 <p>
-O(NM) Where <br >
-M is number of Rows in an input matrix <br />
-N is number of Columns in an input matrix <br />
+O(N) Where <br >
+N is number of nodes<br />
 </p>
 </blockquote>
