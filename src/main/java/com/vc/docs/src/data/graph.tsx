@@ -74,6 +74,11 @@ const graph = {
             company: ["Amazon"]
         },
         {
+            index: 1568,
+            title: "Minimum Number of Days to Disconnect Island",
+            problem: "hard"
+        },
+        {
             index: 1579,
             title: "Remove Max Number of Edges to Keep Graph Fully Traversable",
             problem: "hard"
