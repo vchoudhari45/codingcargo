@@ -138,6 +138,11 @@ const dynamicProgramming = {
             company: ["Facebook"]
         },
         {
+            index: 1569,
+            title: "Number of Ways to Reorder Array to Get Same BST",
+            problem: "hard"
+        },
+        {
             index: 1575,
             title: "Count All Possible Routes",
             problem: "hard"
