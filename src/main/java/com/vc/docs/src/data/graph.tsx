@@ -79,6 +79,12 @@ const graph = {
             problem: "hard"
         },
         {
+            index: 1591,
+            title: "Strange Printer II",
+            problem: "hard",
+            company: ["Google"]
+        },
+        {
             index: 1617,
             title: "Count Subtrees With Max Distance Between Cities",
             problem: "hard"
