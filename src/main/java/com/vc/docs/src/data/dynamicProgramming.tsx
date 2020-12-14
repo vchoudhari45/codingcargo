@@ -138,6 +138,11 @@ const dynamicProgramming = {
             company: ["Facebook"]
         },
         {
+            index: 1575,
+            title: "Count All Possible Routes",
+            problem: "hard"
+        },
+        {
             index: 1639,
             title: "Number of Ways to Form a Target String Given a Dictionary",
             problem: "hard"
