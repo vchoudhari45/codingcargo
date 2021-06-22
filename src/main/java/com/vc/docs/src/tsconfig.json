@@ -24,6 +24,5 @@
   "include": [
     "next-env.d.ts",
     "**/*.ts",
-    "**/*.tsx"
-, "component/googleAd.js"  ]
+    "**/*.tsx"]
 }

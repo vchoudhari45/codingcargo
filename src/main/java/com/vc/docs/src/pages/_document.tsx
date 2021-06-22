@@ -75,9 +75,6 @@ nERDtQAAAABJRU5ErkJggg==" rel="icon" type="image/x-icon" />
 					<meta key="twitter:card" name="twitter:card" content="summary" />
 					<meta key="twitter:site" name="twitter:site" content={TWITTER_HANDLE} /> 
 					<meta key="twitter:image" name="twitter:image" content={imgUrl} />
-					<script data-ad-client="ca-pub-5837843548871883" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-					<script async src="https://www.googletagmanager.com/gtag/js?id=G-DTNBVNQE38"></script>
-					<script type="text/javascript" src={BASE_URL + "scripts/gtag.js"}></script>
 				</Head>
 				<body className="text-sm md:text-base">
 						<Main />

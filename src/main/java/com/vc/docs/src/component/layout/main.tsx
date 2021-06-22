@@ -5,7 +5,6 @@ import { truncate } from "../../util/url"
 import Prism from 'prismjs'
 import React, { useEffect } from 'react'
 import { BASE_URL, HOMEPAGE } from "../../data/menu"
-import GoogleAd  from "../googleAd"
 
 interface Props {
 	prev: MenuItem
@@ -101,14 +100,6 @@ const main: React.FC<Props> = ({prev, current, next, content}: Props) => {
 					</footer>
 					: ""
 				}
-
-                { 
-                    title.toLowerCase() != HOMEPAGE.toLowerCase() && title.toLowerCase().trim() != "" && contentArr.length >= 7 ?
-                    <div className="ad_responsive ad_responsive_align">
-                        <GoogleAd />
-                    </div>
-                    : <></>
-                }
 
 			</div>
 		</>
