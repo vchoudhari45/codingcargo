@@ -17,21 +17,25 @@ Design a search autocomplete system for a search engine. Users may input a sente
 Here are the specific rules:
 </p>
 <p>
-<b>1.</b> The hot degree for a sentence is defined as the number of times a user typed the exactly same sentence before. <br /><br />
-<b>2.</b> The returned top <code class="inline">3</code> hot sentences should be sorted by hot degree (The first is the hottest one). If several sentences have the same degree of hot, you need to use ASCII-code order (smaller one appears first). <br /><br />
-<b>3.</b> If less than <code class="inline">3</code> hot sentences exist, then just return as many as you can. <br /><br />
-<b>4.</b> When the input is a special character, it means the sentence ends, and in this case, you need to return an empty list. <br /><br />
+<b>1.</b> The hot degree for a sentence is defined as the number of times a user typed the exactly same sentence before. <br />
+<b>2.</b> The returned top <code class="inline">3</code> hot sentences should be sorted by hot degree (The first is the hottest one). If several sentences have the same degree of hot, you need to use ASCII-code order (smaller one appears first). <br />
+<b>3.</b> If less than <code class="inline">3</code> hot sentences exist, then just return as many as you can. <br />
+<b>4.</b> When the input is a special character, it means the sentence ends, and in this case, you need to return an empty list. <br />
 </p>
 <p>Your job is to implement the following functions:</p>
 <p>
-<b>DesignSearchAutocompleteSystem(String[] sentences, int[] times)</b>: <br />
+<b>DesignSearchAutocompleteSystem(String[] sentences, int[] times)</b>:
+</p>
+<p>
 This is the constructor. The input is historical data. Sentences is a string array consists of previously typed sentences. Times is the corresponding times a sentence has been typed. Your system should record these historical data.
 </p>
 <p>
 Now, the user wants to input a new sentence. The following function will provide the next character the user types:
 </p>
 <p>
-<b>List&lt;String&gt; input(char c)</b>: <br />
+<b>List&lt;String&gt; input(char c)</b>:
+</p>
+<p>
 The input <code class="inline">c</code> is the next character typed by the user. The character will only be lower-case letters (<code class="inline">a</code> to <code class="inline">z</code>), blank space (' ') or a special character (<code class="inline">#</code>). Also, the previously typed sentence should be recorded in your system. The output will be the top 3 historical hot sentences that have prefix the same as the part of sentence already typed.
 </p>
 
