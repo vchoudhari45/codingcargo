@@ -24,14 +24,14 @@ Here are the specific rules:
 </ul>
 <p>Your job is to implement the following functions:</p>
 <p>
-<code class="inline">DesignSearchAutocompleteSystem(String[] sentences, int[] times)</code>: <br />
+<b>DesignSearchAutocompleteSystem(String[] sentences, int[] times)</b>: <br />
 This is the constructor. The input is historical data. Sentences is a string array consists of previously typed sentences. Times is the corresponding times a sentence has been typed. Your system should record these historical data.
 </p>
 <p>
 Now, the user wants to input a new sentence. The following function will provide the next character the user types:
 </p>
 <p>
-<code class="inline">List<String> input(char c)</code>: <br />
+<b>List&lt;String&gt; input(char c)</b>: <br />
 The input c is the next character typed by the user. The character will only be lower-case letters ('a' to 'z'), blank space (' ') or a special character ('#'). Also, the previously typed sentence should be recorded in your system. The output will be the top 3 historical hot sentences that have prefix the same as the part of sentence already typed.
 </p>
 
@@ -39,8 +39,7 @@ The input c is the next character typed by the user. The character will only be 
 <b>Example 1:</b>
 <blockquote>
 <p>
-<b>Operation</b>: DesignSearchAutocompleteSystem(<br />
-["i love you", "island","ironman", "i love leetcode"], <br />
+<b>Operation</b>: DesignSearchAutocompleteSystem(["i love you", "island","ironman", "i love leetcode"], <br />
 [5,3,2,2]) <br />
 The system have already tracked down the following sentences and their corresponding times:<br />
 "i love you" : 5 times<br />
@@ -50,8 +49,8 @@ The system have already tracked down the following sentences and their correspon
 Now, the user begins another search:<br />
 <br />
 <b>Operation</b>: input('i') <br/>
-Output: ["i love you", "island","i love leetcode"]<br/>
-Explanation:<br/>
+<b>Output</b>: ["i love you", "island","i love leetcode"]<br/>
+<b>Explanation</b>:<br/>
 There are four sentences that have prefix "i". Among them, "ironman" and "i love leetcode" have same hot degree. Since ' ' has ASCII code 32 and 'r' has ASCII code 114, "i love leetcode" should be in front of "ironman". Also we only need to output top 3 hot sentences, so "ironman" will be ignored.<br/>
 <br />
 <b>Operation</b>: input(' ')<br />
@@ -60,13 +59,13 @@ Explanation:<br />
 There are only two sentences that have prefix "i ".<br />
 <br />
 <b>Operation</b>: input('a')<br />
-Output: []<br />
-Explanation:<br />
+<b>Output</b>: []<br />
+<b>Explanation</b>:<br />
 There are no sentences that have prefix "i a".<br />
 <br />
 <b>Operation</b>: input('#')<br />
-Output: []<br />
-Explanation:<br />
+<b>Output</b>: []<br />
+<b>Explanation</b>:<br />
 The user finished the input, the sentence "i a" should be saved as a historical sentence in system. And the following input will be counted as a new search.<br />
 </p>
 </blockquote>
