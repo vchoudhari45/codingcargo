@@ -17,10 +17,10 @@ Design a search autocomplete system for a search engine. Users may input a sente
 Here are the specific rules:
 </p>
 <p>
-<b>1.</b> The hot degree for a sentence is defined as the number of times a user typed the exactly same sentence before.
-<b>2.</b> The returned top <code class="inline">3</code> hot sentences should be sorted by hot degree (The first is the hottest one). If several sentences have the same degree of hot, you need to use ASCII-code order (smaller one appears first).
-<b>3.</b> If less than <code class="inline">3</code> hot sentences exist, then just return as many as you can
-<b>4.</b> When the input is a special character, it means the sentence ends, and in this case, you need to return an empty list.
+<b>1.</b> The hot degree for a sentence is defined as the number of times a user typed the exactly same sentence before. <br />
+<b>2.</b> The returned top <code class="inline">3</code> hot sentences should be sorted by hot degree (The first is the hottest one). If several sentences have the same degree of hot, you need to use ASCII-code order (smaller one appears first). <br />
+<b>3.</b> If less than <code class="inline">3</code> hot sentences exist, then just return as many as you can. <br />
+<b>4.</b> When the input is a special character, it means the sentence ends, and in this case, you need to return an empty list. <br />
 </p>
 <p>Your job is to implement the following functions:</p>
 <p>
