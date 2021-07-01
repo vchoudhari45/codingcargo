@@ -65,4 +65,5 @@ const string = {
 	].sort((a, b) => a.title.localeCompare(b.title))
 }
 
+
 export default string
