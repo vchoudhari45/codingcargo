@@ -54,7 +54,6 @@ nERDtQAAAABJRU5ErkJggg==" rel="icon" type="image/x-icon" />
 					<link rel="apple-touch-icon" href={BASE_URL + "apple-touch-icon.png"} />
 
 					<meta name="theme-color" content="#FFFFFF"/>
-					<meta name="viewport" content="width=device-width, initial-scale=1" />
 					{ metadata && metadata !== "" ? <meta name="description" content={metadata} /> : <></> }
 					{ keywords && keywords !== "" ? <meta name="keywords" content={keywords} /> : <></> }
 					<meta name="robots" content={robots} />

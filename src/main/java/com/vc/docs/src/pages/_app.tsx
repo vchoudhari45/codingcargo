@@ -8,7 +8,10 @@ const App = (appProps: AppProps) => {
 	const title = appProps.pageProps.selected ? appProps.pageProps.selected.title : HOMEPAGE
 	return (
 		<>
-			<Head><title>{title}</title></Head>
+			<Head>
+				<meta name="viewport" content="width=device-width, initial-scale=1" />
+				<title>{title}</title>
+		  </Head>
 			<DefaultLayout {...appProps.pageProps} />
 		</>	
 	)
