@@ -44,7 +44,8 @@ The input <code class="inline">c</code> is the next character typed by the user.
 <blockquote>
 <p>
 <b>Operation</b>:<br />
-DesignSearchAutocompleteSystem(["i love you", "island","ironman", "i love leetcode"], <br />
+DesignSearchAutocompleteSystem(<br />
+["i love you", "island","ironman", "i love leetcode"], <br />
 [5,3,2,2]) <br />
 The system have already tracked down the following sentences and their corresponding times:<br />
 "i love you" : 5 times<br />
