@@ -2,14 +2,14 @@ package com.vc.hard;
 
 import java.util.*;
 
-class Fancy {
+class FancySequence {
     private long totalAddValue = 0;
     private long totalMultValue = 1;
     private List<Integer> numbers;
 
     long MOD = (int)1e9 + 7;
 
-    public Fancy() {
+    public FancySequence() {
         numbers = new ArrayList<>();
     }
 
