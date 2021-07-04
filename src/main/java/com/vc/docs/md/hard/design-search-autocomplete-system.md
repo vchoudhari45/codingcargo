@@ -25,8 +25,6 @@ Here are the specific rules:
 <p>Your job is to implement the following functions:</p>
 <p>
 <code class="inline">DesignSearchAutocompleteSystem(String[] sentences, int[] times)</code>:
-</p>
-<p>
 This is the constructor. The input is historical data. Sentences is a string array consists of previously typed sentences. Times is the corresponding times a sentence has been typed. Your system should record these historical data.
 </p>
 <p>
@@ -34,8 +32,6 @@ Now, the user wants to input a new sentence. The following function will provide
 </p>
 <p>
 <code class="inline">List&lt;String&gt; input(char c)</code>:
-</p>
-<p>
 The input <code class="inline">c</code> is the next character typed by the user. The character will only be lower-case letters (<code class="inline">a</code> to <code class="inline">z</code>), blank space (' ') or a special character (<code class="inline">#</code>). Also, the previously typed sentence should be recorded in your system. The output will be the top 3 historical hot sentences that have prefix the same as the part of sentence already typed.
 </p>
 
