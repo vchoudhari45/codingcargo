@@ -2,7 +2,7 @@ package com.vc.hard;
 
 import java.util.*;
 
-class StrangePrinterII {
+class StrangePrinterIi {
     public boolean isPrintable(int[][] targetGrid) {
 
         HashMap<Integer, int[]> rangeMap = new HashMap<>();
